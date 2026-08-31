@@ -1,0 +1,804 @@
+{
+  "summary": {
+    "collection": "realistic_structure_aware",
+    "top_k": 3,
+    "model": "gemma-4-31b-it",
+    "n_questions": 11,
+    "hit_rate_at_3_before": "11/11",
+    "hit_rate_at_3_after": "11/11",
+    "pass_rate_before": "10/11",
+    "pass_rate_after": "10/11",
+    "fixed": [],
+    "still_failing": [
+      "W4"
+    ],
+    "regressed": []
+  },
+  "per_question": [
+    {
+      "id": "W1",
+      "question": "According to the float test, how do you know the rye levain starter is ripe?",
+      "expected_recipe_id": "ferment_002",
+      "category": "keyword_exact",
+      "hypothesis": "'float test' is a rare, distinctive phrase used nowhere else in the corpus - expected to be helped by BM25/hybrid if semantic search dilutes it among the other sourdough/levain cards.",
+      "before": {
+        "label": "pass",
+        "expected_recipe_id": "ferment_002",
+        "expected_rank": 1,
+        "doc_hit_at_k": true,
+        "answer_correct": true,
+        "k": 3,
+        "evidence": "expected recipe at rank 1, answer tokens matched",
+        "answer": "According to the float test, you drop a teaspoon of ripe levain into room temperature water; it is ripe if it floats rather than sinks [recipe_id=ferment_002 | chunk_id=ferment_002__method__1 | source_file=ferment_002_rye_levain_starter.md].",
+        "retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_002__method__1",
+            "recipe_id": "ferment_002"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ferment_002__method__0",
+            "recipe_id": "ferment_002"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ferment_002__ingredients__0",
+            "recipe_id": "ferment_002"
+          }
+        ]
+      },
+      "after": {
+        "label": "pass",
+        "expected_recipe_id": "ferment_002",
+        "expected_rank": 1,
+        "doc_hit_at_k": true,
+        "answer_correct": true,
+        "k": 3,
+        "evidence": "expected recipe at rank 1, answer tokens matched",
+        "answer": "According to the float test, you drop a teaspoon of ripe levain into room temperature water and it should float rather than sink [recipe_id=ferment_002 | chunk_id=ferment_002__method__1 | source_file=ferment_002_rye_levain_starter.md].",
+        "retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_002__method__1",
+            "recipe_id": "ferment_002"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ferment_002__ingredients__0",
+            "recipe_id": "ferment_002"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ferment_002__method__0",
+            "recipe_id": "ferment_002"
+          }
+        ]
+      },
+      "changed": false,
+      "fixed": false,
+      "still_failing": false,
+      "regressed": false
+    },
+    {
+      "id": "W2",
+      "question": "What test proves the sourdough brioche dough has been kneaded enough before the butter stage finishes?",
+      "expected_recipe_id": "ferment_004",
+      "category": "keyword_exact",
+      "hypothesis": "'windowpane test' is a rare exact phrase - expected to be helped by hybrid.",
+      "before": {
+        "label": "pass",
+        "expected_recipe_id": "ferment_004",
+        "expected_rank": 1,
+        "doc_hit_at_k": true,
+        "answer_correct": true,
+        "k": 3,
+        "evidence": "expected recipe at rank 1, answer tokens matched",
+        "answer": "The dough is ready when it passes the windowpane test, which is when a small piece stretched thin becomes translucent without tearing [recipe_id=ferment_004 | chunk_id=ferment_004__method__0 | source_file=ferment_004_sourdough_brioche.md].",
+        "retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_004__method__0",
+            "recipe_id": "ferment_004"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ferment_004__method__1",
+            "recipe_id": "ferment_004"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ferment_004__ingredients__0",
+            "recipe_id": "ferment_004"
+          }
+        ]
+      },
+      "after": {
+        "label": "pass",
+        "expected_recipe_id": "ferment_004",
+        "expected_rank": 1,
+        "doc_hit_at_k": true,
+        "answer_correct": true,
+        "k": 3,
+        "evidence": "expected recipe at rank 1, answer tokens matched",
+        "answer": "The dough is ready when it passes the windowpane test, where a small piece stretched thin should become translucent without tearing [recipe_id=ferment_004 | chunk_id=ferment_004__method__0 | source_file=ferment_004_sourdough_brioche.md].",
+        "retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_004__method__0",
+            "recipe_id": "ferment_004"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ferment_004__allergen_note__0",
+            "recipe_id": "ferment_004"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ferment_004__ingredients__0",
+            "recipe_id": "ferment_004"
+          }
+        ]
+      },
+      "changed": false,
+      "fixed": false,
+      "still_failing": false,
+      "regressed": false
+    },
+    {
+      "id": "W3",
+      "question": "How much saeujeot does the traditional napa kimchi use, and what percentage of the cabbage weight is that?",
+      "expected_recipe_id": "ferment_005",
+      "category": "keyword_exact",
+      "hypothesis": "'saeujeot' is a rare term appearing only on ferment_005, but ferment_005 and ferment_006 are near-duplicate documents (same cabbage/salt/gochugaru/radish rows) - risk that semantic search pulls the vegan sibling instead. Expected to be helped by hybrid since the exact term only occurs in ferment_005.",
+      "before": {
+        "label": "pass",
+        "expected_recipe_id": "ferment_005",
+        "expected_rank": 1,
+        "doc_hit_at_k": true,
+        "answer_correct": true,
+        "k": 3,
+        "evidence": "expected recipe at rank 1, answer tokens matched",
+        "answer": "The traditional napa kimchi uses 60 g of saeujeot [recipe_id=ferment_005 | chunk_id=ferment_005__ingredients__0 | source_file=ferment_005_traditional_napa_kimchi.md], which is 3% of the cabbage weight [recipe_id=ferment_005 | chunk_id=ferment_005__ingredients__0 | source_file=ferment_005_traditional_napa_kimchi.md].",
+        "retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_005__ingredients__0",
+            "recipe_id": "ferment_005"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ferment_005__ingredients__1",
+            "recipe_id": "ferment_005"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "recipe_169__description__0",
+            "recipe_id": "recipe_169"
+          }
+        ]
+      },
+      "after": {
+        "label": "pass",
+        "expected_recipe_id": "ferment_005",
+        "expected_rank": 1,
+        "doc_hit_at_k": true,
+        "answer_correct": true,
+        "k": 3,
+        "evidence": "expected recipe at rank 1, answer tokens matched",
+        "answer": "Traditional Napa Cabbage Kimchi uses 60 g of saeujeot (salted fermented shrimp) [recipe_id=ferment_005 | chunk_id=ferment_005__ingredients__0 | source_file=ferment_005_traditional_napa_kimchi.md], which is 3% of the cabbage weight [recipe_id=ferment_005 | chunk_id=ferment_005__ingredients__0 | source_file=ferment_005_traditional_napa_kimchi.md].",
+        "retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_005__ingredients__0",
+            "recipe_id": "ferment_005"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "recipe_169__description__0",
+            "recipe_id": "recipe_169"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ferment_006__ingredients__0",
+            "recipe_id": "ferment_006"
+          }
+        ]
+      },
+      "changed": false,
+      "fixed": false,
+      "still_failing": false,
+      "regressed": false
+    },
+    {
+      "id": "W4",
+      "question": "In the vegan napa kimchi, what replaces the salted shrimp and anchovy fish sauce from the traditional recipe, and how much longer does it take to ferment?",
+      "expected_recipe_id": "ferment_006",
+      "category": "contrast",
+      "hypothesis": "Same shape as the already-documented Q7 failure (results.md section 6): the query names the OTHER card's distinctive ingredients ('salted shrimp', 'anchovy fish sauce'), which occur densely in ferment_005's own text. Hybrid/BM25 is NOT expected to fix this - term-overlap scoring can favor the wrong, lexically dense chunk just as much as embedding distance did.",
+      "before": {
+        "label": "right_document_wrong_answer",
+        "expected_recipe_id": "ferment_006",
+        "expected_rank": 1,
+        "doc_hit_at_k": true,
+        "answer_correct": false,
+        "k": 3,
+        "evidence": "expected recipe 'ferment_006' at rank 1 (within top-3), but none of the expected answer tokens [['shiitake', 'kombu'], ['tamari']] appear in the generated answer",
+        "answer": "In vegan kimchi, the fish sauce and salted shrimp are replaced with soy sauce and a kelp and shiitake stock [recipe_id=recipe_169 | chunk_id=recipe_169__variations__0 | source_file=recipe_169_napa_cabbage_kimchi.md]. The Vegan Napa Cabbage Kimchi ferments for 2 to 3 days, which is around a day longer than the traditional card requires [recipe_id=ferment_006 | chunk_id=ferment_006__method__2 | source_file=ferment_006_vegan_napa_kimchi.md].",
+        "retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_006__method__2",
+            "recipe_id": "ferment_006"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ferment_005__allergen_note__0",
+            "recipe_id": "ferment_005"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "recipe_169__variations__0",
+            "recipe_id": "recipe_169"
+          }
+        ]
+      },
+      "after": {
+        "label": "right_document_wrong_answer",
+        "expected_recipe_id": "ferment_006",
+        "expected_rank": 3,
+        "doc_hit_at_k": true,
+        "answer_correct": false,
+        "k": 3,
+        "evidence": "expected recipe 'ferment_006' at rank 3 (within top-3), but none of the expected answer tokens [['shiitake', 'kombu'], ['tamari']] appear in the generated answer",
+        "answer": "I cannot answer this from the provided recipe documents.",
+        "retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_005__allergen_note__0",
+            "recipe_id": "ferment_005"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "recipe_169__description__0",
+            "recipe_id": "recipe_169"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ferment_006__method__2",
+            "recipe_id": "ferment_006"
+          }
+        ]
+      },
+      "changed": false,
+      "fixed": false,
+      "still_failing": true,
+      "regressed": false
+    },
+    {
+      "id": "W5",
+      "question": "How many days does the traditional napa kimchi ferment at 20C before it goes into the refrigerator?",
+      "expected_recipe_id": "ferment_005",
+      "category": "contrast",
+      "hypothesis": "ferment_006's method explicitly discusses 'the traditional card' and its fermentation time for comparison ('around a day longer than the traditional card requires'), so a query about the traditional recipe's own timing risks pulling the vegan card's comparison sentence instead. Not confidently expected to be fixed by hybrid, since both cards contain the phrase '2 days'/'2 to 3 days' near kimchi vocabulary.",
+      "before": {
+        "label": "pass",
+        "expected_recipe_id": "ferment_005",
+        "expected_rank": 2,
+        "doc_hit_at_k": true,
+        "answer_correct": true,
+        "k": 3,
+        "evidence": "expected recipe at rank 2, answer tokens matched",
+        "answer": "Traditional Napa Cabbage Kimchi ferments at 20C for 2 days before being transferred to the refrigerator [recipe_id=ferment_005 | chunk_id=ferment_005__method__2 | source_file=ferment_005_traditional_napa_kimchi.md].",
+        "retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_006__method__2",
+            "recipe_id": "ferment_006"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ferment_005__method__2",
+            "recipe_id": "ferment_005"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "recipe_169__storage__0",
+            "recipe_id": "recipe_169"
+          }
+        ]
+      },
+      "after": {
+        "label": "pass",
+        "expected_recipe_id": "ferment_005",
+        "expected_rank": 2,
+        "doc_hit_at_k": true,
+        "answer_correct": true,
+        "k": 3,
+        "evidence": "expected recipe at rank 2, answer tokens matched",
+        "answer": "Traditional Napa Cabbage Kimchi ferments at 20C for 2 days before being transferred to the refrigerator [recipe_id=ferment_005 | chunk_id=ferment_005__method__2 | source_file=ferment_005_traditional_napa_kimchi.md].",
+        "retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_006__method__2",
+            "recipe_id": "ferment_006"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ferment_005__method__2",
+            "recipe_id": "ferment_005"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "recipe_169__description__0",
+            "recipe_id": "recipe_169"
+          }
+        ]
+      },
+      "changed": false,
+      "fixed": false,
+      "still_failing": false,
+      "regressed": false
+    },
+    {
+      "id": "W6",
+      "question": "At what oven temperature and for how many minutes is the sourdough focaccia baked?",
+      "expected_recipe_id": "ferment_003",
+      "category": "cross_distractor",
+      "hypothesis": "The realistic index's forced distractor set includes recipe_066_focaccia.md - a real, differently-timed focaccia recipe with the same dish name. Expected to stress whether the retriever pulls the distractor's bake time instead of ferment_003's. Uncertain whether hybrid helps or hurts, since both documents share the word 'focaccia' densely.",
+      "before": {
+        "label": "pass",
+        "expected_recipe_id": "ferment_003",
+        "expected_rank": 1,
+        "doc_hit_at_k": true,
+        "answer_correct": true,
+        "k": 3,
+        "evidence": "expected recipe at rank 1, answer tokens matched",
+        "answer": "The sourdough focaccia is baked at 240C for 22 minutes [recipe_id=ferment_003 | chunk_id=ferment_003__method__1 | source_file=ferment_003_sourdough_focaccia.md].",
+        "retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_003__method__1",
+            "recipe_id": "ferment_003"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ferment_003__method__0",
+            "recipe_id": "ferment_003"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ferment_003__ingredients__1",
+            "recipe_id": "ferment_003"
+          }
+        ]
+      },
+      "after": {
+        "label": "pass",
+        "expected_recipe_id": "ferment_003",
+        "expected_rank": 1,
+        "doc_hit_at_k": true,
+        "answer_correct": true,
+        "k": 3,
+        "evidence": "expected recipe at rank 1, answer tokens matched",
+        "answer": "Sourdough focaccia is baked at 240C for 22 minutes [recipe_id=ferment_003 | chunk_id=ferment_003__method__1 | source_file=ferment_003_sourdough_focaccia.md].",
+        "retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_003__method__1",
+            "recipe_id": "ferment_003"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "recipe_066__storage__0",
+            "recipe_id": "recipe_066"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ferment_003__method__0",
+            "recipe_id": "ferment_003"
+          }
+        ]
+      },
+      "changed": false,
+      "fixed": false,
+      "still_failing": false,
+      "regressed": false
+    },
+    {
+      "id": "W7",
+      "question": "What internal temperature should the 2kg country sourdough loaf reach when it's fully baked?",
+      "expected_recipe_id": "ferment_001",
+      "category": "cross_distractor",
+      "hypothesis": "Baking-temperature questions are generic phrasing shared with many bread distractors (naan, roti, ciabatta, pizza dough) in the realistic index - expected to mostly already pass, included as a control question.",
+      "before": {
+        "label": "pass",
+        "expected_recipe_id": "ferment_001",
+        "expected_rank": 1,
+        "doc_hit_at_k": true,
+        "answer_correct": true,
+        "k": 3,
+        "evidence": "expected recipe at rank 1, answer tokens matched",
+        "answer": "The 2kg Country Sourdough Loaf should reach an internal temperature of 96C when fully baked [recipe_id=ferment_001 | chunk_id=ferment_001__method__1 | source_file=ferment_001_country_sourdough_2kg.md].",
+        "retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_001__method__1",
+            "recipe_id": "ferment_001"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ferment_001__method__2",
+            "recipe_id": "ferment_001"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ferment_001__ingredients__1",
+            "recipe_id": "ferment_001"
+          }
+        ]
+      },
+      "after": {
+        "label": "pass",
+        "expected_recipe_id": "ferment_001",
+        "expected_rank": 1,
+        "doc_hit_at_k": true,
+        "answer_correct": true,
+        "k": 3,
+        "evidence": "expected recipe at rank 1, answer tokens matched",
+        "answer": "The 2kg country sourdough loaf should reach an internal temperature of 96C when fully baked [recipe_id=ferment_001 | chunk_id=ferment_001__method__1 | source_file=ferment_001_country_sourdough_2kg.md].",
+        "retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_001__method__1",
+            "recipe_id": "ferment_001"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ferment_001__ingredients__0",
+            "recipe_id": "ferment_001"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ferment_001__method__2",
+            "recipe_id": "ferment_001"
+          }
+        ]
+      },
+      "changed": false,
+      "fixed": false,
+      "still_failing": false,
+      "regressed": false
+    },
+    {
+      "id": "W8",
+      "question": "How long does the enriched sourdough brioche dough cold retard for before shaping?",
+      "expected_recipe_id": "ferment_004",
+      "category": "cross_distractor",
+      "hypothesis": "Control question - specific numeric answer, no strong lexical overlap with distractors, expected to already pass.",
+      "before": {
+        "label": "pass",
+        "expected_recipe_id": "ferment_004",
+        "expected_rank": 1,
+        "doc_hit_at_k": true,
+        "answer_correct": true,
+        "k": 3,
+        "evidence": "expected recipe at rank 1, answer tokens matched",
+        "answer": "The enriched sourdough brioche dough cold retards for 14 to 18 hours at 4C [recipe_id=ferment_004 | chunk_id=ferment_004__method__1 | source_file=ferment_004_sourdough_brioche.md].",
+        "retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_004__method__1",
+            "recipe_id": "ferment_004"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ferment_004__method__0",
+            "recipe_id": "ferment_004"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ferment_001__method__1",
+            "recipe_id": "ferment_001"
+          }
+        ]
+      },
+      "after": {
+        "label": "pass",
+        "expected_recipe_id": "ferment_004",
+        "expected_rank": 1,
+        "doc_hit_at_k": true,
+        "answer_correct": true,
+        "k": 3,
+        "evidence": "expected recipe at rank 1, answer tokens matched",
+        "answer": "The enriched sourdough brioche dough cold retards for 14 to 18 hours at 4C [recipe_id=ferment_004 | chunk_id=ferment_004__method__1 | source_file=ferment_004_sourdough_brioche.md].",
+        "retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_004__method__1",
+            "recipe_id": "ferment_004"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ferment_004__method__0",
+            "recipe_id": "ferment_004"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ferment_004__ingredients__0",
+            "recipe_id": "ferment_004"
+          }
+        ]
+      },
+      "changed": false,
+      "fixed": false,
+      "still_failing": false,
+      "regressed": false
+    },
+    {
+      "id": "W9",
+      "question": "What percentage of the cabbage weight does the gochugaru make up in the vegan napa kimchi?",
+      "expected_recipe_id": "ferment_006",
+      "category": "keyword_exact",
+      "hypothesis": "The gochugaru row ('Gochugaru (Korean chilli flakes) | 100 g | 5%') is BYTE-IDENTICAL text in both ferment_005 and ferment_006 - nothing in that single row distinguishes which card it belongs to. Only 'vegan' framing elsewhere in the chunk can disambiguate. High risk of wrong_document; uncertain whether hybrid helps, since BM25 on this row alone can't disambiguate either.",
+      "before": {
+        "label": "pass",
+        "expected_recipe_id": "ferment_006",
+        "expected_rank": 1,
+        "doc_hit_at_k": true,
+        "answer_correct": true,
+        "k": 3,
+        "evidence": "expected recipe at rank 1, answer tokens matched",
+        "answer": "In the Vegan Napa Cabbage Kimchi, gochugaru (Korean chilli flakes) makes up 5% of the cabbage weight [recipe_id=ferment_006 | chunk_id=ferment_006__ingredients__0 | source_file=ferment_006_vegan_napa_kimchi.md].",
+        "retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_006__ingredients__0",
+            "recipe_id": "ferment_006"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ferment_006__ingredients__1",
+            "recipe_id": "ferment_006"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ferment_005__ingredients__0",
+            "recipe_id": "ferment_005"
+          }
+        ]
+      },
+      "after": {
+        "label": "pass",
+        "expected_recipe_id": "ferment_006",
+        "expected_rank": 1,
+        "doc_hit_at_k": true,
+        "answer_correct": true,
+        "k": 3,
+        "evidence": "expected recipe at rank 1, answer tokens matched",
+        "answer": "In the Vegan Napa Cabbage Kimchi, the gochugaru (Korean chilli flakes) makes up 5% of the cabbage weight [recipe_id=ferment_006 | chunk_id=ferment_006__ingredients__0 | source_file=ferment_006_vegan_napa_kimchi.md].",
+        "retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_006__ingredients__0",
+            "recipe_id": "ferment_006"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ferment_005__ingredients__0",
+            "recipe_id": "ferment_005"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ferment_006__method__1",
+            "recipe_id": "ferment_006"
+          }
+        ]
+      },
+      "changed": false,
+      "fixed": false,
+      "still_failing": false,
+      "regressed": false
+    },
+    {
+      "id": "W10",
+      "question": "What smell and appearance indicate the rye levain has gone past ripe and over-fermented?",
+      "expected_recipe_id": "ferment_002",
+      "category": "keyword_exact",
+      "hypothesis": "Paraphrased question (no exact phrase reused from the card) testing whether semantic search alone is enough without needing BM25 - included as a semantic-should-win control.",
+      "before": {
+        "label": "pass",
+        "expected_recipe_id": "ferment_002",
+        "expected_rank": 1,
+        "doc_hit_at_k": true,
+        "answer_correct": true,
+        "k": 3,
+        "evidence": "expected recipe at rank 1, answer tokens matched",
+        "answer": "A rye levain that has gone past ripe is indicated by an appearance of having risen and then collapsed back to a flat, watery surface [recipe_id=ferment_002 | chunk_id=ferment_002__method__1 | source_file=ferment_002_rye_levain_starter.md].",
+        "retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_002__method__1",
+            "recipe_id": "ferment_002"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ferment_002__method__0",
+            "recipe_id": "ferment_002"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ferment_002__ingredients__0",
+            "recipe_id": "ferment_002"
+          }
+        ]
+      },
+      "after": {
+        "label": "pass",
+        "expected_recipe_id": "ferment_002",
+        "expected_rank": 1,
+        "doc_hit_at_k": true,
+        "answer_correct": true,
+        "k": 3,
+        "evidence": "expected recipe at rank 1, answer tokens matched",
+        "answer": "A rye levain has gone past ripe when it has risen and then collapsed back to a flat, watery surface [recipe_id=ferment_002 | chunk_id=ferment_002__method__1 | source_file=ferment_002_rye_levain_starter.md].",
+        "retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_002__method__1",
+            "recipe_id": "ferment_002"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ferment_002__method__0",
+            "recipe_id": "ferment_002"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ferment_002__allergen_note__0",
+            "recipe_id": "ferment_002"
+          }
+        ]
+      },
+      "changed": false,
+      "fixed": false,
+      "still_failing": false,
+      "regressed": false
+    },
+    {
+      "id": "W11",
+      "question": "Which recipe describes a ripe starter as smelling sharply sour with a faint acetone note?",
+      "expected_recipe_id": "ferment_002",
+      "category": "keyword_exact",
+      "hypothesis": "'acetone' is a single rare, highly distinctive word used nowhere else in the corpus - the clearest exact-term case, expected to be helped by hybrid if it isn't already at rank 1 semantically.",
+      "before": {
+        "label": "pass",
+        "expected_recipe_id": "ferment_002",
+        "expected_rank": 1,
+        "doc_hit_at_k": true,
+        "answer_correct": true,
+        "k": 3,
+        "evidence": "expected recipe at rank 1, answer tokens matched",
+        "answer": "The Rye Levain Starter recipe describes a ripe starter as smelling sharply sour with a faint acetone note [recipe_id=ferment_002 | chunk_id=ferment_002__method__1 | source_file=ferment_002_rye_levain_starter.md].",
+        "retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_002__method__1",
+            "recipe_id": "ferment_002"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ferment_002__method__0",
+            "recipe_id": "ferment_002"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ferment_002__ingredients__0",
+            "recipe_id": "ferment_002"
+          }
+        ]
+      },
+      "after": {
+        "label": "pass",
+        "expected_recipe_id": "ferment_002",
+        "expected_rank": 1,
+        "doc_hit_at_k": true,
+        "answer_correct": true,
+        "k": 3,
+        "evidence": "expected recipe at rank 1, answer tokens matched",
+        "answer": "The Rye Levain Starter recipe describes a ripe starter as smelling sharply sour with a faint acetone note [recipe_id=ferment_002 | chunk_id=ferment_002__method__1 | source_file=ferment_002_rye_levain_starter.md].",
+        "retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_002__method__1",
+            "recipe_id": "ferment_002"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ferment_002__method__0",
+            "recipe_id": "ferment_002"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ferment_002__allergen_note__0",
+            "recipe_id": "ferment_002"
+          }
+        ]
+      },
+      "changed": false,
+      "fixed": false,
+      "still_failing": false,
+      "regressed": false
+    }
+  ],
+  "exploratory_probes": [
+    {
+      "question": "What is the bend test used to check?",
+      "note": "'bend test' occurs verbatim in THREE documents: ferment_005, ferment_006 (both fermentation cards) and recipe_169 (a distractor card's Tips section: 'The bend test on the cabbage stem is the correct measure of salting, not the timer.'). No single recipe_id is 'the' right answer here - this probe exists to show what hybrid actually does to a real rare-term collision, not to be scored pass/fail.",
+      "semantic": [
+        {
+          "rank": 1,
+          "chunk_id": "ferment_005__method__0",
+          "recipe_id": "ferment_005",
+          "text": "Recipe: Traditional Napa Cabbage Kimchi (recipe_id: ferment_005)\nSection: Method\n\nQuarter the cabbage lengthwise keeping the core attached, then brine it using the full 160 g of coarse sea salt, working the salt between the leaves and concentrating it on the thick white stems. Leave for 4 to 6 hours, turning every 2 hours.\n\nThe cabbage is correctly brined when a thick white stem bends into a U shape without snapping. This bend test matters more than the clock, because cabbage size and moisture content vary considerably between heads.\n\nRinse three times in cold water and drain cut side down for at least one hour. Residual water dilutes the paste and can spoil the ferment."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "recipe_169__tips__0",
+          "recipe_id": "recipe_169",
+          "text": "Recipe: Napa Cabbage Kimchi (recipe_id: recipe_169)\nSection: Tips\n\n- The bend test on the cabbage stem is the correct measure of salting, not the timer.\n- Drain the cabbage thoroughly after rinsing.\n- Press out all air pockets and keep the cabbage submerged under its brine.\n- Open the container once a day during the room-temperature stage to release built-up gas."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "ferment_006__method__0",
+          "recipe_id": "ferment_006",
+          "text": "Recipe: Vegan Napa Cabbage Kimchi (recipe_id: ferment_006)\nSection: Method\n\nBrine the quartered cabbage with the full 160 g of coarse sea salt for 4 to 6 hours, turning every 2 hours, then apply the bend test: a thick white stem should bend into a U without snapping. Rinse three times and drain cut side down for one hour.\n\nBuild the umami base while the cabbage brines. Simmer the dried shiitake and the kombu in 400 ml of water for 20 minutes, then remove the kombu before it turns slimy and simmer the shiitake for a further 10 minutes. Strain, reserving 250 ml of the liquid, and finely chop the rehydrated shiitake caps to fold into the paste."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "ferment_004__method__0",
+          "recipe_id": "ferment_004",
+          "text": "Recipe: Sourdough Brioche (recipe_id: ferment_004)\nSection: Method\n\nMix the flour, cold milk, eggs, sugar and levain in a stand mixer with the dough hook on low for 4 minutes until a shaggy dough forms. Add the fine sea salt and mix on medium for a further 8 minutes until the dough is smooth and pulls cleanly from the sides of the bowl.\n\nOnly now begin adding the softened butter, roughly 50 g at a time, waiting until each addition has fully disappeared before adding the next. The butter goes in last and gradually, because adding it at the start coats the flour in fat and prevents the gluten network from developing at all. Expect this stage to take 10 to 12 minutes.\n\nThe dough is ready when it passes the windowpane test: a small piece stretched thin should become translucent without tearing."
+        },
+        {
+          "rank": 5,
+          "chunk_id": "recipe_040__tips__0",
+          "recipe_id": "recipe_040",
+          "text": "Recipe: Aloo Paratha (recipe_id: recipe_040)\nSection: Tips\n\n- The filling must be dry; if it feels wet, add a tablespoon of roasted besan or leave the onion out entirely.\n- Refrigerating boiled potatoes before mashing makes the filling much easier to handle.\n- Roll gently and evenly rather than pressing hard in one place, which is what causes tears.\n- Cook on medium heat, since high heat browns the surface before the dough cooks through."
+        }
+      ],
+      "hybrid": [
+        {
+          "rank": 1,
+          "chunk_id": "recipe_169__tips__0",
+          "recipe_id": "recipe_169",
+          "text": "Recipe: Napa Cabbage Kimchi (recipe_id: recipe_169)\nSection: Tips\n\n- The bend test on the cabbage stem is the correct measure of salting, not the timer.\n- Drain the cabbage thoroughly after rinsing.\n- Press out all air pockets and keep the cabbage submerged under its brine.\n- Open the container once a day during the room-temperature stage to release built-up gas."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "ferment_005__method__0",
+          "recipe_id": "ferment_005",
+          "text": "Recipe: Traditional Napa Cabbage Kimchi (recipe_id: ferment_005)\nSection: Method\n\nQuarter the cabbage lengthwise keeping the core attached, then brine it using the full 160 g of coarse sea salt, working the salt between the leaves and concentrating it on the thick white stems. Leave for 4 to 6 hours, turning every 2 hours.\n\nThe cabbage is correctly brined when a thick white stem bends into a U shape without snapping. This bend test matters more than the clock, because cabbage size and moisture content vary considerably between heads.\n\nRinse three times in cold water and drain cut side down for at least one hour. Residual water dilutes the paste and can spoil the ferment."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "ferment_006__method__0",
+          "recipe_id": "ferment_006",
+          "text": "Recipe: Vegan Napa Cabbage Kimchi (recipe_id: ferment_006)\nSection: Method\n\nBrine the quartered cabbage with the full 160 g of coarse sea salt for 4 to 6 hours, turning every 2 hours, then apply the bend test: a thick white stem should bend into a U without snapping. Rinse three times and drain cut side down for one hour.\n\nBuild the umami base while the cabbage brines. Simmer the dried shiitake and the kombu in 400 ml of water for 20 minutes, then remove the kombu before it turns slimy and simmer the shiitake for a further 10 minutes. Strain, reserving 250 ml of the liquid, and finely chop the rehydrated shiitake caps to fold into the paste."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "recipe_002__instructions__0",
+          "recipe_id": "recipe_002",
+          "text": "Recipe: Plain Dosa (recipe_id: recipe_002)\nSection: Instructions\n\n1. Take the fermented batter out of the refrigerator 30 minutes before cooking so it comes to room temperature. Cold batter sticks to the pan.\n2. Stir the batter gently with a ladle. Do not beat it hard or you will knock out the air from fermentation. Add water a tablespoon at a time until the batter is pourable and coats the back of a spoon thinly.\n3. Heat a flat cast iron tawa or heavy non-stick griddle over medium-high heat for 3 to 4 minutes. Test it by flicking a few drops of water onto the surface: they should dance and evaporate within 2 seconds.\n4. Dip the cut face of the halved onion into oil and rub it across the hot griddle. This seasons the surface and prevents sticking.\n5. Reduce the heat to medium. Pour a full ladle of batter into the centre of the tawa.\n6. Using the back of the ladle, spread the batter outward in a continuous spiral from the centre to the edge, working quickly, until you have a thin circle about 25cm across. Do not go back over an area you have already spread.\n7. Drizzle 1 teaspoon of oil around the outer edge and a few drops in the centre.\n8. Cook undisturbed for 2 to 3 minutes on medium-high heat. The dosa is ready when the base is evenly golden brown, the surface looks dry, and the edges curl away from the griddle on their own.\n9. Fold the dosa in half or roll it into a cylinder with a spatula and lift it off. There is no need to cook the second side for a crisp dosa.\n10. Before making the next dosa, wipe the griddle with a damp cloth held in tongs and let it cool slightly. Repeat until the batter is used up."
+        },
+        {
+          "rank": 5,
+          "chunk_id": "ferment_002__method__1",
+          "recipe_id": "ferment_002",
+          "text": "Recipe: Rye Levain Starter (recipe_id: ferment_002)\nSection: Method\n\nCover loosely and ferment for 8 to 12 hours at 22 to 24C. The levain is ripe when it has at least doubled from the elastic band mark, the surface is domed and covered in fine bubbles, and it smells sharply sour with a faint acetone note. A levain that has risen and then collapsed back to a flat, watery surface has gone past ripe and will give a slack, over-acidified dough.\n\nThe float test is a useful confirmation: drop a teaspoon of ripe levain into room temperature water and it should float rather than sink.\n\nRefresh at least once every 24 hours if the starter is kept at room temperature, or once a week if it is stored at 4C in the refrigerator."
+        }
+      ]
+    }
+  ]
+}

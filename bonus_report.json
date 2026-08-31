@@ -1,0 +1,134 @@
+[
+  {
+    "collection": "fermentation_baseline_500",
+    "label": "Strategy A - baseline 500/100",
+    "top_k": 1,
+    "retrieved": [
+      {
+        "chunk_id": "ferment_001_country_sourdough_2kg.md_1_0",
+        "recipe_id": "ferment_001",
+        "section": "(flat window)",
+        "has_quantity": true,
+        "has_stage": true
+      }
+    ],
+    "context_has_quantity": true,
+    "context_has_stage": true,
+    "answer": "The 2kg Country Sourdough Loaf uses 40 g (2%) of fine sea salt [recipe_id=ferment_001 | chunk_id=ferment_001_country_sourdough_2kg.md_1_0 | source_file=ferment_001_country_sourdough_2kg.md].\n\nThe salt is added after the autolyse stage and after the levain has been mixed in, together with a reserved 100 g of water [recipe_id=ferment_001 | chunk_id=ferment_001_country_sourdough_2kg.md_1_0 | source_file=ferment_001_country_sourdough_2kg.md].",
+    "answer_has_quantity": true,
+    "answer_has_stage": true
+  },
+  {
+    "collection": "fermentation_structure_aware",
+    "label": "Strategy B - structure-aware",
+    "top_k": 1,
+    "retrieved": [
+      {
+        "chunk_id": "ferment_001__method__0",
+        "recipe_id": "ferment_001",
+        "section": "Method",
+        "has_quantity": false,
+        "has_stage": true
+      }
+    ],
+    "context_has_quantity": false,
+    "context_has_stage": true,
+    "answer": "I cannot answer this from the provided recipe documents.",
+    "answer_has_quantity": false,
+    "answer_has_stage": false
+  },
+  {
+    "collection": "fermentation_baseline_500",
+    "label": "Strategy A - baseline 500/100",
+    "top_k": 5,
+    "retrieved": [
+      {
+        "chunk_id": "ferment_001_country_sourdough_2kg.md_1_0",
+        "recipe_id": "ferment_001",
+        "section": "(flat window)",
+        "has_quantity": true,
+        "has_stage": true
+      },
+      {
+        "chunk_id": "ferment_003_sourdough_focaccia.md_1_0",
+        "recipe_id": "ferment_003",
+        "section": "(flat window)",
+        "has_quantity": false,
+        "has_stage": false
+      },
+      {
+        "chunk_id": "ferment_004_sourdough_brioche.md_1_0",
+        "recipe_id": "ferment_004",
+        "section": "(flat window)",
+        "has_quantity": false,
+        "has_stage": false
+      },
+      {
+        "chunk_id": "ferment_002_rye_levain_starter.md_1_0",
+        "recipe_id": "ferment_002",
+        "section": "(flat window)",
+        "has_quantity": false,
+        "has_stage": false
+      },
+      {
+        "chunk_id": "ferment_005_traditional_napa_kimchi.md_1_0",
+        "recipe_id": "ferment_005",
+        "section": "(flat window)",
+        "has_quantity": false,
+        "has_stage": false
+      }
+    ],
+    "context_has_quantity": true,
+    "context_has_stage": true,
+    "answer": "The 2kg Country Sourdough Loaf recipe uses 40 g of fine sea salt [recipe_id=ferment_001 | chunk_id=ferment_001_country_sourdough_2kg.md_1_0 | source_file=ferment_001_country_sourdough_2kg.md]. \n\nIt is added together with the reserved 100 g of water after the autolyse step and after the levain has been added and dispersed, rather than at the start of mixing [recipe_id=ferment_001 | chunk_id=ferment_001_country_sourdough_2kg.md_1_0 | source_file=ferment_001_country_sourdough_2kg.md].",
+    "answer_has_quantity": true,
+    "answer_has_stage": true
+  },
+  {
+    "collection": "fermentation_structure_aware",
+    "label": "Strategy B - structure-aware",
+    "top_k": 5,
+    "retrieved": [
+      {
+        "chunk_id": "ferment_001__method__0",
+        "recipe_id": "ferment_001",
+        "section": "Method",
+        "has_quantity": false,
+        "has_stage": true
+      },
+      {
+        "chunk_id": "ferment_001__ingredients__0",
+        "recipe_id": "ferment_001",
+        "section": "Ingredients",
+        "has_quantity": true,
+        "has_stage": false
+      },
+      {
+        "chunk_id": "ferment_001__ingredients__1",
+        "recipe_id": "ferment_001",
+        "section": "Ingredients",
+        "has_quantity": true,
+        "has_stage": false
+      },
+      {
+        "chunk_id": "ferment_003__method__0",
+        "recipe_id": "ferment_003",
+        "section": "Method",
+        "has_quantity": false,
+        "has_stage": false
+      },
+      {
+        "chunk_id": "ferment_003__ingredients__0",
+        "recipe_id": "ferment_003",
+        "section": "Ingredients",
+        "has_quantity": false,
+        "has_stage": false
+      }
+    ],
+    "context_has_quantity": true,
+    "context_has_stage": true,
+    "answer": "The 2kg Country Sourdough Loaf uses 40 g (2%) of fine sea salt [recipe_id=ferment_001 | chunk_id=ferment_001__ingredients__0 | source_file=ferment_001_country_sourdough_2kg.md]. \n\nThe salt is added after the autolyse phase and after the levain has been added and rested for 30 minutes, together with the reserved 100 g of water [recipe_id=ferment_001 | chunk_id=ferment_001__method__0 | source_file=ferment_001_country_sourdough_2kg.md].",
+    "answer_has_quantity": true,
+    "answer_has_stage": true
+  }
+]

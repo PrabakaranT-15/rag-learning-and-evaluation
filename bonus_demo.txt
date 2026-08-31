@@ -1,0 +1,57 @@
+==============================================================================
+BONUS: precision vs completeness
+==============================================================================
+QUESTION: How much fine sea salt does the 2kg country sourdough use, and at what stage of mixing is it added?
+A complete answer needs BOTH:
+  quantity '40 g'   -> lives ONLY in the ingredient table
+  stage 'autolyse'  -> lives ONLY in the method prose
+
+##############################################################################
+# top_k = 1
+##############################################################################
+
+--- Strategy A - baseline 500/100  (top_k=1) ---
+  1. ferment_001_country_sourdough_2kg.md_1_0  section=(flat window)  has'40 g'=True  has'autolyse'=True
+  CONTEXT COMPLETE: quantity=True stage=True
+  ANSWER:
+    The 2kg Country Sourdough Loaf uses 40 g (2%) of fine sea salt [recipe_id=ferment_001 | chunk_id=ferment_001_country_sourdough_2kg.md_1_0 | source_file=ferment_001_country_sourdough_2kg.md].
+    
+    The salt is added after the autolyse stage and after the levain has been mixed in, together with a reserved 100 g of water [recipe_id=ferment_001 | chunk_id=ferment_001_country_sourdough_2kg.md_1_0 | source_file=ferment_001_country_sourdough_2kg.md].
+  ANSWER COMPLETE: quantity=True stage=True
+
+--- Strategy B - structure-aware  (top_k=1) ---
+  1. ferment_001__method__0  section=Method  has'40 g'=False  has'autolyse'=True
+  CONTEXT COMPLETE: quantity=False stage=True
+  ANSWER:
+    I cannot answer this from the provided recipe documents.
+  ANSWER COMPLETE: quantity=False stage=False
+
+##############################################################################
+# top_k = 5
+##############################################################################
+
+--- Strategy A - baseline 500/100  (top_k=5) ---
+  1. ferment_001_country_sourdough_2kg.md_1_0  section=(flat window)  has'40 g'=True  has'autolyse'=True
+  2. ferment_003_sourdough_focaccia.md_1_0  section=(flat window)  has'40 g'=False  has'autolyse'=False
+  3. ferment_004_sourdough_brioche.md_1_0  section=(flat window)  has'40 g'=False  has'autolyse'=False
+  4. ferment_002_rye_levain_starter.md_1_0  section=(flat window)  has'40 g'=False  has'autolyse'=False
+  5. ferment_005_traditional_napa_kimchi.md_1_0  section=(flat window)  has'40 g'=False  has'autolyse'=False
+  CONTEXT COMPLETE: quantity=True stage=True
+  ANSWER:
+    The 2kg Country Sourdough Loaf recipe uses 40 g of fine sea salt [recipe_id=ferment_001 | chunk_id=ferment_001_country_sourdough_2kg.md_1_0 | source_file=ferment_001_country_sourdough_2kg.md]. 
+    
+    It is added together with the reserved 100 g of water after the autolyse step and after the levain has been added and dispersed, rather than at the start of mixing [recipe_id=ferment_001 | chunk_id=ferment_001_country_sourdough_2kg.md_1_0 | source_file=ferment_001_country_sourdough_2kg.md].
+  ANSWER COMPLETE: quantity=True stage=True
+
+--- Strategy B - structure-aware  (top_k=5) ---
+  1. ferment_001__method__0  section=Method  has'40 g'=False  has'autolyse'=True
+  2. ferment_001__ingredients__0  section=Ingredients  has'40 g'=True  has'autolyse'=False
+  3. ferment_001__ingredients__1  section=Ingredients  has'40 g'=True  has'autolyse'=False
+  4. ferment_003__method__0  section=Method  has'40 g'=False  has'autolyse'=False
+  5. ferment_003__ingredients__0  section=Ingredients  has'40 g'=False  has'autolyse'=False
+  CONTEXT COMPLETE: quantity=True stage=True
+  ANSWER:
+    The 2kg Country Sourdough Loaf uses 40 g (2%) of fine sea salt [recipe_id=ferment_001 | chunk_id=ferment_001__ingredients__0 | source_file=ferment_001_country_sourdough_2kg.md]. 
+    
+    The salt is added after the autolyse phase and after the levain has been added and rested for 30 minutes, together with the reserved 100 g of water [recipe_id=ferment_001 | chunk_id=ferment_001__method__0 | source_file=ferment_001_country_sourdough_2kg.md].
+  ANSWER COMPLETE: quantity=True stage=True

@@ -1,0 +1,747 @@
+{
+  "collection": "fermentation_structure_aware",
+  "top_k": 5,
+  "model": "gemma-4-31b-it",
+  "traces": [
+    {
+      "id": "T01",
+      "question": "How much salt goes into the country sourdough recipe?",
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "ferment_001__ingredients__0",
+          "recipe_id": "ferment_001",
+          "text": "Recipe: 2kg Country Sourdough Loaf (recipe_id: ferment_001)\nSection: Ingredients\n\nTotal flour weight is 2000 g and all baker's percentages below are calculated against that total flour weight. Final hydration is 80%.\n\n| Ingredient | Weight | Baker's % |\n|---|---|---|\n| Strong white bread flour | 1700 g | 85% |\n| Wholemeal flour | 300 g | 15% |\n| Water (28C) | 1600 g | 80% |\n| Fine sea salt | 40 g | 2% |\n| Rye levain (100% hydration) | 400 g | 20% |"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "ferment_001__method__0",
+          "recipe_id": "ferment_001",
+          "text": "Recipe: 2kg Country Sourdough Loaf (recipe_id: ferment_001)\nSection: Method\n\nAutolyse first. Combine the strong white flour, the wholemeal flour and 1500 g of the water in a large tub, mixing until no dry flour remains, then cover and rest for 60 minutes. Hold back the remaining 100 g of water for the salt stage.\n\nAdd the rye levain and squeeze it through the dough until fully dispersed. Rest for 30 minutes.\n\nNow add the fine sea salt together with the reserved 100 g of water. The salt goes in after the autolyse and after the levain, never at the start, because salt tightens the gluten network and slows the enzymatic activity the autolyse is meant to encourage. Squeeze and fold until the dough feels smooth and no grittiness remains at the base of the tub."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "ferment_001__ingredients__1",
+          "recipe_id": "ferment_001",
+          "text": "Recipe: 2kg Country Sourdough Loaf (recipe_id: ferment_001)\nSection: Ingredients\n\nTotal dough weight is 4040 g, which divides into two loaves of roughly 2020 g each."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "ferment_003__ingredients__0",
+          "recipe_id": "ferment_003",
+          "text": "Recipe: Sourdough Focaccia (recipe_id: ferment_003)\nSection: Ingredients\n\nBaker's percentages are calculated against the 1000 g of strong white flour. Final hydration is 85%.\n\n| Ingredient | Weight | Baker's % |\n|---|---|---|\n| Strong white bread flour | 1000 g | 100% |\n| Water (24C) | 850 g | 85% |\n| Rye levain (100% hydration) | 250 g | 25% |\n| Fine sea salt | 22 g | 2.2% |\n| Extra virgin olive oil | 60 g | 6% |"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "ferment_004__ingredients__0",
+          "recipe_id": "ferment_004",
+          "text": "Recipe: Sourdough Brioche (recipe_id: ferment_004)\nSection: Ingredients\n\nBaker's percentages are calculated against the 500 g of strong white flour. This is an enriched dough, so the fat and egg percentages are high.\n\n| Ingredient | Weight | Baker's % |\n|---|---|---|\n| Strong white bread flour | 500 g | 100% |\n| Whole milk (cold) | 150 g | 30% |\n| Eggs (about 4 medium) | 200 g | 40% |\n| Unsalted butter (softened) | 200 g | 40% |\n| Caster sugar | 60 g | 12% |\n| Rye levain (100% hydration) | 100 g | 20% |\n| Fine sea salt | 10 g | 2% |"
+        }
+      ],
+      "answer": "The 2kg Country Sourdough Loaf recipe requires 40 g of fine sea salt [recipe_id=ferment_001 | chunk_id=ferment_001__ingredients__0 | source_file=ferment_001_country_sourdough_2kg.md]."
+    },
+    {
+      "id": "T02",
+      "question": "How long should I proof the brioche dough?",
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "ferment_004__method__1",
+          "recipe_id": "ferment_004",
+          "text": "Recipe: Sourdough Brioche (recipe_id: ferment_004)\nSection: Method\n\nBulk ferment for 5 to 6 hours at 22C, then cold retard for 14 to 18 hours at 4C. Enriched sourdough is very difficult to shape at room temperature, so the cold retard is a handling step as much as a flavour step.\n\nDivide, shape into four balls per tin, and prove for 4 to 5 hours at 24C until the dough reaches the rim of the tin and springs back slowly when pressed.\n\nEgg wash and bake at 180C for 30 minutes until deep golden and the internal temperature reaches 92C. Turn out of the tins immediately to stop the sides collapsing."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "ferment_004__method__0",
+          "recipe_id": "ferment_004",
+          "text": "Recipe: Sourdough Brioche (recipe_id: ferment_004)\nSection: Method\n\nMix the flour, cold milk, eggs, sugar and levain in a stand mixer with the dough hook on low for 4 minutes until a shaggy dough forms. Add the fine sea salt and mix on medium for a further 8 minutes until the dough is smooth and pulls cleanly from the sides of the bowl.\n\nOnly now begin adding the softened butter, roughly 50 g at a time, waiting until each addition has fully disappeared before adding the next. The butter goes in last and gradually, because adding it at the start coats the flour in fat and prevents the gluten network from developing at all. Expect this stage to take 10 to 12 minutes.\n\nThe dough is ready when it passes the windowpane test: a small piece stretched thin should become translucent without tearing."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "ferment_004__ingredients__1",
+          "recipe_id": "ferment_004",
+          "text": "Recipe: Sourdough Brioche (recipe_id: ferment_004)\nSection: Ingredients\n\nTotal dough weight is 1220 g, which makes two loaves in 900 g tins."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "ferment_004__ingredients__0",
+          "recipe_id": "ferment_004",
+          "text": "Recipe: Sourdough Brioche (recipe_id: ferment_004)\nSection: Ingredients\n\nBaker's percentages are calculated against the 500 g of strong white flour. This is an enriched dough, so the fat and egg percentages are high.\n\n| Ingredient | Weight | Baker's % |\n|---|---|---|\n| Strong white bread flour | 500 g | 100% |\n| Whole milk (cold) | 150 g | 30% |\n| Eggs (about 4 medium) | 200 g | 40% |\n| Unsalted butter (softened) | 200 g | 40% |\n| Caster sugar | 60 g | 12% |\n| Rye levain (100% hydration) | 100 g | 20% |\n| Fine sea salt | 10 g | 2% |"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "ferment_004__allergen_note__0",
+          "recipe_id": "ferment_004",
+          "text": "Recipe: Sourdough Brioche (recipe_id: ferment_004)\nSection: Allergen Note\n\nContains wheat and rye, therefore contains gluten. Contains milk and butter, therefore contains dairy. Contains egg, both in the dough and in the egg wash. Contains no nuts. Suitable for vegetarians but not for vegans."
+        }
+      ],
+      "answer": "The brioche dough should prove for 4 to 5 hours at 24C until the dough reaches the rim of the tin and springs back slowly when pressed [recipe_id=ferment_004 | chunk_id=ferment_004__method__1 | source_file=ferment_004_sourdough_brioche.md]."
+    },
+    {
+      "id": "T03",
+      "question": "What temperature do I bake the focaccia at?",
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "ferment_003__method__1",
+          "recipe_id": "ferment_003",
+          "text": "Recipe: Sourdough Focaccia (recipe_id: ferment_003)\nSection: Method\n\nOil the tray generously, tip the dough in without deflating it, and spread it gently towards the corners. If it springs back, wait 20 minutes and try again rather than forcing it. Cold retard in the refrigerator for 12 hours.\n\nBring the tray to room temperature for 90 minutes before baking. Dimple the surface firmly with oiled fingertips, pressing all the way down to the tray so the dough does not dome, then drizzle with a further tablespoon of olive oil and scatter with flaky salt.\n\nBake at 240C for 22 minutes until the top is deep golden and the underside is crisp when lifted with a spatula. Lift the focaccia straight out of the tray onto a rack so the base does not steam."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "ferment_003__method__0",
+          "recipe_id": "ferment_003",
+          "text": "Recipe: Sourdough Focaccia (recipe_id: ferment_003)\nSection: Method\n\nMix the flour and 800 g of the water until no dry flour remains and rest for 45 minutes. Reserve the last 50 g of water for the salt.\n\nAdd the levain and mix through, then rest 30 minutes. Add the fine sea salt with the reserved water and squeeze until fully incorporated. Finally drizzle in the olive oil and work it in. The dough will look broken and greasy at first and will come back together after two minutes of folding.\n\nBulk ferment for 3 to 4 hours at 24C with four sets of coil folds spaced 30 minutes apart. At 85% hydration the dough is slack, so use a wet hand and lift rather than stretch."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "ferment_003__ingredients__1",
+          "recipe_id": "ferment_003",
+          "text": "Recipe: Sourdough Focaccia (recipe_id: ferment_003)\nSection: Ingredients\n\nTotal dough weight is 2182 g, which fills one 30 x 40 cm tray."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "ferment_003__ingredients__0",
+          "recipe_id": "ferment_003",
+          "text": "Recipe: Sourdough Focaccia (recipe_id: ferment_003)\nSection: Ingredients\n\nBaker's percentages are calculated against the 1000 g of strong white flour. Final hydration is 85%.\n\n| Ingredient | Weight | Baker's % |\n|---|---|---|\n| Strong white bread flour | 1000 g | 100% |\n| Water (24C) | 850 g | 85% |\n| Rye levain (100% hydration) | 250 g | 25% |\n| Fine sea salt | 22 g | 2.2% |\n| Extra virgin olive oil | 60 g | 6% |"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "ferment_003__allergen_note__0",
+          "recipe_id": "ferment_003",
+          "text": "Recipe: Sourdough Focaccia (recipe_id: ferment_003)\nSection: Allergen Note\n\nContains wheat and rye, therefore contains gluten. Contains no dairy, no egg and no nuts. Suitable for vegans."
+        }
+      ],
+      "answer": "Bake the focaccia at 240C [recipe_id=ferment_003 | chunk_id=ferment_003__method__1 | source_file=ferment_003_sourdough_focaccia.md]."
+    },
+    {
+      "id": "T04",
+      "question": "Can I make the kimchi vegan?",
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "ferment_006__allergen_note__0",
+          "recipe_id": "ferment_006",
+          "text": "Recipe: Vegan Napa Cabbage Kimchi (recipe_id: ferment_006)\nSection: Allergen Note\n\nContains no fish, no shellfish, no dairy, no egg, no nuts and no gluten. Tamari is used specifically in place of ordinary soy sauce because ordinary soy sauce is brewed with wheat. Suitable for vegans and vegetarians."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "ferment_005__allergen_note__0",
+          "recipe_id": "ferment_005",
+          "text": "Recipe: Traditional Napa Cabbage Kimchi (recipe_id: ferment_005)\nSection: Allergen Note\n\nContains fish in the form of anchovy fish sauce and contains crustacean shellfish in the form of salted fermented shrimp. Not suitable for vegetarians or vegans. Contains no dairy, no egg, no nuts and no gluten. Despite its name, glutinous rice flour contains no gluten."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "ferment_006__ingredients__1",
+          "recipe_id": "ferment_006",
+          "text": "Recipe: Vegan Napa Cabbage Kimchi (recipe_id: ferment_006)\nSection: Ingredients\n\nTotal yield is approximately 2.85 kg of finished kimchi."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "ferment_006__method__1",
+          "recipe_id": "ferment_006",
+          "text": "Recipe: Vegan Napa Cabbage Kimchi (recipe_id: ferment_006)\nSection: Method\n\nThis shiitake and kombu stock plus the tamari is what replaces the saeujeot and anchovy fish sauce used on the traditional card. Both supply glutamates, which is the savoury depth the fermented seafood would otherwise provide.\n\nWhisk the glutinous rice flour into the reserved 250 ml of mushroom stock, heat gently for 5 minutes until thickened, stir in the sugar and cool completely.\n\nMix the cooled porridge with the gochugaru and rest for 10 minutes, then add the garlic, ginger, chopped shiitake and tamari. Fold through the julienned radish.\n\nCoat every leaf with the paste, pack into a jar with 5 cm of headspace, and press down until the brine rises above the cabbage."
+        },
+        {
+          "rank": 5,
+          "chunk_id": "ferment_006__ingredients__0",
+          "recipe_id": "ferment_006",
+          "text": "Recipe: Vegan Napa Cabbage Kimchi (recipe_id: ferment_006)\nSection: Ingredients\n\nPercentages are calculated against the 2000 g of prepared napa cabbage. The salted shrimp and anchovy fish sauce of the traditional card are replaced here by a shiitake and kombu umami base.\n\n| Ingredient | Weight | Percentage of cabbage |\n|---|---|---|\n| Napa cabbage | 2000 g | 100% |\n| Coarse sea salt (for brining) | 160 g | 8% |\n| Gochugaru (Korean chilli flakes) | 100 g | 5% |\n| Korean radish, julienned | 400 g | 20% |\n| Garlic, minced | 60 g | 3% |\n| Ginger, grated | 20 g | 1% |\n| Dried shiitake mushrooms | 30 g | 1.5% |\n| Kombu (dried kelp) | 10 g | 0.5% |\n| Tamari (gluten-free soy sauce) | 50 g | 2.5% |\n| Glutinous rice flour | 30 g | 1.5% |\n| Caster sugar | 20 g | 1% |"
+        }
+      ],
+      "answer": "Yes, you can make the kimchi vegan using the Vegan Napa Cabbage Kimchi recipe (recipe_id: ferment_006), which is suitable for vegans and vegetarians [recipe_id=ferment_006 | chunk_id=ferment_006__allergen_note__0 | source_file=ferment_006_vegan_napa_kimchi.md]. In this version, the salted shrimp and anchovy fish sauce from the traditional recipe are replaced by a shiitake and kombu umami base [recipe_id=ferment_006 | chunk_id=ferment_006__ingredients__0 | source_file=ferment_006_vegan_napa_kimchi.md]."
+    },
+    {
+      "id": "T05",
+      "question": "How do I know my starter is ready to use?",
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "ferment_002__method__1",
+          "recipe_id": "ferment_002",
+          "text": "Recipe: Rye Levain Starter (recipe_id: ferment_002)\nSection: Method\n\nCover loosely and ferment for 8 to 12 hours at 22 to 24C. The levain is ripe when it has at least doubled from the elastic band mark, the surface is domed and covered in fine bubbles, and it smells sharply sour with a faint acetone note. A levain that has risen and then collapsed back to a flat, watery surface has gone past ripe and will give a slack, over-acidified dough.\n\nThe float test is a useful confirmation: drop a teaspoon of ripe levain into room temperature water and it should float rather than sink.\n\nRefresh at least once every 24 hours if the starter is kept at room temperature, or once a week if it is stored at 4C in the refrigerator."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "ferment_002__method__0",
+          "recipe_id": "ferment_002",
+          "text": "Recipe: Rye Levain Starter (recipe_id: ferment_002)\nSection: Method\n\nWeigh the mature starter into a clear straight-sided jar and mark the level with an elastic band so the rise can be judged by eye rather than by guesswork.\n\nAdd the water at 26C and stir until the starter is dispersed and the liquid turns cloudy. Add the wholegrain rye flour and mix to a thick paste. Rye holds far more water than white flour, so at 100% hydration this will look like a stiff batter rather than a dough."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "ferment_002__ingredients__0",
+          "recipe_id": "ferment_002",
+          "text": "Recipe: Rye Levain Starter (recipe_id: ferment_002)\nSection: Ingredients\n\nThis is a 100% hydration levain, meaning the water weight equals the flour weight. Baker's percentages are calculated against the 100 g of rye flour.\n\n| Ingredient | Weight | Baker's % |\n|---|---|---|\n| Wholegrain rye flour | 100 g | 100% |\n| Water (26C) | 100 g | 100% |\n| Mature sourdough starter | 20 g | 20% |"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "ferment_002__allergen_note__0",
+          "recipe_id": "ferment_002",
+          "text": "Recipe: Rye Levain Starter (recipe_id: ferment_002)\nSection: Allergen Note\n\nContains rye, therefore contains gluten. Contains no dairy, no egg and no nuts. Suitable for vegans."
+        },
+        {
+          "rank": 5,
+          "chunk_id": "ferment_004__method__0",
+          "recipe_id": "ferment_004",
+          "text": "Recipe: Sourdough Brioche (recipe_id: ferment_004)\nSection: Method\n\nMix the flour, cold milk, eggs, sugar and levain in a stand mixer with the dough hook on low for 4 minutes until a shaggy dough forms. Add the fine sea salt and mix on medium for a further 8 minutes until the dough is smooth and pulls cleanly from the sides of the bowl.\n\nOnly now begin adding the softened butter, roughly 50 g at a time, waiting until each addition has fully disappeared before adding the next. The butter goes in last and gradually, because adding it at the start coats the flour in fat and prevents the gluten network from developing at all. Expect this stage to take 10 to 12 minutes.\n\nThe dough is ready when it passes the windowpane test: a small piece stretched thin should become translucent without tearing."
+        }
+      ],
+      "answer": "The levain is ripe when it has at least doubled from the elastic band mark, the surface is domed and covered in fine bubbles, and it smells sharply sour with a faint acetone note [recipe_id=ferment_002 | chunk_id=ferment_002__method__1 | source_file=ferment_002_rye_levain_starter.md]. \n\nAs a useful confirmation, you can perform a float test by dropping a teaspoon of ripe levain into room temperature water; it should float rather than sink [recipe_id=ferment_002 | chunk_id=ferment_002__method__1 | source_file=ferment_002_rye_levain_starter.md]. \n\nNote that if the levain has risen and then collapsed back to a flat, watery surface, it has gone past ripe [recipe_id=ferment_002 | chunk_id=ferment_002__method__1 | source_file=ferment_002_rye_levain_starter.md]."
+    },
+    {
+      "id": "T06",
+      "question": "What's the hydration percentage for the sourdough loaf?",
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "ferment_001__ingredients__0",
+          "recipe_id": "ferment_001",
+          "text": "Recipe: 2kg Country Sourdough Loaf (recipe_id: ferment_001)\nSection: Ingredients\n\nTotal flour weight is 2000 g and all baker's percentages below are calculated against that total flour weight. Final hydration is 80%.\n\n| Ingredient | Weight | Baker's % |\n|---|---|---|\n| Strong white bread flour | 1700 g | 85% |\n| Wholemeal flour | 300 g | 15% |\n| Water (28C) | 1600 g | 80% |\n| Fine sea salt | 40 g | 2% |\n| Rye levain (100% hydration) | 400 g | 20% |"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "ferment_002__ingredients__0",
+          "recipe_id": "ferment_002",
+          "text": "Recipe: Rye Levain Starter (recipe_id: ferment_002)\nSection: Ingredients\n\nThis is a 100% hydration levain, meaning the water weight equals the flour weight. Baker's percentages are calculated against the 100 g of rye flour.\n\n| Ingredient | Weight | Baker's % |\n|---|---|---|\n| Wholegrain rye flour | 100 g | 100% |\n| Water (26C) | 100 g | 100% |\n| Mature sourdough starter | 20 g | 20% |"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "ferment_001__ingredients__1",
+          "recipe_id": "ferment_001",
+          "text": "Recipe: 2kg Country Sourdough Loaf (recipe_id: ferment_001)\nSection: Ingredients\n\nTotal dough weight is 4040 g, which divides into two loaves of roughly 2020 g each."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "ferment_003__ingredients__0",
+          "recipe_id": "ferment_003",
+          "text": "Recipe: Sourdough Focaccia (recipe_id: ferment_003)\nSection: Ingredients\n\nBaker's percentages are calculated against the 1000 g of strong white flour. Final hydration is 85%.\n\n| Ingredient | Weight | Baker's % |\n|---|---|---|\n| Strong white bread flour | 1000 g | 100% |\n| Water (24C) | 850 g | 85% |\n| Rye levain (100% hydration) | 250 g | 25% |\n| Fine sea salt | 22 g | 2.2% |\n| Extra virgin olive oil | 60 g | 6% |"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "ferment_004__ingredients__0",
+          "recipe_id": "ferment_004",
+          "text": "Recipe: Sourdough Brioche (recipe_id: ferment_004)\nSection: Ingredients\n\nBaker's percentages are calculated against the 500 g of strong white flour. This is an enriched dough, so the fat and egg percentages are high.\n\n| Ingredient | Weight | Baker's % |\n|---|---|---|\n| Strong white bread flour | 500 g | 100% |\n| Whole milk (cold) | 150 g | 30% |\n| Eggs (about 4 medium) | 200 g | 40% |\n| Unsalted butter (softened) | 200 g | 40% |\n| Caster sugar | 60 g | 12% |\n| Rye levain (100% hydration) | 100 g | 20% |\n| Fine sea salt | 10 g | 2% |"
+        }
+      ],
+      "answer": "The final hydration for the 2kg Country Sourdough Loaf is 80% [recipe_id=ferment_001 | chunk_id=ferment_001__ingredients__0 | source_file=ferment_001_country_sourdough_2kg.md]."
+    },
+    {
+      "id": "T07",
+      "question": "How many calories are in a slice of the brioche?",
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "ferment_004__ingredients__1",
+          "recipe_id": "ferment_004",
+          "text": "Recipe: Sourdough Brioche (recipe_id: ferment_004)\nSection: Ingredients\n\nTotal dough weight is 1220 g, which makes two loaves in 900 g tins."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "ferment_004__allergen_note__0",
+          "recipe_id": "ferment_004",
+          "text": "Recipe: Sourdough Brioche (recipe_id: ferment_004)\nSection: Allergen Note\n\nContains wheat and rye, therefore contains gluten. Contains milk and butter, therefore contains dairy. Contains egg, both in the dough and in the egg wash. Contains no nuts. Suitable for vegetarians but not for vegans."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "ferment_004__ingredients__0",
+          "recipe_id": "ferment_004",
+          "text": "Recipe: Sourdough Brioche (recipe_id: ferment_004)\nSection: Ingredients\n\nBaker's percentages are calculated against the 500 g of strong white flour. This is an enriched dough, so the fat and egg percentages are high.\n\n| Ingredient | Weight | Baker's % |\n|---|---|---|\n| Strong white bread flour | 500 g | 100% |\n| Whole milk (cold) | 150 g | 30% |\n| Eggs (about 4 medium) | 200 g | 40% |\n| Unsalted butter (softened) | 200 g | 40% |\n| Caster sugar | 60 g | 12% |\n| Rye levain (100% hydration) | 100 g | 20% |\n| Fine sea salt | 10 g | 2% |"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "ferment_004__method__1",
+          "recipe_id": "ferment_004",
+          "text": "Recipe: Sourdough Brioche (recipe_id: ferment_004)\nSection: Method\n\nBulk ferment for 5 to 6 hours at 22C, then cold retard for 14 to 18 hours at 4C. Enriched sourdough is very difficult to shape at room temperature, so the cold retard is a handling step as much as a flavour step.\n\nDivide, shape into four balls per tin, and prove for 4 to 5 hours at 24C until the dough reaches the rim of the tin and springs back slowly when pressed.\n\nEgg wash and bake at 180C for 30 minutes until deep golden and the internal temperature reaches 92C. Turn out of the tins immediately to stop the sides collapsing."
+        },
+        {
+          "rank": 5,
+          "chunk_id": "ferment_004__method__0",
+          "recipe_id": "ferment_004",
+          "text": "Recipe: Sourdough Brioche (recipe_id: ferment_004)\nSection: Method\n\nMix the flour, cold milk, eggs, sugar and levain in a stand mixer with the dough hook on low for 4 minutes until a shaggy dough forms. Add the fine sea salt and mix on medium for a further 8 minutes until the dough is smooth and pulls cleanly from the sides of the bowl.\n\nOnly now begin adding the softened butter, roughly 50 g at a time, waiting until each addition has fully disappeared before adding the next. The butter goes in last and gradually, because adding it at the start coats the flour in fat and prevents the gluten network from developing at all. Expect this stage to take 10 to 12 minutes.\n\nThe dough is ready when it passes the windowpane test: a small piece stretched thin should become translucent without tearing."
+        }
+      ],
+      "answer": "I cannot answer this from the provided recipe documents."
+    },
+    {
+      "id": "T08",
+      "question": "whats the best flour for the focaccia",
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "ferment_003__ingredients__0",
+          "recipe_id": "ferment_003",
+          "text": "Recipe: Sourdough Focaccia (recipe_id: ferment_003)\nSection: Ingredients\n\nBaker's percentages are calculated against the 1000 g of strong white flour. Final hydration is 85%.\n\n| Ingredient | Weight | Baker's % |\n|---|---|---|\n| Strong white bread flour | 1000 g | 100% |\n| Water (24C) | 850 g | 85% |\n| Rye levain (100% hydration) | 250 g | 25% |\n| Fine sea salt | 22 g | 2.2% |\n| Extra virgin olive oil | 60 g | 6% |"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "ferment_003__ingredients__1",
+          "recipe_id": "ferment_003",
+          "text": "Recipe: Sourdough Focaccia (recipe_id: ferment_003)\nSection: Ingredients\n\nTotal dough weight is 2182 g, which fills one 30 x 40 cm tray."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "ferment_003__method__0",
+          "recipe_id": "ferment_003",
+          "text": "Recipe: Sourdough Focaccia (recipe_id: ferment_003)\nSection: Method\n\nMix the flour and 800 g of the water until no dry flour remains and rest for 45 minutes. Reserve the last 50 g of water for the salt.\n\nAdd the levain and mix through, then rest 30 minutes. Add the fine sea salt with the reserved water and squeeze until fully incorporated. Finally drizzle in the olive oil and work it in. The dough will look broken and greasy at first and will come back together after two minutes of folding.\n\nBulk ferment for 3 to 4 hours at 24C with four sets of coil folds spaced 30 minutes apart. At 85% hydration the dough is slack, so use a wet hand and lift rather than stretch."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "ferment_003__allergen_note__0",
+          "recipe_id": "ferment_003",
+          "text": "Recipe: Sourdough Focaccia (recipe_id: ferment_003)\nSection: Allergen Note\n\nContains wheat and rye, therefore contains gluten. Contains no dairy, no egg and no nuts. Suitable for vegans."
+        },
+        {
+          "rank": 5,
+          "chunk_id": "ferment_003__method__1",
+          "recipe_id": "ferment_003",
+          "text": "Recipe: Sourdough Focaccia (recipe_id: ferment_003)\nSection: Method\n\nOil the tray generously, tip the dough in without deflating it, and spread it gently towards the corners. If it springs back, wait 20 minutes and try again rather than forcing it. Cold retard in the refrigerator for 12 hours.\n\nBring the tray to room temperature for 90 minutes before baking. Dimple the surface firmly with oiled fingertips, pressing all the way down to the tray so the dough does not dome, then drizzle with a further tablespoon of olive oil and scatter with flaky salt.\n\nBake at 240C for 22 minutes until the top is deep golden and the underside is crisp when lifted with a spatula. Lift the focaccia straight out of the tray onto a rack so the base does not steam."
+        }
+      ],
+      "answer": "The Sourdough Focaccia recipe uses strong white bread flour [recipe_id=ferment_003 | chunk_id=ferment_003__ingredients__0 | source_file=ferment_003_sourdough_focaccia.md]."
+    },
+    {
+      "id": "T09",
+      "question": "How spicy is the kimchi?",
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "ferment_005__method__2",
+          "recipe_id": "ferment_005",
+          "text": "Recipe: Traditional Napa Cabbage Kimchi (recipe_id: ferment_005)\nSection: Method\n\nFerment at 20C for 2 days until bubbles appear and the smell turns sour, then transfer to the refrigerator at 4C. The kimchi is edible immediately but reaches its best flavour after 2 weeks."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "ferment_006__method__2",
+          "recipe_id": "ferment_006",
+          "text": "Recipe: Vegan Napa Cabbage Kimchi (recipe_id: ferment_006)\nSection: Method\n\nFerment at 20C for 2 to 3 days, which is around a day longer than the traditional card requires because the seafood ferments in saeujeot give the traditional version a head start. Move to the refrigerator once bubbling and pleasantly sour."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "ferment_005__allergen_note__0",
+          "recipe_id": "ferment_005",
+          "text": "Recipe: Traditional Napa Cabbage Kimchi (recipe_id: ferment_005)\nSection: Allergen Note\n\nContains fish in the form of anchovy fish sauce and contains crustacean shellfish in the form of salted fermented shrimp. Not suitable for vegetarians or vegans. Contains no dairy, no egg, no nuts and no gluten. Despite its name, glutinous rice flour contains no gluten."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "ferment_005__ingredients__0",
+          "recipe_id": "ferment_005",
+          "text": "Recipe: Traditional Napa Cabbage Kimchi (recipe_id: ferment_005)\nSection: Ingredients\n\nPercentages here are calculated against the 2000 g of prepared napa cabbage rather than against flour, since this is a vegetable ferment rather than a dough.\n\n| Ingredient | Weight | Percentage of cabbage |\n|---|---|---|\n| Napa cabbage | 2000 g | 100% |\n| Coarse sea salt (for brining) | 160 g | 8% |\n| Gochugaru (Korean chilli flakes) | 100 g | 5% |\n| Korean radish, julienned | 400 g | 20% |\n| Garlic, minced | 60 g | 3% |\n| Ginger, grated | 20 g | 1% |\n| Saeujeot (salted fermented shrimp) | 60 g | 3% |\n| Anchovy fish sauce | 60 g | 3% |\n| Glutinous rice flour | 30 g | 1.5% |\n| Caster sugar | 20 g | 1% |"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "ferment_005__ingredients__1",
+          "recipe_id": "ferment_005",
+          "text": "Recipe: Traditional Napa Cabbage Kimchi (recipe_id: ferment_005)\nSection: Ingredients\n\nTotal yield is approximately 2.9 kg of finished kimchi."
+        }
+      ],
+      "answer": "I cannot answer this from the provided recipe documents."
+    },
+    {
+      "id": "T10",
+      "question": "What's the difference between the two kimchi recipes?",
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "ferment_006__method__2",
+          "recipe_id": "ferment_006",
+          "text": "Recipe: Vegan Napa Cabbage Kimchi (recipe_id: ferment_006)\nSection: Method\n\nFerment at 20C for 2 to 3 days, which is around a day longer than the traditional card requires because the seafood ferments in saeujeot give the traditional version a head start. Move to the refrigerator once bubbling and pleasantly sour."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "ferment_005__method__2",
+          "recipe_id": "ferment_005",
+          "text": "Recipe: Traditional Napa Cabbage Kimchi (recipe_id: ferment_005)\nSection: Method\n\nFerment at 20C for 2 days until bubbles appear and the smell turns sour, then transfer to the refrigerator at 4C. The kimchi is edible immediately but reaches its best flavour after 2 weeks."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "ferment_006__ingredients__1",
+          "recipe_id": "ferment_006",
+          "text": "Recipe: Vegan Napa Cabbage Kimchi (recipe_id: ferment_006)\nSection: Ingredients\n\nTotal yield is approximately 2.85 kg of finished kimchi."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "ferment_005__ingredients__1",
+          "recipe_id": "ferment_005",
+          "text": "Recipe: Traditional Napa Cabbage Kimchi (recipe_id: ferment_005)\nSection: Ingredients\n\nTotal yield is approximately 2.9 kg of finished kimchi."
+        },
+        {
+          "rank": 5,
+          "chunk_id": "ferment_005__method__0",
+          "recipe_id": "ferment_005",
+          "text": "Recipe: Traditional Napa Cabbage Kimchi (recipe_id: ferment_005)\nSection: Method\n\nQuarter the cabbage lengthwise keeping the core attached, then brine it using the full 160 g of coarse sea salt, working the salt between the leaves and concentrating it on the thick white stems. Leave for 4 to 6 hours, turning every 2 hours.\n\nThe cabbage is correctly brined when a thick white stem bends into a U shape without snapping. This bend test matters more than the clock, because cabbage size and moisture content vary considerably between heads.\n\nRinse three times in cold water and drain cut side down for at least one hour. Residual water dilutes the paste and can spoil the ferment."
+        }
+      ],
+      "answer": "The differences between the two kimchi recipes are:\n\n*   **Dietary Status:** Vegan Napa Cabbage Kimchi is vegan and vegetarian [recipe_id=ferment_006 | chunk_id=ferment_006__ingredients__1 | source_file=ferment_006_vegan_napa_kimchi.md], while Traditional Napa Cabbage Kimchi is non-vegetarian and contains fish and shellfish [recipe_id=ferment_005 | chunk_id=ferment_005__ingredients__1 | source_file=ferment_005_traditional_napa_kimchi.md].\n*   **Fermentation Time:** Vegan Napa Cabbage Kimchi is fermented at 20C for 2 to 3 days [recipe_id=ferment_006 | chunk_id=ferment_006__method__2 | source_file=ferment_006_vegan_napa_kimchi.md], while Traditional Napa Cabbage Kimchi is fermented at 20C for 2 days [recipe_id=ferment_005 | chunk_id=ferment_005__method__2 | source_file=ferment_005_traditional_napa_kimchi.md]. This difference exists because seafood ferments in saeujeot give the traditional version a head start [recipe_id=ferment_006 | chunk_id=ferment_006__method__2 | source_file=ferment_006_vegan_napa_kimchi.md].\n*   **Yield:** The total yield for Vegan Napa Cabbage Kimchi is approximately 2.85 kg [recipe_id=ferment_006 | chunk_id=ferment_006__ingredients__1 | source_file=ferment_006_vegan_napa_kimchi.md], compared to approximately 2.9 kg for Traditional Napa Cabbage Kimchi [recipe_id=ferment_005 | chunk_id=ferment_005__ingredients__1 | source_file=ferment_005_traditional_napa_kimchi.md]."
+    },
+    {
+      "id": "T11",
+      "question": "how long does the levain take to ripen",
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "ferment_002__method__1",
+          "recipe_id": "ferment_002",
+          "text": "Recipe: Rye Levain Starter (recipe_id: ferment_002)\nSection: Method\n\nCover loosely and ferment for 8 to 12 hours at 22 to 24C. The levain is ripe when it has at least doubled from the elastic band mark, the surface is domed and covered in fine bubbles, and it smells sharply sour with a faint acetone note. A levain that has risen and then collapsed back to a flat, watery surface has gone past ripe and will give a slack, over-acidified dough.\n\nThe float test is a useful confirmation: drop a teaspoon of ripe levain into room temperature water and it should float rather than sink.\n\nRefresh at least once every 24 hours if the starter is kept at room temperature, or once a week if it is stored at 4C in the refrigerator."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "ferment_002__method__0",
+          "recipe_id": "ferment_002",
+          "text": "Recipe: Rye Levain Starter (recipe_id: ferment_002)\nSection: Method\n\nWeigh the mature starter into a clear straight-sided jar and mark the level with an elastic band so the rise can be judged by eye rather than by guesswork.\n\nAdd the water at 26C and stir until the starter is dispersed and the liquid turns cloudy. Add the wholegrain rye flour and mix to a thick paste. Rye holds far more water than white flour, so at 100% hydration this will look like a stiff batter rather than a dough."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "ferment_002__ingredients__0",
+          "recipe_id": "ferment_002",
+          "text": "Recipe: Rye Levain Starter (recipe_id: ferment_002)\nSection: Ingredients\n\nThis is a 100% hydration levain, meaning the water weight equals the flour weight. Baker's percentages are calculated against the 100 g of rye flour.\n\n| Ingredient | Weight | Baker's % |\n|---|---|---|\n| Wholegrain rye flour | 100 g | 100% |\n| Water (26C) | 100 g | 100% |\n| Mature sourdough starter | 20 g | 20% |"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "ferment_002__ingredients__1",
+          "recipe_id": "ferment_002",
+          "text": "Recipe: Rye Levain Starter (recipe_id: ferment_002)\nSection: Ingredients\n\nTotal levain yield is 220 g, which is enough to build the 400 g of levain required by the 2kg Country Sourdough after one further refreshment."
+        },
+        {
+          "rank": 5,
+          "chunk_id": "ferment_001__method__0",
+          "recipe_id": "ferment_001",
+          "text": "Recipe: 2kg Country Sourdough Loaf (recipe_id: ferment_001)\nSection: Method\n\nAutolyse first. Combine the strong white flour, the wholemeal flour and 1500 g of the water in a large tub, mixing until no dry flour remains, then cover and rest for 60 minutes. Hold back the remaining 100 g of water for the salt stage.\n\nAdd the rye levain and squeeze it through the dough until fully dispersed. Rest for 30 minutes.\n\nNow add the fine sea salt together with the reserved 100 g of water. The salt goes in after the autolyse and after the levain, never at the start, because salt tightens the gluten network and slows the enzymatic activity the autolyse is meant to encourage. Squeeze and fold until the dough feels smooth and no grittiness remains at the base of the tub."
+        }
+      ],
+      "answer": "The levain takes 8 to 12 hours to ferment at 22 to 24C [recipe_id=ferment_002 | chunk_id=ferment_002__method__1 | source_file=ferment_002_rye_levain_starter.md]."
+    },
+    {
+      "id": "T12",
+      "question": "Is the sourdough bread gluten free?",
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "ferment_001__allergen_note__0",
+          "recipe_id": "ferment_001",
+          "text": "Recipe: 2kg Country Sourdough Loaf (recipe_id: ferment_001)\nSection: Allergen Note\n\nContains wheat and rye, therefore contains gluten. Contains no dairy, no egg and no nuts. Suitable for vegans. Produced in a bakery that also handles milk, egg and sesame."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "ferment_003__allergen_note__0",
+          "recipe_id": "ferment_003",
+          "text": "Recipe: Sourdough Focaccia (recipe_id: ferment_003)\nSection: Allergen Note\n\nContains wheat and rye, therefore contains gluten. Contains no dairy, no egg and no nuts. Suitable for vegans."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "ferment_002__allergen_note__0",
+          "recipe_id": "ferment_002",
+          "text": "Recipe: Rye Levain Starter (recipe_id: ferment_002)\nSection: Allergen Note\n\nContains rye, therefore contains gluten. Contains no dairy, no egg and no nuts. Suitable for vegans."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "ferment_004__allergen_note__0",
+          "recipe_id": "ferment_004",
+          "text": "Recipe: Sourdough Brioche (recipe_id: ferment_004)\nSection: Allergen Note\n\nContains wheat and rye, therefore contains gluten. Contains milk and butter, therefore contains dairy. Contains egg, both in the dough and in the egg wash. Contains no nuts. Suitable for vegetarians but not for vegans."
+        },
+        {
+          "rank": 5,
+          "chunk_id": "ferment_001__ingredients__1",
+          "recipe_id": "ferment_001",
+          "text": "Recipe: 2kg Country Sourdough Loaf (recipe_id: ferment_001)\nSection: Ingredients\n\nTotal dough weight is 4040 g, which divides into two loaves of roughly 2020 g each."
+        }
+      ],
+      "answer": "The following sourdough recipes are not gluten free:\n\n*   The 2kg Country Sourdough Loaf contains wheat and rye, therefore it contains gluten [recipe_id=ferment_001 | chunk_id=ferment_001__allergen_note__0 | source_file=ferment_001_country_sourdough_2kg.md].\n*   The Sourdough Focaccia contains wheat and rye, therefore it contains gluten [recipe_id=ferment_003 | chunk_id=ferment_003__allergen_note__0 | source_file=ferment_003_sourdough_focaccia.md].\n*   The Sourdough Brioche contains wheat and rye, therefore it contains gluten [recipe_id=ferment_004 | chunk_id=ferment_004__allergen_note__0 | source_file=ferment_004_sourdough_brioche.md].\n*   The Rye Levain Starter contains rye, therefore it contains gluten [recipe_id=ferment_002 | chunk_id=ferment_002__allergen_note__0 | source_file=ferment_002_rye_levain_starter.md]."
+    },
+    {
+      "id": "T13",
+      "question": "What's a good substitute for the fish sauce in the kimchi?",
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "ferment_005__allergen_note__0",
+          "recipe_id": "ferment_005",
+          "text": "Recipe: Traditional Napa Cabbage Kimchi (recipe_id: ferment_005)\nSection: Allergen Note\n\nContains fish in the form of anchovy fish sauce and contains crustacean shellfish in the form of salted fermented shrimp. Not suitable for vegetarians or vegans. Contains no dairy, no egg, no nuts and no gluten. Despite its name, glutinous rice flour contains no gluten."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "ferment_006__allergen_note__0",
+          "recipe_id": "ferment_006",
+          "text": "Recipe: Vegan Napa Cabbage Kimchi (recipe_id: ferment_006)\nSection: Allergen Note\n\nContains no fish, no shellfish, no dairy, no egg, no nuts and no gluten. Tamari is used specifically in place of ordinary soy sauce because ordinary soy sauce is brewed with wheat. Suitable for vegans and vegetarians."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "ferment_006__method__1",
+          "recipe_id": "ferment_006",
+          "text": "Recipe: Vegan Napa Cabbage Kimchi (recipe_id: ferment_006)\nSection: Method\n\nThis shiitake and kombu stock plus the tamari is what replaces the saeujeot and anchovy fish sauce used on the traditional card. Both supply glutamates, which is the savoury depth the fermented seafood would otherwise provide.\n\nWhisk the glutinous rice flour into the reserved 250 ml of mushroom stock, heat gently for 5 minutes until thickened, stir in the sugar and cool completely.\n\nMix the cooled porridge with the gochugaru and rest for 10 minutes, then add the garlic, ginger, chopped shiitake and tamari. Fold through the julienned radish.\n\nCoat every leaf with the paste, pack into a jar with 5 cm of headspace, and press down until the brine rises above the cabbage."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "ferment_006__ingredients__1",
+          "recipe_id": "ferment_006",
+          "text": "Recipe: Vegan Napa Cabbage Kimchi (recipe_id: ferment_006)\nSection: Ingredients\n\nTotal yield is approximately 2.85 kg of finished kimchi."
+        },
+        {
+          "rank": 5,
+          "chunk_id": "ferment_006__ingredients__0",
+          "recipe_id": "ferment_006",
+          "text": "Recipe: Vegan Napa Cabbage Kimchi (recipe_id: ferment_006)\nSection: Ingredients\n\nPercentages are calculated against the 2000 g of prepared napa cabbage. The salted shrimp and anchovy fish sauce of the traditional card are replaced here by a shiitake and kombu umami base.\n\n| Ingredient | Weight | Percentage of cabbage |\n|---|---|---|\n| Napa cabbage | 2000 g | 100% |\n| Coarse sea salt (for brining) | 160 g | 8% |\n| Gochugaru (Korean chilli flakes) | 100 g | 5% |\n| Korean radish, julienned | 400 g | 20% |\n| Garlic, minced | 60 g | 3% |\n| Ginger, grated | 20 g | 1% |\n| Dried shiitake mushrooms | 30 g | 1.5% |\n| Kombu (dried kelp) | 10 g | 0.5% |\n| Tamari (gluten-free soy sauce) | 50 g | 2.5% |\n| Glutinous rice flour | 30 g | 1.5% |\n| Caster sugar | 20 g | 1% |"
+        }
+      ],
+      "answer": "A shiitake and kombu umami base replaces the anchovy fish sauce of the traditional card [recipe_id=ferment_006 | chunk_id=ferment_006__ingredients__0 | source_file=ferment_006_vegan_napa_kimchi.md]. Specifically, a combination of tamari and shiitake and kombu stock replaces the anchovy fish sauce and saeujeot used on the traditional card [recipe_id=ferment_006 | chunk_id=ferment_006__method__1 | source_file=ferment_006_vegan_napa_kimchi.md]."
+    },
+    {
+      "id": "T14",
+      "question": "how much butter in the brioche",
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "ferment_004__ingredients__0",
+          "recipe_id": "ferment_004",
+          "text": "Recipe: Sourdough Brioche (recipe_id: ferment_004)\nSection: Ingredients\n\nBaker's percentages are calculated against the 500 g of strong white flour. This is an enriched dough, so the fat and egg percentages are high.\n\n| Ingredient | Weight | Baker's % |\n|---|---|---|\n| Strong white bread flour | 500 g | 100% |\n| Whole milk (cold) | 150 g | 30% |\n| Eggs (about 4 medium) | 200 g | 40% |\n| Unsalted butter (softened) | 200 g | 40% |\n| Caster sugar | 60 g | 12% |\n| Rye levain (100% hydration) | 100 g | 20% |\n| Fine sea salt | 10 g | 2% |"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "ferment_004__ingredients__1",
+          "recipe_id": "ferment_004",
+          "text": "Recipe: Sourdough Brioche (recipe_id: ferment_004)\nSection: Ingredients\n\nTotal dough weight is 1220 g, which makes two loaves in 900 g tins."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "ferment_004__method__0",
+          "recipe_id": "ferment_004",
+          "text": "Recipe: Sourdough Brioche (recipe_id: ferment_004)\nSection: Method\n\nMix the flour, cold milk, eggs, sugar and levain in a stand mixer with the dough hook on low for 4 minutes until a shaggy dough forms. Add the fine sea salt and mix on medium for a further 8 minutes until the dough is smooth and pulls cleanly from the sides of the bowl.\n\nOnly now begin adding the softened butter, roughly 50 g at a time, waiting until each addition has fully disappeared before adding the next. The butter goes in last and gradually, because adding it at the start coats the flour in fat and prevents the gluten network from developing at all. Expect this stage to take 10 to 12 minutes.\n\nThe dough is ready when it passes the windowpane test: a small piece stretched thin should become translucent without tearing."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "ferment_004__allergen_note__0",
+          "recipe_id": "ferment_004",
+          "text": "Recipe: Sourdough Brioche (recipe_id: ferment_004)\nSection: Allergen Note\n\nContains wheat and rye, therefore contains gluten. Contains milk and butter, therefore contains dairy. Contains egg, both in the dough and in the egg wash. Contains no nuts. Suitable for vegetarians but not for vegans."
+        },
+        {
+          "rank": 5,
+          "chunk_id": "ferment_004__method__1",
+          "recipe_id": "ferment_004",
+          "text": "Recipe: Sourdough Brioche (recipe_id: ferment_004)\nSection: Method\n\nBulk ferment for 5 to 6 hours at 22C, then cold retard for 14 to 18 hours at 4C. Enriched sourdough is very difficult to shape at room temperature, so the cold retard is a handling step as much as a flavour step.\n\nDivide, shape into four balls per tin, and prove for 4 to 5 hours at 24C until the dough reaches the rim of the tin and springs back slowly when pressed.\n\nEgg wash and bake at 180C for 30 minutes until deep golden and the internal temperature reaches 92C. Turn out of the tins immediately to stop the sides collapsing."
+        }
+      ],
+      "answer": "The Sourdough Brioche recipe requires 200 g (40%) of softened unsalted butter [recipe_id=ferment_004 | chunk_id=ferment_004__ingredients__0 | source_file=ferment_004_sourdough_brioche.md]."
+    },
+    {
+      "id": "T15",
+      "question": "Can I freeze the ciabatta dough?",
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "ferment_001__method__2",
+          "recipe_id": "ferment_001",
+          "text": "Recipe: 2kg Country Sourdough Loaf (recipe_id: ferment_001)\nSection: Method\n\nCool on a rack for at least 2 hours before cutting."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "ferment_003__method__1",
+          "recipe_id": "ferment_003",
+          "text": "Recipe: Sourdough Focaccia (recipe_id: ferment_003)\nSection: Method\n\nOil the tray generously, tip the dough in without deflating it, and spread it gently towards the corners. If it springs back, wait 20 minutes and try again rather than forcing it. Cold retard in the refrigerator for 12 hours.\n\nBring the tray to room temperature for 90 minutes before baking. Dimple the surface firmly with oiled fingertips, pressing all the way down to the tray so the dough does not dome, then drizzle with a further tablespoon of olive oil and scatter with flaky salt.\n\nBake at 240C for 22 minutes until the top is deep golden and the underside is crisp when lifted with a spatula. Lift the focaccia straight out of the tray onto a rack so the base does not steam."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "ferment_004__method__1",
+          "recipe_id": "ferment_004",
+          "text": "Recipe: Sourdough Brioche (recipe_id: ferment_004)\nSection: Method\n\nBulk ferment for 5 to 6 hours at 22C, then cold retard for 14 to 18 hours at 4C. Enriched sourdough is very difficult to shape at room temperature, so the cold retard is a handling step as much as a flavour step.\n\nDivide, shape into four balls per tin, and prove for 4 to 5 hours at 24C until the dough reaches the rim of the tin and springs back slowly when pressed.\n\nEgg wash and bake at 180C for 30 minutes until deep golden and the internal temperature reaches 92C. Turn out of the tins immediately to stop the sides collapsing."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "ferment_001__method__1",
+          "recipe_id": "ferment_001",
+          "text": "Recipe: 2kg Country Sourdough Loaf (recipe_id: ferment_001)\nSection: Method\n\nBulk ferment for 4 to 5 hours at 24C, performing a set of coil folds every 45 minutes for the first three hours. The bulk is finished when the dough has risen by roughly 50%, feels aerated, and shows a domed surface with visible bubbles at the edge of the tub.\n\nDivide into two pieces, pre-shape lightly and bench rest for 25 minutes. Shape into boules, place seam side up in floured bannetons, and cold retard in the refrigerator at 4C for 12 to 16 hours.\n\nBake straight from the refrigerator in a preheated cast iron combo cooker. Bake at 250C for 20 minutes with the lid on, then remove the lid, drop the oven to 230C and bake for a further 25 minutes until the crust is deep brown and the internal temperature reaches 96C."
+        },
+        {
+          "rank": 5,
+          "chunk_id": "ferment_003__ingredients__1",
+          "recipe_id": "ferment_003",
+          "text": "Recipe: Sourdough Focaccia (recipe_id: ferment_003)\nSection: Ingredients\n\nTotal dough weight is 2182 g, which fills one 30 x 40 cm tray."
+        }
+      ],
+      "answer": "I cannot answer this from the provided recipe documents."
+    },
+    {
+      "id": "T16",
+      "question": "whats the egg wash for",
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "ferment_004__allergen_note__0",
+          "recipe_id": "ferment_004",
+          "text": "Recipe: Sourdough Brioche (recipe_id: ferment_004)\nSection: Allergen Note\n\nContains wheat and rye, therefore contains gluten. Contains milk and butter, therefore contains dairy. Contains egg, both in the dough and in the egg wash. Contains no nuts. Suitable for vegetarians but not for vegans."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "ferment_004__method__1",
+          "recipe_id": "ferment_004",
+          "text": "Recipe: Sourdough Brioche (recipe_id: ferment_004)\nSection: Method\n\nBulk ferment for 5 to 6 hours at 22C, then cold retard for 14 to 18 hours at 4C. Enriched sourdough is very difficult to shape at room temperature, so the cold retard is a handling step as much as a flavour step.\n\nDivide, shape into four balls per tin, and prove for 4 to 5 hours at 24C until the dough reaches the rim of the tin and springs back slowly when pressed.\n\nEgg wash and bake at 180C for 30 minutes until deep golden and the internal temperature reaches 92C. Turn out of the tins immediately to stop the sides collapsing."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "ferment_004__ingredients__0",
+          "recipe_id": "ferment_004",
+          "text": "Recipe: Sourdough Brioche (recipe_id: ferment_004)\nSection: Ingredients\n\nBaker's percentages are calculated against the 500 g of strong white flour. This is an enriched dough, so the fat and egg percentages are high.\n\n| Ingredient | Weight | Baker's % |\n|---|---|---|\n| Strong white bread flour | 500 g | 100% |\n| Whole milk (cold) | 150 g | 30% |\n| Eggs (about 4 medium) | 200 g | 40% |\n| Unsalted butter (softened) | 200 g | 40% |\n| Caster sugar | 60 g | 12% |\n| Rye levain (100% hydration) | 100 g | 20% |\n| Fine sea salt | 10 g | 2% |"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "ferment_004__method__0",
+          "recipe_id": "ferment_004",
+          "text": "Recipe: Sourdough Brioche (recipe_id: ferment_004)\nSection: Method\n\nMix the flour, cold milk, eggs, sugar and levain in a stand mixer with the dough hook on low for 4 minutes until a shaggy dough forms. Add the fine sea salt and mix on medium for a further 8 minutes until the dough is smooth and pulls cleanly from the sides of the bowl.\n\nOnly now begin adding the softened butter, roughly 50 g at a time, waiting until each addition has fully disappeared before adding the next. The butter goes in last and gradually, because adding it at the start coats the flour in fat and prevents the gluten network from developing at all. Expect this stage to take 10 to 12 minutes.\n\nThe dough is ready when it passes the windowpane test: a small piece stretched thin should become translucent without tearing."
+        },
+        {
+          "rank": 5,
+          "chunk_id": "ferment_002__method__0",
+          "recipe_id": "ferment_002",
+          "text": "Recipe: Rye Levain Starter (recipe_id: ferment_002)\nSection: Method\n\nWeigh the mature starter into a clear straight-sided jar and mark the level with an elastic band so the rise can be judged by eye rather than by guesswork.\n\nAdd the water at 26C and stir until the starter is dispersed and the liquid turns cloudy. Add the wholegrain rye flour and mix to a thick paste. Rye holds far more water than white flour, so at 100% hydration this will look like a stiff batter rather than a dough."
+        }
+      ],
+      "answer": "I cannot answer this from the provided recipe documents."
+    },
+    {
+      "id": "T17",
+      "question": "How do I store leftover kimchi?",
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "ferment_005__method__2",
+          "recipe_id": "ferment_005",
+          "text": "Recipe: Traditional Napa Cabbage Kimchi (recipe_id: ferment_005)\nSection: Method\n\nFerment at 20C for 2 days until bubbles appear and the smell turns sour, then transfer to the refrigerator at 4C. The kimchi is edible immediately but reaches its best flavour after 2 weeks."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "ferment_006__method__2",
+          "recipe_id": "ferment_006",
+          "text": "Recipe: Vegan Napa Cabbage Kimchi (recipe_id: ferment_006)\nSection: Method\n\nFerment at 20C for 2 to 3 days, which is around a day longer than the traditional card requires because the seafood ferments in saeujeot give the traditional version a head start. Move to the refrigerator once bubbling and pleasantly sour."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "ferment_006__method__1",
+          "recipe_id": "ferment_006",
+          "text": "Recipe: Vegan Napa Cabbage Kimchi (recipe_id: ferment_006)\nSection: Method\n\nThis shiitake and kombu stock plus the tamari is what replaces the saeujeot and anchovy fish sauce used on the traditional card. Both supply glutamates, which is the savoury depth the fermented seafood would otherwise provide.\n\nWhisk the glutinous rice flour into the reserved 250 ml of mushroom stock, heat gently for 5 minutes until thickened, stir in the sugar and cool completely.\n\nMix the cooled porridge with the gochugaru and rest for 10 minutes, then add the garlic, ginger, chopped shiitake and tamari. Fold through the julienned radish.\n\nCoat every leaf with the paste, pack into a jar with 5 cm of headspace, and press down until the brine rises above the cabbage."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "ferment_006__ingredients__1",
+          "recipe_id": "ferment_006",
+          "text": "Recipe: Vegan Napa Cabbage Kimchi (recipe_id: ferment_006)\nSection: Ingredients\n\nTotal yield is approximately 2.85 kg of finished kimchi."
+        },
+        {
+          "rank": 5,
+          "chunk_id": "ferment_005__method__1",
+          "recipe_id": "ferment_005",
+          "text": "Recipe: Traditional Napa Cabbage Kimchi (recipe_id: ferment_005)\nSection: Method\n\nMake the rice porridge by whisking the glutinous rice flour into 250 ml of cold water, heating gently for 5 minutes until it thickens, then stirring in the sugar and cooling completely. The porridge feeds the lactobacillus and speeds the early fermentation.\n\nCombine the cooled porridge with the gochugaru and let it stand for 10 minutes so the chilli flakes bloom, then mix in the garlic, ginger, saeujeot and anchovy fish sauce. Fold through the julienned radish.\n\nWearing gloves, spread the paste over every leaf, working from the stem end outward. Pack into a jar, pressing down firmly to eliminate air pockets, and leave 5 cm of headspace."
+        }
+      ],
+      "answer": "Traditional Napa Cabbage Kimchi should be transferred to the refrigerator at 4C after fermenting at 20C for 2 days until the smell turns sour and bubbles appear [recipe_id=ferment_005 | chunk_id=ferment_005__method__2 | source_file=ferment_005_traditional_napa_kimchi.md]. Vegan Napa Cabbage Kimchi should be moved to the refrigerator once it is pleasantly sour and bubbling [recipe_id=ferment_006 | chunk_id=ferment_006__method__2 | source_file=ferment_006_vegan_napa_kimchi.md]."
+    },
+    {
+      "id": "T18",
+      "question": "What's the ratio of flour to water in the rye levain?",
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "ferment_002__ingredients__0",
+          "recipe_id": "ferment_002",
+          "text": "Recipe: Rye Levain Starter (recipe_id: ferment_002)\nSection: Ingredients\n\nThis is a 100% hydration levain, meaning the water weight equals the flour weight. Baker's percentages are calculated against the 100 g of rye flour.\n\n| Ingredient | Weight | Baker's % |\n|---|---|---|\n| Wholegrain rye flour | 100 g | 100% |\n| Water (26C) | 100 g | 100% |\n| Mature sourdough starter | 20 g | 20% |"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "ferment_002__ingredients__1",
+          "recipe_id": "ferment_002",
+          "text": "Recipe: Rye Levain Starter (recipe_id: ferment_002)\nSection: Ingredients\n\nTotal levain yield is 220 g, which is enough to build the 400 g of levain required by the 2kg Country Sourdough after one further refreshment."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "ferment_002__method__0",
+          "recipe_id": "ferment_002",
+          "text": "Recipe: Rye Levain Starter (recipe_id: ferment_002)\nSection: Method\n\nWeigh the mature starter into a clear straight-sided jar and mark the level with an elastic band so the rise can be judged by eye rather than by guesswork.\n\nAdd the water at 26C and stir until the starter is dispersed and the liquid turns cloudy. Add the wholegrain rye flour and mix to a thick paste. Rye holds far more water than white flour, so at 100% hydration this will look like a stiff batter rather than a dough."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "ferment_001__ingredients__0",
+          "recipe_id": "ferment_001",
+          "text": "Recipe: 2kg Country Sourdough Loaf (recipe_id: ferment_001)\nSection: Ingredients\n\nTotal flour weight is 2000 g and all baker's percentages below are calculated against that total flour weight. Final hydration is 80%.\n\n| Ingredient | Weight | Baker's % |\n|---|---|---|\n| Strong white bread flour | 1700 g | 85% |\n| Wholemeal flour | 300 g | 15% |\n| Water (28C) | 1600 g | 80% |\n| Fine sea salt | 40 g | 2% |\n| Rye levain (100% hydration) | 400 g | 20% |"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "ferment_002__method__1",
+          "recipe_id": "ferment_002",
+          "text": "Recipe: Rye Levain Starter (recipe_id: ferment_002)\nSection: Method\n\nCover loosely and ferment for 8 to 12 hours at 22 to 24C. The levain is ripe when it has at least doubled from the elastic band mark, the surface is domed and covered in fine bubbles, and it smells sharply sour with a faint acetone note. A levain that has risen and then collapsed back to a flat, watery surface has gone past ripe and will give a slack, over-acidified dough.\n\nThe float test is a useful confirmation: drop a teaspoon of ripe levain into room temperature water and it should float rather than sink.\n\nRefresh at least once every 24 hours if the starter is kept at room temperature, or once a week if it is stored at 4C in the refrigerator."
+        }
+      ],
+      "answer": "The rye levain is 100% hydration, meaning the water weight equals the flour weight [recipe_id=ferment_002 | chunk_id=ferment_002__ingredients__0 | source_file=ferment_002_rye_levain_starter.md]. Specifically, the recipe uses 100 g of wholegrain rye flour and 100 g of water (26C) [recipe_id=ferment_002 | chunk_id=ferment_002__ingredients__0 | source_file=ferment_002_rye_levain_starter.md]."
+    },
+    {
+      "id": "T19",
+      "question": "Tell me how to make naan bread",
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "ferment_001__method__0",
+          "recipe_id": "ferment_001",
+          "text": "Recipe: 2kg Country Sourdough Loaf (recipe_id: ferment_001)\nSection: Method\n\nAutolyse first. Combine the strong white flour, the wholemeal flour and 1500 g of the water in a large tub, mixing until no dry flour remains, then cover and rest for 60 minutes. Hold back the remaining 100 g of water for the salt stage.\n\nAdd the rye levain and squeeze it through the dough until fully dispersed. Rest for 30 minutes.\n\nNow add the fine sea salt together with the reserved 100 g of water. The salt goes in after the autolyse and after the levain, never at the start, because salt tightens the gluten network and slows the enzymatic activity the autolyse is meant to encourage. Squeeze and fold until the dough feels smooth and no grittiness remains at the base of the tub."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "ferment_003__method__0",
+          "recipe_id": "ferment_003",
+          "text": "Recipe: Sourdough Focaccia (recipe_id: ferment_003)\nSection: Method\n\nMix the flour and 800 g of the water until no dry flour remains and rest for 45 minutes. Reserve the last 50 g of water for the salt.\n\nAdd the levain and mix through, then rest 30 minutes. Add the fine sea salt with the reserved water and squeeze until fully incorporated. Finally drizzle in the olive oil and work it in. The dough will look broken and greasy at first and will come back together after two minutes of folding.\n\nBulk ferment for 3 to 4 hours at 24C with four sets of coil folds spaced 30 minutes apart. At 85% hydration the dough is slack, so use a wet hand and lift rather than stretch."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "ferment_003__method__1",
+          "recipe_id": "ferment_003",
+          "text": "Recipe: Sourdough Focaccia (recipe_id: ferment_003)\nSection: Method\n\nOil the tray generously, tip the dough in without deflating it, and spread it gently towards the corners. If it springs back, wait 20 minutes and try again rather than forcing it. Cold retard in the refrigerator for 12 hours.\n\nBring the tray to room temperature for 90 minutes before baking. Dimple the surface firmly with oiled fingertips, pressing all the way down to the tray so the dough does not dome, then drizzle with a further tablespoon of olive oil and scatter with flaky salt.\n\nBake at 240C for 22 minutes until the top is deep golden and the underside is crisp when lifted with a spatula. Lift the focaccia straight out of the tray onto a rack so the base does not steam."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "ferment_001__method__1",
+          "recipe_id": "ferment_001",
+          "text": "Recipe: 2kg Country Sourdough Loaf (recipe_id: ferment_001)\nSection: Method\n\nBulk ferment for 4 to 5 hours at 24C, performing a set of coil folds every 45 minutes for the first three hours. The bulk is finished when the dough has risen by roughly 50%, feels aerated, and shows a domed surface with visible bubbles at the edge of the tub.\n\nDivide into two pieces, pre-shape lightly and bench rest for 25 minutes. Shape into boules, place seam side up in floured bannetons, and cold retard in the refrigerator at 4C for 12 to 16 hours.\n\nBake straight from the refrigerator in a preheated cast iron combo cooker. Bake at 250C for 20 minutes with the lid on, then remove the lid, drop the oven to 230C and bake for a further 25 minutes until the crust is deep brown and the internal temperature reaches 96C."
+        },
+        {
+          "rank": 5,
+          "chunk_id": "ferment_004__method__1",
+          "recipe_id": "ferment_004",
+          "text": "Recipe: Sourdough Brioche (recipe_id: ferment_004)\nSection: Method\n\nBulk ferment for 5 to 6 hours at 22C, then cold retard for 14 to 18 hours at 4C. Enriched sourdough is very difficult to shape at room temperature, so the cold retard is a handling step as much as a flavour step.\n\nDivide, shape into four balls per tin, and prove for 4 to 5 hours at 24C until the dough reaches the rim of the tin and springs back slowly when pressed.\n\nEgg wash and bake at 180C for 30 minutes until deep golden and the internal temperature reaches 92C. Turn out of the tins immediately to stop the sides collapsing."
+        }
+      ],
+      "answer": "I cannot answer this from the provided recipe documents."
+    },
+    {
+      "id": "T20",
+      "question": "Why does my sourdough starter smell like nail polish?",
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "ferment_002__method__1",
+          "recipe_id": "ferment_002",
+          "text": "Recipe: Rye Levain Starter (recipe_id: ferment_002)\nSection: Method\n\nCover loosely and ferment for 8 to 12 hours at 22 to 24C. The levain is ripe when it has at least doubled from the elastic band mark, the surface is domed and covered in fine bubbles, and it smells sharply sour with a faint acetone note. A levain that has risen and then collapsed back to a flat, watery surface has gone past ripe and will give a slack, over-acidified dough.\n\nThe float test is a useful confirmation: drop a teaspoon of ripe levain into room temperature water and it should float rather than sink.\n\nRefresh at least once every 24 hours if the starter is kept at room temperature, or once a week if it is stored at 4C in the refrigerator."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "ferment_002__method__0",
+          "recipe_id": "ferment_002",
+          "text": "Recipe: Rye Levain Starter (recipe_id: ferment_002)\nSection: Method\n\nWeigh the mature starter into a clear straight-sided jar and mark the level with an elastic band so the rise can be judged by eye rather than by guesswork.\n\nAdd the water at 26C and stir until the starter is dispersed and the liquid turns cloudy. Add the wholegrain rye flour and mix to a thick paste. Rye holds far more water than white flour, so at 100% hydration this will look like a stiff batter rather than a dough."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "ferment_002__allergen_note__0",
+          "recipe_id": "ferment_002",
+          "text": "Recipe: Rye Levain Starter (recipe_id: ferment_002)\nSection: Allergen Note\n\nContains rye, therefore contains gluten. Contains no dairy, no egg and no nuts. Suitable for vegans."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "ferment_002__ingredients__0",
+          "recipe_id": "ferment_002",
+          "text": "Recipe: Rye Levain Starter (recipe_id: ferment_002)\nSection: Ingredients\n\nThis is a 100% hydration levain, meaning the water weight equals the flour weight. Baker's percentages are calculated against the 100 g of rye flour.\n\n| Ingredient | Weight | Baker's % |\n|---|---|---|\n| Wholegrain rye flour | 100 g | 100% |\n| Water (26C) | 100 g | 100% |\n| Mature sourdough starter | 20 g | 20% |"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "ferment_005__method__2",
+          "recipe_id": "ferment_005",
+          "text": "Recipe: Traditional Napa Cabbage Kimchi (recipe_id: ferment_005)\nSection: Method\n\nFerment at 20C for 2 days until bubbles appear and the smell turns sour, then transfer to the refrigerator at 4C. The kimchi is edible immediately but reaches its best flavour after 2 weeks."
+        }
+      ],
+      "answer": "I cannot answer this from the provided recipe documents."
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+Collection: fermentation_structure_aware
+Query: How do I make fermented napa cabbage with chilli flakes and radish?
+Filter: {'diet_vegan': True}
+
+UNFILTERED (no where-clause)
+----------------------------
+  1. chunk_id=ferment_005__method__1
+     score(distance)=0.4760   recipe_id=ferment_005
+     recipe_name=Traditional Napa Cabbage Kimchi
+     dietary_tags=non-vegetarian,contains-fish,contains-shellfish,gluten-free,dairy-free,egg-free,nut-free
+     source_file=ferment_005_traditional_napa_kimchi.md
+  2. chunk_id=ferment_005__ingredients__0
+     score(distance)=0.5155   recipe_id=ferment_005
+     recipe_name=Traditional Napa Cabbage Kimchi
+     dietary_tags=non-vegetarian,contains-fish,contains-shellfish,gluten-free,dairy-free,egg-free,nut-free
+     source_file=ferment_005_traditional_napa_kimchi.md
+  3. chunk_id=ferment_006__ingredients__0
+     score(distance)=0.5240   recipe_id=ferment_006
+     recipe_name=Vegan Napa Cabbage Kimchi
+     dietary_tags=vegan,vegetarian,gluten-free,dairy-free,egg-free,nut-free
+     source_file=ferment_006_vegan_napa_kimchi.md
+  4. chunk_id=ferment_006__method__1
+     score(distance)=0.5358   recipe_id=ferment_006
+     recipe_name=Vegan Napa Cabbage Kimchi
+     dietary_tags=vegan,vegetarian,gluten-free,dairy-free,egg-free,nut-free
+     source_file=ferment_006_vegan_napa_kimchi.md
+  5. chunk_id=ferment_006__method__2
+     score(distance)=0.5445   recipe_id=ferment_006
+     recipe_name=Vegan Napa Cabbage Kimchi
+     dietary_tags=vegan,vegetarian,gluten-free,dairy-free,egg-free,nut-free
+     source_file=ferment_006_vegan_napa_kimchi.md
+
+FILTERED (where dietary tags include vegan)
+-------------------------------------------
+  1. chunk_id=ferment_006__ingredients__0
+     score(distance)=0.5240   recipe_id=ferment_006
+     recipe_name=Vegan Napa Cabbage Kimchi
+     dietary_tags=vegan,vegetarian,gluten-free,dairy-free,egg-free,nut-free
+     source_file=ferment_006_vegan_napa_kimchi.md
+  2. chunk_id=ferment_006__method__1
+     score(distance)=0.5358   recipe_id=ferment_006
+     recipe_name=Vegan Napa Cabbage Kimchi
+     dietary_tags=vegan,vegetarian,gluten-free,dairy-free,egg-free,nut-free
+     source_file=ferment_006_vegan_napa_kimchi.md
+  3. chunk_id=ferment_006__method__2
+     score(distance)=0.5445   recipe_id=ferment_006
+     recipe_name=Vegan Napa Cabbage Kimchi
+     dietary_tags=vegan,vegetarian,gluten-free,dairy-free,egg-free,nut-free
+     source_file=ferment_006_vegan_napa_kimchi.md
+  4. chunk_id=ferment_006__method__0
+     score(distance)=0.5563   recipe_id=ferment_006
+     recipe_name=Vegan Napa Cabbage Kimchi
+     dietary_tags=vegan,vegetarian,gluten-free,dairy-free,egg-free,nut-free
+     source_file=ferment_006_vegan_napa_kimchi.md
+  5. chunk_id=ferment_006__ingredients__1
+     score(distance)=0.5687   recipe_id=ferment_006
+     recipe_name=Vegan Napa Cabbage Kimchi
+     dietary_tags=vegan,vegetarian,gluten-free,dairy-free,egg-free,nut-free
+     source_file=ferment_006_vegan_napa_kimchi.md
+
+top-1 unfiltered: ferment_005__method__1 (ferment_005, non-vegetarian,contains-fish,contains-shellfish,gluten-free,dairy-free,egg-free,nut-free)
+top-1 filtered:   ferment_006__ingredients__0 (ferment_006, vegan,vegetarian,gluten-free,dairy-free,egg-free,nut-free)
+TOP-1 CHANGED: True

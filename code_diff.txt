@@ -1,0 +1,380 @@
+CODE DIFF vs original app at /c/Users/Sanjay.B/Downloads/rag_project_app_zipapp/rag_project_app
+Generated 2026-08-22T08:50Z
+
+### MODIFIED FILES
+
+--- diff: rag/vector_store.py ---
+--- /c/Users/Sanjay.B/Downloads/rag_project_app_zipapp/rag_project_app/rag/vector_store.py	2026-08-21 21:46:08.738144600 +0530
++++ rag/vector_store.py	2026-08-22 14:18:47.558304800 +0530
+@@ -5,6 +5,12 @@
+ chroma_client = chromadb.PersistentClient(path="./data/chroma")
+ 
+ 
++# ---------------------------------------------------------------- existing API
++# build_index() is UNCHANGED and still used by the legal-contract Streamlit app.
++# It clears the collection before writing, which is why the Task Set B ingest
++# path below uses add_chunks() instead: requirement 6 forbids re-indexing the
++# existing corpus.
++
+ def build_index(chunks, collection_name):
+     """Build (or rebuild) a ChromaDB collection from the given chunks."""
+ 
+@@ -35,21 +41,161 @@
+     return collection
+ 
+ 
+-def retrieve(collection, question, top_k):
+-    """Query panni use pannum"""
++def get_collection(collection_name):
++    """Get an existing ChromaDB collection by name."""
++
++    return chroma_client.get_collection(collection_name)
++
++
++# ------------------------------------------------------- Task Set B additions
++
++REQUIRED_METADATA = ["source_file", "recipe_id", "cuisine", "dietary_tags"]
++
++
++def diet_flags(dietary_tags):
++    """Derive boolean flags from the dietary_tags string.
++
++    ChromaDB's where-filter has no substring operator, so a comma-joined
++    dietary_tags string cannot be filtered directly. These booleans are derived
++    from that exact string at ingest time so dietary filtering is still possible
++    without losing the required dietary_tags field itself.
++    """
++
++    tags = [t.strip() for t in dietary_tags.split(",") if t.strip()]
++
++    return {f"diet_{t.replace('-', '_')}": True for t in tags}
++
++
++def validate_chunk_metadata(chunks):
++    """Fail the ingest loudly if any chunk is missing required metadata.
++
++    Task Set B: 'A chunk with no source_file is a failed ingest.'
++    """
++
++    problems = []
++
++    for chunk in chunks:
++
++        metadata = chunk.get("metadata", {})
++
++        for field in REQUIRED_METADATA:
++            if not metadata.get(field):
++                problems.append(
++                    f"chunk {chunk.get('id', '<no id>')} missing '{field}'"
++                )
++
++    if problems:
++        raise ValueError(
++            "INGEST ABORTED - {} chunk(s) failed metadata validation:\n  {}".format(
++                len(problems), "\n  ".join(problems[:20])
++            )
++        )
++
++    return True
++
++
++def attach_metadata(chunks, metadata_by_source, strategy):
++    """Attach recipe metadata + diet flags to chunks, keyed by source file.
++
++    The baseline chunker only carries {source, page}, so recipe_id / cuisine /
++    dietary_tags are re-attached here by looking the source file back up. This
++    is what lets Strategy A stay byte-for-byte unchanged while still satisfying
++    the metadata requirement.
++    """
++
++    enriched = []
++
++    for chunk in chunks:
++
++        base = dict(metadata_by_source[chunk["source"]])
++
++        base["strategy"] = strategy
++        base["page"] = chunk.get("page", 1)
++        base["section"] = chunk.get("section", "")
++        base["block_type"] = chunk.get("block_type", "window")
++        base["source"] = chunk["source"]          # kept for app.py compatibility
++        base.update(diet_flags(base["dietary_tags"]))
++
++        enriched.append({
++            "id": chunk["id"],
++            "text": chunk["text"],
++            "metadata": base,
++        })
++
++    return enriched
++
++
++def add_chunks(chunks, collection_name):
++    """APPEND chunks to a collection without deleting anything already in it.
++
++    Unlike build_index(), this never clears the collection. Existing vectors
++    (for example the legal_contracts corpus, or previously ingested recipe
++    cards) are left untouched.
++    """
++
++    validate_chunk_metadata(chunks)
++
++    collection = chroma_client.get_or_create_collection(name=collection_name)
++
++    before = collection.count()
++
++    # Skip ids already present so a rate-limited run can be resumed without
++    # paying for the same embeddings twice.
++    existing_ids = set(collection.get(include=[])["ids"])
++
++    todo = [c for c in chunks if c["id"] not in existing_ids]
++
++    if len(todo) < len(chunks):
++        print(f"  resuming: {len(chunks) - len(todo)} chunks already embedded, "
++              f"{len(todo)} remaining")
++
++    for chunk in todo:
++
++        embedding = create_embedding(chunk["text"])
++
++        collection.upsert(
++            ids=[chunk["id"]],
++            embeddings=[embedding],
++            documents=[chunk["text"]],
++            metadatas=[chunk["metadata"]],
++        )
++
++    after = collection.count()
++
++    return {
++        "collection": collection,
++        "name": collection_name,
++        "count_before": before,
++        "count_after": after,
++        "added": after - before,
++    }
++
++
++def retrieve(collection, question, top_k, where=None):
++    """Query the collection, optionally with a metadata filter.
++
++    The `where` argument is new; existing callers that omit it behave exactly
++    as before.
++    """
+ 
+     query_embedding = create_embedding(question)
+ 
+-    results = collection.query(
+-        query_embeddings=[query_embedding],
+-        n_results=top_k,
+-        include=["documents", "metadatas", "distances"]
+-    )
++    kwargs = {
++        "query_embeddings": [query_embedding],
++        "n_results": top_k,
++        "include": ["documents", "metadatas", "distances"],
++    }
+ 
+-    return results
++    if where:
++        kwargs["where"] = where
+ 
++    return collection.query(**kwargs)
+ 
+-def get_collection(collection_name):
+-    """Get an existing ChromaDB collection by name."""
+ 
+-    return chroma_client.get_collection(collection_name)
++def list_collections():
++    """Names of every collection currently in the store."""
++
++    return [
++        c.name if hasattr(c, "name") else c
++        for c in chroma_client.list_collections()
++    ]
+
+--- diff: rag/generator.py ---
+--- /c/Users/Sanjay.B/Downloads/rag_project_app_zipapp/rag_project_app/rag/generator.py	2026-08-21 21:46:08.720579500 +0530
++++ rag/generator.py	2026-08-22 14:16:00.164132400 +0530
+@@ -65,3 +65,87 @@
+     )
+ 
+     return response.text
++
++
++# ------------------------------------------------------- Task Set B additions
++
++REFUSAL_TEXT = "I cannot answer this from the provided recipe documents."
++
++
++RECIPE_PROMPT = """You are a recipe assistant working from fermentation recipe cards.
++
++Answer ONLY using the retrieved context below.
++
++HARD RULES:
++
++1. Every factual claim must be supported by the context.
++2. Do not use outside knowledge of any kind.
++3. Do not invent ingredient quantities.
++4. Do not invent baker's percentages or hydration figures.
++5. Do not invent nutrition values, calories, vitamins or glycemic index.
++6. Do not invent temperatures or timings.
++7. Do not estimate, approximate or reason from general cooking knowledge.
++8. If the context does not contain the answer, reply with EXACTLY this sentence
++   and nothing else:
++
++{refusal}
++
++9. If the answer IS in the context, cite it. After each factual claim add a
++   citation in this exact form:
++
++   [recipe_id=<recipe_id> | chunk_id=<chunk_id> | source_file=<source_file>]
++
++   Use only the recipe_id, chunk_id and source_file values given in the context
++   blocks. Never invent a chunk_id.
++
++RETRIEVED CONTEXT:
++
++{context}
++
++USER QUESTION:
++
++{question}
++"""
++
++
++def build_recipe_context(results):
++    """Render retrieved chunks into labelled context blocks with their real ids."""
++
++    ids = results["ids"][0]
++    documents = results["documents"][0]
++    metadatas = results["metadatas"][0]
++
++    blocks = []
++
++    for chunk_id, document, metadata in zip(ids, documents, metadatas):
++        blocks.append(
++            "-------- CONTEXT BLOCK --------\n"
++            f"chunk_id: {chunk_id}\n"
++            f"recipe_id: {metadata.get('recipe_id')}\n"
++            f"recipe_name: {metadata.get('recipe_name')}\n"
++            f"source_file: {metadata.get('source_file')}\n"
++            f"section: {metadata.get('section') or '(flat window)'}\n"
++            f"dietary_tags: {metadata.get('dietary_tags')}\n\n"
++            f"{document}"
++        )
++
++    return "\n\n".join(blocks)
++
++
++def generate_recipe_answer(question, results):
++    """Strictly grounded answer over recipe chunks, with forced refusal."""
++
++    context = build_recipe_context(results)
++
++    prompt = RECIPE_PROMPT.format(
++        refusal=REFUSAL_TEXT,
++        context=context,
++        question=question,
++    )
++
++    response = client.models.generate_content(
++        model="gemini-3.6-flash",
++        contents=prompt
++    )
++
++    return response.text
+
+--- diff: rag/embeddings.py ---
+--- /c/Users/Sanjay.B/Downloads/rag_project_app_zipapp/rag_project_app/rag/embeddings.py	2026-08-21 21:46:08.711530400 +0530
++++ rag/embeddings.py	2026-08-22 14:18:38.273767600 +0530
+@@ -1,20 +1,54 @@
+-from google import genai
+-from dotenv import load_dotenv
+-import os
+-
+-load_dotenv()
+-
+-API_KEY = os.getenv("GOOGLE_API_KEY")
+-
+-client = genai.Client(api_key=API_KEY)
+-
+-
+-def create_embedding(text):
+-    """Gemini vachi embedding pannu."""
+-
+-    result = client.models.embed_content(
+-        model="gemini-embedding-001",
+-        contents=text
+-    )
+-
+-    return result.embeddings[0].values
++from google import genai
++from dotenv import load_dotenv
++import os
++import time
++
++load_dotenv()
++
++API_KEY = os.getenv("GOOGLE_API_KEY")
++
++client = genai.Client(api_key=API_KEY)
++
++
++
++# Call pacing only. The MODEL IS UNCHANGED (gemini-embedding-001) so that the
++# chunker comparison moves exactly one variable. These settings govern how fast
++# requests are sent, not what is computed, after the free-tier limit returned
++# 429 RESOURCE_EXHAUSTED during bulk ingest.
++
++MIN_INTERVAL_SECONDS = 1.1
++MAX_RETRIES = 5
++
++_last_call = [0.0]
++
++
++def create_embedding(text):
++    """Gemini vachi embedding pannu. Throttled + retried on 429."""
++
++    for attempt in range(MAX_RETRIES):
++
++        wait = MIN_INTERVAL_SECONDS - (time.time() - _last_call[0])
++        if wait > 0:
++            time.sleep(wait)
++
++        try:
++            result = client.models.embed_content(
++                model="gemini-embedding-001",
++                contents=text
++            )
++            _last_call[0] = time.time()
++            return result.embeddings[0].values
++
++        except Exception as error:
++
++            _last_call[0] = time.time()
++
++            if "RESOURCE_EXHAUSTED" not in str(error) and "429" not in str(error):
++                raise
++
++            if attempt == MAX_RETRIES - 1:
++                raise
++
++            backoff = 20 * (attempt + 1)
++            print(f"  [rate limited, backing off {backoff}s]", flush=True)
++            time.sleep(backoff)
+
+### UNCHANGED (deliberately)
+  rag/chunker.py  IDENTICAL
+  rag/pdf_loader.py  IDENTICAL
+  app.py  IDENTICAL
+
+### NEW FILES
+  + rag/recipe_loader.py  (138 lines)
+  + rag/structure_aware_chunker.py  (193 lines)
+  + ingest_fermentation_cards.py  (123 lines)
+  + evaluate_chunkers.py  (241 lines)
+  + filter_demo.py  (90 lines)
+  + generate_answers.py  (183 lines)
+  + add_distractor_corpus.py  (124 lines)
+  + eval_questions.json  (88 lines)

@@ -1,0 +1,108 @@
+==============================================================================
+GROUNDED GENERATION TRANSCRIPTS
+collection: fermentation_structure_aware   top_k: 5
+model: gemini-3.6-flash
+==============================================================================
+
+==============================================================================
+ANSWERABLE Q1
+==============================================================================
+QUESTION: What is the exact fine sea salt weight for the 2kg country sourdough?
+KNOWN ANSWER: 40 g, which is 2% baker's percentage
+
+--- MODEL ANSWER ---
+The exact fine sea salt weight for the 2kg Country Sourdough Loaf is 40 g [recipe_id=ferment_001 | chunk_id=ferment_001__ingredients__0 | source_file=ferment_001_country_sourdough_2kg.md].
+
+--- CITATION VERIFICATION ---
+  chunk_id: ferment_001__ingredients__0
+    resolves in ChromaDB : True
+    recipe_id matches    : True (claimed ferment_001, actual ferment_001)
+    contains '40 g' : True
+
+==============================================================================
+ANSWERABLE Q5
+==============================================================================
+QUESTION: At what temperature and for how long is the 2kg country sourdough baked with the lid on?
+KNOWN ANSWER: 250C for 20 minutes with the lid on, then 230C for a further 25 minutes with the lid off
+
+--- MODEL ANSWER ---
+The 2kg country sourdough is baked at 250C for 20 minutes with the lid on [recipe_id=ferment_001 | chunk_id=ferment_001__method__1 | source_file=ferment_001_country_sourdough_2kg.md].
+
+--- CITATION VERIFICATION ---
+  chunk_id: ferment_001__method__1
+    resolves in ChromaDB : True
+    recipe_id matches    : True (claimed ferment_001, actual ferment_001)
+    contains '250C' : True
+
+==============================================================================
+ANSWERABLE Q7
+==============================================================================
+QUESTION: In the vegan kimchi, what replaces the salted shrimp and the anchovy fish sauce?
+KNOWN ANSWER: A shiitake and kombu stock plus tamari, which supply the glutamates the fermented seafood would otherwise provide
+
+--- MODEL ANSWER ---
+In the vegan kimchi, the salted shrimp and anchovy fish sauce are replaced by a shiitake and kombu umami base [recipe_id=ferment_006 | chunk_id=ferment_006__ingredients__0 | source_file=ferment_006_vegan_napa_kimchi.md], specifically a shiitake and kombu stock plus tamari [recipe_id=ferment_006 | chunk_id=ferment_006__method__1 | source_file=ferment_006_vegan_napa_kimchi.md].
+
+--- CITATION VERIFICATION ---
+  chunk_id: ferment_006__ingredients__0
+    resolves in ChromaDB : True
+    recipe_id matches    : True (claimed ferment_006, actual ferment_006)
+    contains 'kombu' : True
+  chunk_id: ferment_006__method__1
+    resolves in ChromaDB : True
+    recipe_id matches    : True (claimed ferment_006, actual ferment_006)
+    contains 'kombu' : True
+
+==============================================================================
+OUT-OF-CORPUS U1
+==============================================================================
+QUESTION: How many calories per 100 g are in the 2kg country sourdough loaf?
+WHY UNANSWERABLE: No card carries any nutrition or calorie information.
+
+--- RETRIEVED (retrieval still returns chunks) ---
+  1. ferment_001__ingredients__1  (recipe_id=ferment_001)
+  2. ferment_001__allergen_note__0  (recipe_id=ferment_001)
+  3. ferment_001__ingredients__0  (recipe_id=ferment_001)
+  4. ferment_001__method__2  (recipe_id=ferment_001)
+  5. ferment_001__method__1  (recipe_id=ferment_001)
+
+--- MODEL ANSWER ---
+I cannot answer this from the provided recipe documents.
+
+REFUSED CORRECTLY: True
+
+==============================================================================
+OUT-OF-CORPUS U2
+==============================================================================
+QUESTION: What is the vitamin C content of the traditional napa cabbage kimchi?
+WHY UNANSWERABLE: No card carries any vitamin or micronutrient data.
+
+--- RETRIEVED (retrieval still returns chunks) ---
+  1. ferment_005__ingredients__1  (recipe_id=ferment_005)
+  2. ferment_006__ingredients__1  (recipe_id=ferment_006)
+  3. ferment_005__ingredients__0  (recipe_id=ferment_005)
+  4. ferment_005__method__2  (recipe_id=ferment_005)
+  5. ferment_006__ingredients__0  (recipe_id=ferment_006)
+
+--- MODEL ANSWER ---
+I cannot answer this from the provided recipe documents.
+
+REFUSED CORRECTLY: True
+
+==============================================================================
+OUT-OF-CORPUS U3
+==============================================================================
+QUESTION: What is the glycemic index of the sourdough focaccia?
+WHY UNANSWERABLE: No card carries glycemic index or any blood-sugar data.
+
+--- RETRIEVED (retrieval still returns chunks) ---
+  1. ferment_003__allergen_note__0  (recipe_id=ferment_003)
+  2. ferment_003__ingredients__1  (recipe_id=ferment_003)
+  3. ferment_003__ingredients__0  (recipe_id=ferment_003)
+  4. ferment_003__method__1  (recipe_id=ferment_003)
+  5. ferment_003__method__0  (recipe_id=ferment_003)
+
+--- MODEL ANSWER ---
+I cannot answer this from the provided recipe documents.
+
+REFUSED CORRECTLY: True

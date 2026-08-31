@@ -1,0 +1,27 @@
+{
+  "before": {
+    "legal_contracts": 3
+  },
+  "after": {
+    "fermentation_baseline_120": 28,
+    "legal_contracts": 3,
+    "fermentation_baseline_500": 10,
+    "fermentation_structure_aware": 33,
+    "realistic_baseline_500": 10,
+    "realistic_baseline_120": 4
+  },
+  "runs": {
+    "fermentation_baseline_500": {
+      "chunks": 10,
+      "count_after": 10
+    },
+    "fermentation_baseline_120": {
+      "chunks": 28,
+      "count_after": 28
+    },
+    "fermentation_structure_aware": {
+      "chunks": 33,
+      "count_after": 33
+    }
+  }
+}

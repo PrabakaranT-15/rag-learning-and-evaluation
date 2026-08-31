@@ -1,0 +1,88 @@
+{
+  "_note": "These 8 questions were written directly from the 6 fermentation cards BEFORE any retrieval was executed. No search results influenced their wording. 4 of the 8 (Q1-Q4) depend on a row inside an ingredient table, exceeding the required minimum of 3.",
+  "_authored_before_retrieval": true,
+  "questions": [
+    {
+      "id": "Q1",
+      "question": "What is the exact fine sea salt weight for the 2kg country sourdough?",
+      "expected_answer": "40 g, which is 2% baker's percentage",
+      "expected_recipe_id": "ferment_001",
+      "expected_section": "Ingredients",
+      "depends_on_table_row": true
+    },
+    {
+      "id": "Q2",
+      "question": "What is the hydration percentage of the sourdough focaccia?",
+      "expected_answer": "85% hydration, from 850 g of water against 1000 g of flour",
+      "expected_recipe_id": "ferment_003",
+      "expected_section": "Ingredients",
+      "depends_on_table_row": true
+    },
+    {
+      "id": "Q3",
+      "question": "What baker's percentage of butter is used in the sourdough brioche?",
+      "expected_answer": "40%, which is 200 g of unsalted butter",
+      "expected_recipe_id": "ferment_004",
+      "expected_section": "Ingredients",
+      "depends_on_table_row": true
+    },
+    {
+      "id": "Q4",
+      "question": "How much gochugaru does the traditional napa cabbage kimchi use, and what percentage of the cabbage weight is that?",
+      "expected_answer": "100 g of gochugaru, which is 5% of the cabbage weight",
+      "expected_recipe_id": "ferment_005",
+      "expected_section": "Ingredients",
+      "depends_on_table_row": true
+    },
+    {
+      "id": "Q5",
+      "question": "At what temperature and for how long is the 2kg country sourdough baked with the lid on?",
+      "expected_answer": "250C for 20 minutes with the lid on, then 230C for a further 25 minutes with the lid off",
+      "expected_recipe_id": "ferment_001",
+      "expected_section": "Method",
+      "depends_on_table_row": false
+    },
+    {
+      "id": "Q6",
+      "question": "How long does the rye levain starter take to ripen and at what temperature?",
+      "expected_answer": "8 to 12 hours at 22 to 24C",
+      "expected_recipe_id": "ferment_002",
+      "expected_section": "Method",
+      "depends_on_table_row": false
+    },
+    {
+      "id": "Q7",
+      "question": "In the vegan kimchi, what replaces the salted shrimp and the anchovy fish sauce?",
+      "expected_answer": "A shiitake and kombu stock plus tamari, which supply the glutamates the fermented seafood would otherwise provide",
+      "expected_recipe_id": "ferment_006",
+      "expected_section": "Method",
+      "depends_on_table_row": false
+    },
+    {
+      "id": "Q8",
+      "question": "Which allergens are declared on the sourdough brioche card?",
+      "expected_answer": "Gluten from wheat and rye, dairy from milk and butter, and egg in both the dough and the egg wash. No nuts.",
+      "expected_recipe_id": "ferment_004",
+      "expected_section": "Allergen Note",
+      "depends_on_table_row": false
+    }
+  ],
+  "answerable_for_generation": ["Q1", "Q5", "Q7"],
+  "unanswerable_questions": [
+    {
+      "id": "U1",
+      "question": "How many calories per 100 g are in the 2kg country sourdough loaf?",
+      "why_unanswerable": "No card carries any nutrition or calorie information."
+    },
+    {
+      "id": "U2",
+      "question": "What is the vitamin C content of the traditional napa cabbage kimchi?",
+      "why_unanswerable": "No card carries any vitamin or micronutrient data."
+    },
+    {
+      "id": "U3",
+      "question": "What is the glycemic index of the sourdough focaccia?",
+      "why_unanswerable": "No card carries glycemic index or any blood-sugar data."
+    }
+  ]
+}

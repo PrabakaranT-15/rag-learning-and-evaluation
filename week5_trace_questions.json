@@ -1,0 +1,26 @@
+{
+  "_note": "Week 5: a FAIR sample, not curated for failure. These are ordinary questions a real user might ask about the recipe corpus - easy, casual, vague, out-of-scope, and comparison questions mixed in naturally, not engineered against known weaknesses the way week4_failing_questions.json was.",
+  "_curated_for_failure": false,
+  "questions": [
+    {"id": "T01", "question": "How much salt goes into the country sourdough recipe?"},
+    {"id": "T02", "question": "How long should I proof the brioche dough?"},
+    {"id": "T03", "question": "What temperature do I bake the focaccia at?"},
+    {"id": "T04", "question": "Can I make the kimchi vegan?"},
+    {"id": "T05", "question": "How do I know my starter is ready to use?"},
+    {"id": "T06", "question": "What's the hydration percentage for the sourdough loaf?"},
+    {"id": "T07", "question": "How many calories are in a slice of the brioche?"},
+    {"id": "T08", "question": "whats the best flour for the focaccia"},
+    {"id": "T09", "question": "How spicy is the kimchi?"},
+    {"id": "T10", "question": "What's the difference between the two kimchi recipes?"},
+    {"id": "T11", "question": "how long does the levain take to ripen"},
+    {"id": "T12", "question": "Is the sourdough bread gluten free?"},
+    {"id": "T13", "question": "What's a good substitute for the fish sauce in the kimchi?"},
+    {"id": "T14", "question": "how much butter in the brioche"},
+    {"id": "T15", "question": "Can I freeze the ciabatta dough?"},
+    {"id": "T16", "question": "whats the egg wash for"},
+    {"id": "T17", "question": "How do I store leftover kimchi?"},
+    {"id": "T18", "question": "What's the ratio of flour to water in the rye levain?"},
+    {"id": "T19", "question": "Tell me how to make naan bread"},
+    {"id": "T20", "question": "Why does my sourdough starter smell like nail polish?"}
+  ]
+}

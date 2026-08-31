@@ -1,0 +1,916 @@
+SEARCH-ONLY DUMP - all 8 questions, all strategies
+Retrieval only. No LLM involved. top_k = 5.
+Embedding model held constant: gemini-embedding-001
+==============================================================================
+
+==============================================================================
+Q1  |  Strategy A - baseline chunker @ 500/100 (app default)
+collection: fermentation_baseline_500
+==============================================================================
+Question        : What is the exact fine sea salt weight for the 2kg country sourdough?
+Expected answer : 40 g, which is 2% baker's percentage
+Expected recipe : ferment_001
+Expected section: Ingredients
+Table-row question: True
+------------------------------------------------------------------------------
+  1. chunk_id=ferment_001_country_sourdough_2kg.md_1_0  <== EXPECTED RECIPE
+     distance=0.4336  recipe_id=ferment_001  source_file=ferment_001_country_sourdough_2kg.md
+     section=(none - flat window)  block_type=window
+     text: # 2kg Country Sourdough Loaf ## Ingredients Total flour weight is 2000 g and all baker's percentages below are calculated against that total flour weight. Final hydration is 80%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1700 g | 85% | | Wholemeal flour | 300 g | 15% | | Water (28C)...
+
+  2. chunk_id=ferment_003_sourdough_focaccia.md_1_0
+     distance=0.5928  recipe_id=ferment_003  source_file=ferment_003_sourdough_focaccia.md
+     section=(none - flat window)  block_type=window
+     text: # Sourdough Focaccia ## Ingredients Baker's percentages are calculated against the 1000 g of strong white flour. Final hydration is 85%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1000 g | 100% | | Water (24C) | 850 g | 85% | | Rye levain (100% hydration) | 250 g | 25% | | Fine sea s...
+
+  3. chunk_id=ferment_002_rye_levain_starter.md_1_0
+     distance=0.6164  recipe_id=ferment_002  source_file=ferment_002_rye_levain_starter.md
+     section=(none - flat window)  block_type=window
+     text: # Rye Levain Starter ## Ingredients This is a 100% hydration levain, meaning the water weight equals the flour weight. Baker's percentages are calculated against the 100 g of rye flour. | Ingredient | Weight | Baker's % | |---|---|---| | Wholegrain rye flour | 100 g | 100% | | Water (26C) | 100 g | 100% | | Mature sour...
+
+  4. chunk_id=ferment_004_sourdough_brioche.md_1_0
+     distance=0.6381  recipe_id=ferment_004  source_file=ferment_004_sourdough_brioche.md
+     section=(none - flat window)  block_type=window
+     text: # Sourdough Brioche ## Ingredients Baker's percentages are calculated against the 500 g of strong white flour. This is an enriched dough, so the fat and egg percentages are high. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 500 g | 100% | | Whole milk (cold) | 150 g | 30% | | Eggs (abo...
+
+  5. chunk_id=ferment_005_traditional_napa_kimchi.md_1_0
+     distance=0.7069  recipe_id=ferment_005  source_file=ferment_005_traditional_napa_kimchi.md
+     section=(none - flat window)  block_type=window
+     text: # Traditional Napa Cabbage Kimchi ## Ingredients Percentages here are calculated against the 2000 g of prepared napa cabbage rather than against flour, since this is a vegetable ferment rather than a dough. | Ingredient | Weight | Percentage of cabbage | |---|---|---| | Napa cabbage | 2000 g | 100% | | Coarse sea salt ...
+
+  hit_recipe@5 : PASS
+  answer_in@5  : PASS
+
+==============================================================================
+Q2  |  Strategy A - baseline chunker @ 500/100 (app default)
+collection: fermentation_baseline_500
+==============================================================================
+Question        : What is the hydration percentage of the sourdough focaccia?
+Expected answer : 85% hydration, from 850 g of water against 1000 g of flour
+Expected recipe : ferment_003
+Expected section: Ingredients
+Table-row question: True
+------------------------------------------------------------------------------
+  1. chunk_id=ferment_003_sourdough_focaccia.md_1_0  <== EXPECTED RECIPE
+     distance=0.4143  recipe_id=ferment_003  source_file=ferment_003_sourdough_focaccia.md
+     section=(none - flat window)  block_type=window
+     text: # Sourdough Focaccia ## Ingredients Baker's percentages are calculated against the 1000 g of strong white flour. Final hydration is 85%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1000 g | 100% | | Water (24C) | 850 g | 85% | | Rye levain (100% hydration) | 250 g | 25% | | Fine sea s...
+
+  2. chunk_id=ferment_001_country_sourdough_2kg.md_1_0
+     distance=0.622  recipe_id=ferment_001  source_file=ferment_001_country_sourdough_2kg.md
+     section=(none - flat window)  block_type=window
+     text: # 2kg Country Sourdough Loaf ## Ingredients Total flour weight is 2000 g and all baker's percentages below are calculated against that total flour weight. Final hydration is 80%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1700 g | 85% | | Wholemeal flour | 300 g | 15% | | Water (28C)...
+
+  3. chunk_id=ferment_004_sourdough_brioche.md_1_0
+     distance=0.6545  recipe_id=ferment_004  source_file=ferment_004_sourdough_brioche.md
+     section=(none - flat window)  block_type=window
+     text: # Sourdough Brioche ## Ingredients Baker's percentages are calculated against the 500 g of strong white flour. This is an enriched dough, so the fat and egg percentages are high. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 500 g | 100% | | Whole milk (cold) | 150 g | 30% | | Eggs (abo...
+
+  4. chunk_id=ferment_002_rye_levain_starter.md_1_0
+     distance=0.6591  recipe_id=ferment_002  source_file=ferment_002_rye_levain_starter.md
+     section=(none - flat window)  block_type=window
+     text: # Rye Levain Starter ## Ingredients This is a 100% hydration levain, meaning the water weight equals the flour weight. Baker's percentages are calculated against the 100 g of rye flour. | Ingredient | Weight | Baker's % | |---|---|---| | Wholegrain rye flour | 100 g | 100% | | Water (26C) | 100 g | 100% | | Mature sour...
+
+  5. chunk_id=ferment_005_traditional_napa_kimchi.md_1_0
+     distance=0.8432  recipe_id=ferment_005  source_file=ferment_005_traditional_napa_kimchi.md
+     section=(none - flat window)  block_type=window
+     text: # Traditional Napa Cabbage Kimchi ## Ingredients Percentages here are calculated against the 2000 g of prepared napa cabbage rather than against flour, since this is a vegetable ferment rather than a dough. | Ingredient | Weight | Percentage of cabbage | |---|---|---| | Napa cabbage | 2000 g | 100% | | Coarse sea salt ...
+
+  hit_recipe@5 : PASS
+  answer_in@5  : PASS
+
+==============================================================================
+Q3  |  Strategy A - baseline chunker @ 500/100 (app default)
+collection: fermentation_baseline_500
+==============================================================================
+Question        : What baker's percentage of butter is used in the sourdough brioche?
+Expected answer : 40%, which is 200 g of unsalted butter
+Expected recipe : ferment_004
+Expected section: Ingredients
+Table-row question: True
+------------------------------------------------------------------------------
+  1. chunk_id=ferment_004_sourdough_brioche.md_1_0  <== EXPECTED RECIPE
+     distance=0.4056  recipe_id=ferment_004  source_file=ferment_004_sourdough_brioche.md
+     section=(none - flat window)  block_type=window
+     text: # Sourdough Brioche ## Ingredients Baker's percentages are calculated against the 500 g of strong white flour. This is an enriched dough, so the fat and egg percentages are high. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 500 g | 100% | | Whole milk (cold) | 150 g | 30% | | Eggs (abo...
+
+  2. chunk_id=ferment_001_country_sourdough_2kg.md_1_0
+     distance=0.6517  recipe_id=ferment_001  source_file=ferment_001_country_sourdough_2kg.md
+     section=(none - flat window)  block_type=window
+     text: # 2kg Country Sourdough Loaf ## Ingredients Total flour weight is 2000 g and all baker's percentages below are calculated against that total flour weight. Final hydration is 80%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1700 g | 85% | | Wholemeal flour | 300 g | 15% | | Water (28C)...
+
+  3. chunk_id=ferment_003_sourdough_focaccia.md_1_0
+     distance=0.6733  recipe_id=ferment_003  source_file=ferment_003_sourdough_focaccia.md
+     section=(none - flat window)  block_type=window
+     text: # Sourdough Focaccia ## Ingredients Baker's percentages are calculated against the 1000 g of strong white flour. Final hydration is 85%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1000 g | 100% | | Water (24C) | 850 g | 85% | | Rye levain (100% hydration) | 250 g | 25% | | Fine sea s...
+
+  4. chunk_id=ferment_002_rye_levain_starter.md_1_0
+     distance=0.6921  recipe_id=ferment_002  source_file=ferment_002_rye_levain_starter.md
+     section=(none - flat window)  block_type=window
+     text: # Rye Levain Starter ## Ingredients This is a 100% hydration levain, meaning the water weight equals the flour weight. Baker's percentages are calculated against the 100 g of rye flour. | Ingredient | Weight | Baker's % | |---|---|---| | Wholegrain rye flour | 100 g | 100% | | Water (26C) | 100 g | 100% | | Mature sour...
+
+  5. chunk_id=ferment_005_traditional_napa_kimchi.md_1_0
+     distance=0.848  recipe_id=ferment_005  source_file=ferment_005_traditional_napa_kimchi.md
+     section=(none - flat window)  block_type=window
+     text: # Traditional Napa Cabbage Kimchi ## Ingredients Percentages here are calculated against the 2000 g of prepared napa cabbage rather than against flour, since this is a vegetable ferment rather than a dough. | Ingredient | Weight | Percentage of cabbage | |---|---|---| | Napa cabbage | 2000 g | 100% | | Coarse sea salt ...
+
+  hit_recipe@5 : PASS
+  answer_in@5  : PASS
+
+==============================================================================
+Q4  |  Strategy A - baseline chunker @ 500/100 (app default)
+collection: fermentation_baseline_500
+==============================================================================
+Question        : How much gochugaru does the traditional napa cabbage kimchi use, and what percentage of the cabbage weight is that?
+Expected answer : 100 g of gochugaru, which is 5% of the cabbage weight
+Expected recipe : ferment_005
+Expected section: Ingredients
+Table-row question: True
+------------------------------------------------------------------------------
+  1. chunk_id=ferment_005_traditional_napa_kimchi.md_1_0  <== EXPECTED RECIPE
+     distance=0.4156  recipe_id=ferment_005  source_file=ferment_005_traditional_napa_kimchi.md
+     section=(none - flat window)  block_type=window
+     text: # Traditional Napa Cabbage Kimchi ## Ingredients Percentages here are calculated against the 2000 g of prepared napa cabbage rather than against flour, since this is a vegetable ferment rather than a dough. | Ingredient | Weight | Percentage of cabbage | |---|---|---| | Napa cabbage | 2000 g | 100% | | Coarse sea salt ...
+
+  2. chunk_id=ferment_006_vegan_napa_kimchi.md_1_0
+     distance=0.5007  recipe_id=ferment_006  source_file=ferment_006_vegan_napa_kimchi.md
+     section=(none - flat window)  block_type=window
+     text: # Vegan Napa Cabbage Kimchi ## Ingredients Percentages are calculated against the 2000 g of prepared napa cabbage. The salted shrimp and anchovy fish sauce of the traditional card are replaced here by a shiitake and kombu umami base. | Ingredient | Weight | Percentage of cabbage | |---|---|---| | Napa cabbage | 2000 g ...
+
+  3. chunk_id=ferment_006_vegan_napa_kimchi.md_1_1
+     distance=0.7894  recipe_id=ferment_006  source_file=ferment_006_vegan_napa_kimchi.md
+     section=(none - flat window)  block_type=window
+     text: which is around a day longer than the traditional card requires because the seafood ferments in saeujeot give the traditional version a head start. Move to the refrigerator once bubbling and pleasantly sour. ## Allergen Note Contains no fish, no shellfish, no dairy, no egg, no nuts and no gluten. Tamari is used specifi...
+
+  4. chunk_id=ferment_005_traditional_napa_kimchi.md_1_1  <== EXPECTED RECIPE
+     distance=0.8992  recipe_id=ferment_005  source_file=ferment_005_traditional_napa_kimchi.md
+     section=(none - flat window)  block_type=window
+     text: weeks. ## Allergen Note Contains fish in the form of anchovy fish sauce and contains crustacean shellfish in the form of salted fermented shrimp. Not suitable for vegetarians or vegans. Contains no dairy, no egg, no nuts and no gluten. Despite its name, glutinous rice flour contains no gluten....
+
+  5. chunk_id=ferment_003_sourdough_focaccia.md_1_0
+     distance=0.9182  recipe_id=ferment_003  source_file=ferment_003_sourdough_focaccia.md
+     section=(none - flat window)  block_type=window
+     text: # Sourdough Focaccia ## Ingredients Baker's percentages are calculated against the 1000 g of strong white flour. Final hydration is 85%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1000 g | 100% | | Water (24C) | 850 g | 85% | | Rye levain (100% hydration) | 250 g | 25% | | Fine sea s...
+
+  hit_recipe@5 : PASS
+  answer_in@5  : PASS
+
+==============================================================================
+Q5  |  Strategy A - baseline chunker @ 500/100 (app default)
+collection: fermentation_baseline_500
+==============================================================================
+Question        : At what temperature and for how long is the 2kg country sourdough baked with the lid on?
+Expected answer : 250C for 20 minutes with the lid on, then 230C for a further 25 minutes with the lid off
+Expected recipe : ferment_001
+Expected section: Method
+Table-row question: False
+------------------------------------------------------------------------------
+  1. chunk_id=ferment_001_country_sourdough_2kg.md_1_0  <== EXPECTED RECIPE
+     distance=0.3517  recipe_id=ferment_001  source_file=ferment_001_country_sourdough_2kg.md
+     section=(none - flat window)  block_type=window
+     text: # 2kg Country Sourdough Loaf ## Ingredients Total flour weight is 2000 g and all baker's percentages below are calculated against that total flour weight. Final hydration is 80%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1700 g | 85% | | Wholemeal flour | 300 g | 15% | | Water (28C)...
+
+  2. chunk_id=ferment_002_rye_levain_starter.md_1_0
+     distance=0.6067  recipe_id=ferment_002  source_file=ferment_002_rye_levain_starter.md
+     section=(none - flat window)  block_type=window
+     text: # Rye Levain Starter ## Ingredients This is a 100% hydration levain, meaning the water weight equals the flour weight. Baker's percentages are calculated against the 100 g of rye flour. | Ingredient | Weight | Baker's % | |---|---|---| | Wholegrain rye flour | 100 g | 100% | | Water (26C) | 100 g | 100% | | Mature sour...
+
+  3. chunk_id=ferment_003_sourdough_focaccia.md_1_0
+     distance=0.6092  recipe_id=ferment_003  source_file=ferment_003_sourdough_focaccia.md
+     section=(none - flat window)  block_type=window
+     text: # Sourdough Focaccia ## Ingredients Baker's percentages are calculated against the 1000 g of strong white flour. Final hydration is 85%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1000 g | 100% | | Water (24C) | 850 g | 85% | | Rye levain (100% hydration) | 250 g | 25% | | Fine sea s...
+
+  4. chunk_id=ferment_004_sourdough_brioche.md_1_0
+     distance=0.6178  recipe_id=ferment_004  source_file=ferment_004_sourdough_brioche.md
+     section=(none - flat window)  block_type=window
+     text: # Sourdough Brioche ## Ingredients Baker's percentages are calculated against the 500 g of strong white flour. This is an enriched dough, so the fat and egg percentages are high. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 500 g | 100% | | Whole milk (cold) | 150 g | 30% | | Eggs (abo...
+
+  5. chunk_id=ferment_005_traditional_napa_kimchi.md_1_0
+     distance=0.81  recipe_id=ferment_005  source_file=ferment_005_traditional_napa_kimchi.md
+     section=(none - flat window)  block_type=window
+     text: # Traditional Napa Cabbage Kimchi ## Ingredients Percentages here are calculated against the 2000 g of prepared napa cabbage rather than against flour, since this is a vegetable ferment rather than a dough. | Ingredient | Weight | Percentage of cabbage | |---|---|---| | Napa cabbage | 2000 g | 100% | | Coarse sea salt ...
+
+  hit_recipe@5 : PASS
+  answer_in@5  : PASS
+
+==============================================================================
+Q6  |  Strategy A - baseline chunker @ 500/100 (app default)
+collection: fermentation_baseline_500
+==============================================================================
+Question        : How long does the rye levain starter take to ripen and at what temperature?
+Expected answer : 8 to 12 hours at 22 to 24C
+Expected recipe : ferment_002
+Expected section: Method
+Table-row question: False
+------------------------------------------------------------------------------
+  1. chunk_id=ferment_002_rye_levain_starter.md_1_0  <== EXPECTED RECIPE
+     distance=0.3681  recipe_id=ferment_002  source_file=ferment_002_rye_levain_starter.md
+     section=(none - flat window)  block_type=window
+     text: # Rye Levain Starter ## Ingredients This is a 100% hydration levain, meaning the water weight equals the flour weight. Baker's percentages are calculated against the 100 g of rye flour. | Ingredient | Weight | Baker's % | |---|---|---| | Wholegrain rye flour | 100 g | 100% | | Water (26C) | 100 g | 100% | | Mature sour...
+
+  2. chunk_id=ferment_001_country_sourdough_2kg.md_1_0
+     distance=0.5867  recipe_id=ferment_001  source_file=ferment_001_country_sourdough_2kg.md
+     section=(none - flat window)  block_type=window
+     text: # 2kg Country Sourdough Loaf ## Ingredients Total flour weight is 2000 g and all baker's percentages below are calculated against that total flour weight. Final hydration is 80%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1700 g | 85% | | Wholemeal flour | 300 g | 15% | | Water (28C)...
+
+  3. chunk_id=ferment_004_sourdough_brioche.md_1_0
+     distance=0.6505  recipe_id=ferment_004  source_file=ferment_004_sourdough_brioche.md
+     section=(none - flat window)  block_type=window
+     text: # Sourdough Brioche ## Ingredients Baker's percentages are calculated against the 500 g of strong white flour. This is an enriched dough, so the fat and egg percentages are high. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 500 g | 100% | | Whole milk (cold) | 150 g | 30% | | Eggs (abo...
+
+  4. chunk_id=ferment_003_sourdough_focaccia.md_1_0
+     distance=0.674  recipe_id=ferment_003  source_file=ferment_003_sourdough_focaccia.md
+     section=(none - flat window)  block_type=window
+     text: # Sourdough Focaccia ## Ingredients Baker's percentages are calculated against the 1000 g of strong white flour. Final hydration is 85%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1000 g | 100% | | Water (24C) | 850 g | 85% | | Rye levain (100% hydration) | 250 g | 25% | | Fine sea s...
+
+  5. chunk_id=ferment_006_vegan_napa_kimchi.md_1_1
+     distance=0.8118  recipe_id=ferment_006  source_file=ferment_006_vegan_napa_kimchi.md
+     section=(none - flat window)  block_type=window
+     text: which is around a day longer than the traditional card requires because the seafood ferments in saeujeot give the traditional version a head start. Move to the refrigerator once bubbling and pleasantly sour. ## Allergen Note Contains no fish, no shellfish, no dairy, no egg, no nuts and no gluten. Tamari is used specifi...
+
+  hit_recipe@5 : PASS
+  answer_in@5  : PASS
+
+==============================================================================
+Q7  |  Strategy A - baseline chunker @ 500/100 (app default)
+collection: fermentation_baseline_500
+==============================================================================
+Question        : In the vegan kimchi, what replaces the salted shrimp and the anchovy fish sauce?
+Expected answer : A shiitake and kombu stock plus tamari, which supply the glutamates the fermented seafood would otherwise provide
+Expected recipe : ferment_006
+Expected section: Method
+Table-row question: False
+------------------------------------------------------------------------------
+  1. chunk_id=ferment_006_vegan_napa_kimchi.md_1_0  <== EXPECTED RECIPE
+     distance=0.4692  recipe_id=ferment_006  source_file=ferment_006_vegan_napa_kimchi.md
+     section=(none - flat window)  block_type=window
+     text: # Vegan Napa Cabbage Kimchi ## Ingredients Percentages are calculated against the 2000 g of prepared napa cabbage. The salted shrimp and anchovy fish sauce of the traditional card are replaced here by a shiitake and kombu umami base. | Ingredient | Weight | Percentage of cabbage | |---|---|---| | Napa cabbage | 2000 g ...
+
+  2. chunk_id=ferment_005_traditional_napa_kimchi.md_1_0
+     distance=0.5244  recipe_id=ferment_005  source_file=ferment_005_traditional_napa_kimchi.md
+     section=(none - flat window)  block_type=window
+     text: # Traditional Napa Cabbage Kimchi ## Ingredients Percentages here are calculated against the 2000 g of prepared napa cabbage rather than against flour, since this is a vegetable ferment rather than a dough. | Ingredient | Weight | Percentage of cabbage | |---|---|---| | Napa cabbage | 2000 g | 100% | | Coarse sea salt ...
+
+  3. chunk_id=ferment_006_vegan_napa_kimchi.md_1_1  <== EXPECTED RECIPE
+     distance=0.6409  recipe_id=ferment_006  source_file=ferment_006_vegan_napa_kimchi.md
+     section=(none - flat window)  block_type=window
+     text: which is around a day longer than the traditional card requires because the seafood ferments in saeujeot give the traditional version a head start. Move to the refrigerator once bubbling and pleasantly sour. ## Allergen Note Contains no fish, no shellfish, no dairy, no egg, no nuts and no gluten. Tamari is used specifi...
+
+  4. chunk_id=ferment_005_traditional_napa_kimchi.md_1_1
+     distance=0.6641  recipe_id=ferment_005  source_file=ferment_005_traditional_napa_kimchi.md
+     section=(none - flat window)  block_type=window
+     text: weeks. ## Allergen Note Contains fish in the form of anchovy fish sauce and contains crustacean shellfish in the form of salted fermented shrimp. Not suitable for vegetarians or vegans. Contains no dairy, no egg, no nuts and no gluten. Despite its name, glutinous rice flour contains no gluten....
+
+  5. chunk_id=ferment_004_sourdough_brioche.md_1_1
+     distance=0.8159  recipe_id=ferment_004  source_file=ferment_004_sourdough_brioche.md
+     section=(none - flat window)  block_type=window
+     text: not for vegans....
+
+  hit_recipe@5 : PASS
+  answer_in@5  : PASS
+
+==============================================================================
+Q8  |  Strategy A - baseline chunker @ 500/100 (app default)
+collection: fermentation_baseline_500
+==============================================================================
+Question        : Which allergens are declared on the sourdough brioche card?
+Expected answer : Gluten from wheat and rye, dairy from milk and butter, and egg in both the dough and the egg wash. No nuts.
+Expected recipe : ferment_004
+Expected section: Allergen Note
+Table-row question: False
+------------------------------------------------------------------------------
+  1. chunk_id=ferment_004_sourdough_brioche.md_1_0  <== EXPECTED RECIPE
+     distance=0.5173  recipe_id=ferment_004  source_file=ferment_004_sourdough_brioche.md
+     section=(none - flat window)  block_type=window
+     text: # Sourdough Brioche ## Ingredients Baker's percentages are calculated against the 500 g of strong white flour. This is an enriched dough, so the fat and egg percentages are high. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 500 g | 100% | | Whole milk (cold) | 150 g | 30% | | Eggs (abo...
+
+  2. chunk_id=ferment_001_country_sourdough_2kg.md_1_1
+     distance=0.6124  recipe_id=ferment_001  source_file=ferment_001_country_sourdough_2kg.md
+     section=(none - flat window)  block_type=window
+     text: Produced in a bakery that also handles milk, egg and sesame....
+
+  3. chunk_id=ferment_001_country_sourdough_2kg.md_1_0
+     distance=0.7241  recipe_id=ferment_001  source_file=ferment_001_country_sourdough_2kg.md
+     section=(none - flat window)  block_type=window
+     text: # 2kg Country Sourdough Loaf ## Ingredients Total flour weight is 2000 g and all baker's percentages below are calculated against that total flour weight. Final hydration is 80%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1700 g | 85% | | Wholemeal flour | 300 g | 15% | | Water (28C)...
+
+  4. chunk_id=ferment_003_sourdough_focaccia.md_1_0
+     distance=0.7335  recipe_id=ferment_003  source_file=ferment_003_sourdough_focaccia.md
+     section=(none - flat window)  block_type=window
+     text: # Sourdough Focaccia ## Ingredients Baker's percentages are calculated against the 1000 g of strong white flour. Final hydration is 85%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1000 g | 100% | | Water (24C) | 850 g | 85% | | Rye levain (100% hydration) | 250 g | 25% | | Fine sea s...
+
+  5. chunk_id=ferment_006_vegan_napa_kimchi.md_1_1
+     distance=0.7389  recipe_id=ferment_006  source_file=ferment_006_vegan_napa_kimchi.md
+     section=(none - flat window)  block_type=window
+     text: which is around a day longer than the traditional card requires because the seafood ferments in saeujeot give the traditional version a head start. Move to the refrigerator once bubbling and pleasantly sour. ## Allergen Note Contains no fish, no shellfish, no dairy, no egg, no nuts and no gluten. Tamari is used specifi...
+
+  hit_recipe@5 : PASS
+  answer_in@5  : PASS
+
+==============================================================================
+Q1  |  Strategy A - baseline chunker @ 120/20 (granularity matched)
+collection: fermentation_baseline_120
+==============================================================================
+Question        : What is the exact fine sea salt weight for the 2kg country sourdough?
+Expected answer : 40 g, which is 2% baker's percentage
+Expected recipe : ferment_001
+Expected section: Ingredients
+Table-row question: True
+------------------------------------------------------------------------------
+  1. chunk_id=ferment_001_country_sourdough_2kg.md_1_0  <== EXPECTED RECIPE
+     distance=0.4227  recipe_id=ferment_001  source_file=ferment_001_country_sourdough_2kg.md
+     section=(none - flat window)  block_type=window
+     text: # 2kg Country Sourdough Loaf ## Ingredients Total flour weight is 2000 g and all baker's percentages below are calculated against that total flour weight. Final hydration is 80%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1700 g | 85% | | Wholemeal flour | 300 g | 15% | | Water (28C)...
+
+  2. chunk_id=ferment_004_sourdough_brioche.md_1_1
+     distance=0.483  recipe_id=ferment_004  source_file=ferment_004_sourdough_brioche.md
+     section=(none - flat window)  block_type=window
+     text: | | Fine sea salt | 10 g | 2% | Total dough weight is 1220 g, which makes two loaves in 900 g tins. ## Method Mix the flour, cold milk, eggs, sugar and levain in a stand mixer with the dough hook on low for 4 minutes until a shaggy dough forms. Add the fine sea salt and mix on medium for a further 8 minutes until the d...
+
+  3. chunk_id=ferment_001_country_sourdough_2kg.md_1_1  <== EXPECTED RECIPE
+     distance=0.4917  recipe_id=ferment_001  source_file=ferment_001_country_sourdough_2kg.md
+     section=(none - flat window)  block_type=window
+     text: roughly 2020 g each. ## Method Autolyse first. Combine the strong white flour, the wholemeal flour and 1500 g of the water in a large tub, mixing until no dry flour remains, then cover and rest for 60 minutes. Hold back the remaining 100 g of water for the salt stage. Add the rye levain and squeeze it through the dough...
+
+  4. chunk_id=ferment_003_sourdough_focaccia.md_1_1
+     distance=0.5356  recipe_id=ferment_003  source_file=ferment_003_sourdough_focaccia.md
+     section=(none - flat window)  block_type=window
+     text: flour and 800 g of the water until no dry flour remains and rest for 45 minutes. Reserve the last 50 g of water for the salt. Add the levain and mix through, then rest 30 minutes. Add the fine sea salt with the reserved water and squeeze until fully incorporated. Finally drizzle in the olive oil and work it in. The dou...
+
+  5. chunk_id=ferment_003_sourdough_focaccia.md_1_0
+     distance=0.5867  recipe_id=ferment_003  source_file=ferment_003_sourdough_focaccia.md
+     section=(none - flat window)  block_type=window
+     text: # Sourdough Focaccia ## Ingredients Baker's percentages are calculated against the 1000 g of strong white flour. Final hydration is 85%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1000 g | 100% | | Water (24C) | 850 g | 85% | | Rye levain (100% hydration) | 250 g | 25% | | Fine sea s...
+
+  hit_recipe@5 : PASS
+  answer_in@5  : PASS
+
+==============================================================================
+Q2  |  Strategy A - baseline chunker @ 120/20 (granularity matched)
+collection: fermentation_baseline_120
+==============================================================================
+Question        : What is the hydration percentage of the sourdough focaccia?
+Expected answer : 85% hydration, from 850 g of water against 1000 g of flour
+Expected recipe : ferment_003
+Expected section: Ingredients
+Table-row question: True
+------------------------------------------------------------------------------
+  1. chunk_id=ferment_003_sourdough_focaccia.md_1_0  <== EXPECTED RECIPE
+     distance=0.3809  recipe_id=ferment_003  source_file=ferment_003_sourdough_focaccia.md
+     section=(none - flat window)  block_type=window
+     text: # Sourdough Focaccia ## Ingredients Baker's percentages are calculated against the 1000 g of strong white flour. Final hydration is 85%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1000 g | 100% | | Water (24C) | 850 g | 85% | | Rye levain (100% hydration) | 250 g | 25% | | Fine sea s...
+
+  2. chunk_id=ferment_003_sourdough_focaccia.md_1_2  <== EXPECTED RECIPE
+     distance=0.5696  recipe_id=ferment_003  source_file=ferment_003_sourdough_focaccia.md
+     section=(none - flat window)  block_type=window
+     text: 85% hydration the dough is slack, so use a wet hand and lift rather than stretch. Oil the tray generously, tip the dough in without deflating it, and spread it gently towards the corners. If it springs back, wait 20 minutes and try again rather than forcing it. Cold retard in the refrigerator for 12 hours. Bring the tr...
+
+  3. chunk_id=ferment_003_sourdough_focaccia.md_1_3  <== EXPECTED RECIPE
+     distance=0.59  recipe_id=ferment_003  source_file=ferment_003_sourdough_focaccia.md
+     section=(none - flat window)  block_type=window
+     text: flaky salt. Bake at 240C for 22 minutes until the top is deep golden and the underside is crisp when lifted with a spatula. Lift the focaccia straight out of the tray onto a rack so the base does not steam. ## Allergen Note Contains wheat and rye, therefore contains gluten. Contains no dairy, no egg and no nuts. Suitab...
+
+  4. chunk_id=ferment_003_sourdough_focaccia.md_1_1  <== EXPECTED RECIPE
+     distance=0.5955  recipe_id=ferment_003  source_file=ferment_003_sourdough_focaccia.md
+     section=(none - flat window)  block_type=window
+     text: flour and 800 g of the water until no dry flour remains and rest for 45 minutes. Reserve the last 50 g of water for the salt. Add the levain and mix through, then rest 30 minutes. Add the fine sea salt with the reserved water and squeeze until fully incorporated. Finally drizzle in the olive oil and work it in. The dou...
+
+  5. chunk_id=ferment_001_country_sourdough_2kg.md_1_0
+     distance=0.6024  recipe_id=ferment_001  source_file=ferment_001_country_sourdough_2kg.md
+     section=(none - flat window)  block_type=window
+     text: # 2kg Country Sourdough Loaf ## Ingredients Total flour weight is 2000 g and all baker's percentages below are calculated against that total flour weight. Final hydration is 80%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1700 g | 85% | | Wholemeal flour | 300 g | 15% | | Water (28C)...
+
+  hit_recipe@5 : PASS
+  answer_in@5  : PASS
+
+==============================================================================
+Q3  |  Strategy A - baseline chunker @ 120/20 (granularity matched)
+collection: fermentation_baseline_120
+==============================================================================
+Question        : What baker's percentage of butter is used in the sourdough brioche?
+Expected answer : 40%, which is 200 g of unsalted butter
+Expected recipe : ferment_004
+Expected section: Ingredients
+Table-row question: True
+------------------------------------------------------------------------------
+  1. chunk_id=ferment_004_sourdough_brioche.md_1_0  <== EXPECTED RECIPE
+     distance=0.3706  recipe_id=ferment_004  source_file=ferment_004_sourdough_brioche.md
+     section=(none - flat window)  block_type=window
+     text: # Sourdough Brioche ## Ingredients Baker's percentages are calculated against the 500 g of strong white flour. This is an enriched dough, so the fat and egg percentages are high. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 500 g | 100% | | Whole milk (cold) | 150 g | 30% | | Eggs (abo...
+
+  2. chunk_id=ferment_004_sourdough_brioche.md_1_2  <== EXPECTED RECIPE
+     distance=0.5936  recipe_id=ferment_004  source_file=ferment_004_sourdough_brioche.md
+     section=(none - flat window)  block_type=window
+     text: fully disappeared before adding the next. The butter goes in last and gradually, because adding it at the start coats the flour in fat and prevents the gluten network from developing at all. Expect this stage to take 10 to 12 minutes. The dough is ready when it passes the windowpane test: a small piece stretched thin s...
+
+  3. chunk_id=ferment_004_sourdough_brioche.md_1_1  <== EXPECTED RECIPE
+     distance=0.628  recipe_id=ferment_004  source_file=ferment_004_sourdough_brioche.md
+     section=(none - flat window)  block_type=window
+     text: | | Fine sea salt | 10 g | 2% | Total dough weight is 1220 g, which makes two loaves in 900 g tins. ## Method Mix the flour, cold milk, eggs, sugar and levain in a stand mixer with the dough hook on low for 4 minutes until a shaggy dough forms. Add the fine sea salt and mix on medium for a further 8 minutes until the d...
+
+  4. chunk_id=ferment_001_country_sourdough_2kg.md_1_0
+     distance=0.6397  recipe_id=ferment_001  source_file=ferment_001_country_sourdough_2kg.md
+     section=(none - flat window)  block_type=window
+     text: # 2kg Country Sourdough Loaf ## Ingredients Total flour weight is 2000 g and all baker's percentages below are calculated against that total flour weight. Final hydration is 80%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1700 g | 85% | | Wholemeal flour | 300 g | 15% | | Water (28C)...
+
+  5. chunk_id=ferment_003_sourdough_focaccia.md_1_0
+     distance=0.6429  recipe_id=ferment_003  source_file=ferment_003_sourdough_focaccia.md
+     section=(none - flat window)  block_type=window
+     text: # Sourdough Focaccia ## Ingredients Baker's percentages are calculated against the 1000 g of strong white flour. Final hydration is 85%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1000 g | 100% | | Water (24C) | 850 g | 85% | | Rye levain (100% hydration) | 250 g | 25% | | Fine sea s...
+
+  hit_recipe@5 : PASS
+  answer_in@5  : PASS
+
+==============================================================================
+Q4  |  Strategy A - baseline chunker @ 120/20 (granularity matched)
+collection: fermentation_baseline_120
+==============================================================================
+Question        : How much gochugaru does the traditional napa cabbage kimchi use, and what percentage of the cabbage weight is that?
+Expected answer : 100 g of gochugaru, which is 5% of the cabbage weight
+Expected recipe : ferment_005
+Expected section: Ingredients
+Table-row question: True
+------------------------------------------------------------------------------
+  1. chunk_id=ferment_005_traditional_napa_kimchi.md_1_0  <== EXPECTED RECIPE
+     distance=0.3563  recipe_id=ferment_005  source_file=ferment_005_traditional_napa_kimchi.md
+     section=(none - flat window)  block_type=window
+     text: # Traditional Napa Cabbage Kimchi ## Ingredients Percentages here are calculated against the 2000 g of prepared napa cabbage rather than against flour, since this is a vegetable ferment rather than a dough. | Ingredient | Weight | Percentage of cabbage | |---|---|---| | Napa cabbage | 2000 g | 100% | | Coarse sea salt ...
+
+  2. chunk_id=ferment_006_vegan_napa_kimchi.md_1_0
+     distance=0.4639  recipe_id=ferment_006  source_file=ferment_006_vegan_napa_kimchi.md
+     section=(none - flat window)  block_type=window
+     text: # Vegan Napa Cabbage Kimchi ## Ingredients Percentages are calculated against the 2000 g of prepared napa cabbage. The salted shrimp and anchovy fish sauce of the traditional card are replaced here by a shiitake and kombu umami base. | Ingredient | Weight | Percentage of cabbage | |---|---|---| | Napa cabbage | 2000 g ...
+
+  3. chunk_id=ferment_005_traditional_napa_kimchi.md_1_1  <== EXPECTED RECIPE
+     distance=0.5012  recipe_id=ferment_005  source_file=ferment_005_traditional_napa_kimchi.md
+     section=(none - flat window)  block_type=window
+     text: | 1% | | Saeujeot (salted fermented shrimp) | 60 g | 3% | | Anchovy fish sauce | 60 g | 3% | | Glutinous rice flour | 30 g | 1.5% | | Caster sugar | 20 g | 1% | Total yield is approximately 2.9 kg of finished kimchi. ## Method Quarter the cabbage lengthwise keeping the core attached, then brine it using the full 160 g ...
+
+  4. chunk_id=ferment_006_vegan_napa_kimchi.md_1_1
+     distance=0.5555  recipe_id=ferment_006  source_file=ferment_006_vegan_napa_kimchi.md
+     section=(none - flat window)  block_type=window
+     text: | Ginger, grated | 20 g | 1% | | Dried shiitake mushrooms | 30 g | 1.5% | | Kombu (dried kelp) | 10 g | 0.5% | | Tamari (gluten-free soy sauce) | 50 g | 2.5% | | Glutinous rice flour | 30 g | 1.5% | | Caster sugar | 20 g | 1% | Total yield is approximately 2.85 kg of finished kimchi. ## Method Brine the quartered cabba...
+
+  5. chunk_id=ferment_005_traditional_napa_kimchi.md_1_2  <== EXPECTED RECIPE
+     distance=0.6083  recipe_id=ferment_005  source_file=ferment_005_traditional_napa_kimchi.md
+     section=(none - flat window)  block_type=window
+     text: is correctly brined when a thick white stem bends into a U shape without snapping. This bend test matters more than the clock, because cabbage size and moisture content vary considerably between heads. Rinse three times in cold water and drain cut side down for at least one hour. Residual water dilutes the paste and ca...
+
+  hit_recipe@5 : PASS
+  answer_in@5  : PASS
+
+==============================================================================
+Q5  |  Strategy A - baseline chunker @ 120/20 (granularity matched)
+collection: fermentation_baseline_120
+==============================================================================
+Question        : At what temperature and for how long is the 2kg country sourdough baked with the lid on?
+Expected answer : 250C for 20 minutes with the lid on, then 230C for a further 25 minutes with the lid off
+Expected recipe : ferment_001
+Expected section: Method
+Table-row question: False
+------------------------------------------------------------------------------
+  1. chunk_id=ferment_001_country_sourdough_2kg.md_1_0  <== EXPECTED RECIPE
+     distance=0.3827  recipe_id=ferment_001  source_file=ferment_001_country_sourdough_2kg.md
+     section=(none - flat window)  block_type=window
+     text: # 2kg Country Sourdough Loaf ## Ingredients Total flour weight is 2000 g and all baker's percentages below are calculated against that total flour weight. Final hydration is 80%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1700 g | 85% | | Wholemeal flour | 300 g | 15% | | Water (28C)...
+
+  2. chunk_id=ferment_001_country_sourdough_2kg.md_1_3  <== EXPECTED RECIPE
+     distance=0.4801  recipe_id=ferment_001  source_file=ferment_001_country_sourdough_2kg.md
+     section=(none - flat window)  block_type=window
+     text: side up in floured bannetons, and cold retard in the refrigerator at 4C for 12 to 16 hours. Bake straight from the refrigerator in a preheated cast iron combo cooker. Bake at 250C for 20 minutes with the lid on, then remove the lid, drop the oven to 230C and bake for a further 25 minutes until the crust is deep brown a...
+
+  3. chunk_id=ferment_001_country_sourdough_2kg.md_1_1  <== EXPECTED RECIPE
+     distance=0.5729  recipe_id=ferment_001  source_file=ferment_001_country_sourdough_2kg.md
+     section=(none - flat window)  block_type=window
+     text: roughly 2020 g each. ## Method Autolyse first. Combine the strong white flour, the wholemeal flour and 1500 g of the water in a large tub, mixing until no dry flour remains, then cover and rest for 60 minutes. Hold back the remaining 100 g of water for the salt stage. Add the rye levain and squeeze it through the dough...
+
+  4. chunk_id=ferment_003_sourdough_focaccia.md_1_2
+     distance=0.6097  recipe_id=ferment_003  source_file=ferment_003_sourdough_focaccia.md
+     section=(none - flat window)  block_type=window
+     text: 85% hydration the dough is slack, so use a wet hand and lift rather than stretch. Oil the tray generously, tip the dough in without deflating it, and spread it gently towards the corners. If it springs back, wait 20 minutes and try again rather than forcing it. Cold retard in the refrigerator for 12 hours. Bring the tr...
+
+  5. chunk_id=ferment_003_sourdough_focaccia.md_1_1
+     distance=0.6097  recipe_id=ferment_003  source_file=ferment_003_sourdough_focaccia.md
+     section=(none - flat window)  block_type=window
+     text: flour and 800 g of the water until no dry flour remains and rest for 45 minutes. Reserve the last 50 g of water for the salt. Add the levain and mix through, then rest 30 minutes. Add the fine sea salt with the reserved water and squeeze until fully incorporated. Finally drizzle in the olive oil and work it in. The dou...
+
+  hit_recipe@5 : PASS
+  answer_in@5  : PASS
+
+==============================================================================
+Q6  |  Strategy A - baseline chunker @ 120/20 (granularity matched)
+collection: fermentation_baseline_120
+==============================================================================
+Question        : How long does the rye levain starter take to ripen and at what temperature?
+Expected answer : 8 to 12 hours at 22 to 24C
+Expected recipe : ferment_002
+Expected section: Method
+Table-row question: False
+------------------------------------------------------------------------------
+  1. chunk_id=ferment_002_rye_levain_starter.md_1_1  <== EXPECTED RECIPE
+     distance=0.4041  recipe_id=ferment_002  source_file=ferment_002_rye_levain_starter.md
+     section=(none - flat window)  block_type=window
+     text: starter into a clear straight-sided jar and mark the level with an elastic band so the rise can be judged by eye rather than by guesswork. Add the water at 26C and stir until the starter is dispersed and the liquid turns cloudy. Add the wholegrain rye flour and mix to a thick paste. Rye holds far more water than white ...
+
+  2. chunk_id=ferment_002_rye_levain_starter.md_1_0  <== EXPECTED RECIPE
+     distance=0.415  recipe_id=ferment_002  source_file=ferment_002_rye_levain_starter.md
+     section=(none - flat window)  block_type=window
+     text: # Rye Levain Starter ## Ingredients This is a 100% hydration levain, meaning the water weight equals the flour weight. Baker's percentages are calculated against the 100 g of rye flour. | Ingredient | Weight | Baker's % | |---|---|---| | Wholegrain rye flour | 100 g | 100% | | Water (26C) | 100 g | 100% | | Mature sour...
+
+  3. chunk_id=ferment_002_rye_levain_starter.md_1_2  <== EXPECTED RECIPE
+     distance=0.479  recipe_id=ferment_002  source_file=ferment_002_rye_levain_starter.md
+     section=(none - flat window)  block_type=window
+     text: from the elastic band mark, the surface is domed and covered in fine bubbles, and it smells sharply sour with a faint acetone note. A levain that has risen and then collapsed back to a flat, watery surface has gone past ripe and will give a slack, over-acidified dough. The float test is a useful confirmation: drop a te...
+
+  4. chunk_id=ferment_001_country_sourdough_2kg.md_1_3
+     distance=0.6132  recipe_id=ferment_001  source_file=ferment_001_country_sourdough_2kg.md
+     section=(none - flat window)  block_type=window
+     text: side up in floured bannetons, and cold retard in the refrigerator at 4C for 12 to 16 hours. Bake straight from the refrigerator in a preheated cast iron combo cooker. Bake at 250C for 20 minutes with the lid on, then remove the lid, drop the oven to 230C and bake for a further 25 minutes until the crust is deep brown a...
+
+  5. chunk_id=ferment_001_country_sourdough_2kg.md_1_1
+     distance=0.6701  recipe_id=ferment_001  source_file=ferment_001_country_sourdough_2kg.md
+     section=(none - flat window)  block_type=window
+     text: roughly 2020 g each. ## Method Autolyse first. Combine the strong white flour, the wholemeal flour and 1500 g of the water in a large tub, mixing until no dry flour remains, then cover and rest for 60 minutes. Hold back the remaining 100 g of water for the salt stage. Add the rye levain and squeeze it through the dough...
+
+  hit_recipe@5 : PASS
+  answer_in@5  : PASS
+
+==============================================================================
+Q7  |  Strategy A - baseline chunker @ 120/20 (granularity matched)
+collection: fermentation_baseline_120
+==============================================================================
+Question        : In the vegan kimchi, what replaces the salted shrimp and the anchovy fish sauce?
+Expected answer : A shiitake and kombu stock plus tamari, which supply the glutamates the fermented seafood would otherwise provide
+Expected recipe : ferment_006
+Expected section: Method
+Table-row question: False
+------------------------------------------------------------------------------
+  1. chunk_id=ferment_006_vegan_napa_kimchi.md_1_0  <== EXPECTED RECIPE
+     distance=0.4862  recipe_id=ferment_006  source_file=ferment_006_vegan_napa_kimchi.md
+     section=(none - flat window)  block_type=window
+     text: # Vegan Napa Cabbage Kimchi ## Ingredients Percentages are calculated against the 2000 g of prepared napa cabbage. The salted shrimp and anchovy fish sauce of the traditional card are replaced here by a shiitake and kombu umami base. | Ingredient | Weight | Percentage of cabbage | |---|---|---| | Napa cabbage | 2000 g ...
+
+  2. chunk_id=ferment_005_traditional_napa_kimchi.md_1_1
+     distance=0.5339  recipe_id=ferment_005  source_file=ferment_005_traditional_napa_kimchi.md
+     section=(none - flat window)  block_type=window
+     text: | 1% | | Saeujeot (salted fermented shrimp) | 60 g | 3% | | Anchovy fish sauce | 60 g | 3% | | Glutinous rice flour | 30 g | 1.5% | | Caster sugar | 20 g | 1% | Total yield is approximately 2.9 kg of finished kimchi. ## Method Quarter the cabbage lengthwise keeping the core attached, then brine it using the full 160 g ...
+
+  3. chunk_id=ferment_005_traditional_napa_kimchi.md_1_0
+     distance=0.5535  recipe_id=ferment_005  source_file=ferment_005_traditional_napa_kimchi.md
+     section=(none - flat window)  block_type=window
+     text: # Traditional Napa Cabbage Kimchi ## Ingredients Percentages here are calculated against the 2000 g of prepared napa cabbage rather than against flour, since this is a vegetable ferment rather than a dough. | Ingredient | Weight | Percentage of cabbage | |---|---|---| | Napa cabbage | 2000 g | 100% | | Coarse sea salt ...
+
+  4. chunk_id=ferment_005_traditional_napa_kimchi.md_1_3
+     distance=0.5999  recipe_id=ferment_005  source_file=ferment_005_traditional_napa_kimchi.md
+     section=(none - flat window)  block_type=window
+     text: fermentation. Combine the cooled porridge with the gochugaru and let it stand for 10 minutes so the chilli flakes bloom, then mix in the garlic, ginger, saeujeot and anchovy fish sauce. Fold through the julienned radish. Wearing gloves, spread the paste over every leaf, working from the stem end outward. Pack into a ja...
+
+  5. chunk_id=ferment_006_vegan_napa_kimchi.md_1_3  <== EXPECTED RECIPE
+     distance=0.6171  recipe_id=ferment_006  source_file=ferment_006_vegan_napa_kimchi.md
+     section=(none - flat window)  block_type=window
+     text: Both supply glutamates, which is the savoury depth the fermented seafood would otherwise provide. Whisk the glutinous rice flour into the reserved 250 ml of mushroom stock, heat gently for 5 minutes until thickened, stir in the sugar and cool completely. Mix the cooled porridge with the gochugaru and rest for 10 minute...
+
+  hit_recipe@5 : PASS
+  answer_in@5  : PASS
+
+==============================================================================
+Q8  |  Strategy A - baseline chunker @ 120/20 (granularity matched)
+collection: fermentation_baseline_120
+==============================================================================
+Question        : Which allergens are declared on the sourdough brioche card?
+Expected answer : Gluten from wheat and rye, dairy from milk and butter, and egg in both the dough and the egg wash. No nuts.
+Expected recipe : ferment_004
+Expected section: Allergen Note
+Table-row question: False
+------------------------------------------------------------------------------
+  1. chunk_id=ferment_004_sourdough_brioche.md_1_0  <== EXPECTED RECIPE
+     distance=0.5387  recipe_id=ferment_004  source_file=ferment_004_sourdough_brioche.md
+     section=(none - flat window)  block_type=window
+     text: # Sourdough Brioche ## Ingredients Baker's percentages are calculated against the 500 g of strong white flour. This is an enriched dough, so the fat and egg percentages are high. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 500 g | 100% | | Whole milk (cold) | 150 g | 30% | | Eggs (abo...
+
+  2. chunk_id=ferment_001_country_sourdough_2kg.md_1_4
+     distance=0.6124  recipe_id=ferment_001  source_file=ferment_001_country_sourdough_2kg.md
+     section=(none - flat window)  block_type=window
+     text: Produced in a bakery that also handles milk, egg and sesame....
+
+  3. chunk_id=ferment_002_rye_levain_starter.md_1_2
+     distance=0.6826  recipe_id=ferment_002  source_file=ferment_002_rye_levain_starter.md
+     section=(none - flat window)  block_type=window
+     text: from the elastic band mark, the surface is domed and covered in fine bubbles, and it smells sharply sour with a faint acetone note. A levain that has risen and then collapsed back to a flat, watery surface has gone past ripe and will give a slack, over-acidified dough. The float test is a useful confirmation: drop a te...
+
+  4. chunk_id=ferment_001_country_sourdough_2kg.md_1_3
+     distance=0.7134  recipe_id=ferment_001  source_file=ferment_001_country_sourdough_2kg.md
+     section=(none - flat window)  block_type=window
+     text: side up in floured bannetons, and cold retard in the refrigerator at 4C for 12 to 16 hours. Bake straight from the refrigerator in a preheated cast iron combo cooker. Bake at 250C for 20 minutes with the lid on, then remove the lid, drop the oven to 230C and bake for a further 25 minutes until the crust is deep brown a...
+
+  5. chunk_id=ferment_004_sourdough_brioche.md_1_2  <== EXPECTED RECIPE
+     distance=0.7318  recipe_id=ferment_004  source_file=ferment_004_sourdough_brioche.md
+     section=(none - flat window)  block_type=window
+     text: fully disappeared before adding the next. The butter goes in last and gradually, because adding it at the start coats the flour in fat and prevents the gluten network from developing at all. Expect this stage to take 10 to 12 minutes. The dough is ready when it passes the windowpane test: a small piece stretched thin s...
+
+  hit_recipe@5 : PASS
+  answer_in@5  : PASS
+
+==============================================================================
+Q1  |  Strategy B - structure-aware chunker
+collection: fermentation_structure_aware
+==============================================================================
+Question        : What is the exact fine sea salt weight for the 2kg country sourdough?
+Expected answer : 40 g, which is 2% baker's percentage
+Expected recipe : ferment_001
+Expected section: Ingredients
+Table-row question: True
+------------------------------------------------------------------------------
+  1. chunk_id=ferment_001__ingredients__0  <== EXPECTED RECIPE
+     distance=0.3983  recipe_id=ferment_001  source_file=ferment_001_country_sourdough_2kg.md
+     section=Ingredients  block_type=table
+     text: Recipe: 2kg Country Sourdough Loaf (recipe_id: ferment_001) Section: Ingredients Total flour weight is 2000 g and all baker's percentages below are calculated against that total flour weight. Final hydration is 80%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1700 g | 85% | | Wholemea...
+
+  2. chunk_id=ferment_001__ingredients__1  <== EXPECTED RECIPE
+     distance=0.4448  recipe_id=ferment_001  source_file=ferment_001_country_sourdough_2kg.md
+     section=Ingredients  block_type=prose
+     text: Recipe: 2kg Country Sourdough Loaf (recipe_id: ferment_001) Section: Ingredients Total dough weight is 4040 g, which divides into two loaves of roughly 2020 g each....
+
+  3. chunk_id=ferment_001__method__0  <== EXPECTED RECIPE
+     distance=0.4516  recipe_id=ferment_001  source_file=ferment_001_country_sourdough_2kg.md
+     section=Method  block_type=prose
+     text: Recipe: 2kg Country Sourdough Loaf (recipe_id: ferment_001) Section: Method Autolyse first. Combine the strong white flour, the wholemeal flour and 1500 g of the water in a large tub, mixing until no dry flour remains, then cover and rest for 60 minutes. Hold back the remaining 100 g of water for the salt stage. Add th...
+
+  4. chunk_id=ferment_003__ingredients__0
+     distance=0.5143  recipe_id=ferment_003  source_file=ferment_003_sourdough_focaccia.md
+     section=Ingredients  block_type=table
+     text: Recipe: Sourdough Focaccia (recipe_id: ferment_003) Section: Ingredients Baker's percentages are calculated against the 1000 g of strong white flour. Final hydration is 85%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1000 g | 100% | | Water (24C) | 850 g | 85% | | Rye levain (100% hy...
+
+  5. chunk_id=ferment_002__ingredients__1
+     distance=0.5703  recipe_id=ferment_002  source_file=ferment_002_rye_levain_starter.md
+     section=Ingredients  block_type=prose
+     text: Recipe: Rye Levain Starter (recipe_id: ferment_002) Section: Ingredients Total levain yield is 220 g, which is enough to build the 400 g of levain required by the 2kg Country Sourdough after one further refreshment....
+
+  hit_recipe@5 : PASS
+  answer_in@5  : PASS
+
+==============================================================================
+Q2  |  Strategy B - structure-aware chunker
+collection: fermentation_structure_aware
+==============================================================================
+Question        : What is the hydration percentage of the sourdough focaccia?
+Expected answer : 85% hydration, from 850 g of water against 1000 g of flour
+Expected recipe : ferment_003
+Expected section: Ingredients
+Table-row question: True
+------------------------------------------------------------------------------
+  1. chunk_id=ferment_003__ingredients__0  <== EXPECTED RECIPE
+     distance=0.4296  recipe_id=ferment_003  source_file=ferment_003_sourdough_focaccia.md
+     section=Ingredients  block_type=table
+     text: Recipe: Sourdough Focaccia (recipe_id: ferment_003) Section: Ingredients Baker's percentages are calculated against the 1000 g of strong white flour. Final hydration is 85%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1000 g | 100% | | Water (24C) | 850 g | 85% | | Rye levain (100% hy...
+
+  2. chunk_id=ferment_003__ingredients__1  <== EXPECTED RECIPE
+     distance=0.5005  recipe_id=ferment_003  source_file=ferment_003_sourdough_focaccia.md
+     section=Ingredients  block_type=prose
+     text: Recipe: Sourdough Focaccia (recipe_id: ferment_003) Section: Ingredients Total dough weight is 2182 g, which fills one 30 x 40 cm tray....
+
+  3. chunk_id=ferment_003__method__0  <== EXPECTED RECIPE
+     distance=0.5057  recipe_id=ferment_003  source_file=ferment_003_sourdough_focaccia.md
+     section=Method  block_type=prose
+     text: Recipe: Sourdough Focaccia (recipe_id: ferment_003) Section: Method Mix the flour and 800 g of the water until no dry flour remains and rest for 45 minutes. Reserve the last 50 g of water for the salt. Add the levain and mix through, then rest 30 minutes. Add the fine sea salt with the reserved water and squeeze until ...
+
+  4. chunk_id=ferment_003__method__1  <== EXPECTED RECIPE
+     distance=0.5483  recipe_id=ferment_003  source_file=ferment_003_sourdough_focaccia.md
+     section=Method  block_type=prose
+     text: Recipe: Sourdough Focaccia (recipe_id: ferment_003) Section: Method Oil the tray generously, tip the dough in without deflating it, and spread it gently towards the corners. If it springs back, wait 20 minutes and try again rather than forcing it. Cold retard in the refrigerator for 12 hours. Bring the tray to room tem...
+
+  5. chunk_id=ferment_001__ingredients__0
+     distance=0.5775  recipe_id=ferment_001  source_file=ferment_001_country_sourdough_2kg.md
+     section=Ingredients  block_type=table
+     text: Recipe: 2kg Country Sourdough Loaf (recipe_id: ferment_001) Section: Ingredients Total flour weight is 2000 g and all baker's percentages below are calculated against that total flour weight. Final hydration is 80%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1700 g | 85% | | Wholemea...
+
+  hit_recipe@5 : PASS
+  answer_in@5  : PASS
+
+==============================================================================
+Q3  |  Strategy B - structure-aware chunker
+collection: fermentation_structure_aware
+==============================================================================
+Question        : What baker's percentage of butter is used in the sourdough brioche?
+Expected answer : 40%, which is 200 g of unsalted butter
+Expected recipe : ferment_004
+Expected section: Ingredients
+Table-row question: True
+------------------------------------------------------------------------------
+  1. chunk_id=ferment_004__ingredients__0  <== EXPECTED RECIPE
+     distance=0.4065  recipe_id=ferment_004  source_file=ferment_004_sourdough_brioche.md
+     section=Ingredients  block_type=table
+     text: Recipe: Sourdough Brioche (recipe_id: ferment_004) Section: Ingredients Baker's percentages are calculated against the 500 g of strong white flour. This is an enriched dough, so the fat and egg percentages are high. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 500 g | 100% | | Whole mi...
+
+  2. chunk_id=ferment_004__ingredients__1  <== EXPECTED RECIPE
+     distance=0.4827  recipe_id=ferment_004  source_file=ferment_004_sourdough_brioche.md
+     section=Ingredients  block_type=prose
+     text: Recipe: Sourdough Brioche (recipe_id: ferment_004) Section: Ingredients Total dough weight is 1220 g, which makes two loaves in 900 g tins....
+
+  3. chunk_id=ferment_004__method__0  <== EXPECTED RECIPE
+     distance=0.5043  recipe_id=ferment_004  source_file=ferment_004_sourdough_brioche.md
+     section=Method  block_type=prose
+     text: Recipe: Sourdough Brioche (recipe_id: ferment_004) Section: Method Mix the flour, cold milk, eggs, sugar and levain in a stand mixer with the dough hook on low for 4 minutes until a shaggy dough forms. Add the fine sea salt and mix on medium for a further 8 minutes until the dough is smooth and pulls cleanly from the s...
+
+  4. chunk_id=ferment_004__method__1  <== EXPECTED RECIPE
+     distance=0.5388  recipe_id=ferment_004  source_file=ferment_004_sourdough_brioche.md
+     section=Method  block_type=prose
+     text: Recipe: Sourdough Brioche (recipe_id: ferment_004) Section: Method Bulk ferment for 5 to 6 hours at 22C, then cold retard for 14 to 18 hours at 4C. Enriched sourdough is very difficult to shape at room temperature, so the cold retard is a handling step as much as a flavour step. Divide, shape into four balls per tin, a...
+
+  5. chunk_id=ferment_004__allergen_note__0  <== EXPECTED RECIPE
+     distance=0.5541  recipe_id=ferment_004  source_file=ferment_004_sourdough_brioche.md
+     section=Allergen Note  block_type=prose
+     text: Recipe: Sourdough Brioche (recipe_id: ferment_004) Section: Allergen Note Contains wheat and rye, therefore contains gluten. Contains milk and butter, therefore contains dairy. Contains egg, both in the dough and in the egg wash. Contains no nuts. Suitable for vegetarians but not for vegans....
+
+  hit_recipe@5 : PASS
+  answer_in@5  : PASS
+
+==============================================================================
+Q4  |  Strategy B - structure-aware chunker
+collection: fermentation_structure_aware
+==============================================================================
+Question        : How much gochugaru does the traditional napa cabbage kimchi use, and what percentage of the cabbage weight is that?
+Expected answer : 100 g of gochugaru, which is 5% of the cabbage weight
+Expected recipe : ferment_005
+Expected section: Ingredients
+Table-row question: True
+------------------------------------------------------------------------------
+  1. chunk_id=ferment_005__ingredients__0  <== EXPECTED RECIPE
+     distance=0.4035  recipe_id=ferment_005  source_file=ferment_005_traditional_napa_kimchi.md
+     section=Ingredients  block_type=table
+     text: Recipe: Traditional Napa Cabbage Kimchi (recipe_id: ferment_005) Section: Ingredients Percentages here are calculated against the 2000 g of prepared napa cabbage rather than against flour, since this is a vegetable ferment rather than a dough. | Ingredient | Weight | Percentage of cabbage | |---|---|---| | Napa cabbage...
+
+  2. chunk_id=ferment_005__ingredients__1  <== EXPECTED RECIPE
+     distance=0.4691  recipe_id=ferment_005  source_file=ferment_005_traditional_napa_kimchi.md
+     section=Ingredients  block_type=prose
+     text: Recipe: Traditional Napa Cabbage Kimchi (recipe_id: ferment_005) Section: Ingredients Total yield is approximately 2.9 kg of finished kimchi....
+
+  3. chunk_id=ferment_006__ingredients__0
+     distance=0.4737  recipe_id=ferment_006  source_file=ferment_006_vegan_napa_kimchi.md
+     section=Ingredients  block_type=table
+     text: Recipe: Vegan Napa Cabbage Kimchi (recipe_id: ferment_006) Section: Ingredients Percentages are calculated against the 2000 g of prepared napa cabbage. The salted shrimp and anchovy fish sauce of the traditional card are replaced here by a shiitake and kombu umami base. | Ingredient | Weight | Percentage of cabbage | |...
+
+  4. chunk_id=ferment_006__ingredients__1
+     distance=0.5239  recipe_id=ferment_006  source_file=ferment_006_vegan_napa_kimchi.md
+     section=Ingredients  block_type=prose
+     text: Recipe: Vegan Napa Cabbage Kimchi (recipe_id: ferment_006) Section: Ingredients Total yield is approximately 2.85 kg of finished kimchi....
+
+  5. chunk_id=ferment_005__method__1  <== EXPECTED RECIPE
+     distance=0.525  recipe_id=ferment_005  source_file=ferment_005_traditional_napa_kimchi.md
+     section=Method  block_type=prose
+     text: Recipe: Traditional Napa Cabbage Kimchi (recipe_id: ferment_005) Section: Method Make the rice porridge by whisking the glutinous rice flour into 250 ml of cold water, heating gently for 5 minutes until it thickens, then stirring in the sugar and cooling completely. The porridge feeds the lactobacillus and speeds the e...
+
+  hit_recipe@5 : PASS
+  answer_in@5  : PASS
+
+==============================================================================
+Q5  |  Strategy B - structure-aware chunker
+collection: fermentation_structure_aware
+==============================================================================
+Question        : At what temperature and for how long is the 2kg country sourdough baked with the lid on?
+Expected answer : 250C for 20 minutes with the lid on, then 230C for a further 25 minutes with the lid off
+Expected recipe : ferment_001
+Expected section: Method
+Table-row question: False
+------------------------------------------------------------------------------
+  1. chunk_id=ferment_001__method__1  <== EXPECTED RECIPE
+     distance=0.3682  recipe_id=ferment_001  source_file=ferment_001_country_sourdough_2kg.md
+     section=Method  block_type=prose
+     text: Recipe: 2kg Country Sourdough Loaf (recipe_id: ferment_001) Section: Method Bulk ferment for 4 to 5 hours at 24C, performing a set of coil folds every 45 minutes for the first three hours. The bulk is finished when the dough has risen by roughly 50%, feels aerated, and shows a domed surface with visible bubbles at the ...
+
+  2. chunk_id=ferment_001__method__2  <== EXPECTED RECIPE
+     distance=0.4849  recipe_id=ferment_001  source_file=ferment_001_country_sourdough_2kg.md
+     section=Method  block_type=prose
+     text: Recipe: 2kg Country Sourdough Loaf (recipe_id: ferment_001) Section: Method Cool on a rack for at least 2 hours before cutting....
+
+  3. chunk_id=ferment_001__ingredients__1  <== EXPECTED RECIPE
+     distance=0.5115  recipe_id=ferment_001  source_file=ferment_001_country_sourdough_2kg.md
+     section=Ingredients  block_type=prose
+     text: Recipe: 2kg Country Sourdough Loaf (recipe_id: ferment_001) Section: Ingredients Total dough weight is 4040 g, which divides into two loaves of roughly 2020 g each....
+
+  4. chunk_id=ferment_001__method__0  <== EXPECTED RECIPE
+     distance=0.5209  recipe_id=ferment_001  source_file=ferment_001_country_sourdough_2kg.md
+     section=Method  block_type=prose
+     text: Recipe: 2kg Country Sourdough Loaf (recipe_id: ferment_001) Section: Method Autolyse first. Combine the strong white flour, the wholemeal flour and 1500 g of the water in a large tub, mixing until no dry flour remains, then cover and rest for 60 minutes. Hold back the remaining 100 g of water for the salt stage. Add th...
+
+  5. chunk_id=ferment_001__ingredients__0  <== EXPECTED RECIPE
+     distance=0.5355  recipe_id=ferment_001  source_file=ferment_001_country_sourdough_2kg.md
+     section=Ingredients  block_type=table
+     text: Recipe: 2kg Country Sourdough Loaf (recipe_id: ferment_001) Section: Ingredients Total flour weight is 2000 g and all baker's percentages below are calculated against that total flour weight. Final hydration is 80%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1700 g | 85% | | Wholemea...
+
+  hit_recipe@5 : PASS
+  answer_in@5  : PASS
+
+==============================================================================
+Q6  |  Strategy B - structure-aware chunker
+collection: fermentation_structure_aware
+==============================================================================
+Question        : How long does the rye levain starter take to ripen and at what temperature?
+Expected answer : 8 to 12 hours at 22 to 24C
+Expected recipe : ferment_002
+Expected section: Method
+Table-row question: False
+------------------------------------------------------------------------------
+  1. chunk_id=ferment_002__method__1  <== EXPECTED RECIPE
+     distance=0.3721  recipe_id=ferment_002  source_file=ferment_002_rye_levain_starter.md
+     section=Method  block_type=prose
+     text: Recipe: Rye Levain Starter (recipe_id: ferment_002) Section: Method Cover loosely and ferment for 8 to 12 hours at 22 to 24C. The levain is ripe when it has at least doubled from the elastic band mark, the surface is domed and covered in fine bubbles, and it smells sharply sour with a faint acetone note. A levain that ...
+
+  2. chunk_id=ferment_002__method__0  <== EXPECTED RECIPE
+     distance=0.4938  recipe_id=ferment_002  source_file=ferment_002_rye_levain_starter.md
+     section=Method  block_type=prose
+     text: Recipe: Rye Levain Starter (recipe_id: ferment_002) Section: Method Weigh the mature starter into a clear straight-sided jar and mark the level with an elastic band so the rise can be judged by eye rather than by guesswork. Add the water at 26C and stir until the starter is dispersed and the liquid turns cloudy. Add th...
+
+  3. chunk_id=ferment_002__ingredients__0  <== EXPECTED RECIPE
+     distance=0.5287  recipe_id=ferment_002  source_file=ferment_002_rye_levain_starter.md
+     section=Ingredients  block_type=table
+     text: Recipe: Rye Levain Starter (recipe_id: ferment_002) Section: Ingredients This is a 100% hydration levain, meaning the water weight equals the flour weight. Baker's percentages are calculated against the 100 g of rye flour. | Ingredient | Weight | Baker's % | |---|---|---| | Wholegrain rye flour | 100 g | 100% | | Water...
+
+  4. chunk_id=ferment_002__ingredients__1  <== EXPECTED RECIPE
+     distance=0.5298  recipe_id=ferment_002  source_file=ferment_002_rye_levain_starter.md
+     section=Ingredients  block_type=prose
+     text: Recipe: Rye Levain Starter (recipe_id: ferment_002) Section: Ingredients Total levain yield is 220 g, which is enough to build the 400 g of levain required by the 2kg Country Sourdough after one further refreshment....
+
+  5. chunk_id=ferment_002__allergen_note__0  <== EXPECTED RECIPE
+     distance=0.5633  recipe_id=ferment_002  source_file=ferment_002_rye_levain_starter.md
+     section=Allergen Note  block_type=prose
+     text: Recipe: Rye Levain Starter (recipe_id: ferment_002) Section: Allergen Note Contains rye, therefore contains gluten. Contains no dairy, no egg and no nuts. Suitable for vegans....
+
+  hit_recipe@5 : PASS
+  answer_in@5  : PASS
+
+==============================================================================
+Q7  |  Strategy B - structure-aware chunker
+collection: fermentation_structure_aware
+==============================================================================
+Question        : In the vegan kimchi, what replaces the salted shrimp and the anchovy fish sauce?
+Expected answer : A shiitake and kombu stock plus tamari, which supply the glutamates the fermented seafood would otherwise provide
+Expected recipe : ferment_006
+Expected section: Method
+Table-row question: False
+------------------------------------------------------------------------------
+  1. chunk_id=ferment_005__allergen_note__0
+     distance=0.465  recipe_id=ferment_005  source_file=ferment_005_traditional_napa_kimchi.md
+     section=Allergen Note  block_type=prose
+     text: Recipe: Traditional Napa Cabbage Kimchi (recipe_id: ferment_005) Section: Allergen Note Contains fish in the form of anchovy fish sauce and contains crustacean shellfish in the form of salted fermented shrimp. Not suitable for vegetarians or vegans. Contains no dairy, no egg, no nuts and no gluten. Despite its name, gl...
+
+  2. chunk_id=ferment_006__ingredients__0  <== EXPECTED RECIPE
+     distance=0.5439  recipe_id=ferment_006  source_file=ferment_006_vegan_napa_kimchi.md
+     section=Ingredients  block_type=table
+     text: Recipe: Vegan Napa Cabbage Kimchi (recipe_id: ferment_006) Section: Ingredients Percentages are calculated against the 2000 g of prepared napa cabbage. The salted shrimp and anchovy fish sauce of the traditional card are replaced here by a shiitake and kombu umami base. | Ingredient | Weight | Percentage of cabbage | |...
+
+  3. chunk_id=ferment_006__allergen_note__0  <== EXPECTED RECIPE
+     distance=0.5497  recipe_id=ferment_006  source_file=ferment_006_vegan_napa_kimchi.md
+     section=Allergen Note  block_type=prose
+     text: Recipe: Vegan Napa Cabbage Kimchi (recipe_id: ferment_006) Section: Allergen Note Contains no fish, no shellfish, no dairy, no egg, no nuts and no gluten. Tamari is used specifically in place of ordinary soy sauce because ordinary soy sauce is brewed with wheat. Suitable for vegans and vegetarians....
+
+  4. chunk_id=ferment_006__method__1  <== EXPECTED RECIPE
+     distance=0.5675  recipe_id=ferment_006  source_file=ferment_006_vegan_napa_kimchi.md
+     section=Method  block_type=prose
+     text: Recipe: Vegan Napa Cabbage Kimchi (recipe_id: ferment_006) Section: Method This shiitake and kombu stock plus the tamari is what replaces the saeujeot and anchovy fish sauce used on the traditional card. Both supply glutamates, which is the savoury depth the fermented seafood would otherwise provide. Whisk the glutinou...
+
+  5. chunk_id=ferment_006__ingredients__1  <== EXPECTED RECIPE
+     distance=0.5698  recipe_id=ferment_006  source_file=ferment_006_vegan_napa_kimchi.md
+     section=Ingredients  block_type=prose
+     text: Recipe: Vegan Napa Cabbage Kimchi (recipe_id: ferment_006) Section: Ingredients Total yield is approximately 2.85 kg of finished kimchi....
+
+  hit_recipe@5 : PASS
+  answer_in@5  : PASS
+
+==============================================================================
+Q8  |  Strategy B - structure-aware chunker
+collection: fermentation_structure_aware
+==============================================================================
+Question        : Which allergens are declared on the sourdough brioche card?
+Expected answer : Gluten from wheat and rye, dairy from milk and butter, and egg in both the dough and the egg wash. No nuts.
+Expected recipe : ferment_004
+Expected section: Allergen Note
+Table-row question: False
+------------------------------------------------------------------------------
+  1. chunk_id=ferment_004__allergen_note__0  <== EXPECTED RECIPE
+     distance=0.3905  recipe_id=ferment_004  source_file=ferment_004_sourdough_brioche.md
+     section=Allergen Note  block_type=prose
+     text: Recipe: Sourdough Brioche (recipe_id: ferment_004) Section: Allergen Note Contains wheat and rye, therefore contains gluten. Contains milk and butter, therefore contains dairy. Contains egg, both in the dough and in the egg wash. Contains no nuts. Suitable for vegetarians but not for vegans....
+
+  2. chunk_id=ferment_004__ingredients__0  <== EXPECTED RECIPE
+     distance=0.5602  recipe_id=ferment_004  source_file=ferment_004_sourdough_brioche.md
+     section=Ingredients  block_type=table
+     text: Recipe: Sourdough Brioche (recipe_id: ferment_004) Section: Ingredients Baker's percentages are calculated against the 500 g of strong white flour. This is an enriched dough, so the fat and egg percentages are high. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 500 g | 100% | | Whole mi...
+
+  3. chunk_id=ferment_003__allergen_note__0
+     distance=0.5696  recipe_id=ferment_003  source_file=ferment_003_sourdough_focaccia.md
+     section=Allergen Note  block_type=prose
+     text: Recipe: Sourdough Focaccia (recipe_id: ferment_003) Section: Allergen Note Contains wheat and rye, therefore contains gluten. Contains no dairy, no egg and no nuts. Suitable for vegans....
+
+  4. chunk_id=ferment_004__ingredients__1  <== EXPECTED RECIPE
+     distance=0.575  recipe_id=ferment_004  source_file=ferment_004_sourdough_brioche.md
+     section=Ingredients  block_type=prose
+     text: Recipe: Sourdough Brioche (recipe_id: ferment_004) Section: Ingredients Total dough weight is 1220 g, which makes two loaves in 900 g tins....
+
+  5. chunk_id=ferment_001__allergen_note__0
+     distance=0.5758  recipe_id=ferment_001  source_file=ferment_001_country_sourdough_2kg.md
+     section=Allergen Note  block_type=prose
+     text: Recipe: 2kg Country Sourdough Loaf (recipe_id: ferment_001) Section: Allergen Note Contains wheat and rye, therefore contains gluten. Contains no dairy, no egg and no nuts. Suitable for vegans. Produced in a bakery that also handles milk, egg and sesame....
+
+  hit_recipe@5 : PASS
+  answer_in@5  : PASS

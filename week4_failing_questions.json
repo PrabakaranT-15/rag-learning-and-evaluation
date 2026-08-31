@@ -1,0 +1,116 @@
+{
+  "_note": "Week 4 question set, authored against the fermentation_cards content BEFORE running any retrieval (same discipline as eval_questions.json). Targets three deliberately hard patterns for the realistic_structure_aware index (6 cards + 20 fermentation/bread-adjacent distractors): near-duplicate content across ferment_005/ferment_006, rare technical terms that BM25 should catch, and a real same-name distractor (recipe_066_focaccia.md vs ferment_003). Each question also carries a hypothesis (author's prediction BEFORE running anything) - the actual before/after outcome is decided only by running week4_failure_analysis.py.",
+  "_authored_before_retrieval": true,
+  "questions": [
+    {
+      "id": "W1",
+      "question": "According to the float test, how do you know the rye levain starter is ripe?",
+      "expected_answer": "A teaspoon of ripe levain dropped into room temperature water should float rather than sink.",
+      "expected_recipe_id": "ferment_002",
+      "expected_section": "Method",
+      "answer_tokens": [["float", "sink"]],
+      "category": "keyword_exact",
+      "hypothesis": "'float test' is a rare, distinctive phrase used nowhere else in the corpus - expected to be helped by BM25/hybrid if semantic search dilutes it among the other sourdough/levain cards."
+    },
+    {
+      "id": "W2",
+      "question": "What test proves the sourdough brioche dough has been kneaded enough before the butter stage finishes?",
+      "expected_answer": "The windowpane test: a small piece of dough stretched thin should become translucent without tearing.",
+      "expected_recipe_id": "ferment_004",
+      "expected_section": "Method",
+      "answer_tokens": [["windowpane"]],
+      "category": "keyword_exact",
+      "hypothesis": "'windowpane test' is a rare exact phrase - expected to be helped by hybrid."
+    },
+    {
+      "id": "W3",
+      "question": "How much saeujeot does the traditional napa kimchi use, and what percentage of the cabbage weight is that?",
+      "expected_answer": "60 g of saeujeot (salted fermented shrimp), which is 3% of the cabbage weight.",
+      "expected_recipe_id": "ferment_005",
+      "expected_section": "Ingredients",
+      "answer_tokens": [["60 g", "3%"]],
+      "category": "keyword_exact",
+      "hypothesis": "'saeujeot' is a rare term appearing only on ferment_005, but ferment_005 and ferment_006 are near-duplicate documents (same cabbage/salt/gochugaru/radish rows) - risk that semantic search pulls the vegan sibling instead. Expected to be helped by hybrid since the exact term only occurs in ferment_005."
+    },
+    {
+      "id": "W4",
+      "question": "In the vegan napa kimchi, what replaces the salted shrimp and anchovy fish sauce from the traditional recipe, and how much longer does it take to ferment?",
+      "expected_answer": "A shiitake and kombu stock plus tamari, supplying the same glutamates; fermentation takes 2 to 3 days, around a day longer than the traditional version.",
+      "expected_recipe_id": "ferment_006",
+      "expected_section": "Method",
+      "answer_tokens": [["shiitake", "kombu"], ["tamari"]],
+      "category": "contrast",
+      "hypothesis": "Same shape as the already-documented Q7 failure (results.md section 6): the query names the OTHER card's distinctive ingredients ('salted shrimp', 'anchovy fish sauce'), which occur densely in ferment_005's own text. Hybrid/BM25 is NOT expected to fix this - term-overlap scoring can favor the wrong, lexically dense chunk just as much as embedding distance did."
+    },
+    {
+      "id": "W5",
+      "question": "How many days does the traditional napa kimchi ferment at 20C before it goes into the refrigerator?",
+      "expected_answer": "2 days.",
+      "expected_recipe_id": "ferment_005",
+      "expected_section": "Method",
+      "answer_tokens": [["2 days"]],
+      "category": "contrast",
+      "hypothesis": "ferment_006's method explicitly discusses 'the traditional card' and its fermentation time for comparison ('around a day longer than the traditional card requires'), so a query about the traditional recipe's own timing risks pulling the vegan card's comparison sentence instead. Not confidently expected to be fixed by hybrid, since both cards contain the phrase '2 days'/'2 to 3 days' near kimchi vocabulary."
+    },
+    {
+      "id": "W6",
+      "question": "At what oven temperature and for how many minutes is the sourdough focaccia baked?",
+      "expected_answer": "240C for 22 minutes.",
+      "expected_recipe_id": "ferment_003",
+      "expected_section": "Method",
+      "answer_tokens": [["240C", "22 minutes"]],
+      "category": "cross_distractor",
+      "hypothesis": "The realistic index's forced distractor set includes recipe_066_focaccia.md - a real, differently-timed focaccia recipe with the same dish name. Expected to stress whether the retriever pulls the distractor's bake time instead of ferment_003's. Uncertain whether hybrid helps or hurts, since both documents share the word 'focaccia' densely."
+    },
+    {
+      "id": "W7",
+      "question": "What internal temperature should the 2kg country sourdough loaf reach when it's fully baked?",
+      "expected_answer": "96C.",
+      "expected_recipe_id": "ferment_001",
+      "expected_section": "Method",
+      "answer_tokens": [["96C"]],
+      "category": "cross_distractor",
+      "hypothesis": "Baking-temperature questions are generic phrasing shared with many bread distractors (naan, roti, ciabatta, pizza dough) in the realistic index - expected to mostly already pass, included as a control question."
+    },
+    {
+      "id": "W8",
+      "question": "How long does the enriched sourdough brioche dough cold retard for before shaping?",
+      "expected_answer": "14 to 18 hours at 4C.",
+      "expected_recipe_id": "ferment_004",
+      "expected_section": "Method",
+      "answer_tokens": [["14 to 18 hours"]],
+      "category": "cross_distractor",
+      "hypothesis": "Control question - specific numeric answer, no strong lexical overlap with distractors, expected to already pass."
+    },
+    {
+      "id": "W9",
+      "question": "What percentage of the cabbage weight does the gochugaru make up in the vegan napa kimchi?",
+      "expected_answer": "5% (100 g of gochugaru against 2000 g of cabbage).",
+      "expected_recipe_id": "ferment_006",
+      "expected_section": "Ingredients",
+      "answer_tokens": [["5%"]],
+      "category": "keyword_exact",
+      "hypothesis": "The gochugaru row ('Gochugaru (Korean chilli flakes) | 100 g | 5%') is BYTE-IDENTICAL text in both ferment_005 and ferment_006 - nothing in that single row distinguishes which card it belongs to. Only 'vegan' framing elsewhere in the chunk can disambiguate. High risk of wrong_document; uncertain whether hybrid helps, since BM25 on this row alone can't disambiguate either."
+    },
+    {
+      "id": "W10",
+      "question": "What smell and appearance indicate the rye levain has gone past ripe and over-fermented?",
+      "expected_answer": "It has risen and then collapsed back to a flat, watery surface, giving a slack, over-acidified dough.",
+      "expected_recipe_id": "ferment_002",
+      "expected_section": "Method",
+      "answer_tokens": [["collapsed"], ["over-acidified"]],
+      "category": "keyword_exact",
+      "hypothesis": "Paraphrased question (no exact phrase reused from the card) testing whether semantic search alone is enough without needing BM25 - included as a semantic-should-win control."
+    },
+    {
+      "id": "W11",
+      "question": "Which recipe describes a ripe starter as smelling sharply sour with a faint acetone note?",
+      "expected_answer": "The Rye Levain Starter.",
+      "expected_recipe_id": "ferment_002",
+      "expected_section": "Method",
+      "answer_tokens": [["acetone"]],
+      "category": "keyword_exact",
+      "hypothesis": "'acetone' is a single rare, highly distinctive word used nowhere else in the corpus - the clearest exact-term case, expected to be helped by hybrid if it isn't already at rank 1 semantically."
+    }
+  ]
+}

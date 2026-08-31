@@ -1,0 +1,85 @@
+{
+  "answerable": [
+    {
+      "id": "Q1",
+      "question": "What is the exact fine sea salt weight for the 2kg country sourdough?",
+      "answer": "The exact fine sea salt weight for the 2kg Country Sourdough Loaf is 40 g [recipe_id=ferment_001 | chunk_id=ferment_001__ingredients__0 | source_file=ferment_001_country_sourdough_2kg.md].",
+      "citations": [
+        {
+          "chunk_id": "ferment_001__ingredients__0",
+          "resolves": true,
+          "recipe_id_claimed": "ferment_001",
+          "recipe_id_actual": "ferment_001",
+          "recipe_id_matches": true,
+          "source_file_actual": "ferment_001_country_sourdough_2kg.md",
+          "contains_claim": true,
+          "verify_token": "40 g"
+        }
+      ]
+    },
+    {
+      "id": "Q5",
+      "question": "At what temperature and for how long is the 2kg country sourdough baked with the lid on?",
+      "answer": "The 2kg country sourdough is baked at 250C for 20 minutes with the lid on [recipe_id=ferment_001 | chunk_id=ferment_001__method__1 | source_file=ferment_001_country_sourdough_2kg.md].",
+      "citations": [
+        {
+          "chunk_id": "ferment_001__method__1",
+          "resolves": true,
+          "recipe_id_claimed": "ferment_001",
+          "recipe_id_actual": "ferment_001",
+          "recipe_id_matches": true,
+          "source_file_actual": "ferment_001_country_sourdough_2kg.md",
+          "contains_claim": true,
+          "verify_token": "250C"
+        }
+      ]
+    },
+    {
+      "id": "Q7",
+      "question": "In the vegan kimchi, what replaces the salted shrimp and the anchovy fish sauce?",
+      "answer": "In the vegan kimchi, the salted shrimp and anchovy fish sauce are replaced by a shiitake and kombu umami base [recipe_id=ferment_006 | chunk_id=ferment_006__ingredients__0 | source_file=ferment_006_vegan_napa_kimchi.md], specifically a shiitake and kombu stock plus tamari [recipe_id=ferment_006 | chunk_id=ferment_006__method__1 | source_file=ferment_006_vegan_napa_kimchi.md].",
+      "citations": [
+        {
+          "chunk_id": "ferment_006__ingredients__0",
+          "resolves": true,
+          "recipe_id_claimed": "ferment_006",
+          "recipe_id_actual": "ferment_006",
+          "recipe_id_matches": true,
+          "source_file_actual": "ferment_006_vegan_napa_kimchi.md",
+          "contains_claim": true,
+          "verify_token": "kombu"
+        },
+        {
+          "chunk_id": "ferment_006__method__1",
+          "resolves": true,
+          "recipe_id_claimed": "ferment_006",
+          "recipe_id_actual": "ferment_006",
+          "recipe_id_matches": true,
+          "source_file_actual": "ferment_006_vegan_napa_kimchi.md",
+          "contains_claim": true,
+          "verify_token": "kombu"
+        }
+      ]
+    }
+  ],
+  "refusals": [
+    {
+      "id": "U1",
+      "question": "How many calories per 100 g are in the 2kg country sourdough loaf?",
+      "answer": "I cannot answer this from the provided recipe documents.",
+      "refused": true
+    },
+    {
+      "id": "U2",
+      "question": "What is the vitamin C content of the traditional napa cabbage kimchi?",
+      "answer": "I cannot answer this from the provided recipe documents.",
+      "refused": true
+    },
+    {
+      "id": "U3",
+      "question": "What is the glycemic index of the sourdough focaccia?",
+      "answer": "I cannot answer this from the provided recipe documents.",
+      "refused": true
+    }
+  ]
+}

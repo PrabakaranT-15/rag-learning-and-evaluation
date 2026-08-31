@@ -1,0 +1,1488 @@
+{
+  "summary": {
+    "realistic_baseline_500": {
+      "hit_recipe": 8,
+      "answer_in": 8
+    },
+    "realistic_baseline_120": {
+      "hit_recipe": 8,
+      "answer_in": 8
+    },
+    "realistic_structure_aware": {
+      "hit_recipe": 8,
+      "answer_in": 8
+    }
+  },
+  "results": {
+    "realistic_baseline_500": {
+      "Q1": {
+        "rows": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_001_country_sourdough_2kg.md_1_0",
+            "distance": 0.4336,
+            "recipe_id": "ferment_001",
+            "source_file": "ferment_001_country_sourdough_2kg.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": true,
+            "text": "# 2kg Country Sourdough Loaf ## Ingredients Total flour weight is 2000 g and all baker's percentages below are calculated against that total flour weight. Final hydration is 80%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1700 g | 85% | | Wholemeal flour | 300 g | 15% | | Water (28C) | 1600 g | 80% | | Fine sea salt | 40 g | 2% | | Rye levain (100% hydration) | 400 g | 20% | Total dough weight is 4040 g, which divides into two loaves of roughly 2020 g each. ## Method Autolyse first. Combine the strong white flour, the wholemeal flour and 1500 g of the water in a large tub, mixing until no dry flour remains, then cover and rest for 60 minutes. Hold back the remaining 100 g of water for the salt stage. Add the rye levain and squeeze it through the dough until fully dispersed. Rest for 30 minutes. Now add the fine sea salt together with the reserved 100 g of water. The salt goes in after the autolyse and after the levain, never at the start, because salt tightens the gluten network and slows the enzymatic activity the autolyse is meant to encourage. Squeeze and fold until the dough feels smooth and no grittiness remains at the base of the tub. Bulk ferment for 4 to 5 hours at 24C, performing a set of coil folds every 45 minutes for the first three hours. The bulk is finished when the dough has risen by roughly 50%, feels aerated, and shows a domed surface with visible bubbles at the edge of the tub. Divide into two pieces, pre-shape lightly and bench rest for 25 minutes. Shape into boules, place seam side up in floured bannetons, and cold retard in the refrigerator at 4C for 12 to 16 hours. Bake straight from the refrigerator in a preheated cast iron combo cooker. Bake at 250C for 20 minutes with the lid on, then remove the lid, drop the oven to 230C and bake for a further 25 minutes until the crust is deep brown and the internal temperature reaches 96C. Cool on a rack for at least 2 hours before cutting. ## Allergen Note Contains wheat and rye, therefore contains gluten. Contains no dairy, no egg and no nuts. Suitable for vegans. Produced in a bakery that also handles milk, egg and sesame."
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ferment_003_sourdough_focaccia.md_1_0",
+            "distance": 0.5928,
+            "recipe_id": "ferment_003",
+            "source_file": "ferment_003_sourdough_focaccia.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "# Sourdough Focaccia ## Ingredients Baker's percentages are calculated against the 1000 g of strong white flour. Final hydration is 85%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1000 g | 100% | | Water (24C) | 850 g | 85% | | Rye levain (100% hydration) | 250 g | 25% | | Fine sea salt | 22 g | 2.2% | | Extra virgin olive oil | 60 g | 6% | Total dough weight is 2182 g, which fills one 30 x 40 cm tray. ## Method Mix the flour and 800 g of the water until no dry flour remains and rest for 45 minutes. Reserve the last 50 g of water for the salt. Add the levain and mix through, then rest 30 minutes. Add the fine sea salt with the reserved water and squeeze until fully incorporated. Finally drizzle in the olive oil and work it in. The dough will look broken and greasy at first and will come back together after two minutes of folding. Bulk ferment for 3 to 4 hours at 24C with four sets of coil folds spaced 30 minutes apart. At 85% hydration the dough is slack, so use a wet hand and lift rather than stretch. Oil the tray generously, tip the dough in without deflating it, and spread it gently towards the corners. If it springs back, wait 20 minutes and try again rather than forcing it. Cold retard in the refrigerator for 12 hours. Bring the tray to room temperature for 90 minutes before baking. Dimple the surface firmly with oiled fingertips, pressing all the way down to the tray so the dough does not dome, then drizzle with a further tablespoon of olive oil and scatter with flaky salt. Bake at 240C for 22 minutes until the top is deep golden and the underside is crisp when lifted with a spatula. Lift the focaccia straight out of the tray onto a rack so the base does not steam. ## Allergen Note Contains wheat and rye, therefore contains gluten. Contains no dairy, no egg and no nuts. Suitable for vegans."
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ferment_002_rye_levain_starter.md_1_0",
+            "distance": 0.6164,
+            "recipe_id": "ferment_002",
+            "source_file": "ferment_002_rye_levain_starter.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "# Rye Levain Starter ## Ingredients This is a 100% hydration levain, meaning the water weight equals the flour weight. Baker's percentages are calculated against the 100 g of rye flour. | Ingredient | Weight | Baker's % | |---|---|---| | Wholegrain rye flour | 100 g | 100% | | Water (26C) | 100 g | 100% | | Mature sourdough starter | 20 g | 20% | Total levain yield is 220 g, which is enough to build the 400 g of levain required by the 2kg Country Sourdough after one further refreshment. ## Method Weigh the mature starter into a clear straight-sided jar and mark the level with an elastic band so the rise can be judged by eye rather than by guesswork. Add the water at 26C and stir until the starter is dispersed and the liquid turns cloudy. Add the wholegrain rye flour and mix to a thick paste. Rye holds far more water than white flour, so at 100% hydration this will look like a stiff batter rather than a dough. Cover loosely and ferment for 8 to 12 hours at 22 to 24C. The levain is ripe when it has at least doubled from the elastic band mark, the surface is domed and covered in fine bubbles, and it smells sharply sour with a faint acetone note. A levain that has risen and then collapsed back to a flat, watery surface has gone past ripe and will give a slack, over-acidified dough. The float test is a useful confirmation: drop a teaspoon of ripe levain into room temperature water and it should float rather than sink. Refresh at least once every 24 hours if the starter is kept at room temperature, or once a week if it is stored at 4C in the refrigerator. ## Allergen Note Contains rye, therefore contains gluten. Contains no dairy, no egg and no nuts. Suitable for vegans."
+          },
+          {
+            "rank": 4,
+            "chunk_id": "ferment_004_sourdough_brioche.md_1_0",
+            "distance": 0.6381,
+            "recipe_id": "ferment_004",
+            "source_file": "ferment_004_sourdough_brioche.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "# Sourdough Brioche ## Ingredients Baker's percentages are calculated against the 500 g of strong white flour. This is an enriched dough, so the fat and egg percentages are high. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 500 g | 100% | | Whole milk (cold) | 150 g | 30% | | Eggs (about 4 medium) | 200 g | 40% | | Unsalted butter (softened) | 200 g | 40% | | Caster sugar | 60 g | 12% | | Rye levain (100% hydration) | 100 g | 20% | | Fine sea salt | 10 g | 2% | Total dough weight is 1220 g, which makes two loaves in 900 g tins. ## Method Mix the flour, cold milk, eggs, sugar and levain in a stand mixer with the dough hook on low for 4 minutes until a shaggy dough forms. Add the fine sea salt and mix on medium for a further 8 minutes until the dough is smooth and pulls cleanly from the sides of the bowl. Only now begin adding the softened butter, roughly 50 g at a time, waiting until each addition has fully disappeared before adding the next. The butter goes in last and gradually, because adding it at the start coats the flour in fat and prevents the gluten network from developing at all. Expect this stage to take 10 to 12 minutes. The dough is ready when it passes the windowpane test: a small piece stretched thin should become translucent without tearing. Bulk ferment for 5 to 6 hours at 22C, then cold retard for 14 to 18 hours at 4C. Enriched sourdough is very difficult to shape at room temperature, so the cold retard is a handling step as much as a flavour step. Divide, shape into four balls per tin, and prove for 4 to 5 hours at 24C until the dough reaches the rim of the tin and springs back slowly when pressed. Egg wash and bake at 180C for 30 minutes until deep golden and the internal temperature reaches 92C. Turn out of the tins immediately to stop the sides collapsing. ## Allergen Note Contains wheat and rye, therefore contains gluten. Contains milk and butter, therefore contains dairy. Contains egg, both in the dough and in the egg wash. Contains no nuts. Suitable for vegetarians but not for vegans."
+          },
+          {
+            "rank": 5,
+            "chunk_id": "recipe_066_focaccia.md_1_0",
+            "distance": 0.6886,
+            "recipe_id": "recipe_066",
+            "source_file": "recipe_066_focaccia.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "# Focaccia ## Description Focaccia is a Ligurian flatbread made from a very wet, high-hydration dough that is dimpled with the fingertips, drenched in olive oil and a salty brine, and baked until the top is golden and the interior is open and airy. The high water content is what produces the large irregular holes, and the brine poured into the dimples is what gives focaccia its characteristic soft, slightly moist crust. It requires patience rather than skill, since the dough is too wet to knead by hand and does most of its work during a long rise. It contains gluten and is naturally vegan. ## Ingredients For the dough: - Strong bread flour - 500g - Water - 400ml, lukewarm - Instant yeast - 7g - Fine salt - 10g - Honey or sugar - 1 teaspoon - Extra virgin olive oil - 60ml, plus more for the tin For the topping brine: - Water - 60ml, lukewarm - Extra virgin olive oil - 45ml - Flaky sea salt - 1.5 teaspoons - Fresh rosemary - 2 sprigs, leaves picked - Cherry tomatoes or olives - a handful (optional) ## Instructions 1. Whisk the yeast and honey into the lukewarm water and let it stand for 5 minutes until it foams. 2. Combine the flour and salt in a large bowl. Pour in the yeast water and 30ml of the olive oil, and mix with a spatula or wet hand until no dry flour remains. The dough will be very wet and sticky, which is correct. 3. Cover and rest for 15 minutes. 4. Instead of kneading, perform a set of stretch and folds: with a wet hand, reach under one side of the dough, stretch it upward and fold it over the centre. Rotate the bowl and repeat four times. 5. Repeat this folding set three more times at 30-minute intervals. The dough will transform from a shaggy mass into a smooth, elastic one. 6. Cover and leave to rise at room temperature for 2 hours, or refrigerate overnight for a much better flavour. It should double and be full of bubbles. 7. Pour 30ml of olive oil into a 30 x 20cm baking tin and spread it over the base and sides. 8. Tip the dough into the tin without deflating it too much. Fold it over itself once, then leave it to relax for 20 minutes. 9. Gently stretch the dough towards the corners of the tin. If it springs back, wait 15 minutes and try again rather than forcing it. 10. Prove uncovered in a warm place for 45 to 60 minutes until visibly puffy and jiggly. 11. Preheat the oven to 220C. Whisk the brine ingredients together. 12. Oil your fingers and press them straight down into the dough all over, right to the bottom of the tin, making deep dimples. This is what stops the focaccia from rising into a loaf. 13. Pour the brine evenly over the surface so it pools in"
+          }
+        ],
+        "hit_recipe": true,
+        "answer_in": true
+      },
+      "Q2": {
+        "rows": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_003_sourdough_focaccia.md_1_0",
+            "distance": 0.4143,
+            "recipe_id": "ferment_003",
+            "source_file": "ferment_003_sourdough_focaccia.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": true,
+            "text": "# Sourdough Focaccia ## Ingredients Baker's percentages are calculated against the 1000 g of strong white flour. Final hydration is 85%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1000 g | 100% | | Water (24C) | 850 g | 85% | | Rye levain (100% hydration) | 250 g | 25% | | Fine sea salt | 22 g | 2.2% | | Extra virgin olive oil | 60 g | 6% | Total dough weight is 2182 g, which fills one 30 x 40 cm tray. ## Method Mix the flour and 800 g of the water until no dry flour remains and rest for 45 minutes. Reserve the last 50 g of water for the salt. Add the levain and mix through, then rest 30 minutes. Add the fine sea salt with the reserved water and squeeze until fully incorporated. Finally drizzle in the olive oil and work it in. The dough will look broken and greasy at first and will come back together after two minutes of folding. Bulk ferment for 3 to 4 hours at 24C with four sets of coil folds spaced 30 minutes apart. At 85% hydration the dough is slack, so use a wet hand and lift rather than stretch. Oil the tray generously, tip the dough in without deflating it, and spread it gently towards the corners. If it springs back, wait 20 minutes and try again rather than forcing it. Cold retard in the refrigerator for 12 hours. Bring the tray to room temperature for 90 minutes before baking. Dimple the surface firmly with oiled fingertips, pressing all the way down to the tray so the dough does not dome, then drizzle with a further tablespoon of olive oil and scatter with flaky salt. Bake at 240C for 22 minutes until the top is deep golden and the underside is crisp when lifted with a spatula. Lift the focaccia straight out of the tray onto a rack so the base does not steam. ## Allergen Note Contains wheat and rye, therefore contains gluten. Contains no dairy, no egg and no nuts. Suitable for vegans."
+          },
+          {
+            "rank": 2,
+            "chunk_id": "recipe_066_focaccia.md_1_0",
+            "distance": 0.5383,
+            "recipe_id": "recipe_066",
+            "source_file": "recipe_066_focaccia.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "# Focaccia ## Description Focaccia is a Ligurian flatbread made from a very wet, high-hydration dough that is dimpled with the fingertips, drenched in olive oil and a salty brine, and baked until the top is golden and the interior is open and airy. The high water content is what produces the large irregular holes, and the brine poured into the dimples is what gives focaccia its characteristic soft, slightly moist crust. It requires patience rather than skill, since the dough is too wet to knead by hand and does most of its work during a long rise. It contains gluten and is naturally vegan. ## Ingredients For the dough: - Strong bread flour - 500g - Water - 400ml, lukewarm - Instant yeast - 7g - Fine salt - 10g - Honey or sugar - 1 teaspoon - Extra virgin olive oil - 60ml, plus more for the tin For the topping brine: - Water - 60ml, lukewarm - Extra virgin olive oil - 45ml - Flaky sea salt - 1.5 teaspoons - Fresh rosemary - 2 sprigs, leaves picked - Cherry tomatoes or olives - a handful (optional) ## Instructions 1. Whisk the yeast and honey into the lukewarm water and let it stand for 5 minutes until it foams. 2. Combine the flour and salt in a large bowl. Pour in the yeast water and 30ml of the olive oil, and mix with a spatula or wet hand until no dry flour remains. The dough will be very wet and sticky, which is correct. 3. Cover and rest for 15 minutes. 4. Instead of kneading, perform a set of stretch and folds: with a wet hand, reach under one side of the dough, stretch it upward and fold it over the centre. Rotate the bowl and repeat four times. 5. Repeat this folding set three more times at 30-minute intervals. The dough will transform from a shaggy mass into a smooth, elastic one. 6. Cover and leave to rise at room temperature for 2 hours, or refrigerate overnight for a much better flavour. It should double and be full of bubbles. 7. Pour 30ml of olive oil into a 30 x 20cm baking tin and spread it over the base and sides. 8. Tip the dough into the tin without deflating it too much. Fold it over itself once, then leave it to relax for 20 minutes. 9. Gently stretch the dough towards the corners of the tin. If it springs back, wait 15 minutes and try again rather than forcing it. 10. Prove uncovered in a warm place for 45 to 60 minutes until visibly puffy and jiggly. 11. Preheat the oven to 220C. Whisk the brine ingredients together. 12. Oil your fingers and press them straight down into the dough all over, right to the bottom of the tin, making deep dimples. This is what stops the focaccia from rising into a loaf. 13. Pour the brine evenly over the surface so it pools in"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "recipe_066_focaccia.md_1_1",
+            "distance": 0.5725,
+            "recipe_id": "recipe_066",
+            "source_file": "recipe_066_focaccia.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "9. Gently stretch the dough towards the corners of the tin. If it springs back, wait 15 minutes and try again rather than forcing it. 10. Prove uncovered in a warm place for 45 to 60 minutes until visibly puffy and jiggly. 11. Preheat the oven to 220C. Whisk the brine ingredients together. 12. Oil your fingers and press them straight down into the dough all over, right to the bottom of the tin, making deep dimples. This is what stops the focaccia from rising into a loaf. 13. Pour the brine evenly over the surface so it pools in the dimples. Scatter over the rosemary and any tomatoes or olives, pressing them in. 14. Bake for 22 to 27 minutes, until the top is deep golden and the underside is crisp when you lift a corner with a spatula. 15. Lift the focaccia out of the tin immediately onto a rack so the base does not steam and go soft. Cool for at least 15 minutes before cutting. ## Tips - Resist adding flour to the sticky dough; the high hydration is what creates the open crumb. - Dimple firmly, all the way down to the tin, or the surface will dome. - The brine looks like too much liquid but is absorbed during baking and keeps the crumb moist. - An overnight cold rise gives a noticeably better flavour and a more open structure. ## Variations - Focaccia Genovese: the classic plain version with just oil, salt and brine. - Focaccia con Cipolle: topped with thinly sliced onions softened in oil. - Focaccia Barese: topped with cherry tomatoes and olives, pressed deep into the dough. - Sweet focaccia: brushed with oil and sugar and topped with grapes, a harvest speciality. ## Substitutions - Plain flour can replace bread flour, though the crumb will be less chewy. - Dried rosemary (1 teaspoon) can replace fresh. - Any good olive oil works, but this is a bread built on olive oil, so use one you like the taste of. - Gluten-free bread flour blends can be used with a 10 percent reduction in water. ## Serving Suggestions Serve focaccia warm or at room temperature, cut into squares, as part of an antipasto spread, alongside soup, or split horizontally as sandwich bread. In Liguria it is eaten for breakfast dipped in cappuccino. It is also excellent served with a bowl of good olive oil and balsamic vinegar. ## Storage Focaccia is at its best on the day it is baked. Store it wrapped in a paper bag or loosely in foil at room temperature for up to 2 days; refrigeration makes it stale quickly. Refresh it in a 180C oven for 5 minutes. It freezes well for up to 2 months, either whole or in slices; reheat directly from frozen at 180C for 10 minutes. ## Nutrition Approximate values per serving: - Calories: 330 kcal - Protein: 7 g - Carbohydrates: 48 g - Fat: 12 g - Fiber: 2 g"
+          },
+          {
+            "rank": 4,
+            "chunk_id": "recipe_066_focaccia.md_1_2",
+            "distance": 0.6065,
+            "recipe_id": "recipe_066",
+            "source_file": "recipe_066_focaccia.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "good olive oil and balsamic vinegar. ## Storage Focaccia is at its best on the day it is baked. Store it wrapped in a paper bag or loosely in foil at room temperature for up to 2 days; refrigeration makes it stale quickly. Refresh it in a 180C oven for 5 minutes. It freezes well for up to 2 months, either whole or in slices; reheat directly from frozen at 180C for 10 minutes. ## Nutrition Approximate values per serving: - Calories: 330 kcal - Protein: 7 g - Carbohydrates: 48 g - Fat: 12 g - Fiber: 2 g These nutrition values are approximate and depend on how much olive oil is absorbed."
+          },
+          {
+            "rank": 5,
+            "chunk_id": "ferment_001_country_sourdough_2kg.md_1_0",
+            "distance": 0.622,
+            "recipe_id": "ferment_001",
+            "source_file": "ferment_001_country_sourdough_2kg.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "# 2kg Country Sourdough Loaf ## Ingredients Total flour weight is 2000 g and all baker's percentages below are calculated against that total flour weight. Final hydration is 80%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1700 g | 85% | | Wholemeal flour | 300 g | 15% | | Water (28C) | 1600 g | 80% | | Fine sea salt | 40 g | 2% | | Rye levain (100% hydration) | 400 g | 20% | Total dough weight is 4040 g, which divides into two loaves of roughly 2020 g each. ## Method Autolyse first. Combine the strong white flour, the wholemeal flour and 1500 g of the water in a large tub, mixing until no dry flour remains, then cover and rest for 60 minutes. Hold back the remaining 100 g of water for the salt stage. Add the rye levain and squeeze it through the dough until fully dispersed. Rest for 30 minutes. Now add the fine sea salt together with the reserved 100 g of water. The salt goes in after the autolyse and after the levain, never at the start, because salt tightens the gluten network and slows the enzymatic activity the autolyse is meant to encourage. Squeeze and fold until the dough feels smooth and no grittiness remains at the base of the tub. Bulk ferment for 4 to 5 hours at 24C, performing a set of coil folds every 45 minutes for the first three hours. The bulk is finished when the dough has risen by roughly 50%, feels aerated, and shows a domed surface with visible bubbles at the edge of the tub. Divide into two pieces, pre-shape lightly and bench rest for 25 minutes. Shape into boules, place seam side up in floured bannetons, and cold retard in the refrigerator at 4C for 12 to 16 hours. Bake straight from the refrigerator in a preheated cast iron combo cooker. Bake at 250C for 20 minutes with the lid on, then remove the lid, drop the oven to 230C and bake for a further 25 minutes until the crust is deep brown and the internal temperature reaches 96C. Cool on a rack for at least 2 hours before cutting. ## Allergen Note Contains wheat and rye, therefore contains gluten. Contains no dairy, no egg and no nuts. Suitable for vegans. Produced in a bakery that also handles milk, egg and sesame."
+          }
+        ],
+        "hit_recipe": true,
+        "answer_in": true
+      },
+      "Q3": {
+        "rows": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_004_sourdough_brioche.md_1_0",
+            "distance": 0.4056,
+            "recipe_id": "ferment_004",
+            "source_file": "ferment_004_sourdough_brioche.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": true,
+            "text": "# Sourdough Brioche ## Ingredients Baker's percentages are calculated against the 500 g of strong white flour. This is an enriched dough, so the fat and egg percentages are high. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 500 g | 100% | | Whole milk (cold) | 150 g | 30% | | Eggs (about 4 medium) | 200 g | 40% | | Unsalted butter (softened) | 200 g | 40% | | Caster sugar | 60 g | 12% | | Rye levain (100% hydration) | 100 g | 20% | | Fine sea salt | 10 g | 2% | Total dough weight is 1220 g, which makes two loaves in 900 g tins. ## Method Mix the flour, cold milk, eggs, sugar and levain in a stand mixer with the dough hook on low for 4 minutes until a shaggy dough forms. Add the fine sea salt and mix on medium for a further 8 minutes until the dough is smooth and pulls cleanly from the sides of the bowl. Only now begin adding the softened butter, roughly 50 g at a time, waiting until each addition has fully disappeared before adding the next. The butter goes in last and gradually, because adding it at the start coats the flour in fat and prevents the gluten network from developing at all. Expect this stage to take 10 to 12 minutes. The dough is ready when it passes the windowpane test: a small piece stretched thin should become translucent without tearing. Bulk ferment for 5 to 6 hours at 22C, then cold retard for 14 to 18 hours at 4C. Enriched sourdough is very difficult to shape at room temperature, so the cold retard is a handling step as much as a flavour step. Divide, shape into four balls per tin, and prove for 4 to 5 hours at 24C until the dough reaches the rim of the tin and springs back slowly when pressed. Egg wash and bake at 180C for 30 minutes until deep golden and the internal temperature reaches 92C. Turn out of the tins immediately to stop the sides collapsing. ## Allergen Note Contains wheat and rye, therefore contains gluten. Contains milk and butter, therefore contains dairy. Contains egg, both in the dough and in the egg wash. Contains no nuts. Suitable for vegetarians but not for vegans."
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ferment_001_country_sourdough_2kg.md_1_0",
+            "distance": 0.6517,
+            "recipe_id": "ferment_001",
+            "source_file": "ferment_001_country_sourdough_2kg.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "# 2kg Country Sourdough Loaf ## Ingredients Total flour weight is 2000 g and all baker's percentages below are calculated against that total flour weight. Final hydration is 80%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1700 g | 85% | | Wholemeal flour | 300 g | 15% | | Water (28C) | 1600 g | 80% | | Fine sea salt | 40 g | 2% | | Rye levain (100% hydration) | 400 g | 20% | Total dough weight is 4040 g, which divides into two loaves of roughly 2020 g each. ## Method Autolyse first. Combine the strong white flour, the wholemeal flour and 1500 g of the water in a large tub, mixing until no dry flour remains, then cover and rest for 60 minutes. Hold back the remaining 100 g of water for the salt stage. Add the rye levain and squeeze it through the dough until fully dispersed. Rest for 30 minutes. Now add the fine sea salt together with the reserved 100 g of water. The salt goes in after the autolyse and after the levain, never at the start, because salt tightens the gluten network and slows the enzymatic activity the autolyse is meant to encourage. Squeeze and fold until the dough feels smooth and no grittiness remains at the base of the tub. Bulk ferment for 4 to 5 hours at 24C, performing a set of coil folds every 45 minutes for the first three hours. The bulk is finished when the dough has risen by roughly 50%, feels aerated, and shows a domed surface with visible bubbles at the edge of the tub. Divide into two pieces, pre-shape lightly and bench rest for 25 minutes. Shape into boules, place seam side up in floured bannetons, and cold retard in the refrigerator at 4C for 12 to 16 hours. Bake straight from the refrigerator in a preheated cast iron combo cooker. Bake at 250C for 20 minutes with the lid on, then remove the lid, drop the oven to 230C and bake for a further 25 minutes until the crust is deep brown and the internal temperature reaches 96C. Cool on a rack for at least 2 hours before cutting. ## Allergen Note Contains wheat and rye, therefore contains gluten. Contains no dairy, no egg and no nuts. Suitable for vegans. Produced in a bakery that also handles milk, egg and sesame."
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ferment_003_sourdough_focaccia.md_1_0",
+            "distance": 0.6733,
+            "recipe_id": "ferment_003",
+            "source_file": "ferment_003_sourdough_focaccia.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "# Sourdough Focaccia ## Ingredients Baker's percentages are calculated against the 1000 g of strong white flour. Final hydration is 85%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1000 g | 100% | | Water (24C) | 850 g | 85% | | Rye levain (100% hydration) | 250 g | 25% | | Fine sea salt | 22 g | 2.2% | | Extra virgin olive oil | 60 g | 6% | Total dough weight is 2182 g, which fills one 30 x 40 cm tray. ## Method Mix the flour and 800 g of the water until no dry flour remains and rest for 45 minutes. Reserve the last 50 g of water for the salt. Add the levain and mix through, then rest 30 minutes. Add the fine sea salt with the reserved water and squeeze until fully incorporated. Finally drizzle in the olive oil and work it in. The dough will look broken and greasy at first and will come back together after two minutes of folding. Bulk ferment for 3 to 4 hours at 24C with four sets of coil folds spaced 30 minutes apart. At 85% hydration the dough is slack, so use a wet hand and lift rather than stretch. Oil the tray generously, tip the dough in without deflating it, and spread it gently towards the corners. If it springs back, wait 20 minutes and try again rather than forcing it. Cold retard in the refrigerator for 12 hours. Bring the tray to room temperature for 90 minutes before baking. Dimple the surface firmly with oiled fingertips, pressing all the way down to the tray so the dough does not dome, then drizzle with a further tablespoon of olive oil and scatter with flaky salt. Bake at 240C for 22 minutes until the top is deep golden and the underside is crisp when lifted with a spatula. Lift the focaccia straight out of the tray onto a rack so the base does not steam. ## Allergen Note Contains wheat and rye, therefore contains gluten. Contains no dairy, no egg and no nuts. Suitable for vegans."
+          },
+          {
+            "rank": 4,
+            "chunk_id": "ferment_002_rye_levain_starter.md_1_0",
+            "distance": 0.6921,
+            "recipe_id": "ferment_002",
+            "source_file": "ferment_002_rye_levain_starter.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "# Rye Levain Starter ## Ingredients This is a 100% hydration levain, meaning the water weight equals the flour weight. Baker's percentages are calculated against the 100 g of rye flour. | Ingredient | Weight | Baker's % | |---|---|---| | Wholegrain rye flour | 100 g | 100% | | Water (26C) | 100 g | 100% | | Mature sourdough starter | 20 g | 20% | Total levain yield is 220 g, which is enough to build the 400 g of levain required by the 2kg Country Sourdough after one further refreshment. ## Method Weigh the mature starter into a clear straight-sided jar and mark the level with an elastic band so the rise can be judged by eye rather than by guesswork. Add the water at 26C and stir until the starter is dispersed and the liquid turns cloudy. Add the wholegrain rye flour and mix to a thick paste. Rye holds far more water than white flour, so at 100% hydration this will look like a stiff batter rather than a dough. Cover loosely and ferment for 8 to 12 hours at 22 to 24C. The levain is ripe when it has at least doubled from the elastic band mark, the surface is domed and covered in fine bubbles, and it smells sharply sour with a faint acetone note. A levain that has risen and then collapsed back to a flat, watery surface has gone past ripe and will give a slack, over-acidified dough. The float test is a useful confirmation: drop a teaspoon of ripe levain into room temperature water and it should float rather than sink. Refresh at least once every 24 hours if the starter is kept at room temperature, or once a week if it is stored at 4C in the refrigerator. ## Allergen Note Contains rye, therefore contains gluten. Contains no dairy, no egg and no nuts. Suitable for vegans."
+          },
+          {
+            "rank": 5,
+            "chunk_id": "recipe_067_ciabatta.md_1_1",
+            "distance": 0.7812,
+            "recipe_id": "recipe_067",
+            "source_file": "recipe_067_ciabatta.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "couche or a parchment-lined tray, handling them like a delicate parcel. Do not shape or roll them. 10. Prove for 45 minutes, uncovered, while the oven heats to 240C with a baking stone or heavy tray inside and a metal tray on the bottom shelf. 11. Slide the loaves onto the hot stone. Pour a cup of boiling water into the bottom tray to create steam and close the door quickly. Steam is what gives ciabatta its thin, crisp crust. 12. Bake for 12 minutes with steam, then remove the water tray and bake for a further 10 to 13 minutes, until deep golden and hollow-sounding when tapped underneath. 13. Cool completely on a wire rack for at least 45 minutes before cutting; cutting hot ciabatta compresses the crumb. ## Tips - The biga must be given its full 12 to 16 hours; this is the main source of flavour. - Use plenty of flour on the work surface, since the dough is far too wet to handle otherwise. - Handle the proved dough as little as possible so the gas bubbles survive into the bake. - Steam in the first half of the bake is essential for the crust. ## Variations - Ciabatta with olives: fold in 100g of chopped olives during the last stretch and fold. - Whole wheat ciabatta: replace 100g of the final flour with whole wheat for a nuttier loaf. - Ciabatta rolls (ciabattine): cut the dough into 8 small squares and bake for 15 minutes. - Herb ciabatta: add rosemary and thyme to the final dough. ## Substitutions - Plain flour can be used but produces a less chewy, more cake-like crumb. - The biga can be replaced with 200g of mature sourdough starter, with the yeast reduced by half. - Olive oil can be omitted for a leaner, more traditional crumb. - Instant yeast can be replaced with double the weight of fresh yeast. ## Serving Suggestions Serve ciabatta with olive oil and balsamic vinegar for dipping, alongside soups and stews, or split for panini and sandwiches, where its sturdy crust and airy crumb work particularly well. It is also excellent toasted for bruschetta. ## Storage Store ciabatta cut side down on a board or in a paper bag at room temperature for up to 2 days; a plastic bag softens the crust. Never refrigerate bread, which accelerates staling. Refresh a stale loaf by spritzing it with water and baking at 200C for 6 minutes. Ciabatta freezes well for 3 months, whole or sliced, and can be toasted straight from frozen. ## Nutrition Approximate values per serving: - Calories: 245 kcal - Protein: 8 g - Carbohydrates: 47 g - Fat: 3 g - Fiber: 2 g These nutrition values are approximate and assume the loaf is divided into eight portions."
+          }
+        ],
+        "hit_recipe": true,
+        "answer_in": true
+      },
+      "Q4": {
+        "rows": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_005_traditional_napa_kimchi.md_1_0",
+            "distance": 0.4156,
+            "recipe_id": "ferment_005",
+            "source_file": "ferment_005_traditional_napa_kimchi.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": true,
+            "text": "# Traditional Napa Cabbage Kimchi ## Ingredients Percentages here are calculated against the 2000 g of prepared napa cabbage rather than against flour, since this is a vegetable ferment rather than a dough. | Ingredient | Weight | Percentage of cabbage | |---|---|---| | Napa cabbage | 2000 g | 100% | | Coarse sea salt (for brining) | 160 g | 8% | | Gochugaru (Korean chilli flakes) | 100 g | 5% | | Korean radish, julienned | 400 g | 20% | | Garlic, minced | 60 g | 3% | | Ginger, grated | 20 g | 1% | | Saeujeot (salted fermented shrimp) | 60 g | 3% | | Anchovy fish sauce | 60 g | 3% | | Glutinous rice flour | 30 g | 1.5% | | Caster sugar | 20 g | 1% | Total yield is approximately 2.9 kg of finished kimchi. ## Method Quarter the cabbage lengthwise keeping the core attached, then brine it using the full 160 g of coarse sea salt, working the salt between the leaves and concentrating it on the thick white stems. Leave for 4 to 6 hours, turning every 2 hours. The cabbage is correctly brined when a thick white stem bends into a U shape without snapping. This bend test matters more than the clock, because cabbage size and moisture content vary considerably between heads. Rinse three times in cold water and drain cut side down for at least one hour. Residual water dilutes the paste and can spoil the ferment. Make the rice porridge by whisking the glutinous rice flour into 250 ml of cold water, heating gently for 5 minutes until it thickens, then stirring in the sugar and cooling completely. The porridge feeds the lactobacillus and speeds the early fermentation. Combine the cooled porridge with the gochugaru and let it stand for 10 minutes so the chilli flakes bloom, then mix in the garlic, ginger, saeujeot and anchovy fish sauce. Fold through the julienned radish. Wearing gloves, spread the paste over every leaf, working from the stem end outward. Pack into a jar, pressing down firmly to eliminate air pockets, and leave 5 cm of headspace. Ferment at 20C for 2 days until bubbles appear and the smell turns sour, then transfer to the refrigerator at 4C. The kimchi is edible immediately but reaches its best flavour after 2 weeks. ## Allergen Note Contains fish in the form of anchovy fish sauce and contains crustacean shellfish in the form of salted fermented shrimp. Not suitable for vegetarians or vegans. Contains no dairy, no egg, no nuts and no gluten. Despite its name, glutinous rice flour contains no gluten."
+          },
+          {
+            "rank": 2,
+            "chunk_id": "recipe_169_napa_cabbage_kimchi.md_1_0",
+            "distance": 0.4597,
+            "recipe_id": "recipe_169",
+            "source_file": "recipe_169_napa_cabbage_kimchi.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "# Napa Cabbage Kimchi ## Description Baechu Kimchi is the fermented napa cabbage that appears at every Korean meal. Cabbage is salted to draw out water, then coated in a paste of gochugaru, garlic, ginger, fish sauce and salted shrimp, and left to ferment. The salting stage is the one that determines everything: too little and the kimchi goes soft and watery, too much and it is inedibly salty. A rice flour porridge in the paste feeds the lactobacillus and speeds fermentation. It contains fish and shellfish, and is gluten-free. ## Ingredients For salting: - Napa cabbage - 2 large heads (about 3kg) - Coarse sea salt - 150g - Water - 2 litres For the rice porridge: - Glutinous rice flour - 2 tablespoons - Water - 250ml - Sugar - 1 tablespoon For the kimchi paste: - Gochugaru (Korean chilli flakes) - 100g - Garlic - 20 cloves, minced - Ginger - 40g, grated - Onion - 1, blended - Fish sauce - 80ml - Salted fermented shrimp (saeujeot) - 3 tablespoons, minced - Korean pear or apple - 1, grated For the vegetables: - Korean radish (mu) or daikon - 500g, julienned - Spring onions - 8, cut into 4cm lengths - Garlic chives - a bunch (optional) - Carrot - 1, julienned ## Instructions 1. Cut each cabbage lengthwise into quarters, keeping the core attached so the leaves stay joined. 2. Dissolve 100g of the salt in 2 litres of water and dip each quarter in it. Then sprinkle the remaining salt between the leaves, concentrating on the thick white stems, which need more salt than the leafy parts. 3. Lay the quarters in a large tub, cut side up, and leave for 4 to 6 hours, turning them every 2 hours so they salt evenly. 4. The cabbage is properly salted when the thick white stem bends into a U shape without snapping. This test matters more than the clock, since cabbages vary in size and moisture. 5. Rinse the cabbage three times in cold water, gently spreading the leaves to wash out the salt from between them. 6. Drain cut side down in a colander for at least 1 hour. The cabbage must be well drained, since residual water dilutes the paste and can spoil the fermentation. 7. Make the rice porridge: whisk the glutinous rice flour into the cold water, then heat gently, stirring, for 5 minutes until it thickens into a runny paste. Stir in the sugar and cool completely. 8. Combine the cooled porridge with the gochugaru and let it sit for 10 minutes so the chilli flakes hydrate and bloom into a deep red paste. 9. Add the garlic, ginger, blended onion, fish sauce, salted shrimp and grated pear. Mix into a thick paste. 10. Fold in the julienned radish, carrot, spring onions and garlic chives, which will soften and release liquid into the paste. 11. Wearing gloves, take a cabbage quarter and spread the paste over every leaf, working"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ferment_006_vegan_napa_kimchi.md_1_0",
+            "distance": 0.5007,
+            "recipe_id": "ferment_006",
+            "source_file": "ferment_006_vegan_napa_kimchi.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "# Vegan Napa Cabbage Kimchi ## Ingredients Percentages are calculated against the 2000 g of prepared napa cabbage. The salted shrimp and anchovy fish sauce of the traditional card are replaced here by a shiitake and kombu umami base. | Ingredient | Weight | Percentage of cabbage | |---|---|---| | Napa cabbage | 2000 g | 100% | | Coarse sea salt (for brining) | 160 g | 8% | | Gochugaru (Korean chilli flakes) | 100 g | 5% | | Korean radish, julienned | 400 g | 20% | | Garlic, minced | 60 g | 3% | | Ginger, grated | 20 g | 1% | | Dried shiitake mushrooms | 30 g | 1.5% | | Kombu (dried kelp) | 10 g | 0.5% | | Tamari (gluten-free soy sauce) | 50 g | 2.5% | | Glutinous rice flour | 30 g | 1.5% | | Caster sugar | 20 g | 1% | Total yield is approximately 2.85 kg of finished kimchi. ## Method Brine the quartered cabbage with the full 160 g of coarse sea salt for 4 to 6 hours, turning every 2 hours, then apply the bend test: a thick white stem should bend into a U without snapping. Rinse three times and drain cut side down for one hour. Build the umami base while the cabbage brines. Simmer the dried shiitake and the kombu in 400 ml of water for 20 minutes, then remove the kombu before it turns slimy and simmer the shiitake for a further 10 minutes. Strain, reserving 250 ml of the liquid, and finely chop the rehydrated shiitake caps to fold into the paste. This shiitake and kombu stock plus the tamari is what replaces the saeujeot and anchovy fish sauce used on the traditional card. Both supply glutamates, which is the savoury depth the fermented seafood would otherwise provide. Whisk the glutinous rice flour into the reserved 250 ml of mushroom stock, heat gently for 5 minutes until thickened, stir in the sugar and cool completely. Mix the cooled porridge with the gochugaru and rest for 10 minutes, then add the garlic, ginger, chopped shiitake and tamari. Fold through the julienned radish. Coat every leaf with the paste, pack into a jar with 5 cm of headspace, and press down until the brine rises above the cabbage. Ferment at 20C for 2 to 3 days, which is around a day longer than the traditional card requires because the seafood ferments in saeujeot give the traditional version a head start. Move to the refrigerator once bubbling and pleasantly sour. ## Allergen Note Contains no fish, no shellfish, no dairy, no egg, no nuts and no gluten. Tamari is used specifically in place of ordinary soy sauce because ordinary soy sauce is brewed with wheat. Suitable for vegans and vegetarians."
+          },
+          {
+            "rank": 4,
+            "chunk_id": "recipe_169_napa_cabbage_kimchi.md_1_1",
+            "distance": 0.5614,
+            "recipe_id": "recipe_169",
+            "source_file": "recipe_169_napa_cabbage_kimchi.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "stirring, for 5 minutes until it thickens into a runny paste. Stir in the sugar and cool completely. 8. Combine the cooled porridge with the gochugaru and let it sit for 10 minutes so the chilli flakes hydrate and bloom into a deep red paste. 9. Add the garlic, ginger, blended onion, fish sauce, salted shrimp and grated pear. Mix into a thick paste. 10. Fold in the julienned radish, carrot, spring onions and garlic chives, which will soften and release liquid into the paste. 11. Wearing gloves, take a cabbage quarter and spread the paste over every leaf, working from the stem end outward. Use less paste on the leafy tips and more on the thick stems. 12. Fold each coated quarter in half and tuck it into a large jar or airtight container, pressing down firmly to eliminate air pockets. 13. Press the surface down so the brine rises above the cabbage, and leave 5cm of headspace, since the kimchi will bubble and expand. 14. Leave at room temperature for 1 to 2 days, until you see bubbles and it smells sour. In warm weather 24 hours is enough. 15. Move to the refrigerator, where fermentation continues slowly. It is ready to eat immediately but is at its best after 2 weeks. ## Tips - The bend test on the cabbage stem is the correct measure of salting, not the timer. - Drain the cabbage thoroughly after rinsing. - Press out all air pockets and keep the cabbage submerged under its brine. - Open the container once a day during the room-temperature stage to release built-up gas. ## Variations - Vegan Kimchi: replace the fish sauce and salted shrimp with soy sauce and a kelp and shiitake stock. - Baek Kimchi: a white, non-spicy version made without gochugaru, suitable for children. - Kkakdugi: made with cubed radish instead of cabbage. - Oi Sobagi: stuffed cucumber kimchi, eaten fresh rather than long fermented. ## Substitutions - Gochugaru cannot be replaced with cayenne or paprika; it is a specific coarse grind with mild heat. - Regular daikon can replace Korean radish. - Apple or nashi pear can replace Korean pear. - Anchovy sauce can replace fish sauce. ## Serving Suggestions Serve kimchi cold as a banchan side dish at every meal, straight from the jar. Fresh kimchi is crisp and good raw, while older sour kimchi is best cooked into jjigae, fried rice or pancakes. Always use clean utensils to take it from the jar so you do not contaminate the batch. ## Storage Kimchi keeps in the refrigerator for 6 months or longer, becoming progressively more sour. Keep it submerged under its brine and press it down after each use. It is not truly spoiled unless it grows mould or smells rotten rather than sour. Do not freeze, as the cabbage collapses. Store it in a sealed container, since the smell permeates everything nearby. ## Nutrition Approximate values per serving (about 100g): - Calories: 35 kcal - Protein: 2"
+          },
+          {
+            "rank": 5,
+            "chunk_id": "recipe_169_napa_cabbage_kimchi.md_1_2",
+            "distance": 0.6429,
+            "recipe_id": "recipe_169",
+            "source_file": "recipe_169_napa_cabbage_kimchi.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "jjigae, fried rice or pancakes. Always use clean utensils to take it from the jar so you do not contaminate the batch. ## Storage Kimchi keeps in the refrigerator for 6 months or longer, becoming progressively more sour. Keep it submerged under its brine and press it down after each use. It is not truly spoiled unless it grows mould or smells rotten rather than sour. Do not freeze, as the cabbage collapses. Store it in a sealed container, since the smell permeates everything nearby. ## Nutrition Approximate values per serving (about 100g): - Calories: 35 kcal - Protein: 2 g - Carbohydrates: 6 g - Fat: 0.5 g - Fiber: 2 g These nutrition values are approximate and vary with the amount of paste used."
+          }
+        ],
+        "hit_recipe": true,
+        "answer_in": true
+      },
+      "Q5": {
+        "rows": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_001_country_sourdough_2kg.md_1_0",
+            "distance": 0.3517,
+            "recipe_id": "ferment_001",
+            "source_file": "ferment_001_country_sourdough_2kg.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": true,
+            "text": "# 2kg Country Sourdough Loaf ## Ingredients Total flour weight is 2000 g and all baker's percentages below are calculated against that total flour weight. Final hydration is 80%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1700 g | 85% | | Wholemeal flour | 300 g | 15% | | Water (28C) | 1600 g | 80% | | Fine sea salt | 40 g | 2% | | Rye levain (100% hydration) | 400 g | 20% | Total dough weight is 4040 g, which divides into two loaves of roughly 2020 g each. ## Method Autolyse first. Combine the strong white flour, the wholemeal flour and 1500 g of the water in a large tub, mixing until no dry flour remains, then cover and rest for 60 minutes. Hold back the remaining 100 g of water for the salt stage. Add the rye levain and squeeze it through the dough until fully dispersed. Rest for 30 minutes. Now add the fine sea salt together with the reserved 100 g of water. The salt goes in after the autolyse and after the levain, never at the start, because salt tightens the gluten network and slows the enzymatic activity the autolyse is meant to encourage. Squeeze and fold until the dough feels smooth and no grittiness remains at the base of the tub. Bulk ferment for 4 to 5 hours at 24C, performing a set of coil folds every 45 minutes for the first three hours. The bulk is finished when the dough has risen by roughly 50%, feels aerated, and shows a domed surface with visible bubbles at the edge of the tub. Divide into two pieces, pre-shape lightly and bench rest for 25 minutes. Shape into boules, place seam side up in floured bannetons, and cold retard in the refrigerator at 4C for 12 to 16 hours. Bake straight from the refrigerator in a preheated cast iron combo cooker. Bake at 250C for 20 minutes with the lid on, then remove the lid, drop the oven to 230C and bake for a further 25 minutes until the crust is deep brown and the internal temperature reaches 96C. Cool on a rack for at least 2 hours before cutting. ## Allergen Note Contains wheat and rye, therefore contains gluten. Contains no dairy, no egg and no nuts. Suitable for vegans. Produced in a bakery that also handles milk, egg and sesame."
+          },
+          {
+            "rank": 2,
+            "chunk_id": "recipe_067_ciabatta.md_1_1",
+            "distance": 0.5991,
+            "recipe_id": "recipe_067",
+            "source_file": "recipe_067_ciabatta.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "couche or a parchment-lined tray, handling them like a delicate parcel. Do not shape or roll them. 10. Prove for 45 minutes, uncovered, while the oven heats to 240C with a baking stone or heavy tray inside and a metal tray on the bottom shelf. 11. Slide the loaves onto the hot stone. Pour a cup of boiling water into the bottom tray to create steam and close the door quickly. Steam is what gives ciabatta its thin, crisp crust. 12. Bake for 12 minutes with steam, then remove the water tray and bake for a further 10 to 13 minutes, until deep golden and hollow-sounding when tapped underneath. 13. Cool completely on a wire rack for at least 45 minutes before cutting; cutting hot ciabatta compresses the crumb. ## Tips - The biga must be given its full 12 to 16 hours; this is the main source of flavour. - Use plenty of flour on the work surface, since the dough is far too wet to handle otherwise. - Handle the proved dough as little as possible so the gas bubbles survive into the bake. - Steam in the first half of the bake is essential for the crust. ## Variations - Ciabatta with olives: fold in 100g of chopped olives during the last stretch and fold. - Whole wheat ciabatta: replace 100g of the final flour with whole wheat for a nuttier loaf. - Ciabatta rolls (ciabattine): cut the dough into 8 small squares and bake for 15 minutes. - Herb ciabatta: add rosemary and thyme to the final dough. ## Substitutions - Plain flour can be used but produces a less chewy, more cake-like crumb. - The biga can be replaced with 200g of mature sourdough starter, with the yeast reduced by half. - Olive oil can be omitted for a leaner, more traditional crumb. - Instant yeast can be replaced with double the weight of fresh yeast. ## Serving Suggestions Serve ciabatta with olive oil and balsamic vinegar for dipping, alongside soups and stews, or split for panini and sandwiches, where its sturdy crust and airy crumb work particularly well. It is also excellent toasted for bruschetta. ## Storage Store ciabatta cut side down on a board or in a paper bag at room temperature for up to 2 days; a plastic bag softens the crust. Never refrigerate bread, which accelerates staling. Refresh a stale loaf by spritzing it with water and baking at 200C for 6 minutes. Ciabatta freezes well for 3 months, whole or sliced, and can be toasted straight from frozen. ## Nutrition Approximate values per serving: - Calories: 245 kcal - Protein: 8 g - Carbohydrates: 47 g - Fat: 3 g - Fiber: 2 g These nutrition values are approximate and assume the loaf is divided into eight portions."
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ferment_002_rye_levain_starter.md_1_0",
+            "distance": 0.6067,
+            "recipe_id": "ferment_002",
+            "source_file": "ferment_002_rye_levain_starter.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "# Rye Levain Starter ## Ingredients This is a 100% hydration levain, meaning the water weight equals the flour weight. Baker's percentages are calculated against the 100 g of rye flour. | Ingredient | Weight | Baker's % | |---|---|---| | Wholegrain rye flour | 100 g | 100% | | Water (26C) | 100 g | 100% | | Mature sourdough starter | 20 g | 20% | Total levain yield is 220 g, which is enough to build the 400 g of levain required by the 2kg Country Sourdough after one further refreshment. ## Method Weigh the mature starter into a clear straight-sided jar and mark the level with an elastic band so the rise can be judged by eye rather than by guesswork. Add the water at 26C and stir until the starter is dispersed and the liquid turns cloudy. Add the wholegrain rye flour and mix to a thick paste. Rye holds far more water than white flour, so at 100% hydration this will look like a stiff batter rather than a dough. Cover loosely and ferment for 8 to 12 hours at 22 to 24C. The levain is ripe when it has at least doubled from the elastic band mark, the surface is domed and covered in fine bubbles, and it smells sharply sour with a faint acetone note. A levain that has risen and then collapsed back to a flat, watery surface has gone past ripe and will give a slack, over-acidified dough. The float test is a useful confirmation: drop a teaspoon of ripe levain into room temperature water and it should float rather than sink. Refresh at least once every 24 hours if the starter is kept at room temperature, or once a week if it is stored at 4C in the refrigerator. ## Allergen Note Contains rye, therefore contains gluten. Contains no dairy, no egg and no nuts. Suitable for vegans."
+          },
+          {
+            "rank": 4,
+            "chunk_id": "ferment_003_sourdough_focaccia.md_1_0",
+            "distance": 0.6092,
+            "recipe_id": "ferment_003",
+            "source_file": "ferment_003_sourdough_focaccia.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "# Sourdough Focaccia ## Ingredients Baker's percentages are calculated against the 1000 g of strong white flour. Final hydration is 85%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1000 g | 100% | | Water (24C) | 850 g | 85% | | Rye levain (100% hydration) | 250 g | 25% | | Fine sea salt | 22 g | 2.2% | | Extra virgin olive oil | 60 g | 6% | Total dough weight is 2182 g, which fills one 30 x 40 cm tray. ## Method Mix the flour and 800 g of the water until no dry flour remains and rest for 45 minutes. Reserve the last 50 g of water for the salt. Add the levain and mix through, then rest 30 minutes. Add the fine sea salt with the reserved water and squeeze until fully incorporated. Finally drizzle in the olive oil and work it in. The dough will look broken and greasy at first and will come back together after two minutes of folding. Bulk ferment for 3 to 4 hours at 24C with four sets of coil folds spaced 30 minutes apart. At 85% hydration the dough is slack, so use a wet hand and lift rather than stretch. Oil the tray generously, tip the dough in without deflating it, and spread it gently towards the corners. If it springs back, wait 20 minutes and try again rather than forcing it. Cold retard in the refrigerator for 12 hours. Bring the tray to room temperature for 90 minutes before baking. Dimple the surface firmly with oiled fingertips, pressing all the way down to the tray so the dough does not dome, then drizzle with a further tablespoon of olive oil and scatter with flaky salt. Bake at 240C for 22 minutes until the top is deep golden and the underside is crisp when lifted with a spatula. Lift the focaccia straight out of the tray onto a rack so the base does not steam. ## Allergen Note Contains wheat and rye, therefore contains gluten. Contains no dairy, no egg and no nuts. Suitable for vegans."
+          },
+          {
+            "rank": 5,
+            "chunk_id": "ferment_004_sourdough_brioche.md_1_0",
+            "distance": 0.6178,
+            "recipe_id": "ferment_004",
+            "source_file": "ferment_004_sourdough_brioche.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "# Sourdough Brioche ## Ingredients Baker's percentages are calculated against the 500 g of strong white flour. This is an enriched dough, so the fat and egg percentages are high. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 500 g | 100% | | Whole milk (cold) | 150 g | 30% | | Eggs (about 4 medium) | 200 g | 40% | | Unsalted butter (softened) | 200 g | 40% | | Caster sugar | 60 g | 12% | | Rye levain (100% hydration) | 100 g | 20% | | Fine sea salt | 10 g | 2% | Total dough weight is 1220 g, which makes two loaves in 900 g tins. ## Method Mix the flour, cold milk, eggs, sugar and levain in a stand mixer with the dough hook on low for 4 minutes until a shaggy dough forms. Add the fine sea salt and mix on medium for a further 8 minutes until the dough is smooth and pulls cleanly from the sides of the bowl. Only now begin adding the softened butter, roughly 50 g at a time, waiting until each addition has fully disappeared before adding the next. The butter goes in last and gradually, because adding it at the start coats the flour in fat and prevents the gluten network from developing at all. Expect this stage to take 10 to 12 minutes. The dough is ready when it passes the windowpane test: a small piece stretched thin should become translucent without tearing. Bulk ferment for 5 to 6 hours at 22C, then cold retard for 14 to 18 hours at 4C. Enriched sourdough is very difficult to shape at room temperature, so the cold retard is a handling step as much as a flavour step. Divide, shape into four balls per tin, and prove for 4 to 5 hours at 24C until the dough reaches the rim of the tin and springs back slowly when pressed. Egg wash and bake at 180C for 30 minutes until deep golden and the internal temperature reaches 92C. Turn out of the tins immediately to stop the sides collapsing. ## Allergen Note Contains wheat and rye, therefore contains gluten. Contains milk and butter, therefore contains dairy. Contains egg, both in the dough and in the egg wash. Contains no nuts. Suitable for vegetarians but not for vegans."
+          }
+        ],
+        "hit_recipe": true,
+        "answer_in": true
+      },
+      "Q6": {
+        "rows": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_002_rye_levain_starter.md_1_0",
+            "distance": 0.3681,
+            "recipe_id": "ferment_002",
+            "source_file": "ferment_002_rye_levain_starter.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": true,
+            "text": "# Rye Levain Starter ## Ingredients This is a 100% hydration levain, meaning the water weight equals the flour weight. Baker's percentages are calculated against the 100 g of rye flour. | Ingredient | Weight | Baker's % | |---|---|---| | Wholegrain rye flour | 100 g | 100% | | Water (26C) | 100 g | 100% | | Mature sourdough starter | 20 g | 20% | Total levain yield is 220 g, which is enough to build the 400 g of levain required by the 2kg Country Sourdough after one further refreshment. ## Method Weigh the mature starter into a clear straight-sided jar and mark the level with an elastic band so the rise can be judged by eye rather than by guesswork. Add the water at 26C and stir until the starter is dispersed and the liquid turns cloudy. Add the wholegrain rye flour and mix to a thick paste. Rye holds far more water than white flour, so at 100% hydration this will look like a stiff batter rather than a dough. Cover loosely and ferment for 8 to 12 hours at 22 to 24C. The levain is ripe when it has at least doubled from the elastic band mark, the surface is domed and covered in fine bubbles, and it smells sharply sour with a faint acetone note. A levain that has risen and then collapsed back to a flat, watery surface has gone past ripe and will give a slack, over-acidified dough. The float test is a useful confirmation: drop a teaspoon of ripe levain into room temperature water and it should float rather than sink. Refresh at least once every 24 hours if the starter is kept at room temperature, or once a week if it is stored at 4C in the refrigerator. ## Allergen Note Contains rye, therefore contains gluten. Contains no dairy, no egg and no nuts. Suitable for vegans."
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ferment_001_country_sourdough_2kg.md_1_0",
+            "distance": 0.5867,
+            "recipe_id": "ferment_001",
+            "source_file": "ferment_001_country_sourdough_2kg.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "# 2kg Country Sourdough Loaf ## Ingredients Total flour weight is 2000 g and all baker's percentages below are calculated against that total flour weight. Final hydration is 80%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1700 g | 85% | | Wholemeal flour | 300 g | 15% | | Water (28C) | 1600 g | 80% | | Fine sea salt | 40 g | 2% | | Rye levain (100% hydration) | 400 g | 20% | Total dough weight is 4040 g, which divides into two loaves of roughly 2020 g each. ## Method Autolyse first. Combine the strong white flour, the wholemeal flour and 1500 g of the water in a large tub, mixing until no dry flour remains, then cover and rest for 60 minutes. Hold back the remaining 100 g of water for the salt stage. Add the rye levain and squeeze it through the dough until fully dispersed. Rest for 30 minutes. Now add the fine sea salt together with the reserved 100 g of water. The salt goes in after the autolyse and after the levain, never at the start, because salt tightens the gluten network and slows the enzymatic activity the autolyse is meant to encourage. Squeeze and fold until the dough feels smooth and no grittiness remains at the base of the tub. Bulk ferment for 4 to 5 hours at 24C, performing a set of coil folds every 45 minutes for the first three hours. The bulk is finished when the dough has risen by roughly 50%, feels aerated, and shows a domed surface with visible bubbles at the edge of the tub. Divide into two pieces, pre-shape lightly and bench rest for 25 minutes. Shape into boules, place seam side up in floured bannetons, and cold retard in the refrigerator at 4C for 12 to 16 hours. Bake straight from the refrigerator in a preheated cast iron combo cooker. Bake at 250C for 20 minutes with the lid on, then remove the lid, drop the oven to 230C and bake for a further 25 minutes until the crust is deep brown and the internal temperature reaches 96C. Cool on a rack for at least 2 hours before cutting. ## Allergen Note Contains wheat and rye, therefore contains gluten. Contains no dairy, no egg and no nuts. Suitable for vegans. Produced in a bakery that also handles milk, egg and sesame."
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ferment_004_sourdough_brioche.md_1_0",
+            "distance": 0.6505,
+            "recipe_id": "ferment_004",
+            "source_file": "ferment_004_sourdough_brioche.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "# Sourdough Brioche ## Ingredients Baker's percentages are calculated against the 500 g of strong white flour. This is an enriched dough, so the fat and egg percentages are high. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 500 g | 100% | | Whole milk (cold) | 150 g | 30% | | Eggs (about 4 medium) | 200 g | 40% | | Unsalted butter (softened) | 200 g | 40% | | Caster sugar | 60 g | 12% | | Rye levain (100% hydration) | 100 g | 20% | | Fine sea salt | 10 g | 2% | Total dough weight is 1220 g, which makes two loaves in 900 g tins. ## Method Mix the flour, cold milk, eggs, sugar and levain in a stand mixer with the dough hook on low for 4 minutes until a shaggy dough forms. Add the fine sea salt and mix on medium for a further 8 minutes until the dough is smooth and pulls cleanly from the sides of the bowl. Only now begin adding the softened butter, roughly 50 g at a time, waiting until each addition has fully disappeared before adding the next. The butter goes in last and gradually, because adding it at the start coats the flour in fat and prevents the gluten network from developing at all. Expect this stage to take 10 to 12 minutes. The dough is ready when it passes the windowpane test: a small piece stretched thin should become translucent without tearing. Bulk ferment for 5 to 6 hours at 22C, then cold retard for 14 to 18 hours at 4C. Enriched sourdough is very difficult to shape at room temperature, so the cold retard is a handling step as much as a flavour step. Divide, shape into four balls per tin, and prove for 4 to 5 hours at 24C until the dough reaches the rim of the tin and springs back slowly when pressed. Egg wash and bake at 180C for 30 minutes until deep golden and the internal temperature reaches 92C. Turn out of the tins immediately to stop the sides collapsing. ## Allergen Note Contains wheat and rye, therefore contains gluten. Contains milk and butter, therefore contains dairy. Contains egg, both in the dough and in the egg wash. Contains no nuts. Suitable for vegetarians but not for vegans."
+          },
+          {
+            "rank": 4,
+            "chunk_id": "ferment_003_sourdough_focaccia.md_1_0",
+            "distance": 0.674,
+            "recipe_id": "ferment_003",
+            "source_file": "ferment_003_sourdough_focaccia.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "# Sourdough Focaccia ## Ingredients Baker's percentages are calculated against the 1000 g of strong white flour. Final hydration is 85%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1000 g | 100% | | Water (24C) | 850 g | 85% | | Rye levain (100% hydration) | 250 g | 25% | | Fine sea salt | 22 g | 2.2% | | Extra virgin olive oil | 60 g | 6% | Total dough weight is 2182 g, which fills one 30 x 40 cm tray. ## Method Mix the flour and 800 g of the water until no dry flour remains and rest for 45 minutes. Reserve the last 50 g of water for the salt. Add the levain and mix through, then rest 30 minutes. Add the fine sea salt with the reserved water and squeeze until fully incorporated. Finally drizzle in the olive oil and work it in. The dough will look broken and greasy at first and will come back together after two minutes of folding. Bulk ferment for 3 to 4 hours at 24C with four sets of coil folds spaced 30 minutes apart. At 85% hydration the dough is slack, so use a wet hand and lift rather than stretch. Oil the tray generously, tip the dough in without deflating it, and spread it gently towards the corners. If it springs back, wait 20 minutes and try again rather than forcing it. Cold retard in the refrigerator for 12 hours. Bring the tray to room temperature for 90 minutes before baking. Dimple the surface firmly with oiled fingertips, pressing all the way down to the tray so the dough does not dome, then drizzle with a further tablespoon of olive oil and scatter with flaky salt. Bake at 240C for 22 minutes until the top is deep golden and the underside is crisp when lifted with a spatula. Lift the focaccia straight out of the tray onto a rack so the base does not steam. ## Allergen Note Contains wheat and rye, therefore contains gluten. Contains no dairy, no egg and no nuts. Suitable for vegans."
+          },
+          {
+            "rank": 5,
+            "chunk_id": "recipe_067_ciabatta.md_1_1",
+            "distance": 0.7507,
+            "recipe_id": "recipe_067",
+            "source_file": "recipe_067_ciabatta.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "couche or a parchment-lined tray, handling them like a delicate parcel. Do not shape or roll them. 10. Prove for 45 minutes, uncovered, while the oven heats to 240C with a baking stone or heavy tray inside and a metal tray on the bottom shelf. 11. Slide the loaves onto the hot stone. Pour a cup of boiling water into the bottom tray to create steam and close the door quickly. Steam is what gives ciabatta its thin, crisp crust. 12. Bake for 12 minutes with steam, then remove the water tray and bake for a further 10 to 13 minutes, until deep golden and hollow-sounding when tapped underneath. 13. Cool completely on a wire rack for at least 45 minutes before cutting; cutting hot ciabatta compresses the crumb. ## Tips - The biga must be given its full 12 to 16 hours; this is the main source of flavour. - Use plenty of flour on the work surface, since the dough is far too wet to handle otherwise. - Handle the proved dough as little as possible so the gas bubbles survive into the bake. - Steam in the first half of the bake is essential for the crust. ## Variations - Ciabatta with olives: fold in 100g of chopped olives during the last stretch and fold. - Whole wheat ciabatta: replace 100g of the final flour with whole wheat for a nuttier loaf. - Ciabatta rolls (ciabattine): cut the dough into 8 small squares and bake for 15 minutes. - Herb ciabatta: add rosemary and thyme to the final dough. ## Substitutions - Plain flour can be used but produces a less chewy, more cake-like crumb. - The biga can be replaced with 200g of mature sourdough starter, with the yeast reduced by half. - Olive oil can be omitted for a leaner, more traditional crumb. - Instant yeast can be replaced with double the weight of fresh yeast. ## Serving Suggestions Serve ciabatta with olive oil and balsamic vinegar for dipping, alongside soups and stews, or split for panini and sandwiches, where its sturdy crust and airy crumb work particularly well. It is also excellent toasted for bruschetta. ## Storage Store ciabatta cut side down on a board or in a paper bag at room temperature for up to 2 days; a plastic bag softens the crust. Never refrigerate bread, which accelerates staling. Refresh a stale loaf by spritzing it with water and baking at 200C for 6 minutes. Ciabatta freezes well for 3 months, whole or sliced, and can be toasted straight from frozen. ## Nutrition Approximate values per serving: - Calories: 245 kcal - Protein: 8 g - Carbohydrates: 47 g - Fat: 3 g - Fiber: 2 g These nutrition values are approximate and assume the loaf is divided into eight portions."
+          }
+        ],
+        "hit_recipe": true,
+        "answer_in": true
+      },
+      "Q7": {
+        "rows": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_006_vegan_napa_kimchi.md_1_0",
+            "distance": 0.4692,
+            "recipe_id": "ferment_006",
+            "source_file": "ferment_006_vegan_napa_kimchi.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": true,
+            "text": "# Vegan Napa Cabbage Kimchi ## Ingredients Percentages are calculated against the 2000 g of prepared napa cabbage. The salted shrimp and anchovy fish sauce of the traditional card are replaced here by a shiitake and kombu umami base. | Ingredient | Weight | Percentage of cabbage | |---|---|---| | Napa cabbage | 2000 g | 100% | | Coarse sea salt (for brining) | 160 g | 8% | | Gochugaru (Korean chilli flakes) | 100 g | 5% | | Korean radish, julienned | 400 g | 20% | | Garlic, minced | 60 g | 3% | | Ginger, grated | 20 g | 1% | | Dried shiitake mushrooms | 30 g | 1.5% | | Kombu (dried kelp) | 10 g | 0.5% | | Tamari (gluten-free soy sauce) | 50 g | 2.5% | | Glutinous rice flour | 30 g | 1.5% | | Caster sugar | 20 g | 1% | Total yield is approximately 2.85 kg of finished kimchi. ## Method Brine the quartered cabbage with the full 160 g of coarse sea salt for 4 to 6 hours, turning every 2 hours, then apply the bend test: a thick white stem should bend into a U without snapping. Rinse three times and drain cut side down for one hour. Build the umami base while the cabbage brines. Simmer the dried shiitake and the kombu in 400 ml of water for 20 minutes, then remove the kombu before it turns slimy and simmer the shiitake for a further 10 minutes. Strain, reserving 250 ml of the liquid, and finely chop the rehydrated shiitake caps to fold into the paste. This shiitake and kombu stock plus the tamari is what replaces the saeujeot and anchovy fish sauce used on the traditional card. Both supply glutamates, which is the savoury depth the fermented seafood would otherwise provide. Whisk the glutinous rice flour into the reserved 250 ml of mushroom stock, heat gently for 5 minutes until thickened, stir in the sugar and cool completely. Mix the cooled porridge with the gochugaru and rest for 10 minutes, then add the garlic, ginger, chopped shiitake and tamari. Fold through the julienned radish. Coat every leaf with the paste, pack into a jar with 5 cm of headspace, and press down until the brine rises above the cabbage. Ferment at 20C for 2 to 3 days, which is around a day longer than the traditional card requires because the seafood ferments in saeujeot give the traditional version a head start. Move to the refrigerator once bubbling and pleasantly sour. ## Allergen Note Contains no fish, no shellfish, no dairy, no egg, no nuts and no gluten. Tamari is used specifically in place of ordinary soy sauce because ordinary soy sauce is brewed with wheat. Suitable for vegans and vegetarians."
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ferment_005_traditional_napa_kimchi.md_1_0",
+            "distance": 0.5244,
+            "recipe_id": "ferment_005",
+            "source_file": "ferment_005_traditional_napa_kimchi.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "# Traditional Napa Cabbage Kimchi ## Ingredients Percentages here are calculated against the 2000 g of prepared napa cabbage rather than against flour, since this is a vegetable ferment rather than a dough. | Ingredient | Weight | Percentage of cabbage | |---|---|---| | Napa cabbage | 2000 g | 100% | | Coarse sea salt (for brining) | 160 g | 8% | | Gochugaru (Korean chilli flakes) | 100 g | 5% | | Korean radish, julienned | 400 g | 20% | | Garlic, minced | 60 g | 3% | | Ginger, grated | 20 g | 1% | | Saeujeot (salted fermented shrimp) | 60 g | 3% | | Anchovy fish sauce | 60 g | 3% | | Glutinous rice flour | 30 g | 1.5% | | Caster sugar | 20 g | 1% | Total yield is approximately 2.9 kg of finished kimchi. ## Method Quarter the cabbage lengthwise keeping the core attached, then brine it using the full 160 g of coarse sea salt, working the salt between the leaves and concentrating it on the thick white stems. Leave for 4 to 6 hours, turning every 2 hours. The cabbage is correctly brined when a thick white stem bends into a U shape without snapping. This bend test matters more than the clock, because cabbage size and moisture content vary considerably between heads. Rinse three times in cold water and drain cut side down for at least one hour. Residual water dilutes the paste and can spoil the ferment. Make the rice porridge by whisking the glutinous rice flour into 250 ml of cold water, heating gently for 5 minutes until it thickens, then stirring in the sugar and cooling completely. The porridge feeds the lactobacillus and speeds the early fermentation. Combine the cooled porridge with the gochugaru and let it stand for 10 minutes so the chilli flakes bloom, then mix in the garlic, ginger, saeujeot and anchovy fish sauce. Fold through the julienned radish. Wearing gloves, spread the paste over every leaf, working from the stem end outward. Pack into a jar, pressing down firmly to eliminate air pockets, and leave 5 cm of headspace. Ferment at 20C for 2 days until bubbles appear and the smell turns sour, then transfer to the refrigerator at 4C. The kimchi is edible immediately but reaches its best flavour after 2 weeks. ## Allergen Note Contains fish in the form of anchovy fish sauce and contains crustacean shellfish in the form of salted fermented shrimp. Not suitable for vegetarians or vegans. Contains no dairy, no egg, no nuts and no gluten. Despite its name, glutinous rice flour contains no gluten."
+          },
+          {
+            "rank": 3,
+            "chunk_id": "recipe_169_napa_cabbage_kimchi.md_1_0",
+            "distance": 0.5718,
+            "recipe_id": "recipe_169",
+            "source_file": "recipe_169_napa_cabbage_kimchi.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "# Napa Cabbage Kimchi ## Description Baechu Kimchi is the fermented napa cabbage that appears at every Korean meal. Cabbage is salted to draw out water, then coated in a paste of gochugaru, garlic, ginger, fish sauce and salted shrimp, and left to ferment. The salting stage is the one that determines everything: too little and the kimchi goes soft and watery, too much and it is inedibly salty. A rice flour porridge in the paste feeds the lactobacillus and speeds fermentation. It contains fish and shellfish, and is gluten-free. ## Ingredients For salting: - Napa cabbage - 2 large heads (about 3kg) - Coarse sea salt - 150g - Water - 2 litres For the rice porridge: - Glutinous rice flour - 2 tablespoons - Water - 250ml - Sugar - 1 tablespoon For the kimchi paste: - Gochugaru (Korean chilli flakes) - 100g - Garlic - 20 cloves, minced - Ginger - 40g, grated - Onion - 1, blended - Fish sauce - 80ml - Salted fermented shrimp (saeujeot) - 3 tablespoons, minced - Korean pear or apple - 1, grated For the vegetables: - Korean radish (mu) or daikon - 500g, julienned - Spring onions - 8, cut into 4cm lengths - Garlic chives - a bunch (optional) - Carrot - 1, julienned ## Instructions 1. Cut each cabbage lengthwise into quarters, keeping the core attached so the leaves stay joined. 2. Dissolve 100g of the salt in 2 litres of water and dip each quarter in it. Then sprinkle the remaining salt between the leaves, concentrating on the thick white stems, which need more salt than the leafy parts. 3. Lay the quarters in a large tub, cut side up, and leave for 4 to 6 hours, turning them every 2 hours so they salt evenly. 4. The cabbage is properly salted when the thick white stem bends into a U shape without snapping. This test matters more than the clock, since cabbages vary in size and moisture. 5. Rinse the cabbage three times in cold water, gently spreading the leaves to wash out the salt from between them. 6. Drain cut side down in a colander for at least 1 hour. The cabbage must be well drained, since residual water dilutes the paste and can spoil the fermentation. 7. Make the rice porridge: whisk the glutinous rice flour into the cold water, then heat gently, stirring, for 5 minutes until it thickens into a runny paste. Stir in the sugar and cool completely. 8. Combine the cooled porridge with the gochugaru and let it sit for 10 minutes so the chilli flakes hydrate and bloom into a deep red paste. 9. Add the garlic, ginger, blended onion, fish sauce, salted shrimp and grated pear. Mix into a thick paste. 10. Fold in the julienned radish, carrot, spring onions and garlic chives, which will soften and release liquid into the paste. 11. Wearing gloves, take a cabbage quarter and spread the paste over every leaf, working"
+          },
+          {
+            "rank": 4,
+            "chunk_id": "recipe_169_napa_cabbage_kimchi.md_1_1",
+            "distance": 0.5755,
+            "recipe_id": "recipe_169",
+            "source_file": "recipe_169_napa_cabbage_kimchi.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "stirring, for 5 minutes until it thickens into a runny paste. Stir in the sugar and cool completely. 8. Combine the cooled porridge with the gochugaru and let it sit for 10 minutes so the chilli flakes hydrate and bloom into a deep red paste. 9. Add the garlic, ginger, blended onion, fish sauce, salted shrimp and grated pear. Mix into a thick paste. 10. Fold in the julienned radish, carrot, spring onions and garlic chives, which will soften and release liquid into the paste. 11. Wearing gloves, take a cabbage quarter and spread the paste over every leaf, working from the stem end outward. Use less paste on the leafy tips and more on the thick stems. 12. Fold each coated quarter in half and tuck it into a large jar or airtight container, pressing down firmly to eliminate air pockets. 13. Press the surface down so the brine rises above the cabbage, and leave 5cm of headspace, since the kimchi will bubble and expand. 14. Leave at room temperature for 1 to 2 days, until you see bubbles and it smells sour. In warm weather 24 hours is enough. 15. Move to the refrigerator, where fermentation continues slowly. It is ready to eat immediately but is at its best after 2 weeks. ## Tips - The bend test on the cabbage stem is the correct measure of salting, not the timer. - Drain the cabbage thoroughly after rinsing. - Press out all air pockets and keep the cabbage submerged under its brine. - Open the container once a day during the room-temperature stage to release built-up gas. ## Variations - Vegan Kimchi: replace the fish sauce and salted shrimp with soy sauce and a kelp and shiitake stock. - Baek Kimchi: a white, non-spicy version made without gochugaru, suitable for children. - Kkakdugi: made with cubed radish instead of cabbage. - Oi Sobagi: stuffed cucumber kimchi, eaten fresh rather than long fermented. ## Substitutions - Gochugaru cannot be replaced with cayenne or paprika; it is a specific coarse grind with mild heat. - Regular daikon can replace Korean radish. - Apple or nashi pear can replace Korean pear. - Anchovy sauce can replace fish sauce. ## Serving Suggestions Serve kimchi cold as a banchan side dish at every meal, straight from the jar. Fresh kimchi is crisp and good raw, while older sour kimchi is best cooked into jjigae, fried rice or pancakes. Always use clean utensils to take it from the jar so you do not contaminate the batch. ## Storage Kimchi keeps in the refrigerator for 6 months or longer, becoming progressively more sour. Keep it submerged under its brine and press it down after each use. It is not truly spoiled unless it grows mould or smells rotten rather than sour. Do not freeze, as the cabbage collapses. Store it in a sealed container, since the smell permeates everything nearby. ## Nutrition Approximate values per serving (about 100g): - Calories: 35 kcal - Protein: 2"
+          },
+          {
+            "rank": 5,
+            "chunk_id": "ferment_006_vegan_napa_kimchi.md_1_1",
+            "distance": 0.6409,
+            "recipe_id": "ferment_006",
+            "source_file": "ferment_006_vegan_napa_kimchi.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": true,
+            "text": "which is around a day longer than the traditional card requires because the seafood ferments in saeujeot give the traditional version a head start. Move to the refrigerator once bubbling and pleasantly sour. ## Allergen Note Contains no fish, no shellfish, no dairy, no egg, no nuts and no gluten. Tamari is used specifically in place of ordinary soy sauce because ordinary soy sauce is brewed with wheat. Suitable for vegans and vegetarians."
+          }
+        ],
+        "hit_recipe": true,
+        "answer_in": true
+      },
+      "Q8": {
+        "rows": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_004_sourdough_brioche.md_1_0",
+            "distance": 0.5173,
+            "recipe_id": "ferment_004",
+            "source_file": "ferment_004_sourdough_brioche.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": true,
+            "text": "# Sourdough Brioche ## Ingredients Baker's percentages are calculated against the 500 g of strong white flour. This is an enriched dough, so the fat and egg percentages are high. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 500 g | 100% | | Whole milk (cold) | 150 g | 30% | | Eggs (about 4 medium) | 200 g | 40% | | Unsalted butter (softened) | 200 g | 40% | | Caster sugar | 60 g | 12% | | Rye levain (100% hydration) | 100 g | 20% | | Fine sea salt | 10 g | 2% | Total dough weight is 1220 g, which makes two loaves in 900 g tins. ## Method Mix the flour, cold milk, eggs, sugar and levain in a stand mixer with the dough hook on low for 4 minutes until a shaggy dough forms. Add the fine sea salt and mix on medium for a further 8 minutes until the dough is smooth and pulls cleanly from the sides of the bowl. Only now begin adding the softened butter, roughly 50 g at a time, waiting until each addition has fully disappeared before adding the next. The butter goes in last and gradually, because adding it at the start coats the flour in fat and prevents the gluten network from developing at all. Expect this stage to take 10 to 12 minutes. The dough is ready when it passes the windowpane test: a small piece stretched thin should become translucent without tearing. Bulk ferment for 5 to 6 hours at 22C, then cold retard for 14 to 18 hours at 4C. Enriched sourdough is very difficult to shape at room temperature, so the cold retard is a handling step as much as a flavour step. Divide, shape into four balls per tin, and prove for 4 to 5 hours at 24C until the dough reaches the rim of the tin and springs back slowly when pressed. Egg wash and bake at 180C for 30 minutes until deep golden and the internal temperature reaches 92C. Turn out of the tins immediately to stop the sides collapsing. ## Allergen Note Contains wheat and rye, therefore contains gluten. Contains milk and butter, therefore contains dairy. Contains egg, both in the dough and in the egg wash. Contains no nuts. Suitable for vegetarians but not for vegans."
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ferment_001_country_sourdough_2kg.md_1_1",
+            "distance": 0.6124,
+            "recipe_id": "ferment_001",
+            "source_file": "ferment_001_country_sourdough_2kg.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "Produced in a bakery that also handles milk, egg and sesame."
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ferment_001_country_sourdough_2kg.md_1_0",
+            "distance": 0.7241,
+            "recipe_id": "ferment_001",
+            "source_file": "ferment_001_country_sourdough_2kg.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "# 2kg Country Sourdough Loaf ## Ingredients Total flour weight is 2000 g and all baker's percentages below are calculated against that total flour weight. Final hydration is 80%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1700 g | 85% | | Wholemeal flour | 300 g | 15% | | Water (28C) | 1600 g | 80% | | Fine sea salt | 40 g | 2% | | Rye levain (100% hydration) | 400 g | 20% | Total dough weight is 4040 g, which divides into two loaves of roughly 2020 g each. ## Method Autolyse first. Combine the strong white flour, the wholemeal flour and 1500 g of the water in a large tub, mixing until no dry flour remains, then cover and rest for 60 minutes. Hold back the remaining 100 g of water for the salt stage. Add the rye levain and squeeze it through the dough until fully dispersed. Rest for 30 minutes. Now add the fine sea salt together with the reserved 100 g of water. The salt goes in after the autolyse and after the levain, never at the start, because salt tightens the gluten network and slows the enzymatic activity the autolyse is meant to encourage. Squeeze and fold until the dough feels smooth and no grittiness remains at the base of the tub. Bulk ferment for 4 to 5 hours at 24C, performing a set of coil folds every 45 minutes for the first three hours. The bulk is finished when the dough has risen by roughly 50%, feels aerated, and shows a domed surface with visible bubbles at the edge of the tub. Divide into two pieces, pre-shape lightly and bench rest for 25 minutes. Shape into boules, place seam side up in floured bannetons, and cold retard in the refrigerator at 4C for 12 to 16 hours. Bake straight from the refrigerator in a preheated cast iron combo cooker. Bake at 250C for 20 minutes with the lid on, then remove the lid, drop the oven to 230C and bake for a further 25 minutes until the crust is deep brown and the internal temperature reaches 96C. Cool on a rack for at least 2 hours before cutting. ## Allergen Note Contains wheat and rye, therefore contains gluten. Contains no dairy, no egg and no nuts. Suitable for vegans. Produced in a bakery that also handles milk, egg and sesame."
+          },
+          {
+            "rank": 4,
+            "chunk_id": "ferment_003_sourdough_focaccia.md_1_0",
+            "distance": 0.7335,
+            "recipe_id": "ferment_003",
+            "source_file": "ferment_003_sourdough_focaccia.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "# Sourdough Focaccia ## Ingredients Baker's percentages are calculated against the 1000 g of strong white flour. Final hydration is 85%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1000 g | 100% | | Water (24C) | 850 g | 85% | | Rye levain (100% hydration) | 250 g | 25% | | Fine sea salt | 22 g | 2.2% | | Extra virgin olive oil | 60 g | 6% | Total dough weight is 2182 g, which fills one 30 x 40 cm tray. ## Method Mix the flour and 800 g of the water until no dry flour remains and rest for 45 minutes. Reserve the last 50 g of water for the salt. Add the levain and mix through, then rest 30 minutes. Add the fine sea salt with the reserved water and squeeze until fully incorporated. Finally drizzle in the olive oil and work it in. The dough will look broken and greasy at first and will come back together after two minutes of folding. Bulk ferment for 3 to 4 hours at 24C with four sets of coil folds spaced 30 minutes apart. At 85% hydration the dough is slack, so use a wet hand and lift rather than stretch. Oil the tray generously, tip the dough in without deflating it, and spread it gently towards the corners. If it springs back, wait 20 minutes and try again rather than forcing it. Cold retard in the refrigerator for 12 hours. Bring the tray to room temperature for 90 minutes before baking. Dimple the surface firmly with oiled fingertips, pressing all the way down to the tray so the dough does not dome, then drizzle with a further tablespoon of olive oil and scatter with flaky salt. Bake at 240C for 22 minutes until the top is deep golden and the underside is crisp when lifted with a spatula. Lift the focaccia straight out of the tray onto a rack so the base does not steam. ## Allergen Note Contains wheat and rye, therefore contains gluten. Contains no dairy, no egg and no nuts. Suitable for vegans."
+          },
+          {
+            "rank": 5,
+            "chunk_id": "ferment_006_vegan_napa_kimchi.md_1_1",
+            "distance": 0.7389,
+            "recipe_id": "ferment_006",
+            "source_file": "ferment_006_vegan_napa_kimchi.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "which is around a day longer than the traditional card requires because the seafood ferments in saeujeot give the traditional version a head start. Move to the refrigerator once bubbling and pleasantly sour. ## Allergen Note Contains no fish, no shellfish, no dairy, no egg, no nuts and no gluten. Tamari is used specifically in place of ordinary soy sauce because ordinary soy sauce is brewed with wheat. Suitable for vegans and vegetarians."
+          }
+        ],
+        "hit_recipe": true,
+        "answer_in": true
+      }
+    },
+    "realistic_baseline_120": {
+      "Q1": {
+        "rows": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_001_country_sourdough_2kg.md_1_0",
+            "distance": 0.4227,
+            "recipe_id": "ferment_001",
+            "source_file": "ferment_001_country_sourdough_2kg.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": true,
+            "text": "# 2kg Country Sourdough Loaf ## Ingredients Total flour weight is 2000 g and all baker's percentages below are calculated against that total flour weight. Final hydration is 80%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1700 g | 85% | | Wholemeal flour | 300 g | 15% | | Water (28C) | 1600 g | 80% | | Fine sea salt | 40 g | 2% | | Rye levain (100% hydration) | 400 g | 20% | Total dough weight is 4040 g, which divides into two loaves of roughly 2020 g each. ## Method Autolyse first. Combine the strong white flour, the wholemeal flour and 1500 g of"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ferment_004_sourdough_brioche.md_1_1",
+            "distance": 0.483,
+            "recipe_id": "ferment_004",
+            "source_file": "ferment_004_sourdough_brioche.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "| | Fine sea salt | 10 g | 2% | Total dough weight is 1220 g, which makes two loaves in 900 g tins. ## Method Mix the flour, cold milk, eggs, sugar and levain in a stand mixer with the dough hook on low for 4 minutes until a shaggy dough forms. Add the fine sea salt and mix on medium for a further 8 minutes until the dough is smooth and pulls cleanly from the sides of the bowl. Only now begin adding the softened butter, roughly 50 g at a time, waiting until each addition has fully disappeared before adding the next. The butter goes in last and gradually, because adding it at the start coats"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ferment_001_country_sourdough_2kg.md_1_1",
+            "distance": 0.4917,
+            "recipe_id": "ferment_001",
+            "source_file": "ferment_001_country_sourdough_2kg.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": true,
+            "text": "roughly 2020 g each. ## Method Autolyse first. Combine the strong white flour, the wholemeal flour and 1500 g of the water in a large tub, mixing until no dry flour remains, then cover and rest for 60 minutes. Hold back the remaining 100 g of water for the salt stage. Add the rye levain and squeeze it through the dough until fully dispersed. Rest for 30 minutes. Now add the fine sea salt together with the reserved 100 g of water. The salt goes in after the autolyse and after the levain, never at the start, because salt tightens the gluten network and slows the enzymatic activity the autolyse is meant to encourage. Squeeze and fold until the dough"
+          },
+          {
+            "rank": 4,
+            "chunk_id": "ferment_003_sourdough_focaccia.md_1_1",
+            "distance": 0.5356,
+            "recipe_id": "ferment_003",
+            "source_file": "ferment_003_sourdough_focaccia.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "flour and 800 g of the water until no dry flour remains and rest for 45 minutes. Reserve the last 50 g of water for the salt. Add the levain and mix through, then rest 30 minutes. Add the fine sea salt with the reserved water and squeeze until fully incorporated. Finally drizzle in the olive oil and work it in. The dough will look broken and greasy at first and will come back together after two minutes of folding. Bulk ferment for 3 to 4 hours at 24C with four sets of coil folds spaced 30 minutes apart. At 85% hydration the dough is slack, so use a wet hand and lift rather than stretch. Oil the tray generously,"
+          },
+          {
+            "rank": 5,
+            "chunk_id": "ferment_003_sourdough_focaccia.md_1_0",
+            "distance": 0.5867,
+            "recipe_id": "ferment_003",
+            "source_file": "ferment_003_sourdough_focaccia.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "# Sourdough Focaccia ## Ingredients Baker's percentages are calculated against the 1000 g of strong white flour. Final hydration is 85%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1000 g | 100% | | Water (24C) | 850 g | 85% | | Rye levain (100% hydration) | 250 g | 25% | | Fine sea salt | 22 g | 2.2% | | Extra virgin olive oil | 60 g | 6% | Total dough weight is 2182 g, which fills one 30 x 40 cm tray. ## Method Mix the flour and 800 g of the water until no dry flour remains and rest for 45 minutes. Reserve the last"
+          }
+        ],
+        "hit_recipe": true,
+        "answer_in": true
+      },
+      "Q2": {
+        "rows": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_003_sourdough_focaccia.md_1_0",
+            "distance": 0.3809,
+            "recipe_id": "ferment_003",
+            "source_file": "ferment_003_sourdough_focaccia.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": true,
+            "text": "# Sourdough Focaccia ## Ingredients Baker's percentages are calculated against the 1000 g of strong white flour. Final hydration is 85%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1000 g | 100% | | Water (24C) | 850 g | 85% | | Rye levain (100% hydration) | 250 g | 25% | | Fine sea salt | 22 g | 2.2% | | Extra virgin olive oil | 60 g | 6% | Total dough weight is 2182 g, which fills one 30 x 40 cm tray. ## Method Mix the flour and 800 g of the water until no dry flour remains and rest for 45 minutes. Reserve the last"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "recipe_066_focaccia.md_1_0",
+            "distance": 0.5259,
+            "recipe_id": "recipe_066",
+            "source_file": "recipe_066_focaccia.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "# Focaccia ## Description Focaccia is a Ligurian flatbread made from a very wet, high-hydration dough that is dimpled with the fingertips, drenched in olive oil and a salty brine, and baked until the top is golden and the interior is open and airy. The high water content is what produces the large irregular holes, and the brine poured into the dimples is what gives focaccia its characteristic soft, slightly moist crust. It requires patience rather than skill, since the dough is too wet to knead by hand and does most of its work during a long rise. It contains gluten and is naturally vegan. ## Ingredients For the dough: - Strong bread flour - 500g - Water - 400ml,"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ferment_003_sourdough_focaccia.md_1_2",
+            "distance": 0.5696,
+            "recipe_id": "ferment_003",
+            "source_file": "ferment_003_sourdough_focaccia.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": true,
+            "text": "85% hydration the dough is slack, so use a wet hand and lift rather than stretch. Oil the tray generously, tip the dough in without deflating it, and spread it gently towards the corners. If it springs back, wait 20 minutes and try again rather than forcing it. Cold retard in the refrigerator for 12 hours. Bring the tray to room temperature for 90 minutes before baking. Dimple the surface firmly with oiled fingertips, pressing all the way down to the tray so the dough does not dome, then drizzle with a further tablespoon of olive oil and scatter with flaky salt. Bake at 240C for 22 minutes until the top is deep golden and the underside is crisp when"
+          },
+          {
+            "rank": 4,
+            "chunk_id": "ferment_003_sourdough_focaccia.md_1_3",
+            "distance": 0.59,
+            "recipe_id": "ferment_003",
+            "source_file": "ferment_003_sourdough_focaccia.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": true,
+            "text": "flaky salt. Bake at 240C for 22 minutes until the top is deep golden and the underside is crisp when lifted with a spatula. Lift the focaccia straight out of the tray onto a rack so the base does not steam. ## Allergen Note Contains wheat and rye, therefore contains gluten. Contains no dairy, no egg and no nuts. Suitable for vegans."
+          },
+          {
+            "rank": 5,
+            "chunk_id": "ferment_003_sourdough_focaccia.md_1_1",
+            "distance": 0.5955,
+            "recipe_id": "ferment_003",
+            "source_file": "ferment_003_sourdough_focaccia.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": true,
+            "text": "flour and 800 g of the water until no dry flour remains and rest for 45 minutes. Reserve the last 50 g of water for the salt. Add the levain and mix through, then rest 30 minutes. Add the fine sea salt with the reserved water and squeeze until fully incorporated. Finally drizzle in the olive oil and work it in. The dough will look broken and greasy at first and will come back together after two minutes of folding. Bulk ferment for 3 to 4 hours at 24C with four sets of coil folds spaced 30 minutes apart. At 85% hydration the dough is slack, so use a wet hand and lift rather than stretch. Oil the tray generously,"
+          }
+        ],
+        "hit_recipe": true,
+        "answer_in": true
+      },
+      "Q3": {
+        "rows": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_004_sourdough_brioche.md_1_0",
+            "distance": 0.3706,
+            "recipe_id": "ferment_004",
+            "source_file": "ferment_004_sourdough_brioche.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": true,
+            "text": "# Sourdough Brioche ## Ingredients Baker's percentages are calculated against the 500 g of strong white flour. This is an enriched dough, so the fat and egg percentages are high. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 500 g | 100% | | Whole milk (cold) | 150 g | 30% | | Eggs (about 4 medium) | 200 g | 40% | | Unsalted butter (softened) | 200 g | 40% | | Caster sugar | 60 g | 12% | | Rye levain (100% hydration) | 100 g | 20% | | Fine sea salt | 10 g | 2% | Total dough weight is 1220 g, which makes two"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ferment_004_sourdough_brioche.md_1_2",
+            "distance": 0.5936,
+            "recipe_id": "ferment_004",
+            "source_file": "ferment_004_sourdough_brioche.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": true,
+            "text": "fully disappeared before adding the next. The butter goes in last and gradually, because adding it at the start coats the flour in fat and prevents the gluten network from developing at all. Expect this stage to take 10 to 12 minutes. The dough is ready when it passes the windowpane test: a small piece stretched thin should become translucent without tearing. Bulk ferment for 5 to 6 hours at 22C, then cold retard for 14 to 18 hours at 4C. Enriched sourdough is very difficult to shape at room temperature, so the cold retard is a handling step as much as a flavour step. Divide, shape into four balls per tin, and prove for 4 to 5 hours at"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ferment_004_sourdough_brioche.md_1_1",
+            "distance": 0.628,
+            "recipe_id": "ferment_004",
+            "source_file": "ferment_004_sourdough_brioche.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": true,
+            "text": "| | Fine sea salt | 10 g | 2% | Total dough weight is 1220 g, which makes two loaves in 900 g tins. ## Method Mix the flour, cold milk, eggs, sugar and levain in a stand mixer with the dough hook on low for 4 minutes until a shaggy dough forms. Add the fine sea salt and mix on medium for a further 8 minutes until the dough is smooth and pulls cleanly from the sides of the bowl. Only now begin adding the softened butter, roughly 50 g at a time, waiting until each addition has fully disappeared before adding the next. The butter goes in last and gradually, because adding it at the start coats"
+          },
+          {
+            "rank": 4,
+            "chunk_id": "ferment_001_country_sourdough_2kg.md_1_0",
+            "distance": 0.6397,
+            "recipe_id": "ferment_001",
+            "source_file": "ferment_001_country_sourdough_2kg.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "# 2kg Country Sourdough Loaf ## Ingredients Total flour weight is 2000 g and all baker's percentages below are calculated against that total flour weight. Final hydration is 80%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1700 g | 85% | | Wholemeal flour | 300 g | 15% | | Water (28C) | 1600 g | 80% | | Fine sea salt | 40 g | 2% | | Rye levain (100% hydration) | 400 g | 20% | Total dough weight is 4040 g, which divides into two loaves of roughly 2020 g each. ## Method Autolyse first. Combine the strong white flour, the wholemeal flour and 1500 g of"
+          },
+          {
+            "rank": 5,
+            "chunk_id": "ferment_003_sourdough_focaccia.md_1_0",
+            "distance": 0.6429,
+            "recipe_id": "ferment_003",
+            "source_file": "ferment_003_sourdough_focaccia.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "# Sourdough Focaccia ## Ingredients Baker's percentages are calculated against the 1000 g of strong white flour. Final hydration is 85%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1000 g | 100% | | Water (24C) | 850 g | 85% | | Rye levain (100% hydration) | 250 g | 25% | | Fine sea salt | 22 g | 2.2% | | Extra virgin olive oil | 60 g | 6% | Total dough weight is 2182 g, which fills one 30 x 40 cm tray. ## Method Mix the flour and 800 g of the water until no dry flour remains and rest for 45 minutes. Reserve the last"
+          }
+        ],
+        "hit_recipe": true,
+        "answer_in": true
+      },
+      "Q4": {
+        "rows": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_005_traditional_napa_kimchi.md_1_0",
+            "distance": 0.3563,
+            "recipe_id": "ferment_005",
+            "source_file": "ferment_005_traditional_napa_kimchi.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": true,
+            "text": "# Traditional Napa Cabbage Kimchi ## Ingredients Percentages here are calculated against the 2000 g of prepared napa cabbage rather than against flour, since this is a vegetable ferment rather than a dough. | Ingredient | Weight | Percentage of cabbage | |---|---|---| | Napa cabbage | 2000 g | 100% | | Coarse sea salt (for brining) | 160 g | 8% | | Gochugaru (Korean chilli flakes) | 100 g | 5% | | Korean radish, julienned | 400 g | 20% | | Garlic, minced | 60 g | 3% | | Ginger, grated | 20 g | 1% | | Saeujeot (salted fermented shrimp) | 60 g | 3% | | Anchovy fish sauce | 60"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "recipe_169_napa_cabbage_kimchi.md_1_0",
+            "distance": 0.4511,
+            "recipe_id": "recipe_169",
+            "source_file": "recipe_169_napa_cabbage_kimchi.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "# Napa Cabbage Kimchi ## Description Baechu Kimchi is the fermented napa cabbage that appears at every Korean meal. Cabbage is salted to draw out water, then coated in a paste of gochugaru, garlic, ginger, fish sauce and salted shrimp, and left to ferment. The salting stage is the one that determines everything: too little and the kimchi goes soft and watery, too much and it is inedibly salty. A rice flour porridge in the paste feeds the lactobacillus and speeds fermentation. It contains fish and shellfish, and is gluten-free. ## Ingredients For salting: - Napa cabbage - 2 large heads (about 3kg) - Coarse sea salt - 150g - Water - 2 litres For the rice porridge: - Glutinous"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ferment_006_vegan_napa_kimchi.md_1_0",
+            "distance": 0.4639,
+            "recipe_id": "ferment_006",
+            "source_file": "ferment_006_vegan_napa_kimchi.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "# Vegan Napa Cabbage Kimchi ## Ingredients Percentages are calculated against the 2000 g of prepared napa cabbage. The salted shrimp and anchovy fish sauce of the traditional card are replaced here by a shiitake and kombu umami base. | Ingredient | Weight | Percentage of cabbage | |---|---|---| | Napa cabbage | 2000 g | 100% | | Coarse sea salt (for brining) | 160 g | 8% | | Gochugaru (Korean chilli flakes) | 100 g | 5% | | Korean radish, julienned | 400 g | 20% | | Garlic, minced | 60 g | 3% | | Ginger, grated | 20 g | 1% | | Dried shiitake mushrooms | 30 g | 1.5% | |"
+          },
+          {
+            "rank": 4,
+            "chunk_id": "ferment_005_traditional_napa_kimchi.md_1_1",
+            "distance": 0.5012,
+            "recipe_id": "ferment_005",
+            "source_file": "ferment_005_traditional_napa_kimchi.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": true,
+            "text": "| 1% | | Saeujeot (salted fermented shrimp) | 60 g | 3% | | Anchovy fish sauce | 60 g | 3% | | Glutinous rice flour | 30 g | 1.5% | | Caster sugar | 20 g | 1% | Total yield is approximately 2.9 kg of finished kimchi. ## Method Quarter the cabbage lengthwise keeping the core attached, then brine it using the full 160 g of coarse sea salt, working the salt between the leaves and concentrating it on the thick white stems. Leave for 4 to 6 hours, turning every 2 hours. The cabbage is correctly brined when a thick white stem bends into a U shape without snapping. This bend test matters more"
+          },
+          {
+            "rank": 5,
+            "chunk_id": "ferment_006_vegan_napa_kimchi.md_1_1",
+            "distance": 0.5555,
+            "recipe_id": "ferment_006",
+            "source_file": "ferment_006_vegan_napa_kimchi.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "| Ginger, grated | 20 g | 1% | | Dried shiitake mushrooms | 30 g | 1.5% | | Kombu (dried kelp) | 10 g | 0.5% | | Tamari (gluten-free soy sauce) | 50 g | 2.5% | | Glutinous rice flour | 30 g | 1.5% | | Caster sugar | 20 g | 1% | Total yield is approximately 2.85 kg of finished kimchi. ## Method Brine the quartered cabbage with the full 160 g of coarse sea salt for 4 to 6 hours, turning every 2 hours, then apply the bend test: a thick white stem should bend into a U without snapping. Rinse three times and drain cut side down for one hour. Build"
+          }
+        ],
+        "hit_recipe": true,
+        "answer_in": true
+      },
+      "Q5": {
+        "rows": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_001_country_sourdough_2kg.md_1_0",
+            "distance": 0.3827,
+            "recipe_id": "ferment_001",
+            "source_file": "ferment_001_country_sourdough_2kg.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": true,
+            "text": "# 2kg Country Sourdough Loaf ## Ingredients Total flour weight is 2000 g and all baker's percentages below are calculated against that total flour weight. Final hydration is 80%. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 1700 g | 85% | | Wholemeal flour | 300 g | 15% | | Water (28C) | 1600 g | 80% | | Fine sea salt | 40 g | 2% | | Rye levain (100% hydration) | 400 g | 20% | Total dough weight is 4040 g, which divides into two loaves of roughly 2020 g each. ## Method Autolyse first. Combine the strong white flour, the wholemeal flour and 1500 g of"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ferment_001_country_sourdough_2kg.md_1_3",
+            "distance": 0.4801,
+            "recipe_id": "ferment_001",
+            "source_file": "ferment_001_country_sourdough_2kg.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": true,
+            "text": "side up in floured bannetons, and cold retard in the refrigerator at 4C for 12 to 16 hours. Bake straight from the refrigerator in a preheated cast iron combo cooker. Bake at 250C for 20 minutes with the lid on, then remove the lid, drop the oven to 230C and bake for a further 25 minutes until the crust is deep brown and the internal temperature reaches 96C. Cool on a rack for at least 2 hours before cutting. ## Allergen Note Contains wheat and rye, therefore contains gluten. Contains no dairy, no egg and no nuts. Suitable for vegans. Produced in a bakery that also handles milk, egg and sesame."
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ferment_001_country_sourdough_2kg.md_1_1",
+            "distance": 0.5729,
+            "recipe_id": "ferment_001",
+            "source_file": "ferment_001_country_sourdough_2kg.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": true,
+            "text": "roughly 2020 g each. ## Method Autolyse first. Combine the strong white flour, the wholemeal flour and 1500 g of the water in a large tub, mixing until no dry flour remains, then cover and rest for 60 minutes. Hold back the remaining 100 g of water for the salt stage. Add the rye levain and squeeze it through the dough until fully dispersed. Rest for 30 minutes. Now add the fine sea salt together with the reserved 100 g of water. The salt goes in after the autolyse and after the levain, never at the start, because salt tightens the gluten network and slows the enzymatic activity the autolyse is meant to encourage. Squeeze and fold until the dough"
+          },
+          {
+            "rank": 4,
+            "chunk_id": "recipe_067_ciabatta.md_1_4",
+            "distance": 0.5868,
+            "recipe_id": "recipe_067",
+            "source_file": "recipe_067_ciabatta.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "couche or a parchment-lined tray, handling them like a delicate parcel. Do not shape or roll them. 10. Prove for 45 minutes, uncovered, while the oven heats to 240C with a baking stone or heavy tray inside and a metal tray on the bottom shelf. 11. Slide the loaves onto the hot stone. Pour a cup of boiling water into the bottom tray to create steam and close the door quickly. Steam is what gives ciabatta its thin, crisp crust. 12. Bake for 12 minutes with steam, then remove the water tray and bake for a further 10 to 13 minutes, until deep golden and hollow-sounding when tapped underneath. 13. Cool completely on a wire rack for at least 45"
+          },
+          {
+            "rank": 5,
+            "chunk_id": "ferment_003_sourdough_focaccia.md_1_2",
+            "distance": 0.6097,
+            "recipe_id": "ferment_003",
+            "source_file": "ferment_003_sourdough_focaccia.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "85% hydration the dough is slack, so use a wet hand and lift rather than stretch. Oil the tray generously, tip the dough in without deflating it, and spread it gently towards the corners. If it springs back, wait 20 minutes and try again rather than forcing it. Cold retard in the refrigerator for 12 hours. Bring the tray to room temperature for 90 minutes before baking. Dimple the surface firmly with oiled fingertips, pressing all the way down to the tray so the dough does not dome, then drizzle with a further tablespoon of olive oil and scatter with flaky salt. Bake at 240C for 22 minutes until the top is deep golden and the underside is crisp when"
+          }
+        ],
+        "hit_recipe": true,
+        "answer_in": true
+      },
+      "Q6": {
+        "rows": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_002_rye_levain_starter.md_1_1",
+            "distance": 0.4041,
+            "recipe_id": "ferment_002",
+            "source_file": "ferment_002_rye_levain_starter.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": true,
+            "text": "starter into a clear straight-sided jar and mark the level with an elastic band so the rise can be judged by eye rather than by guesswork. Add the water at 26C and stir until the starter is dispersed and the liquid turns cloudy. Add the wholegrain rye flour and mix to a thick paste. Rye holds far more water than white flour, so at 100% hydration this will look like a stiff batter rather than a dough. Cover loosely and ferment for 8 to 12 hours at 22 to 24C. The levain is ripe when it has at least doubled from the elastic band mark, the surface is domed and covered in fine bubbles, and it smells sharply sour with"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ferment_002_rye_levain_starter.md_1_0",
+            "distance": 0.415,
+            "recipe_id": "ferment_002",
+            "source_file": "ferment_002_rye_levain_starter.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": true,
+            "text": "# Rye Levain Starter ## Ingredients This is a 100% hydration levain, meaning the water weight equals the flour weight. Baker's percentages are calculated against the 100 g of rye flour. | Ingredient | Weight | Baker's % | |---|---|---| | Wholegrain rye flour | 100 g | 100% | | Water (26C) | 100 g | 100% | | Mature sourdough starter | 20 g | 20% | Total levain yield is 220 g, which is enough to build the 400 g of levain required by the 2kg Country Sourdough after one further refreshment. ## Method Weigh the mature starter into a clear straight-sided jar and mark the level with an elastic band so the rise can be judged"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ferment_002_rye_levain_starter.md_1_2",
+            "distance": 0.479,
+            "recipe_id": "ferment_002",
+            "source_file": "ferment_002_rye_levain_starter.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": true,
+            "text": "from the elastic band mark, the surface is domed and covered in fine bubbles, and it smells sharply sour with a faint acetone note. A levain that has risen and then collapsed back to a flat, watery surface has gone past ripe and will give a slack, over-acidified dough. The float test is a useful confirmation: drop a teaspoon of ripe levain into room temperature water and it should float rather than sink. Refresh at least once every 24 hours if the starter is kept at room temperature, or once a week if it is stored at 4C in the refrigerator. ## Allergen Note Contains rye, therefore contains gluten. Contains no dairy, no egg and no nuts. Suitable for vegans."
+          },
+          {
+            "rank": 4,
+            "chunk_id": "ferment_001_country_sourdough_2kg.md_1_3",
+            "distance": 0.6132,
+            "recipe_id": "ferment_001",
+            "source_file": "ferment_001_country_sourdough_2kg.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "side up in floured bannetons, and cold retard in the refrigerator at 4C for 12 to 16 hours. Bake straight from the refrigerator in a preheated cast iron combo cooker. Bake at 250C for 20 minutes with the lid on, then remove the lid, drop the oven to 230C and bake for a further 25 minutes until the crust is deep brown and the internal temperature reaches 96C. Cool on a rack for at least 2 hours before cutting. ## Allergen Note Contains wheat and rye, therefore contains gluten. Contains no dairy, no egg and no nuts. Suitable for vegans. Produced in a bakery that also handles milk, egg and sesame."
+          },
+          {
+            "rank": 5,
+            "chunk_id": "ferment_001_country_sourdough_2kg.md_1_1",
+            "distance": 0.6701,
+            "recipe_id": "ferment_001",
+            "source_file": "ferment_001_country_sourdough_2kg.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "roughly 2020 g each. ## Method Autolyse first. Combine the strong white flour, the wholemeal flour and 1500 g of the water in a large tub, mixing until no dry flour remains, then cover and rest for 60 minutes. Hold back the remaining 100 g of water for the salt stage. Add the rye levain and squeeze it through the dough until fully dispersed. Rest for 30 minutes. Now add the fine sea salt together with the reserved 100 g of water. The salt goes in after the autolyse and after the levain, never at the start, because salt tightens the gluten network and slows the enzymatic activity the autolyse is meant to encourage. Squeeze and fold until the dough"
+          }
+        ],
+        "hit_recipe": true,
+        "answer_in": true
+      },
+      "Q7": {
+        "rows": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_006_vegan_napa_kimchi.md_1_0",
+            "distance": 0.4862,
+            "recipe_id": "ferment_006",
+            "source_file": "ferment_006_vegan_napa_kimchi.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": true,
+            "text": "# Vegan Napa Cabbage Kimchi ## Ingredients Percentages are calculated against the 2000 g of prepared napa cabbage. The salted shrimp and anchovy fish sauce of the traditional card are replaced here by a shiitake and kombu umami base. | Ingredient | Weight | Percentage of cabbage | |---|---|---| | Napa cabbage | 2000 g | 100% | | Coarse sea salt (for brining) | 160 g | 8% | | Gochugaru (Korean chilli flakes) | 100 g | 5% | | Korean radish, julienned | 400 g | 20% | | Garlic, minced | 60 g | 3% | | Ginger, grated | 20 g | 1% | | Dried shiitake mushrooms | 30 g | 1.5% | |"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ferment_005_traditional_napa_kimchi.md_1_1",
+            "distance": 0.5339,
+            "recipe_id": "ferment_005",
+            "source_file": "ferment_005_traditional_napa_kimchi.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "| 1% | | Saeujeot (salted fermented shrimp) | 60 g | 3% | | Anchovy fish sauce | 60 g | 3% | | Glutinous rice flour | 30 g | 1.5% | | Caster sugar | 20 g | 1% | Total yield is approximately 2.9 kg of finished kimchi. ## Method Quarter the cabbage lengthwise keeping the core attached, then brine it using the full 160 g of coarse sea salt, working the salt between the leaves and concentrating it on the thick white stems. Leave for 4 to 6 hours, turning every 2 hours. The cabbage is correctly brined when a thick white stem bends into a U shape without snapping. This bend test matters more"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "recipe_169_napa_cabbage_kimchi.md_1_0",
+            "distance": 0.5481,
+            "recipe_id": "recipe_169",
+            "source_file": "recipe_169_napa_cabbage_kimchi.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "# Napa Cabbage Kimchi ## Description Baechu Kimchi is the fermented napa cabbage that appears at every Korean meal. Cabbage is salted to draw out water, then coated in a paste of gochugaru, garlic, ginger, fish sauce and salted shrimp, and left to ferment. The salting stage is the one that determines everything: too little and the kimchi goes soft and watery, too much and it is inedibly salty. A rice flour porridge in the paste feeds the lactobacillus and speeds fermentation. It contains fish and shellfish, and is gluten-free. ## Ingredients For salting: - Napa cabbage - 2 large heads (about 3kg) - Coarse sea salt - 150g - Water - 2 litres For the rice porridge: - Glutinous"
+          },
+          {
+            "rank": 4,
+            "chunk_id": "ferment_005_traditional_napa_kimchi.md_1_0",
+            "distance": 0.5535,
+            "recipe_id": "ferment_005",
+            "source_file": "ferment_005_traditional_napa_kimchi.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "# Traditional Napa Cabbage Kimchi ## Ingredients Percentages here are calculated against the 2000 g of prepared napa cabbage rather than against flour, since this is a vegetable ferment rather than a dough. | Ingredient | Weight | Percentage of cabbage | |---|---|---| | Napa cabbage | 2000 g | 100% | | Coarse sea salt (for brining) | 160 g | 8% | | Gochugaru (Korean chilli flakes) | 100 g | 5% | | Korean radish, julienned | 400 g | 20% | | Garlic, minced | 60 g | 3% | | Ginger, grated | 20 g | 1% | | Saeujeot (salted fermented shrimp) | 60 g | 3% | | Anchovy fish sauce | 60"
+          },
+          {
+            "rank": 5,
+            "chunk_id": "recipe_166_kimchi_jjigae.md_1_6",
+            "distance": 0.593,
+            "recipe_id": "recipe_166",
+            "source_file": "recipe_166_kimchi_jjigae.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "Jjigae: use vegan kimchi, mushroom broth and extra tofu, with a little sesame oil for richness. - Kimchi Jjigae with spam: a popular version using tinned ham. - Kimchi Sundubu: made with silken tofu for a softer, more delicate stew. ## Substitutions - Pork shoulder or bacon can replace pork belly. - Water can replace the anchovy broth, though the stew will be less savoury; a teaspoon of dashi powder helps. - Doenjang can be replaced with Japanese miso. - Silken tofu can replace firm tofu for a softer texture. ## Serving Suggestions Serve kimchi jjigae hot in the middle of the table with individual bowls of steamed rice and a few banchan side dishes. It is eaten communally, with"
+          }
+        ],
+        "hit_recipe": true,
+        "answer_in": true
+      },
+      "Q8": {
+        "rows": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_004_sourdough_brioche.md_1_0",
+            "distance": 0.5387,
+            "recipe_id": "ferment_004",
+            "source_file": "ferment_004_sourdough_brioche.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": true,
+            "text": "# Sourdough Brioche ## Ingredients Baker's percentages are calculated against the 500 g of strong white flour. This is an enriched dough, so the fat and egg percentages are high. | Ingredient | Weight | Baker's % | |---|---|---| | Strong white bread flour | 500 g | 100% | | Whole milk (cold) | 150 g | 30% | | Eggs (about 4 medium) | 200 g | 40% | | Unsalted butter (softened) | 200 g | 40% | | Caster sugar | 60 g | 12% | | Rye levain (100% hydration) | 100 g | 20% | | Fine sea salt | 10 g | 2% | Total dough weight is 1220 g, which makes two"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ferment_001_country_sourdough_2kg.md_1_4",
+            "distance": 0.6124,
+            "recipe_id": "ferment_001",
+            "source_file": "ferment_001_country_sourdough_2kg.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "Produced in a bakery that also handles milk, egg and sesame."
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ferment_002_rye_levain_starter.md_1_2",
+            "distance": 0.6826,
+            "recipe_id": "ferment_002",
+            "source_file": "ferment_002_rye_levain_starter.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "from the elastic band mark, the surface is domed and covered in fine bubbles, and it smells sharply sour with a faint acetone note. A levain that has risen and then collapsed back to a flat, watery surface has gone past ripe and will give a slack, over-acidified dough. The float test is a useful confirmation: drop a teaspoon of ripe levain into room temperature water and it should float rather than sink. Refresh at least once every 24 hours if the starter is kept at room temperature, or once a week if it is stored at 4C in the refrigerator. ## Allergen Note Contains rye, therefore contains gluten. Contains no dairy, no egg and no nuts. Suitable for vegans."
+          },
+          {
+            "rank": 4,
+            "chunk_id": "ferment_001_country_sourdough_2kg.md_1_3",
+            "distance": 0.7134,
+            "recipe_id": "ferment_001",
+            "source_file": "ferment_001_country_sourdough_2kg.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": false,
+            "text": "side up in floured bannetons, and cold retard in the refrigerator at 4C for 12 to 16 hours. Bake straight from the refrigerator in a preheated cast iron combo cooker. Bake at 250C for 20 minutes with the lid on, then remove the lid, drop the oven to 230C and bake for a further 25 minutes until the crust is deep brown and the internal temperature reaches 96C. Cool on a rack for at least 2 hours before cutting. ## Allergen Note Contains wheat and rye, therefore contains gluten. Contains no dairy, no egg and no nuts. Suitable for vegans. Produced in a bakery that also handles milk, egg and sesame."
+          },
+          {
+            "rank": 5,
+            "chunk_id": "ferment_004_sourdough_brioche.md_1_2",
+            "distance": 0.7318,
+            "recipe_id": "ferment_004",
+            "source_file": "ferment_004_sourdough_brioche.md",
+            "section": "(none - flat window)",
+            "block_type": "window",
+            "is_expected_recipe": true,
+            "text": "fully disappeared before adding the next. The butter goes in last and gradually, because adding it at the start coats the flour in fat and prevents the gluten network from developing at all. Expect this stage to take 10 to 12 minutes. The dough is ready when it passes the windowpane test: a small piece stretched thin should become translucent without tearing. Bulk ferment for 5 to 6 hours at 22C, then cold retard for 14 to 18 hours at 4C. Enriched sourdough is very difficult to shape at room temperature, so the cold retard is a handling step as much as a flavour step. Divide, shape into four balls per tin, and prove for 4 to 5 hours at"
+          }
+        ],
+        "hit_recipe": true,
+        "answer_in": true
+      }
+    },
+    "realistic_structure_aware": {
+      "Q1": {
+        "rows": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_001__ingredients__0",
+            "distance": 0.3983,
+            "recipe_id": "ferment_001",
+            "source_file": "ferment_001_country_sourdough_2kg.md",
+            "section": "Ingredients",
+            "block_type": "table",
+            "is_expected_recipe": true,
+            "text": "Recipe: 2kg Country Sourdough Loaf (recipe_id: ferment_001)\nSection: Ingredients\n\nTotal flour weight is 2000 g and all baker's percentages below are calculated against that total flour weight. Final hydration is 80%.\n\n| Ingredient | Weight | Baker's % |\n|---|---|---|\n| Strong white bread flour | 1700 g | 85% |\n| Wholemeal flour | 300 g | 15% |\n| Water (28C) | 1600 g | 80% |\n| Fine sea salt | 40 g | 2% |\n| Rye levain (100% hydration) | 400 g | 20% |"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ferment_001__ingredients__1",
+            "distance": 0.4448,
+            "recipe_id": "ferment_001",
+            "source_file": "ferment_001_country_sourdough_2kg.md",
+            "section": "Ingredients",
+            "block_type": "prose",
+            "is_expected_recipe": true,
+            "text": "Recipe: 2kg Country Sourdough Loaf (recipe_id: ferment_001)\nSection: Ingredients\n\nTotal dough weight is 4040 g, which divides into two loaves of roughly 2020 g each."
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ferment_001__method__0",
+            "distance": 0.4516,
+            "recipe_id": "ferment_001",
+            "source_file": "ferment_001_country_sourdough_2kg.md",
+            "section": "Method",
+            "block_type": "prose",
+            "is_expected_recipe": true,
+            "text": "Recipe: 2kg Country Sourdough Loaf (recipe_id: ferment_001)\nSection: Method\n\nAutolyse first. Combine the strong white flour, the wholemeal flour and 1500 g of the water in a large tub, mixing until no dry flour remains, then cover and rest for 60 minutes. Hold back the remaining 100 g of water for the salt stage.\n\nAdd the rye levain and squeeze it through the dough until fully dispersed. Rest for 30 minutes.\n\nNow add the fine sea salt together with the reserved 100 g of water. The salt goes in after the autolyse and after the levain, never at the start, because salt tightens the gluten network and slows the enzymatic activity the autolyse is meant to encourage. Squeeze and fold until the dough feels smooth and no grittiness remains at the base of the tub."
+          },
+          {
+            "rank": 4,
+            "chunk_id": "ferment_003__ingredients__0",
+            "distance": 0.5143,
+            "recipe_id": "ferment_003",
+            "source_file": "ferment_003_sourdough_focaccia.md",
+            "section": "Ingredients",
+            "block_type": "table",
+            "is_expected_recipe": false,
+            "text": "Recipe: Sourdough Focaccia (recipe_id: ferment_003)\nSection: Ingredients\n\nBaker's percentages are calculated against the 1000 g of strong white flour. Final hydration is 85%.\n\n| Ingredient | Weight | Baker's % |\n|---|---|---|\n| Strong white bread flour | 1000 g | 100% |\n| Water (24C) | 850 g | 85% |\n| Rye levain (100% hydration) | 250 g | 25% |\n| Fine sea salt | 22 g | 2.2% |\n| Extra virgin olive oil | 60 g | 6% |"
+          },
+          {
+            "rank": 5,
+            "chunk_id": "ferment_002__ingredients__1",
+            "distance": 0.5703,
+            "recipe_id": "ferment_002",
+            "source_file": "ferment_002_rye_levain_starter.md",
+            "section": "Ingredients",
+            "block_type": "prose",
+            "is_expected_recipe": false,
+            "text": "Recipe: Rye Levain Starter (recipe_id: ferment_002)\nSection: Ingredients\n\nTotal levain yield is 220 g, which is enough to build the 400 g of levain required by the 2kg Country Sourdough after one further refreshment."
+          }
+        ],
+        "hit_recipe": true,
+        "answer_in": true
+      },
+      "Q2": {
+        "rows": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_003__ingredients__0",
+            "distance": 0.4296,
+            "recipe_id": "ferment_003",
+            "source_file": "ferment_003_sourdough_focaccia.md",
+            "section": "Ingredients",
+            "block_type": "table",
+            "is_expected_recipe": true,
+            "text": "Recipe: Sourdough Focaccia (recipe_id: ferment_003)\nSection: Ingredients\n\nBaker's percentages are calculated against the 1000 g of strong white flour. Final hydration is 85%.\n\n| Ingredient | Weight | Baker's % |\n|---|---|---|\n| Strong white bread flour | 1000 g | 100% |\n| Water (24C) | 850 g | 85% |\n| Rye levain (100% hydration) | 250 g | 25% |\n| Fine sea salt | 22 g | 2.2% |\n| Extra virgin olive oil | 60 g | 6% |"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ferment_003__ingredients__1",
+            "distance": 0.5005,
+            "recipe_id": "ferment_003",
+            "source_file": "ferment_003_sourdough_focaccia.md",
+            "section": "Ingredients",
+            "block_type": "prose",
+            "is_expected_recipe": true,
+            "text": "Recipe: Sourdough Focaccia (recipe_id: ferment_003)\nSection: Ingredients\n\nTotal dough weight is 2182 g, which fills one 30 x 40 cm tray."
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ferment_003__method__0",
+            "distance": 0.5057,
+            "recipe_id": "ferment_003",
+            "source_file": "ferment_003_sourdough_focaccia.md",
+            "section": "Method",
+            "block_type": "prose",
+            "is_expected_recipe": true,
+            "text": "Recipe: Sourdough Focaccia (recipe_id: ferment_003)\nSection: Method\n\nMix the flour and 800 g of the water until no dry flour remains and rest for 45 minutes. Reserve the last 50 g of water for the salt.\n\nAdd the levain and mix through, then rest 30 minutes. Add the fine sea salt with the reserved water and squeeze until fully incorporated. Finally drizzle in the olive oil and work it in. The dough will look broken and greasy at first and will come back together after two minutes of folding.\n\nBulk ferment for 3 to 4 hours at 24C with four sets of coil folds spaced 30 minutes apart. At 85% hydration the dough is slack, so use a wet hand and lift rather than stretch."
+          },
+          {
+            "rank": 4,
+            "chunk_id": "ferment_003__method__1",
+            "distance": 0.5483,
+            "recipe_id": "ferment_003",
+            "source_file": "ferment_003_sourdough_focaccia.md",
+            "section": "Method",
+            "block_type": "prose",
+            "is_expected_recipe": true,
+            "text": "Recipe: Sourdough Focaccia (recipe_id: ferment_003)\nSection: Method\n\nOil the tray generously, tip the dough in without deflating it, and spread it gently towards the corners. If it springs back, wait 20 minutes and try again rather than forcing it. Cold retard in the refrigerator for 12 hours.\n\nBring the tray to room temperature for 90 minutes before baking. Dimple the surface firmly with oiled fingertips, pressing all the way down to the tray so the dough does not dome, then drizzle with a further tablespoon of olive oil and scatter with flaky salt.\n\nBake at 240C for 22 minutes until the top is deep golden and the underside is crisp when lifted with a spatula. Lift the focaccia straight out of the tray onto a rack so the base does not steam."
+          },
+          {
+            "rank": 5,
+            "chunk_id": "recipe_066__description__0",
+            "distance": 0.5531,
+            "recipe_id": "recipe_066",
+            "source_file": "recipe_066_focaccia.md",
+            "section": "Description",
+            "block_type": "prose",
+            "is_expected_recipe": false,
+            "text": "Recipe: Focaccia (recipe_id: recipe_066)\nSection: Description\n\nFocaccia is a Ligurian flatbread made from a very wet, high-hydration dough that is dimpled with the fingertips, drenched in olive oil and a salty brine, and baked until the top is golden and the interior is open and airy. The high water content is what produces the large irregular holes, and the brine poured into the dimples is what gives focaccia its characteristic soft, slightly moist crust. It requires patience rather than skill, since the dough is too wet to knead by hand and does most of its work during a long rise. It contains gluten and is naturally vegan."
+          }
+        ],
+        "hit_recipe": true,
+        "answer_in": true
+      },
+      "Q3": {
+        "rows": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_004__ingredients__0",
+            "distance": 0.4065,
+            "recipe_id": "ferment_004",
+            "source_file": "ferment_004_sourdough_brioche.md",
+            "section": "Ingredients",
+            "block_type": "table",
+            "is_expected_recipe": true,
+            "text": "Recipe: Sourdough Brioche (recipe_id: ferment_004)\nSection: Ingredients\n\nBaker's percentages are calculated against the 500 g of strong white flour. This is an enriched dough, so the fat and egg percentages are high.\n\n| Ingredient | Weight | Baker's % |\n|---|---|---|\n| Strong white bread flour | 500 g | 100% |\n| Whole milk (cold) | 150 g | 30% |\n| Eggs (about 4 medium) | 200 g | 40% |\n| Unsalted butter (softened) | 200 g | 40% |\n| Caster sugar | 60 g | 12% |\n| Rye levain (100% hydration) | 100 g | 20% |\n| Fine sea salt | 10 g | 2% |"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ferment_004__ingredients__1",
+            "distance": 0.4827,
+            "recipe_id": "ferment_004",
+            "source_file": "ferment_004_sourdough_brioche.md",
+            "section": "Ingredients",
+            "block_type": "prose",
+            "is_expected_recipe": true,
+            "text": "Recipe: Sourdough Brioche (recipe_id: ferment_004)\nSection: Ingredients\n\nTotal dough weight is 1220 g, which makes two loaves in 900 g tins."
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ferment_004__method__0",
+            "distance": 0.5043,
+            "recipe_id": "ferment_004",
+            "source_file": "ferment_004_sourdough_brioche.md",
+            "section": "Method",
+            "block_type": "prose",
+            "is_expected_recipe": true,
+            "text": "Recipe: Sourdough Brioche (recipe_id: ferment_004)\nSection: Method\n\nMix the flour, cold milk, eggs, sugar and levain in a stand mixer with the dough hook on low for 4 minutes until a shaggy dough forms. Add the fine sea salt and mix on medium for a further 8 minutes until the dough is smooth and pulls cleanly from the sides of the bowl.\n\nOnly now begin adding the softened butter, roughly 50 g at a time, waiting until each addition has fully disappeared before adding the next. The butter goes in last and gradually, because adding it at the start coats the flour in fat and prevents the gluten network from developing at all. Expect this stage to take 10 to 12 minutes.\n\nThe dough is ready when it passes the windowpane test: a small piece stretched thin should become translucent without tearing."
+          },
+          {
+            "rank": 4,
+            "chunk_id": "ferment_004__method__1",
+            "distance": 0.5388,
+            "recipe_id": "ferment_004",
+            "source_file": "ferment_004_sourdough_brioche.md",
+            "section": "Method",
+            "block_type": "prose",
+            "is_expected_recipe": true,
+            "text": "Recipe: Sourdough Brioche (recipe_id: ferment_004)\nSection: Method\n\nBulk ferment for 5 to 6 hours at 22C, then cold retard for 14 to 18 hours at 4C. Enriched sourdough is very difficult to shape at room temperature, so the cold retard is a handling step as much as a flavour step.\n\nDivide, shape into four balls per tin, and prove for 4 to 5 hours at 24C until the dough reaches the rim of the tin and springs back slowly when pressed.\n\nEgg wash and bake at 180C for 30 minutes until deep golden and the internal temperature reaches 92C. Turn out of the tins immediately to stop the sides collapsing."
+          },
+          {
+            "rank": 5,
+            "chunk_id": "ferment_004__allergen_note__0",
+            "distance": 0.5541,
+            "recipe_id": "ferment_004",
+            "source_file": "ferment_004_sourdough_brioche.md",
+            "section": "Allergen Note",
+            "block_type": "prose",
+            "is_expected_recipe": true,
+            "text": "Recipe: Sourdough Brioche (recipe_id: ferment_004)\nSection: Allergen Note\n\nContains wheat and rye, therefore contains gluten. Contains milk and butter, therefore contains dairy. Contains egg, both in the dough and in the egg wash. Contains no nuts. Suitable for vegetarians but not for vegans."
+          }
+        ],
+        "hit_recipe": true,
+        "answer_in": true
+      },
+      "Q4": {
+        "rows": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_005__ingredients__0",
+            "distance": 0.4035,
+            "recipe_id": "ferment_005",
+            "source_file": "ferment_005_traditional_napa_kimchi.md",
+            "section": "Ingredients",
+            "block_type": "table",
+            "is_expected_recipe": true,
+            "text": "Recipe: Traditional Napa Cabbage Kimchi (recipe_id: ferment_005)\nSection: Ingredients\n\nPercentages here are calculated against the 2000 g of prepared napa cabbage rather than against flour, since this is a vegetable ferment rather than a dough.\n\n| Ingredient | Weight | Percentage of cabbage |\n|---|---|---|\n| Napa cabbage | 2000 g | 100% |\n| Coarse sea salt (for brining) | 160 g | 8% |\n| Gochugaru (Korean chilli flakes) | 100 g | 5% |\n| Korean radish, julienned | 400 g | 20% |\n| Garlic, minced | 60 g | 3% |\n| Ginger, grated | 20 g | 1% |\n| Saeujeot (salted fermented shrimp) | 60 g | 3% |\n| Anchovy fish sauce | 60 g | 3% |\n| Glutinous rice flour | 30 g | 1.5% |\n| Caster sugar | 20 g | 1% |"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ferment_005__ingredients__1",
+            "distance": 0.4691,
+            "recipe_id": "ferment_005",
+            "source_file": "ferment_005_traditional_napa_kimchi.md",
+            "section": "Ingredients",
+            "block_type": "prose",
+            "is_expected_recipe": true,
+            "text": "Recipe: Traditional Napa Cabbage Kimchi (recipe_id: ferment_005)\nSection: Ingredients\n\nTotal yield is approximately 2.9 kg of finished kimchi."
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ferment_006__ingredients__0",
+            "distance": 0.4737,
+            "recipe_id": "ferment_006",
+            "source_file": "ferment_006_vegan_napa_kimchi.md",
+            "section": "Ingredients",
+            "block_type": "table",
+            "is_expected_recipe": false,
+            "text": "Recipe: Vegan Napa Cabbage Kimchi (recipe_id: ferment_006)\nSection: Ingredients\n\nPercentages are calculated against the 2000 g of prepared napa cabbage. The salted shrimp and anchovy fish sauce of the traditional card are replaced here by a shiitake and kombu umami base.\n\n| Ingredient | Weight | Percentage of cabbage |\n|---|---|---|\n| Napa cabbage | 2000 g | 100% |\n| Coarse sea salt (for brining) | 160 g | 8% |\n| Gochugaru (Korean chilli flakes) | 100 g | 5% |\n| Korean radish, julienned | 400 g | 20% |\n| Garlic, minced | 60 g | 3% |\n| Ginger, grated | 20 g | 1% |\n| Dried shiitake mushrooms | 30 g | 1.5% |\n| Kombu (dried kelp) | 10 g | 0.5% |\n| Tamari (gluten-free soy sauce) | 50 g | 2.5% |\n| Glutinous rice flour | 30 g | 1.5% |\n| Caster sugar | 20 g | 1% |"
+          },
+          {
+            "rank": 4,
+            "chunk_id": "recipe_169__description__0",
+            "distance": 0.4906,
+            "recipe_id": "recipe_169",
+            "source_file": "recipe_169_napa_cabbage_kimchi.md",
+            "section": "Description",
+            "block_type": "prose",
+            "is_expected_recipe": false,
+            "text": "Recipe: Napa Cabbage Kimchi (recipe_id: recipe_169)\nSection: Description\n\nBaechu Kimchi is the fermented napa cabbage that appears at every Korean meal. Cabbage is salted to draw out water, then coated in a paste of gochugaru, garlic, ginger, fish sauce and salted shrimp, and left to ferment. The salting stage is the one that determines everything: too little and the kimchi goes soft and watery, too much and it is inedibly salty. A rice flour porridge in the paste feeds the lactobacillus and speeds fermentation. It contains fish and shellfish, and is gluten-free."
+          },
+          {
+            "rank": 5,
+            "chunk_id": "recipe_169__ingredients__0",
+            "distance": 0.5162,
+            "recipe_id": "recipe_169",
+            "source_file": "recipe_169_napa_cabbage_kimchi.md",
+            "section": "Ingredients",
+            "block_type": "prose",
+            "is_expected_recipe": false,
+            "text": "Recipe: Napa Cabbage Kimchi (recipe_id: recipe_169)\nSection: Ingredients\n\nFor salting:\n- Napa cabbage - 2 large heads (about 3kg)\n- Coarse sea salt - 150g\n- Water - 2 litres\n\nFor the rice porridge:\n- Glutinous rice flour - 2 tablespoons\n- Water - 250ml\n- Sugar - 1 tablespoon\n\nFor the kimchi paste:\n- Gochugaru (Korean chilli flakes) - 100g\n- Garlic - 20 cloves, minced\n- Ginger - 40g, grated\n- Onion - 1, blended\n- Fish sauce - 80ml\n- Salted fermented shrimp (saeujeot) - 3 tablespoons, minced\n- Korean pear or apple - 1, grated\n\nFor the vegetables:\n- Korean radish (mu) or daikon - 500g, julienned\n- Spring onions - 8, cut into 4cm lengths\n- Garlic chives - a bunch (optional)\n- Carrot - 1, julienned"
+          }
+        ],
+        "hit_recipe": true,
+        "answer_in": true
+      },
+      "Q5": {
+        "rows": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_001__method__1",
+            "distance": 0.3682,
+            "recipe_id": "ferment_001",
+            "source_file": "ferment_001_country_sourdough_2kg.md",
+            "section": "Method",
+            "block_type": "prose",
+            "is_expected_recipe": true,
+            "text": "Recipe: 2kg Country Sourdough Loaf (recipe_id: ferment_001)\nSection: Method\n\nBulk ferment for 4 to 5 hours at 24C, performing a set of coil folds every 45 minutes for the first three hours. The bulk is finished when the dough has risen by roughly 50%, feels aerated, and shows a domed surface with visible bubbles at the edge of the tub.\n\nDivide into two pieces, pre-shape lightly and bench rest for 25 minutes. Shape into boules, place seam side up in floured bannetons, and cold retard in the refrigerator at 4C for 12 to 16 hours.\n\nBake straight from the refrigerator in a preheated cast iron combo cooker. Bake at 250C for 20 minutes with the lid on, then remove the lid, drop the oven to 230C and bake for a further 25 minutes until the crust is deep brown and the internal temperature reaches 96C."
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ferment_001__method__2",
+            "distance": 0.4849,
+            "recipe_id": "ferment_001",
+            "source_file": "ferment_001_country_sourdough_2kg.md",
+            "section": "Method",
+            "block_type": "prose",
+            "is_expected_recipe": true,
+            "text": "Recipe: 2kg Country Sourdough Loaf (recipe_id: ferment_001)\nSection: Method\n\nCool on a rack for at least 2 hours before cutting."
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ferment_001__ingredients__1",
+            "distance": 0.5115,
+            "recipe_id": "ferment_001",
+            "source_file": "ferment_001_country_sourdough_2kg.md",
+            "section": "Ingredients",
+            "block_type": "prose",
+            "is_expected_recipe": true,
+            "text": "Recipe: 2kg Country Sourdough Loaf (recipe_id: ferment_001)\nSection: Ingredients\n\nTotal dough weight is 4040 g, which divides into two loaves of roughly 2020 g each."
+          },
+          {
+            "rank": 4,
+            "chunk_id": "ferment_001__method__0",
+            "distance": 0.5209,
+            "recipe_id": "ferment_001",
+            "source_file": "ferment_001_country_sourdough_2kg.md",
+            "section": "Method",
+            "block_type": "prose",
+            "is_expected_recipe": true,
+            "text": "Recipe: 2kg Country Sourdough Loaf (recipe_id: ferment_001)\nSection: Method\n\nAutolyse first. Combine the strong white flour, the wholemeal flour and 1500 g of the water in a large tub, mixing until no dry flour remains, then cover and rest for 60 minutes. Hold back the remaining 100 g of water for the salt stage.\n\nAdd the rye levain and squeeze it through the dough until fully dispersed. Rest for 30 minutes.\n\nNow add the fine sea salt together with the reserved 100 g of water. The salt goes in after the autolyse and after the levain, never at the start, because salt tightens the gluten network and slows the enzymatic activity the autolyse is meant to encourage. Squeeze and fold until the dough feels smooth and no grittiness remains at the base of the tub."
+          },
+          {
+            "rank": 5,
+            "chunk_id": "ferment_001__ingredients__0",
+            "distance": 0.5355,
+            "recipe_id": "ferment_001",
+            "source_file": "ferment_001_country_sourdough_2kg.md",
+            "section": "Ingredients",
+            "block_type": "table",
+            "is_expected_recipe": true,
+            "text": "Recipe: 2kg Country Sourdough Loaf (recipe_id: ferment_001)\nSection: Ingredients\n\nTotal flour weight is 2000 g and all baker's percentages below are calculated against that total flour weight. Final hydration is 80%.\n\n| Ingredient | Weight | Baker's % |\n|---|---|---|\n| Strong white bread flour | 1700 g | 85% |\n| Wholemeal flour | 300 g | 15% |\n| Water (28C) | 1600 g | 80% |\n| Fine sea salt | 40 g | 2% |\n| Rye levain (100% hydration) | 400 g | 20% |"
+          }
+        ],
+        "hit_recipe": true,
+        "answer_in": true
+      },
+      "Q6": {
+        "rows": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_002__method__1",
+            "distance": 0.3721,
+            "recipe_id": "ferment_002",
+            "source_file": "ferment_002_rye_levain_starter.md",
+            "section": "Method",
+            "block_type": "prose",
+            "is_expected_recipe": true,
+            "text": "Recipe: Rye Levain Starter (recipe_id: ferment_002)\nSection: Method\n\nCover loosely and ferment for 8 to 12 hours at 22 to 24C. The levain is ripe when it has at least doubled from the elastic band mark, the surface is domed and covered in fine bubbles, and it smells sharply sour with a faint acetone note. A levain that has risen and then collapsed back to a flat, watery surface has gone past ripe and will give a slack, over-acidified dough.\n\nThe float test is a useful confirmation: drop a teaspoon of ripe levain into room temperature water and it should float rather than sink.\n\nRefresh at least once every 24 hours if the starter is kept at room temperature, or once a week if it is stored at 4C in the refrigerator."
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ferment_002__method__0",
+            "distance": 0.4938,
+            "recipe_id": "ferment_002",
+            "source_file": "ferment_002_rye_levain_starter.md",
+            "section": "Method",
+            "block_type": "prose",
+            "is_expected_recipe": true,
+            "text": "Recipe: Rye Levain Starter (recipe_id: ferment_002)\nSection: Method\n\nWeigh the mature starter into a clear straight-sided jar and mark the level with an elastic band so the rise can be judged by eye rather than by guesswork.\n\nAdd the water at 26C and stir until the starter is dispersed and the liquid turns cloudy. Add the wholegrain rye flour and mix to a thick paste. Rye holds far more water than white flour, so at 100% hydration this will look like a stiff batter rather than a dough."
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ferment_002__ingredients__0",
+            "distance": 0.5287,
+            "recipe_id": "ferment_002",
+            "source_file": "ferment_002_rye_levain_starter.md",
+            "section": "Ingredients",
+            "block_type": "table",
+            "is_expected_recipe": true,
+            "text": "Recipe: Rye Levain Starter (recipe_id: ferment_002)\nSection: Ingredients\n\nThis is a 100% hydration levain, meaning the water weight equals the flour weight. Baker's percentages are calculated against the 100 g of rye flour.\n\n| Ingredient | Weight | Baker's % |\n|---|---|---|\n| Wholegrain rye flour | 100 g | 100% |\n| Water (26C) | 100 g | 100% |\n| Mature sourdough starter | 20 g | 20% |"
+          },
+          {
+            "rank": 4,
+            "chunk_id": "ferment_002__ingredients__1",
+            "distance": 0.5298,
+            "recipe_id": "ferment_002",
+            "source_file": "ferment_002_rye_levain_starter.md",
+            "section": "Ingredients",
+            "block_type": "prose",
+            "is_expected_recipe": true,
+            "text": "Recipe: Rye Levain Starter (recipe_id: ferment_002)\nSection: Ingredients\n\nTotal levain yield is 220 g, which is enough to build the 400 g of levain required by the 2kg Country Sourdough after one further refreshment."
+          },
+          {
+            "rank": 5,
+            "chunk_id": "ferment_002__allergen_note__0",
+            "distance": 0.5633,
+            "recipe_id": "ferment_002",
+            "source_file": "ferment_002_rye_levain_starter.md",
+            "section": "Allergen Note",
+            "block_type": "prose",
+            "is_expected_recipe": true,
+            "text": "Recipe: Rye Levain Starter (recipe_id: ferment_002)\nSection: Allergen Note\n\nContains rye, therefore contains gluten. Contains no dairy, no egg and no nuts. Suitable for vegans."
+          }
+        ],
+        "hit_recipe": true,
+        "answer_in": true
+      },
+      "Q7": {
+        "rows": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_005__allergen_note__0",
+            "distance": 0.465,
+            "recipe_id": "ferment_005",
+            "source_file": "ferment_005_traditional_napa_kimchi.md",
+            "section": "Allergen Note",
+            "block_type": "prose",
+            "is_expected_recipe": false,
+            "text": "Recipe: Traditional Napa Cabbage Kimchi (recipe_id: ferment_005)\nSection: Allergen Note\n\nContains fish in the form of anchovy fish sauce and contains crustacean shellfish in the form of salted fermented shrimp. Not suitable for vegetarians or vegans. Contains no dairy, no egg, no nuts and no gluten. Despite its name, glutinous rice flour contains no gluten."
+          },
+          {
+            "rank": 2,
+            "chunk_id": "recipe_169__variations__0",
+            "distance": 0.4704,
+            "recipe_id": "recipe_169",
+            "source_file": "recipe_169_napa_cabbage_kimchi.md",
+            "section": "Variations",
+            "block_type": "prose",
+            "is_expected_recipe": false,
+            "text": "Recipe: Napa Cabbage Kimchi (recipe_id: recipe_169)\nSection: Variations\n\n- Vegan Kimchi: replace the fish sauce and salted shrimp with soy sauce and a kelp and shiitake stock.\n- Baek Kimchi: a white, non-spicy version made without gochugaru, suitable for children.\n- Kkakdugi: made with cubed radish instead of cabbage.\n- Oi Sobagi: stuffed cucumber kimchi, eaten fresh rather than long fermented."
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ferment_006__ingredients__0",
+            "distance": 0.5439,
+            "recipe_id": "ferment_006",
+            "source_file": "ferment_006_vegan_napa_kimchi.md",
+            "section": "Ingredients",
+            "block_type": "table",
+            "is_expected_recipe": true,
+            "text": "Recipe: Vegan Napa Cabbage Kimchi (recipe_id: ferment_006)\nSection: Ingredients\n\nPercentages are calculated against the 2000 g of prepared napa cabbage. The salted shrimp and anchovy fish sauce of the traditional card are replaced here by a shiitake and kombu umami base.\n\n| Ingredient | Weight | Percentage of cabbage |\n|---|---|---|\n| Napa cabbage | 2000 g | 100% |\n| Coarse sea salt (for brining) | 160 g | 8% |\n| Gochugaru (Korean chilli flakes) | 100 g | 5% |\n| Korean radish, julienned | 400 g | 20% |\n| Garlic, minced | 60 g | 3% |\n| Ginger, grated | 20 g | 1% |\n| Dried shiitake mushrooms | 30 g | 1.5% |\n| Kombu (dried kelp) | 10 g | 0.5% |\n| Tamari (gluten-free soy sauce) | 50 g | 2.5% |\n| Glutinous rice flour | 30 g | 1.5% |\n| Caster sugar | 20 g | 1% |"
+          },
+          {
+            "rank": 4,
+            "chunk_id": "ferment_006__allergen_note__0",
+            "distance": 0.5497,
+            "recipe_id": "ferment_006",
+            "source_file": "ferment_006_vegan_napa_kimchi.md",
+            "section": "Allergen Note",
+            "block_type": "prose",
+            "is_expected_recipe": true,
+            "text": "Recipe: Vegan Napa Cabbage Kimchi (recipe_id: ferment_006)\nSection: Allergen Note\n\nContains no fish, no shellfish, no dairy, no egg, no nuts and no gluten. Tamari is used specifically in place of ordinary soy sauce because ordinary soy sauce is brewed with wheat. Suitable for vegans and vegetarians."
+          },
+          {
+            "rank": 5,
+            "chunk_id": "ferment_006__method__1",
+            "distance": 0.5675,
+            "recipe_id": "ferment_006",
+            "source_file": "ferment_006_vegan_napa_kimchi.md",
+            "section": "Method",
+            "block_type": "prose",
+            "is_expected_recipe": true,
+            "text": "Recipe: Vegan Napa Cabbage Kimchi (recipe_id: ferment_006)\nSection: Method\n\nThis shiitake and kombu stock plus the tamari is what replaces the saeujeot and anchovy fish sauce used on the traditional card. Both supply glutamates, which is the savoury depth the fermented seafood would otherwise provide.\n\nWhisk the glutinous rice flour into the reserved 250 ml of mushroom stock, heat gently for 5 minutes until thickened, stir in the sugar and cool completely.\n\nMix the cooled porridge with the gochugaru and rest for 10 minutes, then add the garlic, ginger, chopped shiitake and tamari. Fold through the julienned radish.\n\nCoat every leaf with the paste, pack into a jar with 5 cm of headspace, and press down until the brine rises above the cabbage."
+          }
+        ],
+        "hit_recipe": true,
+        "answer_in": true
+      },
+      "Q8": {
+        "rows": [
+          {
+            "rank": 1,
+            "chunk_id": "ferment_004__allergen_note__0",
+            "distance": 0.3905,
+            "recipe_id": "ferment_004",
+            "source_file": "ferment_004_sourdough_brioche.md",
+            "section": "Allergen Note",
+            "block_type": "prose",
+            "is_expected_recipe": true,
+            "text": "Recipe: Sourdough Brioche (recipe_id: ferment_004)\nSection: Allergen Note\n\nContains wheat and rye, therefore contains gluten. Contains milk and butter, therefore contains dairy. Contains egg, both in the dough and in the egg wash. Contains no nuts. Suitable for vegetarians but not for vegans."
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ferment_004__ingredients__0",
+            "distance": 0.5602,
+            "recipe_id": "ferment_004",
+            "source_file": "ferment_004_sourdough_brioche.md",
+            "section": "Ingredients",
+            "block_type": "table",
+            "is_expected_recipe": true,
+            "text": "Recipe: Sourdough Brioche (recipe_id: ferment_004)\nSection: Ingredients\n\nBaker's percentages are calculated against the 500 g of strong white flour. This is an enriched dough, so the fat and egg percentages are high.\n\n| Ingredient | Weight | Baker's % |\n|---|---|---|\n| Strong white bread flour | 500 g | 100% |\n| Whole milk (cold) | 150 g | 30% |\n| Eggs (about 4 medium) | 200 g | 40% |\n| Unsalted butter (softened) | 200 g | 40% |\n| Caster sugar | 60 g | 12% |\n| Rye levain (100% hydration) | 100 g | 20% |\n| Fine sea salt | 10 g | 2% |"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ferment_003__allergen_note__0",
+            "distance": 0.5696,
+            "recipe_id": "ferment_003",
+            "source_file": "ferment_003_sourdough_focaccia.md",
+            "section": "Allergen Note",
+            "block_type": "prose",
+            "is_expected_recipe": false,
+            "text": "Recipe: Sourdough Focaccia (recipe_id: ferment_003)\nSection: Allergen Note\n\nContains wheat and rye, therefore contains gluten. Contains no dairy, no egg and no nuts. Suitable for vegans."
+          },
+          {
+            "rank": 4,
+            "chunk_id": "ferment_004__ingredients__1",
+            "distance": 0.575,
+            "recipe_id": "ferment_004",
+            "source_file": "ferment_004_sourdough_brioche.md",
+            "section": "Ingredients",
+            "block_type": "prose",
+            "is_expected_recipe": true,
+            "text": "Recipe: Sourdough Brioche (recipe_id: ferment_004)\nSection: Ingredients\n\nTotal dough weight is 1220 g, which makes two loaves in 900 g tins."
+          },
+          {
+            "rank": 5,
+            "chunk_id": "ferment_001__allergen_note__0",
+            "distance": 0.5758,
+            "recipe_id": "ferment_001",
+            "source_file": "ferment_001_country_sourdough_2kg.md",
+            "section": "Allergen Note",
+            "block_type": "prose",
+            "is_expected_recipe": false,
+            "text": "Recipe: 2kg Country Sourdough Loaf (recipe_id: ferment_001)\nSection: Allergen Note\n\nContains wheat and rye, therefore contains gluten. Contains no dairy, no egg and no nuts. Suitable for vegans. Produced in a bakery that also handles milk, egg and sesame."
+          }
+        ],
+        "hit_recipe": true,
+        "answer_in": true
+      }
+    }
+  }
+}
