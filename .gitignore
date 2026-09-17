@@ -1,6 +1,31 @@
+# Environment variables / secrets
 .env
+.env.*
+!.env.example
+
+# Python
 __pycache__/
 *.pyc
+.venv/
+venv/
+
+# RAG / vector database
 data/chroma/
+chroma/
+chroma_db/
+
+# Generated embeddings
 evaluation/query_embeddings.json
+
+# Playwright MCP
 .playwright-mcp/
+
+# IDE
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local RAG documents
+documents/*.pdf
