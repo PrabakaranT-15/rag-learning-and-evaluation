@@ -1,0 +1,398 @@
+{
+  "fixed_answers": {
+    "T01": "The 2kg Country Sourdough Loaf recipe requires 40 g of fine sea salt [recipe_id=ferment_001 | chunk_id=ferment_001__ingredients__0 | source_file=ferment_001_country_sourdough_2kg.md].",
+    "T02": "The brioche dough should prove for 4 to 5 hours at 24C [recipe_id=ferment_004 | chunk_id=ferment_004__method__1 | source_file=ferment_004_sourdough_brioche.md].",
+    "T03": "Bake the focaccia at 240C [recipe_id=ferment_003 | chunk_id=ferment_003__method__1 | source_file=ferment_003_sourdough_focaccia.md].",
+    "T04": "Yes, you can make the kimchi vegan using the Vegan Napa Cabbage Kimchi recipe, which is suitable for vegans [recipe_id=ferment_006 | chunk_id=ferment_006__allergen_note__0 | source_file=ferment_006_vegan_napa_kimchi.md]. In this recipe, the anchovy fish sauce and salted shrimp (saeujeot) used in the traditional version are replaced by tamari and a shiitake and kombu stock/umami base [recipe_id=ferment_006 | chunk_id=ferment_006__ingredients__0 | source_file=ferment_006_vegan_napa_kimchi.md] [recipe_id=ferment_006 | chunk_id=ferment_006__method__1 | source_file=ferment_006_vegan_napa_kimchi.md].",
+    "T05": "The levain is ripe when it smells sharply sour with a faint acetone note, its surface is domed and covered in fine bubbles, and it has at least doubled from the elastic band mark [recipe_id=ferment_002 | chunk_id=ferment_002__method__1 | source_file=ferment_002_rye_levain_starter.md]. To confirm this, you can perform a float test by dropping a teaspoon of the levain into room temperature water; it should float rather than sink [recipe_id=ferment_002 | chunk_id=ferment_002__method__1 | source_file=ferment_002_rye_levain_starter.md].",
+    "T06": "The final hydration for the 2kg Country Sourdough Loaf is 80% [recipe_id=ferment_001 | chunk_id=ferment_001__ingredients__0 | source_file=ferment_001_country_sourdough_2kg.md].",
+    "T07": "I cannot answer this from the provided recipe documents.",
+    "T08": "The recipe for Sourdough Focaccia uses strong white bread flour [recipe_id=ferment_003 | chunk_id=ferment_003__ingredients__0 | source_file=ferment_003_sourdough_focaccia.md] and rye levain [recipe_id=ferment_003 | chunk_id=ferment_003__ingredients__0 | source_file=ferment_003_sourdough_focaccia.md].",
+    "T09": "I cannot answer this from the provided recipe documents.",
+    "T10": "The differences between the two kimchi recipes are as follows:\n\n*   **Dietary Profile:** Vegan Napa Cabbage Kimchi is vegan and vegetarian [recipe_id=ferment_006 | chunk_id=ferment_006__method__2 | source_file=ferment_006_vegan_napa_kimchi.md], whereas Traditional Napa Cabbage Kimchi is non-vegetarian and contains fish and shellfish [recipe_id=ferment_005 | chunk_id=ferment_005__method__2 | source_file=ferment_005_traditional_napa_kimchi.md].\n*   **Fermentation Time:** Vegan Napa Cabbage Kimchi ferments at 20C for 2 to 3 days [recipe_id=ferment_006 | chunk_id=ferment_006__method__2 | source_file=ferment_006_vegan_napa_kimchi.md], while Traditional Napa Cabbage Kimchi ferments at 20C for 2 days [recipe_id=ferment_005 | chunk_id=ferment_005__method__2 | source_file=ferment_005_traditional_napa_kimchi.md]. The vegan version takes around a day longer because seafood ferments in saeujeot in the traditional version provide a head start [recipe_id=ferment_006 | chunk_id=ferment_006__method__2 | source_file=ferment_006_vegan_napa_kimchi.md].\n*   **Yield:** The total yield for Vegan Napa Cabbage Kimchi is approximately 2.85 kg [recipe_id=ferment_006 | chunk_id=ferment_006__ingredients__1 | source_file=ferment_006_vegan_napa_kimchi.md], compared to approximately 2.9 kg for Traditional Napa Cabbage Kimchi [recipe_id=ferment_005 | chunk_id=ferment_005__ingredients__1 | source_file=ferment_005_traditional_napa_kimchi.md].",
+    "T11": "The levain takes 8 to 12 hours to ferment at 22 to 24C to be ripe [recipe_id=ferment_002 | chunk_id=ferment_002__method__1 | source_file=ferment_002_rye_levain_starter.md].",
+    "T12": "The sourdough breads mentioned in the context are not gluten free:\n\n*   The 2kg Country Sourdough Loaf contains wheat and rye and therefore contains gluten [recipe_id=ferment_001 | chunk_id=ferment_001__allergen_note__0 | source_file=ferment_001_country_sourdough_2kg.md].\n*   The Sourdough Focaccia contains wheat and rye and therefore contains gluten [recipe_id=ferment_003 | chunk_id=ferment_003__allergen_note__0 | source_file=ferment_003_sourdough_focaccia.md].\n*   The Sourdough Brioche contains wheat and rye and therefore contains gluten [recipe_id=ferment_004 | chunk_id=ferment_004__allergen_note__0 | source_file=ferment_004_sourdough_brioche.md].",
+    "T13": "A shiitake and kombu umami base [recipe_id=ferment_006 | chunk_id=ferment_006__ingredients__0 | source_file=ferment_006_vegan_napa_kimchi.md], specifically shiitake and kombu stock plus tamari [recipe_id=ferment_006 | chunk_id=ferment_006__method__1 | source_file=ferment_006_vegan_napa_kimchi.md], replaces the anchovy fish sauce used in the traditional recipe [recipe_id=ferment_006 | chunk_id=ferment_006__method__1 | source_file=ferment_006_vegan_napa_kimchi.md].",
+    "T14": "The sourdough brioche contains 200 g of softened unsalted butter [recipe_id=ferment_004 | chunk_id=ferment_004__ingredients__0 | source_file=ferment_004_sourdough_brioche.md].",
+    "T15": "I cannot answer this from the provided recipe documents.",
+    "T16": "I cannot answer this from the provided recipe documents.",
+    "T17": "Traditional Napa Cabbage Kimchi is transferred to the refrigerator at 4C after fermenting at 20C for 2 days until bubbles appear and the smell turns sour [recipe_id=ferment_005 | chunk_id=ferment_005__method__2 | source_file=ferment_005_traditional_napa_kimchi.md]. Vegan Napa Cabbage Kimchi is moved to the refrigerator once it is bubbling and pleasantly sour [recipe_id=ferment_006 | chunk_id=ferment_006__method__2 | source_file=ferment_006_vegan_napa_kimchi.md].",
+    "T18": "The rye levain is a 100% hydration levain, which means the water weight equals the flour weight [recipe_id=ferment_002 | chunk_id=ferment_002__ingredients__0 | source_file=ferment_002_rye_levain_starter.md]. Specifically, the recipe uses 100 g of wholegrain rye flour and 100 g of water [recipe_id=ferment_002 | chunk_id=ferment_002__ingredients__0 | source_file=ferment_002_rye_levain_starter.md].",
+    "T19": "I cannot answer this from the provided recipe documents.",
+    "T20": "A Rye Levain Starter smells sharply sour with a faint acetone note when it is ripe [recipe_id=ferment_002 | chunk_id=ferment_002__method__1 | source_file=ferment_002_rye_levain_starter.md]."
+  },
+  "hard_regressions": {
+    "T20": {
+      "ok": true,
+      "detail": "flipped to a correct, grounded answer"
+    },
+    "T07": {
+      "ok": true,
+      "detail": "still refuses"
+    },
+    "T15": {
+      "ok": true,
+      "detail": "still refuses"
+    },
+    "T16": {
+      "ok": true,
+      "detail": "still refuses"
+    },
+    "T19": {
+      "ok": true,
+      "detail": "still refuses"
+    }
+  },
+  "soft_regressions": {
+    "T09": {
+      "flipped": false,
+      "detail": "still refuses (acceptable per prediction)"
+    }
+  },
+  "judge_baseline_verdicts": {
+    "T01": {
+      "verdict": "pass",
+      "reason": "The answer correctly identifies the amount of salt for the country sourdough recipe as 40 g, which is explicitly stated in the provided context.",
+      "raw": "VERDICT: PASS\nREASON: The answer correctly identifies the amount of salt for the country sourdough recipe as 40 g, which is explicitly stated in the provided context."
+    },
+    "T02": {
+      "verdict": "pass",
+      "reason": "The answer accurately provides the proofing time and conditions directly from the retrieved context.",
+      "raw": "VERDICT: PASS\nREASON: The answer accurately provides the proofing time and conditions directly from the retrieved context."
+    },
+    "T03": {
+      "verdict": "pass",
+      "reason": "The answer correctly identifies the baking temperature (240C) as stated in the retrieved context.",
+      "raw": "VERDICT: PASS\nREASON: The answer correctly identifies the baking temperature (240C) as stated in the retrieved context."
+    },
+    "T04": {
+      "verdict": "pass",
+      "reason": "The answer correctly identifies that a vegan version exists, cites the specific recipe, and explains the substitutions used to make it vegan, all of which are supported by the retrieved context.",
+      "raw": "VERDICT: PASS\nREASON: The answer correctly identifies that a vegan version exists, cites the specific recipe, and explains the substitutions used to make it vegan, all of which are supported by the retrieved context."
+    },
+    "T05": {
+      "verdict": "pass",
+      "reason": "The answer correctly and completely identifies all the indicators of ripeness and the confirmation test mentioned in the retrieved context.",
+      "raw": "VERDICT: PASS\nREASON: The answer correctly and completely identifies all the indicators of ripeness and the confirmation test mentioned in the retrieved context."
+    },
+    "T06": {
+      "verdict": "pass",
+      "reason": "The answer correctly identifies the final hydration percentage for the sourdough loaf as stated in the retrieved context.",
+      "raw": "VERDICT: PASS\nREASON: The answer correctly identifies the final hydration percentage for the sourdough loaf as stated in the retrieved context."
+    },
+    "T07": {
+      "verdict": "pass",
+      "reason": "The provided context does not contain information regarding the caloric content of the brioche, so the assistant correctly refused to answer.",
+      "raw": "VERDICT: PASS\nREASON: The provided context does not contain information regarding the caloric content of the brioche, so the assistant correctly refused to answer."
+    },
+    "T08": {
+      "verdict": "pass",
+      "reason": "The answer correctly identifies the flour used in the provided recipe as strong white bread flour.",
+      "raw": "VERDICT: PASS\nREASON: The answer correctly identifies the flour used in the provided recipe as strong white bread flour."
+    },
+    "T09": {
+      "verdict": "fail",
+      "reason": "The retrieved context lists \"Gochugaru (Korean chilli flakes)\" as an ingredient, which provides the information necessary to answer the question about the kimchi's spiciness.",
+      "raw": "VERDICT: FAIL\nREASON: The retrieved context lists \"Gochugaru (Korean chilli flakes)\" as an ingredient, which provides the information necessary to answer the question about the kimchi's spiciness."
+    },
+    "T10": {
+      "verdict": "pass",
+      "reason": "The answer correctly identifies the differences in dietary status, fermentation time (including the reason why), and yield, all of which are supported by the retrieved context.",
+      "raw": "VERDICT: PASS\nREASON: The answer correctly identifies the differences in dietary status, fermentation time (including the reason why), and yield, all of which are supported by the retrieved context."
+    },
+    "T11": {
+      "verdict": "pass",
+      "reason": "The answer correctly identifies the fermentation time and temperature from the provided text to address when the levain ripens.",
+      "raw": "VERDICT: PASS\nREASON: The answer correctly identifies the fermentation time and temperature from the provided text to address when the levain ripens."
+    },
+    "T12": {
+      "verdict": "pass",
+      "reason": "The answer correctly identifies that all the sourdough recipes provided in the context contain gluten, supporting each claim with the provided text.",
+      "raw": "VERDICT: PASS\nREASON: The answer correctly identifies that all the sourdough recipes provided in the context contain gluten, supporting each claim with the provided text."
+    },
+    "T13": {
+      "verdict": "pass",
+      "reason": "The answer accurately identifies the substitute for fish sauce using the provided context.",
+      "raw": "VERDICT: PASS\nREASON: The answer accurately identifies the substitute for fish sauce using the provided context."
+    },
+    "T14": {
+      "verdict": "pass",
+      "reason": "The answer correctly identifies the amount of butter from the ingredients table in the retrieved context.",
+      "raw": "VERDICT: PASS\nREASON: The answer correctly identifies the amount of butter from the ingredients table in the retrieved context."
+    },
+    "T15": {
+      "verdict": "pass",
+      "reason": "The retrieved context does not mention ciabatta or freezing dough, so the assistant correctly refused to answer.",
+      "raw": "VERDICT: PASS\nREASON: The retrieved context does not mention ciabatta or freezing dough, so the assistant correctly refused to answer."
+    },
+    "T16": {
+      "verdict": "fail",
+      "reason": "The context states to \"Egg wash and bake... until deep golden,\" providing a clear link between the egg wash and the resulting color, so the assistant should have made that connection instead of refusing.",
+      "raw": "VERDICT: FAIL\nREASON: The context states to \"Egg wash and bake... until deep golden,\" providing a clear link between the egg wash and the resulting color, so the assistant should have made that connection instead of refusing."
+    },
+    "T17": {
+      "verdict": "pass",
+      "reason": "The answer correctly identifies the refrigerator as the storage method for both types of kimchi using the provided context.",
+      "raw": "VERDICT: PASS\nREASON: The answer correctly identifies the refrigerator as the storage method for both types of kimchi using the provided context."
+    },
+    "T18": {
+      "verdict": "pass",
+      "reason": "The answer correctly identifies the ratio of flour to water as equal weights based on the 100% hydration description and ingredient list in the provided context.",
+      "raw": "VERDICT: PASS\nREASON: The answer correctly identifies the ratio of flour to water as equal weights based on the 100% hydration description and ingredient list in the provided context."
+    },
+    "T19": {
+      "verdict": "pass",
+      "reason": "The retrieved context contains recipes for sourdough loaf, focaccia, and brioche, but not for naan bread, so the assistant correctly refused to answer.",
+      "raw": "VERDICT: PASS\nREASON: The retrieved context contains recipes for sourdough loaf, focaccia, and brioche, but not for naan bread, so the assistant correctly refused to answer."
+    },
+    "T20": {
+      "verdict": "fail",
+      "reason": "The assistant refused to answer despite the context stating that a ripe levain smells \"sharply sour with a faint acetone note,\" and acetone is the chemical responsible for the smell of nail polish remover.",
+      "raw": "VERDICT: FAIL\nREASON: The assistant refused to answer despite the context stating that a ripe levain smells \"sharply sour with a faint acetone note,\" and acetone is the chemical responsible for the smell of nail polish remover."
+    }
+  },
+  "judge_fixed_verdicts": {
+    "T01": {
+      "verdict": "pass",
+      "reason": "The answer accurately identifies the amount of salt for the country sourdough recipe as stated in the retrieved context.",
+      "raw": "VERDICT: PASS\nREASON: The answer accurately identifies the amount of salt for the country sourdough recipe as stated in the retrieved context."
+    },
+    "T02": {
+      "verdict": "pass",
+      "reason": "The answer correctly identifies the proofing time and temperature explicitly stated in the retrieved context.",
+      "raw": "VERDICT: PASS\nREASON: The answer correctly identifies the proofing time and temperature explicitly stated in the retrieved context."
+    },
+    "T03": {
+      "verdict": "pass",
+      "reason": "The answer accurately identifies the baking temperature of 240C as specified in the retrieved context.",
+      "raw": "VERDICT: PASS\nREASON: The answer accurately identifies the baking temperature of 240C as specified in the retrieved context."
+    },
+    "T04": {
+      "verdict": "pass",
+      "reason": "The answer correctly confirms that kimchi can be made vegan and explains the specific substitutions used in the provided vegan recipe, all of which are supported by the retrieved context.",
+      "raw": "VERDICT: PASS\nREASON: The answer correctly confirms that kimchi can be made vegan and explains the specific substitutions used in the provided vegan recipe, all of which are supported by the retrieved context."
+    },
+    "T05": {
+      "verdict": "pass",
+      "reason": "The answer accurately and completely describes the signs of ripeness and the float test as stated in the retrieved context.",
+      "raw": "VERDICT: PASS\nREASON: The answer accurately and completely describes the signs of ripeness and the float test as stated in the retrieved context."
+    },
+    "T06": {
+      "verdict": "pass",
+      "reason": "The answer correctly identifies the hydration percentage for the sourdough loaf as stated in the retrieved context.",
+      "raw": "VERDICT: PASS\nREASON: The answer correctly identifies the hydration percentage for the sourdough loaf as stated in the retrieved context."
+    },
+    "T07": {
+      "verdict": "pass",
+      "reason": "The retrieved context does not contain nutritional information or calorie counts, so the assistant correctly refused to answer.",
+      "raw": "VERDICT: PASS\nREASON: The retrieved context does not contain nutritional information or calorie counts, so the assistant correctly refused to answer."
+    },
+    "T08": {
+      "verdict": "pass",
+      "reason": "The answer accurately identifies the flour types used in the provided recipe as requested.",
+      "raw": "VERDICT: PASS\nREASON: The answer accurately identifies the flour types used in the provided recipe as requested."
+    },
+    "T09": {
+      "verdict": "pass",
+      "reason": "The provided context lists the quantity of chili flakes but does not describe the level of spiciness, so the assistant correctly refused to answer.",
+      "raw": "VERDICT: PASS\nREASON: The provided context lists the quantity of chili flakes but does not describe the level of spiciness, so the assistant correctly refused to answer."
+    },
+    "T10": {
+      "verdict": "pass",
+      "reason": "The answer accurately identifies the differences in dietary profile, fermentation time, and yield based on the provided text, including the specific reason for the fermentation time difference.",
+      "raw": "VERDICT: PASS\nREASON: The answer accurately identifies the differences in dietary profile, fermentation time, and yield based on the provided text, including the specific reason for the fermentation time difference."
+    },
+    "T11": {
+      "verdict": "pass",
+      "reason": "The answer correctly identifies the ripening time and temperature based on the provided text.",
+      "raw": "VERDICT: PASS\nREASON: The answer correctly identifies the ripening time and temperature based on the provided text."
+    },
+    "T12": {
+      "verdict": "pass",
+      "reason": "The answer correctly identifies that the sourdough breads listed in the context contain gluten, citing the specific recipes provided.",
+      "raw": "VERDICT: PASS\nREASON: The answer correctly identifies that the sourdough breads listed in the context contain gluten, citing the specific recipes provided."
+    },
+    "T13": {
+      "verdict": "pass",
+      "reason": "The answer correctly identifies the substitute for fish sauce as described in the provided text.",
+      "raw": "VERDICT: PASS\nREASON: The answer correctly identifies the substitute for fish sauce as described in the provided text."
+    },
+    "T14": {
+      "verdict": "pass",
+      "reason": "The answer correctly identifies the amount of butter specified in the ingredients table of the provided context.",
+      "raw": "VERDICT: PASS\nREASON: The answer correctly identifies the amount of butter specified in the ingredients table of the provided context."
+    },
+    "T15": {
+      "verdict": "pass",
+      "reason": "The retrieved context does not mention ciabatta or freezing dough, so the assistant correctly refused to answer.",
+      "raw": "VERDICT: PASS\nREASON: The retrieved context does not mention ciabatta or freezing dough, so the assistant correctly refused to answer."
+    },
+    "T16": {
+      "verdict": "pass",
+      "reason": "The retrieved context mentions that the dough should be egg washed and baked, but it does not explicitly state the purpose of the egg wash.",
+      "raw": "VERDICT: PASS\nREASON: The retrieved context mentions that the dough should be egg washed and baked, but it does not explicitly state the purpose of the egg wash."
+    },
+    "T17": {
+      "verdict": "pass",
+      "reason": "The answer correctly identifies the storage method (refrigeration) for both types of kimchi as described in the provided context.",
+      "raw": "VERDICT: PASS\nREASON: The answer correctly identifies the storage method (refrigeration) for both types of kimchi as described in the provided context."
+    },
+    "T18": {
+      "verdict": "pass",
+      "reason": "The answer accurately states the ratio of flour to water based on the provided context, mentioning both the 100% hydration definition and the specific weights.",
+      "raw": "VERDICT: PASS\nREASON: The answer accurately states the ratio of flour to water based on the provided context, mentioning both the 100% hydration definition and the specific weights."
+    },
+    "T19": {
+      "verdict": "pass",
+      "reason": "The retrieved context contains recipes for sourdough loaf, focaccia, and brioche, but not naan bread, so the assistant correctly refused to answer.",
+      "raw": "VERDICT: PASS\nREASON: The retrieved context contains recipes for sourdough loaf, focaccia, and brioche, but not naan bread, so the assistant correctly refused to answer."
+    },
+    "T20": {
+      "verdict": "pass",
+      "reason": "The answer correctly connects the user's lay description of \"nail polish\" to the technical term \"acetone\" found in the context and explains that this scent indicates the starter is ripe.",
+      "raw": "VERDICT: PASS\nREASON: The answer correctly connects the user's lay description of \"nail polish\" to the technical term \"acetone\" found in the context and explains that this scent indicates the starter is ripe."
+    }
+  },
+  "judge_human_agreement_rate": 0.75,
+  "judge_human_disagreements": [
+    [
+      "T08",
+      "fail",
+      "pass"
+    ],
+    [
+      "T10",
+      "fail",
+      "pass"
+    ],
+    [
+      "T12",
+      "fail",
+      "pass"
+    ],
+    [
+      "T16",
+      "pass",
+      "fail"
+    ],
+    [
+      "T17",
+      "fail",
+      "pass"
+    ]
+  ],
+  "citation_safety_net_problems": [],
+  "ragas_style_per_trace": {
+    "T01": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8474181730335278,
+      "context_precision": 1.0
+    },
+    "T02": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9084554654256425,
+      "context_precision": 1.0
+    },
+    "T03": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9715701237402442,
+      "context_precision": 1.0
+    },
+    "T04": {
+      "faithfulness": 0.8333333333333334,
+      "answer_relevancy": 0.8575333594104518,
+      "context_precision": 0.7000000000000001
+    },
+    "T05": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.7047474577732254,
+      "context_precision": 1.0
+    },
+    "T06": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8767482879347153,
+      "context_precision": 1.0
+    },
+    "T07": {
+      "faithfulness": null,
+      "answer_relevancy": null,
+      "context_precision": 0.0
+    },
+    "T08": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.7623657494196739,
+      "context_precision": 1.0
+    },
+    "T09": {
+      "faithfulness": null,
+      "answer_relevancy": null,
+      "context_precision": 0.0
+    },
+    "T10": {
+      "faithfulness": 0.8181818181818182,
+      "answer_relevancy": 0.7832762086336652,
+      "context_precision": 1.0
+    },
+    "T11": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8941047893974806,
+      "context_precision": 1.0
+    },
+    "T12": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8260731599692898,
+      "context_precision": 0.9166666666666666
+    },
+    "T13": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.6901771312444231,
+      "context_precision": 0.3666666666666667
+    },
+    "T14": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8558985523140118,
+      "context_precision": 1.0
+    },
+    "T15": {
+      "faithfulness": null,
+      "answer_relevancy": null,
+      "context_precision": 0.0
+    },
+    "T16": {
+      "faithfulness": null,
+      "answer_relevancy": null,
+      "context_precision": 0.0
+    },
+    "T17": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.7561531908401958,
+      "context_precision": 1.0
+    },
+    "T18": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8932284287233503,
+      "context_precision": 1.0
+    },
+    "T19": {
+      "faithfulness": null,
+      "answer_relevancy": null,
+      "context_precision": 0.0
+    },
+    "T20": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.7787877632276835,
+      "context_precision": 1.0
+    }
+  },
+  "ragas_style_context_recall_Q1_Q5_Q7": {
+    "Q1": 1.0,
+    "Q5": 1.0,
+    "Q7": 1.0
+  },
+  "ragas_style_averages": {
+    "faithfulness": 0.9767676767676768,
+    "answer_relevancy": 0.8271025227391722,
+    "context_precision": 0.6991666666666667,
+    "context_recall_Q1_Q5_Q7": 1.0
+  }
+}

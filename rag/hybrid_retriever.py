@@ -63,6 +63,38 @@ def tokenize(text):
     return _TOKEN_RE.findall(text.lower())
 
 
+# Common English function words. $contains has no notion of term rarity (no
+# IDF), so leaving these in would (a) match nearly every chunk in the
+# $contains OR-clause, defeating candidate narrowing, and (b) let a long
+# prose chunk that happens to say "the" ten times out-score a short,
+# fact-dense chunk in _rank_by_term_overlap's raw occurrence count - found
+# live in the Streamlit UI: "How much salt goes into the country sourdough
+# recipe?" fused away the one chunk with the actual salt weight because a
+# method paragraph repeating "the" scored higher on keyword overlap. Real
+# BM25 avoids this via corpus-wide IDF; this stopword list is the cheap,
+# no-extra-Chroma-calls stand-in for that same effect, applied only to the
+# keyword-ranking signal - tokenize() itself stays unfiltered so its own
+# tests (which check literal tokenization, stopwords included) stay valid.
+_STOPWORDS = frozenset({
+    "a", "an", "and", "are", "as", "at", "be", "by", "can", "could", "did",
+    "do", "does", "for", "from", "goes", "how", "i", "in", "into", "is",
+    "it", "much", "of", "on", "or", "should", "that", "the", "these",
+    "this", "those", "to", "was", "were", "what", "will", "with", "would",
+    "you",
+})
+
+
+def _keyword_tokens(question):
+    """Query tokens for the keyword-search signal only: tokenize() minus
+    stopwords, falling back to the unfiltered tokens if that empties out
+    (e.g. a question that is entirely stopwords) so keyword search never
+    just goes silent."""
+
+    tokens = tokenize(question)
+    filtered = [token for token in tokens if token not in _STOPWORDS]
+    return filtered or tokens
+
+
 def _keyword_candidates(collection, tokens, where=None):
     """Ask Chroma's own document filter for candidates containing any query
     token, in any of a few common casings.
@@ -149,10 +181,10 @@ def retrieve_hybrid(collection, question, top_k, candidate_pool=15, where=None):
     # `where` is passed straight into collection.get() alongside
     # where_document, so Chroma applies the same metadata filter natively -
     # no need to separately re-derive an allowed id set.
-    tokens = tokenize(question)
-    keyword_result = _keyword_candidates(collection, tokens, where=where)
+    keyword_tokens = _keyword_tokens(question)
+    keyword_result = _keyword_candidates(collection, keyword_tokens, where=where)
     keyword_ids = _rank_by_term_overlap(
-        tokens, keyword_result["ids"], keyword_result["documents"]
+        keyword_tokens, keyword_result["ids"], keyword_result["documents"]
     )[:pool]
     keyword_rank_of = {doc_id: rank for rank, doc_id in enumerate(keyword_ids, start=1)}
 

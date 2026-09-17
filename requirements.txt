@@ -3,4 +3,5 @@ PyMuPDF
 chromadb
 python-dotenv
 google-genai
+groq
 pytest
