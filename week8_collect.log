@@ -1,0 +1,98 @@
+[1/14] kimchi_vegan_trap: 'napa cabbage kimchi with chilli flakes and radish' (restriction='vegan')
+  [model misfired into native tool-calling, resampling]
+  [model misfired into native tool-calling, resampling]
+  [model misfired into native tool-calling, resampling]
+  [model misfired into native tool-calling, resampling]
+    finished_recipe_id='ferment_006'  correct=True  steps=4  calls=5  14.42s  stopped=finished
+[2/14] brioche_dairy_free_no_match: 'sourdough brioche' (restriction='dairy-free')
+  [model misfired into native tool-calling, resampling]
+  [model misfired into native tool-calling, resampling]
+  [model misfired into native tool-calling, resampling]
+  [model misfired into native tool-calling, resampling]
+  [rate limited/unavailable, backing off 20s]
+  [model misfired into native tool-calling, resampling]
+    finished_recipe_id=None  correct=True  steps=3  calls=3  95.44s  stopped=finished
+[3/14] sourdough_vegan_straightforward: 'country sourdough bread' (restriction='vegan')
+  [model misfired into native tool-calling, resampling]
+  [model misfired into native tool-calling, resampling]
+  [model misfired into native tool-calling, resampling]
+  [model misfired into native tool-calling, resampling]
+  [model misfired into native tool-calling, resampling]
+  [rate limited/unavailable, backing off 20s]
+  [rate limited/unavailable, backing off 30s]
+  [rate limited/unavailable, backing off 40s]
+    finished_recipe_id='ferment_001'  correct=True  steps=4  calls=5  211.17s  stopped=finished
+[4/14] rye_levain_nut_free_straightforward: 'rye levain starter' (restriction='nut-free')
+  [rate limited/unavailable, backing off 20s]
+    finished_recipe_id='ferment_002'  correct=True  steps=4  calls=5  67.09s  stopped=finished
+[5/14] focaccia_vegan_straightforward: 'sourdough focaccia' (restriction='vegan')
+  [model misfired into native tool-calling, resampling]
+  [model misfired into native tool-calling, resampling]
+  [rate limited/unavailable, backing off 20s]
+  [rate limited/unavailable, backing off 30s]
+  [rate limited/unavailable, backing off 40s]
+  [rate limited/unavailable, backing off 50s]
+  [rate limited/unavailable, backing off 60s]
+  [rate limited/unavailable, backing off 60s]
+  [rate limited/unavailable, backing off 60s]
+    finished_recipe_id=None  correct=False  steps=1  calls=1  348.52s  stopped=time_budget_exceeded
+[6/14] brioche_vegan_no_match: 'sourdough brioche' (restriction='vegan')
+  [model misfired into native tool-calling, resampling]
+  [rate limited/unavailable, backing off 20s]
+  [rate limited/unavailable, backing off 30s]
+  [rate limited/unavailable, backing off 40s]
+  [rate limited/unavailable, backing off 50s]
+  [rate limited/unavailable, backing off 60s]
+    finished_recipe_id=None  correct=True  steps=1  calls=1  203.89s  stopped=time_budget_exceeded
+[7/14] kimchi_vegetarian_trap: 'napa cabbage kimchi' (restriction='vegetarian')
+  [rate limited/unavailable, backing off 20s]
+  [rate limited/unavailable, backing off 30s]
+  [rate limited/unavailable, backing off 40s]
+  [rate limited/unavailable, backing off 50s]
+  [rate limited/unavailable, backing off 60s]
+  [rate limited/unavailable, backing off 60s]
+    finished_recipe_id=None  correct=False  steps=1  calls=1  312.12s  stopped=time_budget_exceeded
+[8/14] rye_levain_egg_free_straightforward: 'rye levain starter' (restriction='egg-free')
+  [rate limited/unavailable, backing off 20s]
+  [rate limited/unavailable, backing off 30s]
+  [rate limited/unavailable, backing off 40s]
+  [rate limited/unavailable, backing off 50s]
+  [rate limited/unavailable, backing off 60s]
+  [rate limited/unavailable, backing off 60s]
+    finished_recipe_id=None  correct=False  steps=1  calls=1  262.95s  stopped=time_budget_exceeded
+[9/14] rye_levain_no_restriction: "what's a good starter recipe for rye levain?" (restriction=None)
+  [rate limited/unavailable, backing off 20s]
+  [rate limited/unavailable, backing off 30s]
+  [rate limited/unavailable, backing off 40s]
+  [rate limited/unavailable, backing off 50s]
+  [rate limited/unavailable, backing off 60s]
+  [rate limited/unavailable, backing off 60s]
+  [model misfired into native tool-calling, resampling]
+  [rate limited/unavailable, backing off 60s]
+Traceback (most recent call last):
+  File "D:\rag_food_receipe\week8_collect_trajectories.py", line 197, in <module>
+    main()
+  File "D:\rag_food_receipe\week8_collect_trajectories.py", line 180, in main
+    run = run_one(scenario, collection)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\rag_food_receipe\week8_collect_trajectories.py", line 149, in run_one
+    result = run_agent(collection, scenario["query"], scenario["restriction"], model=WEEK4_MODEL)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\rag_food_receipe\rag\agent.py", line 279, in run_agent
+    action = _ask_for_action(question, transcript, model, restriction)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\rag_food_receipe\rag\agent.py", line 193, in _ask_for_action
+    raw = generator._generate(prompt, model)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\rag_food_receipe\rag\generator.py", line 84, in _generate
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjay.B\AppData\Local\Programs\Python\Python312\Lib\site-packages\groq\resources\chat\completions.py", line 466, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\Sanjay.B\AppData\Local\Programs\Python\Python312\Lib\site-packages\groq\_base_client.py", line 1284, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjay.B\AppData\Local\Programs\Python\Python312\Lib\site-packages\groq\_base_client.py", line 1071, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1h6n21ven2ry4wvsa0xyyhh` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199715, Requested 819. Please try again in 3m50.688s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}

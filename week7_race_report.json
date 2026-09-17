@@ -1,0 +1,479 @@
+[
+  {
+    "method": "fixed_workflow",
+    "scenario": "kimchi_vegan_trap",
+    "elapsed_seconds": 134.05,
+    "llm_calls": 1,
+    "correct": true,
+    "answer": "The recipe for Vegan Napa Cabbage Kimchi is suitable for vegans [recipe_id=ferment_006 | chunk_id=ferment_006__allergen_note__0 | source_file=ferment_006_vegan_napa_kimchi.md].\n\n**Ingredients** [recipe_id=ferment_006 | chunk_id=ferment_006__ingredients__0 | source_file=ferment_006_vegan_napa_kimchi.md]:\n* Napa cabbage: 2000 g\n* Coarse sea salt (for brining): 160 g\n* Gochugaru (Korean chilli flakes): 100 g\n* Korean radish, julienned: 400 g\n* Garlic, minced: 60 g\n* Ginger, grated: 20 g\n* Dried shiitake mushrooms: 30 g\n* Kombu (dried kelp): 10 g\n* Tamari (gluten-free soy sauce): 50 g\n* Glutinous rice flour: 30 g\n* Caster sugar: 20 g\n\n**Method**:\n1. Brine quartered cabbage with 160 g of coarse sea salt for 4 to 6 hours, turning every 2 hours [recipe_id=ferment_006 | chunk_id=ferment_006__method__0 | source_file=ferment_006_vegan_napa_kimchi.md]. Apply the bend test: a thick white stem should bend into a U without snapping [recipe_id=ferment_006 | chunk_id=ferment_006__method__0 | source_file=ferment_006_vegan_napa_kimchi.md]. Rinse three times and drain cut side down for one hour [recipe_id=ferment_006 | chunk_id=ferment_006__method__0 | source_file=ferment_006_vegan_napa_kimchi.md].\n2. Create the umami base: Simmer dried shiitake and kombu in 400 ml of water for 20 minutes [recipe_id=ferment_006 | chunk_id=ferment_006__method__0 | source_file=ferment_006_vegan_napa_kimchi.md]. Remove the kombu before it turns slimy and simmer the shiitake for an additional 10 minutes [recipe_id=ferment_006 | chunk_id=ferment_006__method__0 | source_file=ferment_006_vegan_napa_kimchi.md]. Strain the liquid, reserving 250 ml, and finely chop the rehydrated shiitake caps [recipe_id=ferment_006 | chunk_id=ferment_006__method__0 | source_file=ferment_006_vegan_napa_kimchi.md].\n3. Whisk glutinous rice flour into the reserved 250 ml of mushroom stock, heat gently for 5 minutes until thickened, stir in sugar, and cool completely [recipe_id=ferment_006 | chunk_id=ferment_006__method__1 | source_file=ferment_006_vegan_napa_kimchi.md].\n4. Mix the cooled porridge with gochugaru and let rest for 10 minutes [recipe_id=ferment_006 | chunk_id=ferment_006__method__1 | source_file=ferment_006_vegan_napa_kimchi.md]. Add garlic, ginger, chopped shiitake, and tamari [recipe_id=ferment_006 | chunk_id=ferment_006__method__1 | source_file=ferment_006_vegan_napa_kimchi.md]. Fold in the julienned radish [recipe_id=ferment_006 | chunk_id=ferment_006__method__1 | source_file=ferment_006_vegan_napa_kimchi.md].\n5. Coat every leaf with the paste, pack into a jar with 5 cm of headspace, and press down until the brine rises above the cabbage [recipe_id=ferment_006 | chunk_id=ferment_006__method__1 | source_file=ferment_006_vegan_napa_kimchi.md].\n6. Ferment at 20C for 2 to 3 days [recipe_id=ferment_006 | chunk_id=ferment_006__method__2 | source_file=ferment_006_vegan_napa_kimchi.md]. Move to the refrigerator once bubbling and pleasantly sour [recipe_id=ferment_006 | chunk_id=ferment_006__method__2 | source_file=ferment_006_vegan_napa_kimchi.md].",
+    "steps": null,
+    "stopped_reason": null
+  },
+  {
+    "method": "agent",
+    "scenario": "kimchi_vegan_trap",
+    "elapsed_seconds": 71.28,
+    "llm_calls": 5,
+    "correct": true,
+    "answer": "The recipe for Vegan Napa Cabbage Kimchi [recipe_id=ferment_006 | chunk_id=ferment_006__allergen_note__0 | source_file=ferment_006_vegan_napa_kimchi.md] is suitable for vegans [recipe_id=ferment_006 | chunk_id=ferment_006__allergen_note__0 | source_file=ferment_006_vegan_napa_kimchi.md] and contains napa cabbage [recipe_id=ferment_006 | chunk_id=ferment_006__ingredients__0 | source_file=ferment_006_vegan_napa_kimchi.md], Gochugaru (Korean chilli flakes) [recipe_id=ferment_006 | chunk_id=ferment_006__ingredients__0 | source_file=ferment_006_vegan_napa_kimchi.md], and julienned Korean radish [recipe_id=ferment_006 | chunk_id=ferment_006__ingredients__0 | source_file=ferment_006_vegan_napa_kimchi.md].",
+    "steps": [
+      {
+        "step": 1,
+        "thought": "I need to find a recipe for 'napa cabbage kimchi with chilli flakes and radish' that is vegan. I will start by searching for recipes matching this description.",
+        "tool": "search_recipes",
+        "args": {
+          "query": "napa cabbage kimchi with chilli flakes and radish",
+          "where": {
+            "diet_vegan": true
+          }
+        },
+        "observation": [
+          {
+            "chunk_id": "ferment_006__ingredients__0",
+            "recipe_id": "ferment_006",
+            "recipe_name": "Vegan Napa Cabbage Kimchi",
+            "dietary_tags": "vegan,vegetarian,gluten-free,dairy-free,egg-free,nut-free",
+            "distance": 0.0
+          },
+          {
+            "chunk_id": "ferment_006__ingredients__1",
+            "recipe_id": "ferment_006",
+            "recipe_name": "Vegan Napa Cabbage Kimchi",
+            "dietary_tags": "vegan,vegetarian,gluten-free,dairy-free,egg-free,nut-free",
+            "distance": 0.0315
+          },
+          {
+            "chunk_id": "ferment_006__method__0",
+            "recipe_id": "ferment_006",
+            "recipe_name": "Vegan Napa Cabbage Kimchi",
+            "dietary_tags": "vegan,vegetarian,gluten-free,dairy-free,egg-free,nut-free",
+            "distance": 0.0315
+          },
+          {
+            "chunk_id": "ferment_006__method__1",
+            "recipe_id": "ferment_006",
+            "recipe_name": "Vegan Napa Cabbage Kimchi",
+            "dietary_tags": "vegan,vegetarian,gluten-free,dairy-free,egg-free,nut-free",
+            "distance": 0.0317
+          },
+          {
+            "chunk_id": "ferment_006__method__2",
+            "recipe_id": "ferment_006",
+            "recipe_name": "Vegan Napa Cabbage Kimchi",
+            "dietary_tags": "vegan,vegetarian,gluten-free,dairy-free,egg-free,nut-free",
+            "distance": 0.0615
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "thought": "I have found a promising recipe: 'Vegan Napa Cabbage Kimchi' (recipe_id: 'ferment_006'). Now I must verify that its dietary tags satisfy the 'vegan' restriction using the check_restriction tool before proceeding.",
+        "tool": "check_restriction",
+        "args": {
+          "dietary_tags": "vegan,vegetarian,gluten-free,dairy-free,egg-free,nut-free",
+          "restriction": "vegan"
+        },
+        "observation": {
+          "restriction": "vegan",
+          "dietary_tags": "vegan,vegetarian,gluten-free,dairy-free,egg-free,nut-free",
+          "satisfied": true
+        }
+      },
+      {
+        "step": 3,
+        "thought": "The candidate recipe 'Vegan Napa Cabbage Kimchi' (ferment_006) has passed the dietary restriction check. Now I need to fetch the full recipe text before I can finish.",
+        "tool": "get_recipe",
+        "args": {
+          "recipe_id": "ferment_006"
+        },
+        "observation": {
+          "recipe_id": "ferment_006",
+          "chunks": 6,
+          "text": "Recipe: Vegan Napa Cabbage Kimchi (recipe_id: ferment_006)\nSection: Allergen Note\n\nContains no fish, no shellfish, no dairy, no egg, no nuts and no gluten. Tamari is used specifically in place of ordinary soy sauce because ordinary soy sauce is brewed with wheat. Suitable for vegans and vegetarians.\n\nRecipe: Vegan Napa Cabbage Kimchi (recipe_id: ferment_006)\nSection: Ingredients\n\nPercentages are calculated against the 2000 g of prepared napa cabbage. The salted shrimp and anchovy fish sauce of the traditional card are replaced here by a shiitake and kombu umami base.\n\n| Ingredient | Weight | Percentage of cabbage |\n|---|---|---|\n| Napa cabbage | 2000 g | 100% |\n| Coarse sea salt (for brining) | 160 g | 8% |\n| Gochugaru (Korean chilli flakes) | 100 g | 5% |\n| Korean radish, julienned | 400 g | 20% |\n| Garlic, minced | 60 g | 3% |\n| Ginger, grated | 20 g | 1% |\n| Dried shiitake mushrooms | 30 g | 1.5% |\n| Kombu (dried kelp) | 10 g | 0.5% |\n| Tamari (gluten-free soy sauce) | 50 g | 2.5% |\n| Glutinous rice flour | 30 g | 1.5% |\n| Caster sugar | 20 g | 1% |\n\nRecipe: Vegan Napa Cabbage Kimchi (recipe_id: ferment_006)\nSection: Ingredients\n\nTotal yield is approximately 2.85 kg of finished kimchi.\n\nRecipe: Vegan Napa Cabbage Kimchi (recipe_id: ferment_006)\nSection: Method\n\nBrine the quartered cabbage with the full 160 g of coarse sea salt for 4 to 6 hours, turning every 2 hours, then apply the bend test: a thick white stem should bend into a U without snapping. Rinse three times and drain cut side down for one hour.\n\nBuild the umami base while the cabbage brines. Simmer the dried shiitake and the kombu in 400 ml of water for 20 minutes, then remove the kombu before it turns slimy and simmer the shiitake for a further 10 minutes. Strain, reserving 250 ml of the liquid, and finely chop the rehydrated shiitake caps to fold into the paste.\n\nRecipe: Vegan Napa Cabbage Kimchi (recipe_id: ferment_006)\nSection: Method\n\nThis shiitake and kombu stock plus the tamari is what replaces the saeujeot and anchovy fish sauce used on the traditional card. Both supply glutamates, which is the savoury depth the fermented seafood would otherwise provide.\n\nWhisk the glutinous rice flour into the reserved 250 ml of mushroom stock, heat gently for 5 minutes until thickened, stir in the sugar and cool completely.\n\nMix the cooled porridge with the gochugaru and rest for 10 minutes, then add the garlic, ginger, chopped shiitake and tamari. Fold through the julienned radish.\n\nCoat every leaf with the paste, pack into a jar with 5 cm of headspace, and press down until the brine rises above the cabbage.\n\nRecipe: Vegan Napa Cabbage Kimchi (recipe_id: ferment_006)\nSection: Method\n\nFerment at 20C for 2 to 3 days, which is around a day longer than the traditional card requires because the seafood ferments in saeujeot give the traditional version a head start. Move to the refrigerator once bubbling and pleasantly sour."
+        }
+      },
+      {
+        "step": 4,
+        "thought": "I have found a recipe for 'Vegan Napa Cabbage Kimchi' (recipe_id: ferment_006) which contains napa cabbage, Korean chilli flakes (Gochugaru), and Korean radish. I have already verified that it satisfies the 'vegan' restriction and have retrieved the full recipe text. I can now finish.",
+        "tool": "finish",
+        "args": {
+          "recipe_id": "ferment_006"
+        },
+        "observation": "loop ended"
+      }
+    ],
+    "stopped_reason": "finished"
+  },
+  {
+    "method": "fixed_workflow",
+    "scenario": "brioche_dairy_free_no_match",
+    "elapsed_seconds": 11.14,
+    "llm_calls": 1,
+    "correct": true,
+    "answer": "I cannot answer this from the provided recipe documents.",
+    "steps": null,
+    "stopped_reason": null
+  },
+  {
+    "method": "agent",
+    "scenario": "brioche_dairy_free_no_match",
+    "elapsed_seconds": 91.2,
+    "llm_calls": 4,
+    "correct": true,
+    "answer": "I could not find a recipe for 'sourdough brioche' that satisfies 'dairy-free'.",
+    "steps": [
+      {
+        "step": 1,
+        "thought": "I will start by searching for 'sourdough brioche' recipes.",
+        "tool": "search_recipes",
+        "args": {
+          "query": "sourdough brioche"
+        },
+        "observation": [
+          {
+            "chunk_id": "ferment_004__method__1",
+            "recipe_id": "ferment_004",
+            "recipe_name": "Sourdough Brioche",
+            "dietary_tags": "vegetarian,contains-dairy,contains-egg,contains-gluten,nut-free",
+            "distance": 0.0
+          },
+          {
+            "chunk_id": "ferment_004__ingredients__1",
+            "recipe_id": "ferment_004",
+            "recipe_name": "Sourdough Brioche",
+            "dietary_tags": "vegetarian,contains-dairy,contains-egg,contains-gluten,nut-free",
+            "distance": 0.0079
+          },
+          {
+            "chunk_id": "ferment_004__ingredients__0",
+            "recipe_id": "ferment_004",
+            "recipe_name": "Sourdough Brioche",
+            "dietary_tags": "vegetarian,contains-dairy,contains-egg,contains-gluten,nut-free",
+            "distance": 0.031
+          },
+          {
+            "chunk_id": "ferment_004__method__0",
+            "recipe_id": "ferment_004",
+            "recipe_name": "Sourdough Brioche",
+            "dietary_tags": "vegetarian,contains-dairy,contains-egg,contains-gluten,nut-free",
+            "distance": 0.0315
+          },
+          {
+            "chunk_id": "ferment_004__allergen_note__0",
+            "recipe_id": "ferment_004",
+            "recipe_name": "Sourdough Brioche",
+            "dietary_tags": "vegetarian,contains-dairy,contains-egg,contains-gluten,nut-free",
+            "distance": 0.0465
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "thought": "The initial search for 'sourdough brioche' returned recipe 'ferment_004', but its dietary tags explicitly state 'contains-dairy', which contradicts the 'dairy-free' requirement. I will perform a new search specifically for 'dairy-free sourdough brioche' to find a suitable alternative.",
+        "tool": "search_recipes",
+        "args": {
+          "query": "dairy-free sourdough brioche"
+        },
+        "observation": [
+          {
+            "chunk_id": "ferment_004__allergen_note__0",
+            "recipe_id": "ferment_004",
+            "recipe_name": "Sourdough Brioche",
+            "dietary_tags": "vegetarian,contains-dairy,contains-egg,contains-gluten,nut-free",
+            "distance": 0.0
+          },
+          {
+            "chunk_id": "ferment_004__method__1",
+            "recipe_id": "ferment_004",
+            "recipe_name": "Sourdough Brioche",
+            "dietary_tags": "vegetarian,contains-dairy,contains-egg,contains-gluten,nut-free",
+            "distance": 0.0155
+          },
+          {
+            "chunk_id": "ferment_004__method__0",
+            "recipe_id": "ferment_004",
+            "recipe_name": "Sourdough Brioche",
+            "dietary_tags": "vegetarian,contains-dairy,contains-egg,contains-gluten,nut-free",
+            "distance": 0.0451
+          },
+          {
+            "chunk_id": "ferment_004__ingredients__1",
+            "recipe_id": "ferment_004",
+            "recipe_name": "Sourdough Brioche",
+            "dietary_tags": "vegetarian,contains-dairy,contains-egg,contains-gluten,nut-free",
+            "distance": 0.0461
+          },
+          {
+            "chunk_id": "ferment_001__allergen_note__0",
+            "recipe_id": "ferment_001",
+            "recipe_name": "2kg Country Sourdough Loaf",
+            "dietary_tags": "vegan,vegetarian,dairy-free,egg-free,nut-free,contains-gluten",
+            "distance": 0.053
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "thought": "The search for 'sourdough brioche' returned 'Sourdough Brioche' (ferment_004), but it contains dairy. The search for 'dairy-free sourdough brioche' also returned ferment_004 and a non-brioche country loaf (ferment_001). I will try searching for 'brioche' using a metadata filter for dairy-free to see if any other candidates exist.",
+        "tool": "search_recipes",
+        "args": {
+          "query": "brioche",
+          "where": {
+            "diet_dairy_free": true
+          }
+        },
+        "observation": [
+          {
+            "chunk_id": "ferment_001__ingredients__1",
+            "recipe_id": "ferment_001",
+            "recipe_name": "2kg Country Sourdough Loaf",
+            "dietary_tags": "vegan,vegetarian,dairy-free,egg-free,nut-free,contains-gluten",
+            "distance": 0.0
+          },
+          {
+            "chunk_id": "ferment_001__method__0",
+            "recipe_id": "ferment_001",
+            "recipe_name": "2kg Country Sourdough Loaf",
+            "dietary_tags": "vegan,vegetarian,dairy-free,egg-free,nut-free,contains-gluten",
+            "distance": 0.0161
+          },
+          {
+            "chunk_id": "ferment_001__allergen_note__0",
+            "recipe_id": "ferment_001",
+            "recipe_name": "2kg Country Sourdough Loaf",
+            "dietary_tags": "vegan,vegetarian,dairy-free,egg-free,nut-free,contains-gluten",
+            "distance": 0.0317
+          },
+          {
+            "chunk_id": "ferment_003__allergen_note__0",
+            "recipe_id": "ferment_003",
+            "recipe_name": "Sourdough Focaccia",
+            "dietary_tags": "vegan,vegetarian,dairy-free,egg-free,nut-free,contains-gluten",
+            "distance": 0.0469
+          },
+          {
+            "chunk_id": "ferment_001__ingredients__0",
+            "recipe_id": "ferment_001",
+            "recipe_name": "2kg Country Sourdough Loaf",
+            "dietary_tags": "vegan,vegetarian,dairy-free,egg-free,nut-free,contains-gluten",
+            "distance": 0.0615
+          }
+        ]
+      },
+      {
+        "step": 4,
+        "thought": "I have searched for 'sourdough brioche' multiple times, including using a metadata filter for dairy-free options. The only sourdough brioche recipe found (ferment_004) explicitly contains dairy. Other dairy-free results (ferment_001 and ferment_003) are a country loaf and a focaccia, not brioche. I have exhausted the search options and concluded that no dairy-free sourdough brioche exists in the corpus.",
+        "tool": "finish",
+        "args": {
+          "recipe_id": null
+        },
+        "observation": "loop ended"
+      }
+    ],
+    "stopped_reason": "finished"
+  },
+  {
+    "method": "fixed_workflow",
+    "scenario": "sourdough_vegan_straightforward",
+    "elapsed_seconds": 66.33,
+    "llm_calls": 1,
+    "correct": true,
+    "answer": "The 2kg Country Sourdough Loaf recipe (recipe_id: ferment_001) is suitable for vegans [recipe_id=ferment_001 | chunk_id=ferment_001__allergen_note__0 | source_file=ferment_001_country_sourdough_2kg.md].\n\n**Ingredients** [recipe_id=ferment_001 | chunk_id=ferment_001__ingredients__0 | source_file=ferment_001_country_sourdough_2kg.md]:\n*   Strong white bread flour: 1700 g\n*   Wholemeal flour: 300 g\n*   Water (28C): 1600 g\n*   Fine sea salt: 40 g\n*   Rye levain (100% hydration): 400 g\n\n**Method**:\n1.  **Autolyse**: Combine the strong white flour, wholemeal flour, and 1500 g of the water in a large tub, mix until no dry flour remains, cover and rest for 60 minutes [recipe_id=ferment_001 | chunk_id=ferment_001__method__0 | source_file=ferment_001_country_sourdough_2kg.md].\n2.  **Levain**: Add the rye levain, squeeze it through the dough until fully dispersed, and rest for 30 minutes [recipe_id=ferment_001 | chunk_id=ferment_001__method__0 | source_file=ferment_001_country_sourdough_2kg.md].\n3.  **Salt**: Add the fine sea salt and the remaining 100 g of water; squeeze and fold until the dough is smooth and no grittiness remains [recipe_id=ferment_001 | chunk_id=ferment_001__method__0 | source_file=ferment_001_country_sourdough_2kg.md].\n4.  **Bulk Fermentation**: Bulk ferment for 4 to 5 hours at 24C, performing coil folds every 45 minutes for the first three hours [recipe_id=ferment_001 | chunk_id=ferment_001__method__1 | source_file=ferment_001_country_sourdough_2kg.md].\n5.  **Shaping and Retarding**: Divide the dough into two pieces, pre-shape lightly, and bench rest for 25 minutes [recipe_id=ferment_001 | chunk_id=ferment_001__method__1 | source_file=ferment_001_country_sourdough_2kg.md]. Shape into boules, place seam side up in floured bannetons, and cold retard in the refrigerator at 4C for 12 to 16 hours [recipe_id=ferment_001 | chunk_id=ferment_001__method__1 | source_file=ferment_001_country_sourdough_2kg.md].\n6.  **Baking**: Bake straight from the refrigerator in a preheated cast iron combo cooker at 250C for 20 minutes with the lid on [recipe_id=ferment_001 | chunk_id=ferment_001__method__1 | source_file=ferment_001_country_sourdough_2kg.md]. Remove the lid, drop the oven to 230C, and bake for another 25 minutes until the crust is deep brown and the internal temperature is 96C [recipe_id=ferment_001 | chunk_id=ferment_001__method__1 | source_file=ferment_001_country_sourdough_2kg.md].\n7.  **Cooling**: Cool on a rack for at least 2 hours before cutting [recipe_id=ferment_001 | chunk_id=ferment_001__method__2 | source_file=ferment_001_country_sourdough_2kg.md].",
+    "steps": null,
+    "stopped_reason": null
+  },
+  {
+    "method": "agent",
+    "scenario": "sourdough_vegan_straightforward",
+    "elapsed_seconds": 111.39,
+    "llm_calls": 5,
+    "correct": true,
+    "answer": "The 2kg Country Sourdough Loaf is suitable for vegans [recipe_id=ferment_001 | chunk_id=ferment_001__allergen_note__0 | source_file=ferment_001_country_sourdough_2kg.md].\n\n**Ingredients**\n* Strong white bread flour: 1700 g [recipe_id=ferment_001 | chunk_id=ferment_001__ingredients__0 | source_file=ferment_001_country_sourdough_2kg.md]\n* Wholemeal flour: 300 g [recipe_id=ferment_001 | chunk_id=ferment_001__ingredients__0 | source_file=ferment_001_country_sourdough_2kg.md]\n* Water (28C): 1600 g [recipe_id=ferment_001 | chunk_id=ferment_001__ingredients__0 | source_file=ferment_001_country_sourdough_2kg.md]\n* Fine sea salt: 40 g [recipe_id=ferment_001 | chunk_id=ferment_001__ingredients__0 | source_file=ferment_001_country_sourdough_2kg.md]\n* Rye levain (100% hydration): 400 g [recipe_id=ferment_001 | chunk_id=ferment_001__ingredients__0 | source_file=ferment_001_country_sourdough_2kg.md]\n\n**Method**\n1. **Autolyse**: Combine strong white flour, wholemeal flour, and 1500 g of the water in a large tub, mixing until no dry flour remains, then cover and rest for 60 minutes [recipe_id=ferment_001 | chunk_id=ferment_001__method__0 | source_file=ferment_001_country_sourdough_2kg.md]. Hold back 100 g of water for the salt stage [recipe_id=ferment_001 | chunk_id=ferment_001__method__0 | source_file=ferment_001_country_sourdough_2kg.md].\n2. **Levain**: Squeeze the rye levain through the dough until fully dispersed and rest for 30 minutes [recipe_id=ferment_001 | chunk_id=ferment_001__method__0 | source_file=ferment_001_country_sourdough_2kg.md].\n3. **Salt**: Add the fine sea salt and the reserved 100 g of water [recipe_id=ferment_001 | chunk_id=ferment_001__method__0 | source_file=ferment_001_country_sourdough_2kg.md]. Squeeze and fold until the dough feels smooth and no grittiness remains at the base of the tub [recipe_id=ferment_001 | chunk_id=ferment_001__method__0 | source_file=ferment_001_country_sourdough_2kg.md].\n4. **Bulk Ferment**: Bulk ferment for 4 to 5 hours at 24C, performing a set of coil folds every 45 minutes for the first three hours [recipe_id=ferment_001 | chunk_id=ferment_001__method__1 | source_file=ferment_001_country_sourdough_2kg.md].\n5. **Shape**: Divide the dough into two pieces, pre-shape lightly, and bench rest for 25 minutes [recipe_id=ferment_001 | chunk_id=ferment_001__method__1 | source_file=ferment_001_country_sourdough_2kg.md]. Shape into boules, place seam side up in floured bannetons, and cold retard in the refrigerator at 4C for 12 to 16 hours [recipe_id=ferment_001 | chunk_id=ferment_001__method__1 | source_file=ferment_001_country_sourdough_2kg.md].\n6. **Bake**: Bake straight from the refrigerator in a preheated cast iron combo cooker [recipe_id=ferment_001 | chunk_id=ferment_001__method__1 | source_file=ferment_001_country_sourdough_2kg.md]. Bake at 250C for 20 minutes with the lid on, then remove the lid, drop the oven to 230C and bake for a further 25 minutes until the internal temperature reaches 96C and the crust is deep brown [recipe_id=ferment_001 | chunk_id=ferment_001__method__1 | source_file=ferment_001_country_sourdough_2kg.md].\n7. **Cool**: Cool on a rack for at least 2 hours before cutting [recipe_id=ferment_001 | chunk_id=ferment_001__method__2 | source_file=ferment_001_country_sourdough_2kg.md].",
+    "steps": [
+      {
+        "step": 1,
+        "thought": "I will start by searching for recipes for 'country sourdough bread'.",
+        "tool": "search_recipes",
+        "args": {
+          "query": "country sourdough bread"
+        },
+        "observation": [
+          {
+            "chunk_id": "ferment_001__ingredients__1",
+            "recipe_id": "ferment_001",
+            "recipe_name": "2kg Country Sourdough Loaf",
+            "dietary_tags": "vegan,vegetarian,dairy-free,egg-free,nut-free,contains-gluten",
+            "distance": 0.0
+          },
+          {
+            "chunk_id": "ferment_001__allergen_note__0",
+            "recipe_id": "ferment_001",
+            "recipe_name": "2kg Country Sourdough Loaf",
+            "dietary_tags": "vegan,vegetarian,dairy-free,egg-free,nut-free,contains-gluten",
+            "distance": 0.0143
+          },
+          {
+            "chunk_id": "ferment_001__ingredients__0",
+            "recipe_id": "ferment_001",
+            "recipe_name": "2kg Country Sourdough Loaf",
+            "dietary_tags": "vegan,vegetarian,dairy-free,egg-free,nut-free,contains-gluten",
+            "distance": 0.0143
+          },
+          {
+            "chunk_id": "ferment_001__method__2",
+            "recipe_id": "ferment_001",
+            "recipe_name": "2kg Country Sourdough Loaf",
+            "dietary_tags": "vegan,vegetarian,dairy-free,egg-free,nut-free,contains-gluten",
+            "distance": 0.0153
+          },
+          {
+            "chunk_id": "ferment_001__method__0",
+            "recipe_id": "ferment_001",
+            "recipe_name": "2kg Country Sourdough Loaf",
+            "dietary_tags": "vegan,vegetarian,dairy-free,egg-free,nut-free,contains-gluten",
+            "distance": 0.0233
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "thought": "The search results returned '2kg Country Sourdough Loaf' (recipe_id: 'ferment_001') with dietary tags that include 'vegan'. I must now verify this restriction using the check_restriction tool before fetching the full recipe.",
+        "tool": "check_restriction",
+        "args": {
+          "dietary_tags": "vegan,vegetarian,dairy-free,egg-free,nut-free,contains-gluten",
+          "restriction": "vegan"
+        },
+        "observation": {
+          "restriction": "vegan",
+          "dietary_tags": "vegan,vegetarian,dairy-free,egg-free,nut-free,contains-gluten",
+          "satisfied": true
+        }
+      },
+      {
+        "step": 3,
+        "thought": "The candidate recipe '2kg Country Sourdough Loaf' (recipe_id: 'ferment_001') matches the search query and has been verified as vegan. Now I need to retrieve the full recipe text before finishing.",
+        "tool": "get_recipe",
+        "args": {
+          "recipe_id": "ferment_001"
+        },
+        "observation": {
+          "recipe_id": "ferment_001",
+          "chunks": 6,
+          "text": "Recipe: 2kg Country Sourdough Loaf (recipe_id: ferment_001)\nSection: Allergen Note\n\nContains wheat and rye, therefore contains gluten. Contains no dairy, no egg and no nuts. Suitable for vegans. Produced in a bakery that also handles milk, egg and sesame.\n\nRecipe: 2kg Country Sourdough Loaf (recipe_id: ferment_001)\nSection: Ingredients\n\nTotal flour weight is 2000 g and all baker's percentages below are calculated against that total flour weight. Final hydration is 80%.\n\n| Ingredient | Weight | Baker's % |\n|---|---|---|\n| Strong white bread flour | 1700 g | 85% |\n| Wholemeal flour | 300 g | 15% |\n| Water (28C) | 1600 g | 80% |\n| Fine sea salt | 40 g | 2% |\n| Rye levain (100% hydration) | 400 g | 20% |\n\nRecipe: 2kg Country Sourdough Loaf (recipe_id: ferment_001)\nSection: Ingredients\n\nTotal dough weight is 4040 g, which divides into two loaves of roughly 2020 g each.\n\nRecipe: 2kg Country Sourdough Loaf (recipe_id: ferment_001)\nSection: Method\n\nAutolyse first. Combine the strong white flour, the wholemeal flour and 1500 g of the water in a large tub, mixing until no dry flour remains, then cover and rest for 60 minutes. Hold back the remaining 100 g of water for the salt stage.\n\nAdd the rye levain and squeeze it through the dough until fully dispersed. Rest for 30 minutes.\n\nNow add the fine sea salt together with the reserved 100 g of water. The salt goes in after the autolyse and after the levain, never at the start, because salt tightens the gluten network and slows the enzymatic activity the autolyse is meant to encourage. Squeeze and fold until the dough feels smooth and no grittiness remains at the base of the tub.\n\nRecipe: 2kg Country Sourdough Loaf (recipe_id: ferment_001)\nSection: Method\n\nBulk ferment for 4 to 5 hours at 24C, performing a set of coil folds every 45 minutes for the first three hours. The bulk is finished when the dough has risen by roughly 50%, feels aerated, and shows a domed surface with visible bubbles at the edge of the tub.\n\nDivide into two pieces, pre-shape lightly and bench rest for 25 minutes. Shape into boules, place seam side up in floured bannetons, and cold retard in the refrigerator at 4C for 12 to 16 hours.\n\nBake straight from the refrigerator in a preheated cast iron combo cooker. Bake at 250C for 20 minutes with the lid on, then remove the lid, drop the oven to 230C and bake for a further 25 minutes until the crust is deep brown and the internal temperature reaches 96C.\n\nRecipe: 2kg Country Sourdough Loaf (recipe_id: ferment_001)\nSection: Method\n\nCool on a rack for at least 2 hours before cutting."
+        }
+      },
+      {
+        "step": 4,
+        "thought": "I have successfully found a 'country sourdough bread' recipe (ferment_001), verified that it is vegan using the check_restriction tool, and retrieved the full recipe text. I can now finish the process.",
+        "tool": "finish",
+        "args": {
+          "recipe_id": "ferment_001"
+        },
+        "observation": "loop ended"
+      }
+    ],
+    "stopped_reason": "finished"
+  },
+  {
+    "method": "fixed_workflow",
+    "scenario": "rye_levain_nut_free_straightforward",
+    "elapsed_seconds": 63.73,
+    "llm_calls": 1,
+    "correct": true,
+    "answer": "The Rye Levain Starter [recipe_id=ferment_002 | chunk_id=ferment_002__allergen_note__0 | source_file=ferment_002_rye_levain_starter.md] is nut-free [recipe_id=ferment_002 | chunk_id=ferment_002__allergen_note__0 | source_file=ferment_002_rye_levain_starter.md].\n\n**Ingredients**\n* Wholegrain rye flour: 100 g [recipe_id=ferment_002 | chunk_id=ferment_002__ingredients__0 | source_file=ferment_002_rye_levain_starter.md]\n* Water (26C): 100 g [recipe_id=ferment_002 | chunk_id=ferment_002__ingredients__0 | source_file=ferment_002_rye_levain_starter.md]\n* Mature sourdough starter: 20 g [recipe_id=ferment_002 | chunk_id=ferment_002__ingredients__0 | source_file=ferment_002_rye_levain_starter.md]\n\n**Method**\n1. Weigh the mature starter into a clear straight-sided jar and mark the level with an elastic band [recipe_id=ferment_002 | chunk_id=ferment_002__method__0 | source_file=ferment_002_rye_levain_starter.md].\n2. Add the water at 26C and stir until the starter is dispersed and the liquid turns cloudy [recipe_id=ferment_002 | chunk_id=ferment_002__method__0 | source_file=ferment_002_rye_levain_starter.md].\n3. Add the wholegrain rye flour and mix to a thick paste [recipe_id=ferment_002 | chunk_id=ferment_002__method__0 | source_file=ferment_002_rye_levain_starter.md].\n4. Cover loosely and ferment for 8 to 12 hours at 22 to 24C [recipe_id=ferment_002 | chunk_id=ferment_002__method__1 | source_file=ferment_002_rye_levain_starter.md].",
+    "steps": null,
+    "stopped_reason": null
+  },
+  {
+    "method": "agent",
+    "scenario": "rye_levain_nut_free_straightforward",
+    "elapsed_seconds": 86.61,
+    "llm_calls": 5,
+    "correct": true,
+    "answer": "The Rye Levain Starter [recipe_id=ferment_002 | chunk_id=ferment_002__allergen_note__0 | source_file=ferment_002_rye_levain_starter.md] is nut-free, as it contains no nuts [recipe_id=ferment_002 | chunk_id=ferment_002__allergen_note__0 | source_file=ferment_002_rye_levain_starter.md].\n\n**Ingredients**\n* Wholegrain rye flour: 100 g [recipe_id=ferment_002 | chunk_id=ferment_002__ingredients__0 | source_file=ferment_002_rye_levain_starter.md]\n* Water (26C): 100 g [recipe_id=ferment_002 | chunk_id=ferment_002__ingredients__0 | source_file=ferment_002_rye_levain_starter.md]\n* Mature sourdough starter: 20 g [recipe_id=ferment_002 | chunk_id=ferment_002__ingredients__0 | source_file=ferment_002_rye_levain_starter.md]\n\n**Method**\n1. Weigh the mature starter into a clear straight-sided jar and mark the level with an elastic band [recipe_id=ferment_002 | chunk_id=ferment_002__method__0 | source_file=ferment_002_rye_levain_starter.md].\n2. Add the water at 26C and stir until the liquid turns cloudy and the starter is dispersed [recipe_id=ferment_002 | chunk_id=ferment_002__method__0 | source_file=ferment_002_rye_levain_starter.md].\n3. Add the wholegrain rye flour and mix into a thick paste [recipe_id=ferment_002 | chunk_id=ferment_002__method__0 | source_file=ferment_002_rye_levain_starter.md].\n4. Cover loosely and ferment at 22 to 24C for 8 to 12 hours [recipe_id=ferment_002 | chunk_id=ferment_002__method__1 | source_file=ferment_002_rye_levain_starter.md].",
+    "steps": [
+      {
+        "step": 1,
+        "thought": "I will search for recipes for 'rye levain starter' to find a suitable candidate.",
+        "tool": "search_recipes",
+        "args": {
+          "query": "rye levain starter"
+        },
+        "observation": [
+          {
+            "chunk_id": "ferment_002__ingredients__0",
+            "recipe_id": "ferment_002",
+            "recipe_name": "Rye Levain Starter",
+            "dietary_tags": "vegan,vegetarian,dairy-free,egg-free,nut-free,contains-gluten",
+            "distance": 0.0
+          },
+          {
+            "chunk_id": "ferment_002__ingredients__1",
+            "recipe_id": "ferment_002",
+            "recipe_name": "Rye Levain Starter",
+            "dietary_tags": "vegan,vegetarian,dairy-free,egg-free,nut-free,contains-gluten",
+            "distance": 0.0077
+          },
+          {
+            "chunk_id": "ferment_002__method__0",
+            "recipe_id": "ferment_002",
+            "recipe_name": "Rye Levain Starter",
+            "dietary_tags": "vegan,vegetarian,dairy-free,egg-free,nut-free,contains-gluten",
+            "distance": 0.0159
+          },
+          {
+            "chunk_id": "ferment_002__allergen_note__0",
+            "recipe_id": "ferment_002",
+            "recipe_name": "Rye Levain Starter",
+            "dietary_tags": "vegan,vegetarian,dairy-free,egg-free,nut-free,contains-gluten",
+            "distance": 0.0233
+          },
+          {
+            "chunk_id": "ferment_002__method__1",
+            "recipe_id": "ferment_002",
+            "recipe_name": "Rye Levain Starter",
+            "dietary_tags": "vegan,vegetarian,dairy-free,egg-free,nut-free,contains-gluten",
+            "distance": 0.0313
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "thought": "I have found a candidate recipe 'Rye Levain Starter' (recipe_id: 'ferment_002'). I need to verify that its dietary tags satisfy the 'nut-free' restriction using the check_restriction tool before proceeding.",
+        "tool": "check_restriction",
+        "args": {
+          "dietary_tags": "vegan,vegetarian,dairy-free,egg-free,nut-free,contains-gluten",
+          "restriction": "nut-free"
+        },
+        "observation": {
+          "restriction": "nut-free",
+          "dietary_tags": "vegan,vegetarian,dairy-free,egg-free,nut-free,contains-gluten",
+          "satisfied": true
+        }
+      },
+      {
+        "step": 3,
+        "thought": "The search found a 'Rye Levain Starter' (recipe_id: ferment_002) and check_restriction confirmed it is nut-free. I now need to fetch the full recipe text using get_recipe before I can call finish.",
+        "tool": "get_recipe",
+        "args": {
+          "recipe_id": "ferment_002"
+        },
+        "observation": {
+          "recipe_id": "ferment_002",
+          "chunks": 5,
+          "text": "Recipe: Rye Levain Starter (recipe_id: ferment_002)\nSection: Allergen Note\n\nContains rye, therefore contains gluten. Contains no dairy, no egg and no nuts. Suitable for vegans.\n\nRecipe: Rye Levain Starter (recipe_id: ferment_002)\nSection: Ingredients\n\nThis is a 100% hydration levain, meaning the water weight equals the flour weight. Baker's percentages are calculated against the 100 g of rye flour.\n\n| Ingredient | Weight | Baker's % |\n|---|---|---|\n| Wholegrain rye flour | 100 g | 100% |\n| Water (26C) | 100 g | 100% |\n| Mature sourdough starter | 20 g | 20% |\n\nRecipe: Rye Levain Starter (recipe_id: ferment_002)\nSection: Ingredients\n\nTotal levain yield is 220 g, which is enough to build the 400 g of levain required by the 2kg Country Sourdough after one further refreshment.\n\nRecipe: Rye Levain Starter (recipe_id: ferment_002)\nSection: Method\n\nWeigh the mature starter into a clear straight-sided jar and mark the level with an elastic band so the rise can be judged by eye rather than by guesswork.\n\nAdd the water at 26C and stir until the starter is dispersed and the liquid turns cloudy. Add the wholegrain rye flour and mix to a thick paste. Rye holds far more water than white flour, so at 100% hydration this will look like a stiff batter rather than a dough.\n\nRecipe: Rye Levain Starter (recipe_id: ferment_002)\nSection: Method\n\nCover loosely and ferment for 8 to 12 hours at 22 to 24C. The levain is ripe when it has at least doubled from the elastic band mark, the surface is domed and covered in fine bubbles, and it smells sharply sour with a faint acetone note. A levain that has risen and then collapsed back to a flat, watery surface has gone past ripe and will give a slack, over-acidified dough.\n\nThe float test is a useful confirmation: drop a teaspoon of ripe levain into room temperature water and it should float rather than sink.\n\nRefresh at least once every 24 hours if the starter is kept at room temperature, or once a week if it is stored at 4C in the refrigerator."
+        }
+      },
+      {
+        "step": 4,
+        "thought": "I have found a recipe for 'Rye Levain Starter' (recipe_id: ferment_002), verified that it is 'nut-free' via check_restriction, and retrieved the full recipe text using get_recipe. I can now finish the task.",
+        "tool": "finish",
+        "args": {
+          "recipe_id": "ferment_002"
+        },
+        "observation": "loop ended"
+      }
+    ],
+    "stopped_reason": "finished"
+  }
+]

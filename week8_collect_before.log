@@ -1,0 +1,49 @@
+[1/14] kimchi_vegan_trap: 'napa cabbage kimchi with chilli flakes and radish' (restriction='vegan')
+  [empty response, resampling]
+    finished_recipe_id='ferment_006'  correct=True  steps=4  calls=6  10.7s  stopped=finished
+[2/14] brioche_dairy_free_no_match: 'sourdough brioche' (restriction='dairy-free')
+  [empty response, resampling]
+    finished_recipe_id=None  correct=True  steps=3  calls=4  17.56s  stopped=finished
+[3/14] sourdough_vegan_straightforward: 'country sourdough bread' (restriction='vegan')
+    finished_recipe_id='ferment_001'  correct=True  steps=4  calls=5  48.83s  stopped=finished
+[4/14] rye_levain_nut_free_straightforward: 'rye levain starter' (restriction='nut-free')
+  [rate limited/unavailable, backing off 20s]
+    finished_recipe_id='ferment_002'  correct=True  steps=4  calls=5  40.55s  stopped=finished
+[5/14] focaccia_vegan_straightforward: 'sourdough focaccia' (restriction='vegan')
+    finished_recipe_id='ferment_003'  correct=True  steps=4  calls=5  41.11s  stopped=finished
+[6/14] brioche_vegan_no_match: 'sourdough brioche' (restriction='vegan')
+  [empty response, resampling]
+  [empty response, resampling]
+  [empty response, resampling]
+    finished_recipe_id=None  correct=True  steps=5  calls=8  62.03s  stopped=finished
+[7/14] kimchi_vegetarian_trap: 'napa cabbage kimchi' (restriction='vegetarian')
+    finished_recipe_id='ferment_006'  correct=True  steps=4  calls=5  43.95s  stopped=finished
+[8/14] rye_levain_egg_free_straightforward: 'rye levain starter' (restriction='egg-free')
+    finished_recipe_id='ferment_002'  correct=True  steps=4  calls=5  37.42s  stopped=finished
+[9/14] rye_levain_no_restriction: "what's a good starter recipe for rye levain?" (restriction=None)
+  [empty response, resampling]
+  [empty response, resampling]
+  [empty response, resampling]
+  [empty response, resampling]
+    finished_recipe_id='r1'  correct=False  steps=1  calls=6  31.11s  stopped=finished
+[10/14] focaccia_no_restriction: 'how do I make sourdough focaccia?' (restriction=None)
+  [empty response, resampling]
+  [empty response, resampling]
+    finished_recipe_id='ferment_003'  correct=True  steps=3  calls=6  39.17s  stopped=finished
+[11/14] kimchi_short_ambiguous_vegan_trap: 'kimchi' (restriction='vegan')
+    finished_recipe_id='recipe_12345'  correct=False  steps=1  calls=2  14.98s  stopped=finished
+[12/14] brioche_egg_free_no_match: 'sourdough brioche' (restriction='egg-free')
+    finished_recipe_id=None  correct=True  steps=5  calls=5  44.08s  stopped=finished
+[13/14] sourdough_gluten_free_no_match: 'country sourdough bread' (restriction='gluten-free')
+  [empty response, resampling]
+  [empty response, resampling]
+  [empty response, resampling]
+  [empty response, resampling]
+  [empty response, resampling]
+  [empty response, resampling]
+    finished_recipe_id=None  correct=True  steps=5  calls=11  136.31s  stopped=finished
+[14/14] kimchi_dairy_free_either_ok: 'napa cabbage kimchi' (restriction='dairy-free')
+    finished_recipe_id='ferment_005'  correct=True  steps=4  calls=5  45.45s  stopped=finished
+
+12/14 scenarios reached the expected outcome.
+Wrote week8_trajectories.json
