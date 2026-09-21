@@ -29,6 +29,30 @@ fixed workflow uses (rag/fixed_workflow.py). That keeps generation quality
 identical between the two paths, so race_agent_vs_workflow.py's comparison
 measures only the difference that matters: the search-and-verify CONTROL
 FLOW, not two different writing styles.
+
+WEEK 9 MODULE 5: TOOLS DISCOVERED OVER MCP, NOT HARDCODED
+-----------------------------------------------------------
+search_recipes/check_restriction/get_recipe used to be plain Python imports
+from rag/tools.py, with a hardcoded if/elif dispatch in _run_tool() and a
+hand-written tool list in the planner prompt. Both are now generic: at
+startup this module asks rag.mcp_client.MCPToolRegistry for "whatever tools
+are available", which connects to every server in mcp_servers.json and calls
+tools/list on each. The planner prompt and the dispatch table are both built
+FROM that discovered catalog - so bolting on a new server (one more entry in
+mcp_servers.json, e.g. mcp_servers/ingredient_server.py's ingredient
+database) makes its tools available to this loop with zero changes here.
+
+The one deliberate exception is `collection_name`: the planner is never
+shown it and can never set it (see HIDDEN_PARAMS below) - which collection
+this agent searches is something the app decides, not something a model
+reading a user's question should be trusted to pick.
+
+finish() itself is still an internal control action, not a discovered tool -
+no server advertises it, because it isn't a capability a server owns, it's
+this loop's own stopping condition (same reasoning that already justified
+keeping check_restriction's verification gate, restriction_verified(), as a
+direct in-process import below rather than something the planner calls
+through MCP: the gate has to run whether or not the planner remembers to).
 """
 
 import json
@@ -36,17 +60,46 @@ import time
 
 from rag import generator
 from rag.generator import generate_recipe_answer
-from rag.tools import search_recipes, check_restriction, get_recipe, restriction_verified
+from rag.mcp_client import MCPToolRegistry
+from rag.tools import get_recipe, restriction_verified
 
 
 MAX_STEPS = 6
 MAX_SECONDS = 90.0
 
-def _tools_description(restriction):
-    """The planner's tool/rules prompt, adjusted for whether this question
-    actually named a dietary restriction to verify.
+# Params the agent injects itself rather than letting the planner set them -
+# see the MCP docstring note above.
+HIDDEN_PARAMS = {"collection_name"}
 
-    Without this split, a restriction-less question (any recipe question
+# The three tools this agent was originally built around (rag/tools.py, now
+# served by mcp_servers/recipe_tools_server.py). Anything else discovered -
+# e.g. mcp_servers/ingredient_server.py's tools - is treated as an optional
+# extra: still fully callable and dispatched the same generic way, but its
+# output is additionally folded into the final answer's context (see
+# _extra_context_blocks) instead of only ever informing the planner's own
+# reasoning and then being discarded at finish().
+CORE_RECIPE_TOOLS = {"search_recipes", "check_restriction", "get_recipe"}
+
+_registry = None
+
+
+def _get_registry():
+    """One MCPToolRegistry per process, reused across every run_agent() call
+    instead of reconnecting (and respawning server subprocesses) per query."""
+
+    global _registry
+    if _registry is None:
+        _registry = MCPToolRegistry()
+    return _registry
+
+
+def _tools_description(tool_catalog, restriction):
+    """The planner's tool/rules prompt, built from whatever MCPToolRegistry
+    discovered plus a couple of domain rules layered on top - and adjusted
+    for whether this question actually named a dietary restriction to
+    verify.
+
+    Without that split, a restriction-less question (any recipe question
     that doesn't mention "vegan"/"dairy-free"/etc.) would still carry the
     hard rule "never finish without a PASSED check_restriction" - and
     check_restriction("", ...) never reports satisfied, since an empty
@@ -57,10 +110,19 @@ def _tools_description(restriction):
     something to verify.
     """
 
+    tool_lines = []
+    for i, tool in enumerate(tool_catalog, start=1):
+        props = tool["input_schema"].get("properties", {})
+        visible_args = ", ".join(name for name in props if name not in HIDDEN_PARAMS)
+        tool_lines.append(f"{i}. {tool['name']}({visible_args}) - {tool['description']}")
+
+    has_check_restriction = any(t["name"] == "check_restriction" for t in tool_catalog)
+    verify_gate_applies = bool(restriction) and has_check_restriction
+
     finish_rule = (
         "`recipe_id` must be a recipe that PASSED check_restriction, and whose "
         "full text you have already read via get_recipe"
-        if restriction else
+        if verify_gate_applies else
         "`recipe_id` must be a recipe whose full text you have already read "
         "via get_recipe. This question does not name a dietary restriction, "
         "so check_restriction is not required - judge from the search "
@@ -73,7 +135,7 @@ def _tools_description(restriction):
         "again - either passing the restriction as a `where` filter, or "
         "looking at the next candidates - do not give up after a single "
         "failed check."
-        if restriction else
+        if verify_gate_applies else
         "- If the top candidate is a poor match for the query, try "
         "search_recipes again with a different query before finishing - do "
         "not give up after a single search."
@@ -83,35 +145,37 @@ def _tools_description(restriction):
         "- Never call finish with a recipe_id you have not run "
         "check_restriction on, or that check_restriction reported as NOT "
         "satisfied."
-        if restriction else
+        if verify_gate_applies else
         "- check_restriction is available but only meaningful when the "
         "question names a restriction; it is not required here."
     )
 
-    return f"""You control a recipe-finding agent. Available tools:
+    tools_block = "\n".join(tool_lines) if tool_lines else "(no tools discovered)"
 
-1. search_recipes(query, where=null) - hybrid search over the recipe corpus.
-   `where` is an optional Chroma metadata filter, e.g. {{"diet_vegan": true}}.
-   Returns up to 5 candidate chunks, each with recipe_id, recipe_name,
-   dietary_tags and a text snippet, ranked best-first.
+    has_extra_tools = any(t["name"] not in CORE_RECIPE_TOOLS for t in tool_catalog)
+    extra_tools_rule = (
+        "\n- Tools beyond search_recipes/check_restriction/get_recipe are "
+        "optional extras discovered over MCP (e.g. an ingredient database). "
+        "Call one if it would genuinely help answer the question - anything "
+        "it returns before you call finish is automatically added as extra "
+        "grounding context for the final answer."
+        if has_extra_tools else ""
+    )
 
-2. check_restriction(dietary_tags, restriction) - deterministic check of
-   whether a candidate's dietary_tags string already satisfies `restriction`
-   (e.g. "vegan", "dairy-free"). Use this on a candidate BEFORE trusting it -
-   copy the dietary_tags value straight from a prior search_recipes result.
+    return f"""You control a recipe-finding agent. Available tools (discovered over MCP):
 
-3. get_recipe(recipe_id) - fetch the full recipe (every chunk, joined), for
-   use only once you have picked the final candidate to answer from.
+{tools_block}
 
-4. finish(recipe_id) - stop the loop. {finish_rule} - the actual answer will
-   be generated FROM that recipe's real text, not from anything you write
-   here. If you are confident no recipe in the corpus satisfies the request,
-   call finish with recipe_id set to null instead of guessing.
+Plus one control action:
+finish(recipe_id) - stop the loop. {finish_rule} - the actual answer will be
+generated FROM that recipe's real text, not from anything you write here. If
+you are confident no recipe in the corpus satisfies the request, call finish
+with recipe_id set to null instead of guessing.
 
 Rules:
 - Call exactly ONE tool per turn.
 {verify_rule}
-{retry_rule}
+{retry_rule}{extra_tools_rule}
 """
 
 _ABORT_TOOL = "_abort"
@@ -161,7 +225,7 @@ def _extract_json_object(text):
     return None
 
 
-def _ask_for_action(goal, transcript, model, restriction):
+def _ask_for_action(goal, transcript, model, restriction, tool_catalog):
     """One planning step: ask the model what to do next, given the goal and
     the (tool, args, observation) transcript so far. Never raises on bad
     output - falls back to an internal `_abort` action, so one malformed
@@ -176,7 +240,9 @@ def _ask_for_action(goal, transcript, model, restriction):
     else:
         history = "(none yet)"
 
-    prompt = f"""{_tools_description(restriction)}
+    tool_names = "|".join([t["name"] for t in tool_catalog] + ["finish"])
+
+    prompt = f"""{_tools_description(tool_catalog, restriction)}
 
 GOAL:
 {goal}
@@ -185,7 +251,7 @@ TRANSCRIPT SO FAR:
 {history}
 
 Respond with ONLY one JSON object for your next single action, no other text:
-{{"thought": "...", "tool": "search_recipes|check_restriction|get_recipe|finish", "args": {{...}}}}
+{{"thought": "...", "tool": "{tool_names}", "args": {{...}}}}
 
 For finish, args must be {{"recipe_id": "..."}} or {{"recipe_id": null}}.
 """
@@ -208,29 +274,76 @@ For finish, args must be {{"recipe_id": "..."}} or {{"recipe_id": null}}.
     return action
 
 
-def _run_tool(collection, tool, args):
-    """Dispatch one tool call to rag/tools.py, returning a JSON-safe
-    observation the planner can read back on its next turn."""
+def _run_tool(registry, collection_name, tool, args):
+    """Dispatch one tool call through MCPToolRegistry, returning a JSON-safe
+    observation the planner can read back on its next turn.
 
-    if tool == "search_recipes":
-        candidates = search_recipes(collection, args.get("query", ""), where=args.get("where"))
-        return [
-            {k: c[k] for k in ("chunk_id", "recipe_id", "recipe_name", "dietary_tags", "distance")}
-            for c in candidates
-        ]
+    This is the generic replacement for the old hardcoded if/elif: it does
+    not know the names of any tools in advance. The only special case is
+    `collection_name` - injected here, from the app's own state rather than
+    the planner's args, into any discovered tool whose schema declares that
+    parameter (see HIDDEN_PARAMS). A tool with no such parameter, like
+    check_restriction or a future ingredient-database tool, is called
+    exactly as the planner asked."""
 
-    if tool == "check_restriction":
-        return check_restriction(args.get("dietary_tags", ""), args.get("restriction", ""))
+    call_args = dict(args)
+    if "collection_name" in registry.tool_param_names(tool):
+        call_args["collection_name"] = collection_name
 
-    if tool == "get_recipe":
-        recipe_id = args.get("recipe_id")
-        if not recipe_id:
-            return {"error": "get_recipe requires a recipe_id"}
-        result = get_recipe(collection, recipe_id)
-        text = "\n\n".join(result["documents"][0])
-        return {"recipe_id": recipe_id, "chunks": len(result["ids"][0]), "text": text[:3000]}
+    return registry.call_tool(tool, call_args)
 
-    return {"error": f"unknown tool '{tool}'"}
+
+def _extra_context_blocks(transcript):
+    """Observations from any successful tool call OTHER than the three core
+    recipe tools - e.g. an ingredient-database tool bolted on via MCP -
+    reshaped into the same (ids, documents, metadatas) shape
+    generate_recipe_answer() already expects for retrieved chunks, so a
+    bolted-on tool's real output can be cited in the final answer instead of
+    only ever shaping the planner's own reasoning and then being discarded.
+
+    Each block is clearly labelled by the tool that produced it (source_file
+    "mcp-tool:<name>", recipe_id "(mcp tool data)") so the strict-grounding
+    prompt's citation rule still points at something real and traceable -
+    this is not a way to sneak ungrounded content past that rule, it is more
+    grounded context, from a different real source than the recipe corpus."""
+
+    ids, documents, metadatas = [], [], []
+
+    for step in transcript:
+        tool = step.get("tool")
+        if tool in CORE_RECIPE_TOOLS or tool in ("finish", _ABORT_TOOL):
+            continue
+
+        observation = step.get("observation")
+        if not isinstance(observation, dict) or "error" in observation:
+            continue
+
+        ids.append(f"mcp:{tool}:{step['step']}")
+        documents.append(json.dumps(observation))
+        metadatas.append({
+            "recipe_id": "(mcp tool data)",
+            "recipe_name": tool,
+            "source_file": f"mcp-tool:{tool}",
+        })
+
+    return ids, documents, metadatas
+
+
+def _with_extra_context(full, transcript):
+    """full, with any _extra_context_blocks() appended - or full unchanged
+    if the transcript has none, so the common case (no extra tools used)
+    does no extra work."""
+
+    extra_ids, extra_documents, extra_metadatas = _extra_context_blocks(transcript)
+    if not extra_ids:
+        return full
+
+    return {
+        "ids": [full["ids"][0] + extra_ids],
+        "documents": [full["documents"][0] + extra_documents],
+        "metadatas": [full["metadatas"][0] + extra_metadatas],
+        "distances": [full["distances"][0] + [0.0] * len(extra_ids)],
+    }
 
 
 def _no_match_answer(query, restriction):
@@ -265,6 +378,10 @@ def run_agent(collection, query, restriction=None, model=generator.DEFAULT_MODEL
         f'Find a recipe for "{query}".'
     )
 
+    registry = _get_registry()
+    tool_catalog = registry.list_tools()
+    collection_name = collection.name
+
     transcript = []
     start = time.monotonic()
     calls_before = len(generator.call_log)
@@ -276,7 +393,7 @@ def run_agent(collection, query, restriction=None, model=generator.DEFAULT_MODEL
             stopped_reason = "time_budget_exceeded"
             break
 
-        action = _ask_for_action(question, transcript, model, restriction)
+        action = _ask_for_action(question, transcript, model, restriction, tool_catalog)
         tool = action.get("tool")
         args = action.get("args") or {}
 
@@ -327,6 +444,7 @@ def run_agent(collection, query, restriction=None, model=generator.DEFAULT_MODEL
 
             if recipe_id:
                 full = get_recipe(collection, recipe_id)
+                full = _with_extra_context(full, transcript)
                 answer = generate_recipe_answer(question, full, model=model)
             else:
                 answer = _no_match_answer(query, restriction)
@@ -344,7 +462,7 @@ def run_agent(collection, query, restriction=None, model=generator.DEFAULT_MODEL
                 "elapsed_seconds": time.monotonic() - start,
             }
 
-        observation = _run_tool(collection, tool, args)
+        observation = _run_tool(registry, collection_name, tool, args)
 
         transcript.append({
             "step": step_number, "thought": action.get("thought", ""),

@@ -1,0 +1,16 @@
+{
+  "servers": [
+    {
+      "name": "recipe-tools",
+      "transport": "stdio",
+      "command": "python",
+      "args": ["-m", "mcp_servers.recipe_tools_server"]
+    },
+    {
+      "name": "ingredient-db",
+      "transport": "stdio",
+      "command": "python",
+      "args": ["-m", "mcp_servers.ingredient_server"]
+    }
+  ]
+}
