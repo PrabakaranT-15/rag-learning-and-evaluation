@@ -5,3 +5,4 @@ python-dotenv
 google-genai
 groq
 pytest
+mcp[cli]<2

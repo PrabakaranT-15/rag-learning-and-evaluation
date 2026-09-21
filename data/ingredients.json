@@ -1,0 +1,225 @@
+[
+  {
+    "name": "Strong white bread flour",
+    "aliases": ["bread flour", "white bread flour", "strong flour"],
+    "category": "flour",
+    "dietary_tags": ["vegan", "vegetarian", "dairy-free", "egg-free", "nut-free"],
+    "allergens": ["gluten"],
+    "nutrition_per_100g": {"calories": 361, "protein_g": 12.6, "fat_g": 1.7, "carbs_g": 72.5},
+    "substitutes": [
+      {"name": "Gluten-free bread flour blend", "ratio": "1:1", "notes": "needs added xanthan gum for structure; texture is denser", "dietary_tags": ["vegan", "vegetarian", "dairy-free", "egg-free", "gluten-free"]},
+      {"name": "Whole wheat flour", "ratio": "1:1", "notes": "denser crumb, absorbs more water", "dietary_tags": ["vegan", "vegetarian", "dairy-free", "egg-free"]}
+    ]
+  },
+  {
+    "name": "Wholemeal flour",
+    "aliases": ["whole wheat flour", "wholegrain flour"],
+    "category": "flour",
+    "dietary_tags": ["vegan", "vegetarian", "dairy-free", "egg-free", "nut-free"],
+    "allergens": ["gluten"],
+    "nutrition_per_100g": {"calories": 340, "protein_g": 13.2, "fat_g": 2.5, "carbs_g": 61.9},
+    "substitutes": [
+      {"name": "Strong white bread flour", "ratio": "1:1", "notes": "lighter crumb, less bran flavour", "dietary_tags": ["vegan", "vegetarian", "dairy-free", "egg-free"]}
+    ]
+  },
+  {
+    "name": "Rye flour",
+    "aliases": ["dark rye flour", "wholegrain rye flour"],
+    "category": "flour",
+    "dietary_tags": ["vegan", "vegetarian", "dairy-free", "egg-free", "nut-free"],
+    "allergens": ["gluten"],
+    "nutrition_per_100g": {"calories": 335, "protein_g": 8.8, "fat_g": 1.7, "carbs_g": 69.8},
+    "substitutes": [
+      {"name": "Wholemeal flour", "ratio": "1:1", "notes": "milder flavour, less tang in the finished levain", "dietary_tags": ["vegan", "vegetarian", "dairy-free", "egg-free"]}
+    ]
+  },
+  {
+    "name": "Glutinous rice flour",
+    "aliases": ["sweet rice flour", "mochiko"],
+    "category": "flour",
+    "dietary_tags": ["vegan", "vegetarian", "dairy-free", "egg-free", "nut-free", "gluten-free"],
+    "allergens": [],
+    "nutrition_per_100g": {"calories": 366, "protein_g": 6.0, "fat_g": 0.6, "carbs_g": 84.0},
+    "substitutes": [
+      {"name": "Regular rice flour", "ratio": "1:1", "notes": "porridge will be slightly less sticky/thick", "dietary_tags": ["vegan", "vegetarian", "dairy-free", "egg-free", "gluten-free"]},
+      {"name": "Cornstarch", "ratio": "3:4 (use 3/4 the amount)", "notes": "thickens differently, use as a last resort", "dietary_tags": ["vegan", "vegetarian", "dairy-free", "egg-free", "gluten-free"]}
+    ]
+  },
+  {
+    "name": "Fine sea salt",
+    "aliases": ["sea salt", "table salt"],
+    "category": "seasoning",
+    "dietary_tags": ["vegan", "vegetarian", "dairy-free", "egg-free", "nut-free", "gluten-free"],
+    "allergens": [],
+    "nutrition_per_100g": {"calories": 0, "protein_g": 0, "fat_g": 0, "carbs_g": 0},
+    "substitutes": [
+      {"name": "Coarse sea salt", "ratio": "1:1 by weight", "notes": "measure by weight, not volume - coarse crystals take up more space per gram", "dietary_tags": ["vegan", "vegetarian", "dairy-free", "egg-free", "gluten-free"]}
+    ]
+  },
+  {
+    "name": "Coarse sea salt",
+    "aliases": ["kosher salt", "brining salt"],
+    "category": "seasoning",
+    "dietary_tags": ["vegan", "vegetarian", "dairy-free", "egg-free", "nut-free", "gluten-free"],
+    "allergens": [],
+    "nutrition_per_100g": {"calories": 0, "protein_g": 0, "fat_g": 0, "carbs_g": 0},
+    "substitutes": [
+      {"name": "Fine sea salt", "ratio": "1:1 by weight", "notes": "measure by weight, not volume", "dietary_tags": ["vegan", "vegetarian", "dairy-free", "egg-free", "gluten-free"]}
+    ]
+  },
+  {
+    "name": "Rye levain",
+    "aliases": ["rye starter", "sourdough starter", "levain"],
+    "category": "leavening",
+    "dietary_tags": ["vegan", "vegetarian", "dairy-free", "egg-free", "nut-free"],
+    "allergens": ["gluten"],
+    "nutrition_per_100g": {"calories": 220, "protein_g": 6.5, "fat_g": 1.0, "carbs_g": 44.0},
+    "substitutes": [
+      {"name": "Active dry yeast", "ratio": "1g yeast per 100g levain, plus adjust hydration", "notes": "loses the sour flavour and longer fermentation character", "dietary_tags": ["vegan", "vegetarian", "dairy-free", "egg-free"]}
+    ]
+  },
+  {
+    "name": "Unsalted butter",
+    "aliases": ["butter"],
+    "category": "dairy",
+    "dietary_tags": ["vegetarian", "gluten-free", "egg-free", "nut-free"],
+    "allergens": ["dairy"],
+    "nutrition_per_100g": {"calories": 717, "protein_g": 0.9, "fat_g": 81.0, "carbs_g": 0.1},
+    "substitutes": [
+      {"name": "Vegan block butter", "ratio": "1:1", "notes": "similar fat content, works well in enriched doughs", "dietary_tags": ["vegan", "vegetarian", "dairy-free", "gluten-free"]},
+      {"name": "Coconut oil (solid)", "ratio": "1:1", "notes": "adds a mild coconut flavour", "dietary_tags": ["vegan", "vegetarian", "dairy-free", "gluten-free"]}
+    ]
+  },
+  {
+    "name": "Whole milk",
+    "aliases": ["milk"],
+    "category": "dairy",
+    "dietary_tags": ["vegetarian", "gluten-free", "egg-free", "nut-free"],
+    "allergens": ["dairy"],
+    "nutrition_per_100g": {"calories": 61, "protein_g": 3.2, "fat_g": 3.3, "carbs_g": 4.8},
+    "substitutes": [
+      {"name": "Oat milk", "ratio": "1:1", "notes": "slightly sweeter, good browning", "dietary_tags": ["vegan", "vegetarian", "dairy-free", "gluten-free"]},
+      {"name": "Soy milk (unsweetened)", "ratio": "1:1", "notes": "highest protein of the plant milks, closest structure to dairy", "dietary_tags": ["vegan", "vegetarian", "dairy-free", "gluten-free"]}
+    ]
+  },
+  {
+    "name": "Eggs",
+    "aliases": ["egg", "whole eggs"],
+    "category": "protein",
+    "dietary_tags": ["vegetarian", "dairy-free", "gluten-free", "nut-free"],
+    "allergens": ["egg"],
+    "nutrition_per_100g": {"calories": 143, "protein_g": 12.6, "fat_g": 9.5, "carbs_g": 0.7},
+    "substitutes": [
+      {"name": "Aquafaba", "ratio": "3 tbsp per egg", "notes": "chickpea brine; good for binding, less good for rich colour/flavour in brioche", "dietary_tags": ["vegan", "vegetarian", "dairy-free", "egg-free", "gluten-free"]},
+      {"name": "Ground flaxseed + water (1:3, rested 10 min)", "ratio": "1 tbsp flax + 3 tbsp water per egg", "notes": "adds slight nuttiness and density", "dietary_tags": ["vegan", "vegetarian", "dairy-free", "egg-free", "gluten-free"]}
+    ]
+  },
+  {
+    "name": "Caster sugar",
+    "aliases": ["superfine sugar", "sugar"],
+    "category": "sweetener",
+    "dietary_tags": ["vegan", "vegetarian", "dairy-free", "egg-free", "nut-free", "gluten-free"],
+    "allergens": [],
+    "nutrition_per_100g": {"calories": 400, "protein_g": 0, "fat_g": 0, "carbs_g": 100.0},
+    "substitutes": [
+      {"name": "Granulated sugar", "ratio": "1:1", "notes": "slightly coarser, dissolves a little slower", "dietary_tags": ["vegan", "vegetarian", "dairy-free", "egg-free", "gluten-free"]}
+    ]
+  },
+  {
+    "name": "Napa cabbage",
+    "aliases": ["chinese cabbage", "napa"],
+    "category": "vegetable",
+    "dietary_tags": ["vegan", "vegetarian", "dairy-free", "egg-free", "nut-free", "gluten-free"],
+    "allergens": [],
+    "nutrition_per_100g": {"calories": 16, "protein_g": 1.2, "fat_g": 0.2, "carbs_g": 3.2},
+    "substitutes": [
+      {"name": "Savoy cabbage", "ratio": "1:1 by weight", "notes": "sturdier leaf, slightly longer brining time", "dietary_tags": ["vegan", "vegetarian", "dairy-free", "egg-free", "gluten-free"]}
+    ]
+  },
+  {
+    "name": "Gochugaru",
+    "aliases": ["korean chilli flakes", "korean chili flakes", "korean red pepper flakes"],
+    "category": "seasoning",
+    "dietary_tags": ["vegan", "vegetarian", "dairy-free", "egg-free", "nut-free", "gluten-free"],
+    "allergens": [],
+    "nutrition_per_100g": {"calories": 282, "protein_g": 12.0, "fat_g": 15.0, "carbs_g": 50.0},
+    "substitutes": [
+      {"name": "Crushed red pepper flakes + smoked paprika (2:1)", "ratio": "match gochugaru weight", "notes": "hotter and less smoky-sweet than real gochugaru", "dietary_tags": ["vegan", "vegetarian", "dairy-free", "egg-free", "gluten-free"]}
+    ]
+  },
+  {
+    "name": "Anchovy fish sauce",
+    "aliases": ["fish sauce"],
+    "category": "seasoning",
+    "dietary_tags": ["non-vegetarian", "contains-fish", "dairy-free", "egg-free", "nut-free", "gluten-free"],
+    "allergens": ["fish"],
+    "nutrition_per_100g": {"calories": 35, "protein_g": 5.1, "fat_g": 0, "carbs_g": 3.6},
+    "substitutes": [
+      {"name": "Soy sauce + kelp (dashima) soaking liquid", "ratio": "1:1", "notes": "umami stand-in with no fish; this is the standard vegan-kimchi swap", "dietary_tags": ["vegan", "vegetarian", "dairy-free", "egg-free", "gluten-free"]}
+    ]
+  },
+  {
+    "name": "Saeujeot",
+    "aliases": ["salted fermented shrimp"],
+    "category": "seasoning",
+    "dietary_tags": ["non-vegetarian", "contains-shellfish", "dairy-free", "egg-free", "nut-free", "gluten-free"],
+    "allergens": ["shellfish"],
+    "nutrition_per_100g": {"calories": 85, "protein_g": 14.0, "fat_g": 2.0, "carbs_g": 1.0},
+    "substitutes": [
+      {"name": "Extra soy sauce + a pinch of sugar", "ratio": "to taste", "notes": "no shellfish; the standard vegan-kimchi swap alongside the fish sauce substitute", "dietary_tags": ["vegan", "vegetarian", "dairy-free", "egg-free", "gluten-free"]}
+    ]
+  },
+  {
+    "name": "Korean radish",
+    "aliases": ["mu", "daikon"],
+    "category": "vegetable",
+    "dietary_tags": ["vegan", "vegetarian", "dairy-free", "egg-free", "nut-free", "gluten-free"],
+    "allergens": [],
+    "nutrition_per_100g": {"calories": 18, "protein_g": 0.6, "fat_g": 0.1, "carbs_g": 4.1},
+    "substitutes": [
+      {"name": "Daikon radish", "ratio": "1:1", "notes": "very close substitute, slightly milder", "dietary_tags": ["vegan", "vegetarian", "dairy-free", "egg-free", "gluten-free"]}
+    ]
+  },
+  {
+    "name": "Garlic",
+    "aliases": ["garlic cloves", "minced garlic"],
+    "category": "aromatic",
+    "dietary_tags": ["vegan", "vegetarian", "dairy-free", "egg-free", "nut-free", "gluten-free"],
+    "allergens": [],
+    "nutrition_per_100g": {"calories": 149, "protein_g": 6.4, "fat_g": 0.5, "carbs_g": 33.1},
+    "substitutes": [
+      {"name": "Garlic powder", "ratio": "1/8 tsp powder per clove", "notes": "milder, no fresh pungency", "dietary_tags": ["vegan", "vegetarian", "dairy-free", "egg-free", "gluten-free"]}
+    ]
+  },
+  {
+    "name": "Ginger",
+    "aliases": ["fresh ginger", "grated ginger"],
+    "category": "aromatic",
+    "dietary_tags": ["vegan", "vegetarian", "dairy-free", "egg-free", "nut-free", "gluten-free"],
+    "allergens": [],
+    "nutrition_per_100g": {"calories": 80, "protein_g": 1.8, "fat_g": 0.8, "carbs_g": 17.8},
+    "substitutes": [
+      {"name": "Ground ginger", "ratio": "1/4 tsp powder per 1 tbsp fresh", "notes": "less bright, more concentrated heat", "dietary_tags": ["vegan", "vegetarian", "dairy-free", "egg-free", "gluten-free"]}
+    ]
+  },
+  {
+    "name": "Water",
+    "aliases": [],
+    "category": "liquid",
+    "dietary_tags": ["vegan", "vegetarian", "dairy-free", "egg-free", "nut-free", "gluten-free"],
+    "allergens": [],
+    "nutrition_per_100g": {"calories": 0, "protein_g": 0, "fat_g": 0, "carbs_g": 0},
+    "substitutes": []
+  },
+  {
+    "name": "Olive oil",
+    "aliases": ["extra virgin olive oil"],
+    "category": "fat",
+    "dietary_tags": ["vegan", "vegetarian", "dairy-free", "egg-free", "nut-free", "gluten-free"],
+    "allergens": [],
+    "nutrition_per_100g": {"calories": 884, "protein_g": 0, "fat_g": 100.0, "carbs_g": 0},
+    "substitutes": [
+      {"name": "Neutral vegetable oil", "ratio": "1:1", "notes": "loses the fruity flavour but works structurally", "dietary_tags": ["vegan", "vegetarian", "dairy-free", "egg-free", "gluten-free"]}
+    ]
+  }
+]
