@@ -16,6 +16,7 @@ tool signature.
 """
 
 import json
+import os
 from pathlib import Path
 
 from mcp.server.fastmcp import FastMCP
@@ -23,6 +24,12 @@ from mcp.server.fastmcp import FastMCP
 DATA_PATH = Path(__file__).resolve().parent.parent / "data" / "ingredients.json"
 
 mcp = FastMCP("ingredient-db", host="127.0.0.1", port=8931)
+
+# Week 9 "Remote MCP & auth" / access-control: the shared secret an HTTP
+# caller must present. Only enforced in --http mode (see __main__) - stdio
+# is this repo's own agent launching a local subprocess, never exposed to a
+# network, so there is nothing for a shared secret to protect there.
+API_KEY_ENV = "INGREDIENT_SERVER_API_KEY"
 
 
 def _load_catalog():
@@ -118,11 +125,109 @@ def check_allergens(ingredients: list) -> dict:
     return {"by_ingredient": by_ingredient, "all_allergens": sorted(all_allergens)}
 
 
+# --------------------------------------------------------- resources & prompts
+# MCP has three primitives - tools, resources, prompts. Everything above is a
+# tool (an action: look something up, filter, aggregate). These two add the
+# other two primitives, on the same server, so this deliverable demonstrates
+# the full protocol surface rather than only the one primitive used so far.
+
+@mcp.resource("ingredients://catalog")
+def ingredient_catalog() -> str:
+    """The full ingredient database, as a READABLE resource rather than a
+    callable action - a host can list_resources()/read_resource() this to
+    browse what's available before deciding which tool to call, the same way
+    it might read a file or a DB row. Returns the raw JSON verbatim; no
+    lookup, filtering or aggregation - that's what the tools above are for."""
+
+    return DATA_PATH.read_text(encoding="utf-8")
+
+
+@mcp.prompt()
+def allergen_check_prompt(ingredients: list[str]) -> str:
+    """A reusable prompt template for allergen-checking a recipe's ingredient
+    list - MCP's third primitive. A host asks for this prompt BY NAME with a
+    list of ingredients and gets back ready-to-send instruction text that
+    points the caller at check_allergens rather than guessing from general
+    food knowledge - the same grounding discipline this project's recipe
+    generator enforces (rag/generator.py), applied to prompt templates too."""
+
+    listed = ", ".join(ingredients)
+    return (
+        f"Using the check_allergens tool, verify whether any of these "
+        f"ingredients carry a known allergen: {listed}. Report only the "
+        f"allergens the tool actually returns for them - never guess an "
+        f"allergen from general food knowledge, and say so explicitly for "
+        f"any ingredient the tool reports as unknown."
+    )
+
+
+# ---------------------------------------------------------------- access control
+# Minimal shared-secret bearer-token check for the HTTP transport - the
+# concrete answer to "checking a tool before you trust someone else's" and
+# "Remote MCP & auth" for THIS server's own exposed surface. A full OAuth
+# authorization-server flow (FastMCP's built-in AuthSettings) is real but
+# disproportionate machinery for a single static-secret course deliverable;
+# a bearer check in front of the same streamable-HTTP app it would otherwise
+# guard is the honest minimum version of the same control, and it is
+# genuinely enforced (see tests/test_ingredient_server.py's HTTP auth test),
+# not just described.
+
+class _BearerTokenMiddleware:
+    """Rejects any HTTP request that doesn't present
+    `Authorization: Bearer <API_KEY_ENV>` - before it ever reaches the MCP
+    session manager. Only installed when API_KEY_ENV is actually set (see
+    __main__), so local dev/testing without a key still works exactly as
+    before - the same "safe by default once configured, not broken by
+    default until configured" tradeoff diet_flags() and validate_chunk_metadata()
+    already make elsewhere in this project."""
+
+    def __init__(self, app, expected_token):
+        self._app = app
+        self._expected = f"Bearer {expected_token}"
+
+    async def __call__(self, scope, receive, send):
+        if scope["type"] != "http":
+            await self._app(scope, receive, send)
+            return
+
+        headers = dict(scope.get("headers") or [])
+        provided = headers.get(b"authorization", b"").decode("latin-1")
+
+        if provided != self._expected:
+            from starlette.responses import JSONResponse
+            response = JSONResponse(
+                {"error": "unauthorized: missing or invalid bearer token"},
+                status_code=401,
+            )
+            await response(scope, receive, send)
+            return
+
+        await self._app(scope, receive, send)
+
+
 if __name__ == "__main__":
     import sys
 
-    # Local/agent use: stdio (the agent launches this as a subprocess).
-    # Shareable use ("someone else's agent calls it"): streamable-HTTP, so it
-    # has a URL a different host process can connect to over the network.
-    transport = "streamable-http" if "--http" in sys.argv else "stdio"
-    mcp.run(transport=transport)
+    # Local/agent use: stdio (the agent launches this as a subprocess, never
+    # over a network - see rag/mcp_client.py). Shareable use ("someone
+    # else's agent calls it"): streamable-HTTP, with the bearer check above
+    # in front of it, so it has a URL AND a credential a different host
+    # process needs to connect.
+    if "--http" in sys.argv:
+        import uvicorn
+
+        api_key = os.getenv(API_KEY_ENV)
+        app = mcp.streamable_http_app()
+
+        if api_key:
+            app = _BearerTokenMiddleware(app, api_key)
+            print(f"[ingredient-db] HTTP auth ENABLED - callers need "
+                  f"'Authorization: Bearer <{API_KEY_ENV}>'", file=sys.stderr)
+        else:
+            print(f"[ingredient-db] WARNING: {API_KEY_ENV} not set - serving "
+                  f"UNAUTHENTICATED. Set it before exposing this beyond "
+                  f"localhost.", file=sys.stderr)
+
+        uvicorn.run(app, host=mcp.settings.host, port=mcp.settings.port)
+    else:
+        mcp.run(transport="stdio")

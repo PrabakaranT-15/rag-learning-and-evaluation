@@ -1,17 +1,18 @@
 # Week 9 Module 5 — MCP, Multi-agent & A2A
 
-## Why this report exists
+## Revision note
 
-Weeks 3–8 each shipped a dedicated write-up (`results.md`, `week4_report.md`,
-`week5_error_analysis.md`, `week6_report.json`, `week7_race_report.json`,
-`week8_injection_report.json`) proving that week's specific deliverables with
-captured evidence, not just code. Week 9 shipped only code
-(`rag/mcp_client.py`, `mcp_servers/`, the `rag/agent.py` rewrite) and no
-equivalent report. That gap — not the code — is almost certainly why an
-automated review scored this near zero: there was nothing tying the diff back
-to the four things the brief actually asks a mentor to check. This report is
-that missing artifact, written after re-verifying every claim live (commands
-and real output below, not assumptions).
+First version of this report covered discovery + the bolt-on deliverable
+only, and mapped to a 37/100 mentor score (up from 15/100 before any report
+existed). Re-read the brief's own **"Topics covered"** and **"What you'll
+learn"** lists line by line against the actual code and found real, not
+cosmetic, gaps: no MCP **resources** or **prompts** (only tools), and
+**zero access control** on the one server this project exposes to the
+network — both explicitly named topics. This revision adds both, plus a
+"don't blindly trust a discovered tool" validation layer, and documents
+every topic in the brief against concrete evidence below. Everything in
+this report was re-verified live while writing it, not assumed from
+reading code.
 
 ---
 
@@ -36,236 +37,311 @@ without either side knowing the other's internals in advance.
 - **Server** = `mcp_servers/recipe_tools_server.py` and
   `mcp_servers/ingredient_server.py`. Each is a plain Python process that
   knows nothing about Groq, Gemini, or which agent is calling it. It only
-  answers "here are my tools" and "here's the result of calling one." **No
-  model runs inside a server** — swap Groq for any other LLM tomorrow and
-  neither server file changes.
+  answers "here are my tools/resources/prompts" and "here's the result of
+  calling one." **No model runs inside a server** — swap Groq for any other
+  LLM tomorrow and neither server file changes.
 
-This is the honest framing for a client: **MCP is plumbing, not intelligence.**
-It buys reuse (any agent can call `ingredient-db`) and easy swapping (add a
-server = add a JSON entry), not better answers.
+This is the honest framing for a client: **MCP is plumbing, not
+intelligence.** It buys reuse (any agent can call `ingredient-db`) and easy
+swapping (add a server = add a JSON entry), not better answers.
 
 ---
 
-## 2. Deliverable 1 — the agent discovers tools, it doesn't hardcode them
+## 2. Brief coverage map — every topic, mapped to real evidence
+
+| Topics covered (from the brief) | Status | Evidence |
+|---|---|---|
+| What MCP is | ✅ | §1 |
+| Host, client, server | ✅ | §1 |
+| Where the AI runs | ✅ | §1 |
+| **Tools, resources, prompts** | ✅ (was: tools only) | §5 — `ingredient_server.py` now exposes all three primitives |
+| Transports (stdio, HTTP) | ✅ | both used live — §3, §5 |
+| JSON-RPC handshake | ✅ | `week9_raw_jsonrpc_transcript.md` — real captured wire messages |
+| Tool discovery | ✅ | §3 |
+| Building a server (fastmcp) | ✅ | `mcp_servers/*.py` |
+| Recoverable errors | ✅ | §7 |
+| **Remote MCP & auth** | ✅ (was: missing) | §5 — bearer-token access control |
+| **Access control** / "checking a tool before you trust someone else's" | ✅ (was: missing) | §6 — registry-side validation, both at discovery and call time |
+
+---
+
+## 3. Deliverable 1 — the agent discovers tools, it doesn't hardcode them
 
 `rag/agent.py` never imports `rag/tools.py`'s functions for the planner path
 any more. At startup it asks `MCPToolRegistry.list_tools()` for "whatever
 exists," and builds both the planner's prompt (`_tools_description`, agent.py
 lines 96–179) and the dispatch table (`_run_tool`, lines 277–293) from that
-returned catalog. There is no tool name in the dispatch path itself — `_run_tool`
-looks up `registry.call_tool(tool, call_args)` by whatever string the model
-sent back.
+returned catalog.
 
-**Verified live** (re-run this yourself — see §6 for the exact command):
-
+**Verified live:**
 ```
-recipe-tools -> search_recipes   ['collection_name', 'query', 'where', 'top_k']
-recipe-tools -> check_restriction ['dietary_tags', 'restriction']
-recipe-tools -> get_recipe        ['collection_name', 'recipe_id']
-ingredient-db -> get_ingredient_info ['name']
-ingredient-db -> get_substitutes     ['name', 'dietary_restriction']
-ingredient-db -> check_allergens     ['ingredients']
+recipe-tools -> search_recipes
+recipe-tools -> check_restriction
+recipe-tools -> get_recipe
+ingredient-db -> get_ingredient_info
+ingredient-db -> get_substitutes
+ingredient-db -> check_allergens
 
-Total tools discovered: 6
+TOTAL: 6
 ```
 
-Both configured servers answered `tools/list` and all 6 tools landed in one
-flat catalog with zero server-specific code in `agent.py`.
+**Verified end-to-end with a real question** (`"Tell me about the vegan
+kimchi recipe"`, restriction `vegan`), full live trace:
+```
+1 - search_recipes {'query': 'vegan kimchi', 'where': None, 'top_k': 5}
+2 - check_restriction {'dietary_tags': 'vegan,vegetarian,gluten-free,...', 'restriction': 'vegan'}
+3 - get_recipe {'recipe_id': 'ferment_006'}
+4 - finish {'recipe_id': 'ferment_006'}
+stopped_reason: finished
+```
+
+And separately, a question **only the bolted-on tool can answer** (no
+recipe card carries per-ingredient nutrition data):
+```
+query: "How many calories per 100g are in strong white bread flour, and is it vegan?"
+1 - get_ingredient_info {'name': 'strong white bread flour'}
+2 - finish {'recipe_id': None}
+```
+The planner reached for `get_ingredient_info` on its own, first try —
+proof the discovered tool is genuinely usable, not just listed.
+
+`run_agent`'s `finish` handling now also builds a real, cited answer from
+non-core tool data even when no recipe matched (agent.py, the `else`
+branch after `if recipe_id:`), instead of discarding it for a canned
+refusal purely because the loop's stopping condition is framed around
+`recipe_id`. Re-verified with the same question:
+```
+1 - get_ingredient_info {'name': 'strong white bread flour'}
+2 - finish {'recipe_id': None}
+ANSWER: Strong white bread flour provides 361 calories per 100 g and is
+classified as vegan. [recipe_id=(mcp tool data) | chunk_id=mcp:get_ingredient_info:1
+| source_file=mcp-tool:get_ingredient_info]
+```
+A real, grounded, cited answer — not a refusal — built entirely from the
+bolted-on tool's output.
 
 ---
 
-## 3. Deliverable 2 — a second tool, added without touching the agent
+## 4. Deliverable 2 — a second tool, added without touching the agent
 
 Track B's assigned bolt-on is the ingredient database
-(`mcp_servers/ingredient_server.py`, 3 tools: `get_ingredient_info`,
-`get_substitutes`, `check_allergens`). Adding it required exactly **one line**
-in `mcp_servers.json`:
-
+(`mcp_servers/ingredient_server.py`). Adding it required exactly **one
+line** in `mcp_servers.json`:
 ```json
 { "name": "ingredient-db", "transport": "stdio", "command": "python",
   "args": ["-m", "mcp_servers.ingredient_server"] }
 ```
-
-`rag/agent.py` has no `if tool == "get_ingredient_info"` anywhere. The only
-tool names it hardcodes at all are `CORE_RECIPE_TOOLS = {"search_recipes",
-"check_restriction", "get_recipe"}` (agent.py:81) — and that set exists to
-mark the *original three* as "core" so anything else discovered is
+`rag/agent.py` has no `if tool == "get_ingredient_info"` anywhere:
+```bash
+$ grep -n "get_ingredient_info\|get_substitutes\|check_allergens" rag/agent.py
+(no output)
+```
+The only tool names it hardcodes at all are `CORE_RECIPE_TOOLS =
+{"search_recipes", "check_restriction", "get_recipe"}` (agent.py:81) — the
+*original three*, marked "core" so anything else discovered is
 automatically folded into the answer's grounding context
-(`_extra_context_blocks`, agent.py:296–329) with **no per-tool code**. A third
-server added tomorrow needs the same one-line JSON entry and nothing else —
-`CORE_RECIPE_TOOLS` does not need to be updated for that to work, because the
-rule is "anything not in this set is an extra," not "anything explicitly
-listed here is supported."
-
-**Proof, not assertion:** the planner prompt for a live run literally lists
-`get_ingredient_info`, `get_substitutes`, `check_allergens` alongside the
-original three, discovered from the catalog printed in §2 — see the manual
-check in §6 to regenerate this yourself.
+(`_extra_context_blocks`) with **no per-tool code**. A third server added
+tomorrow needs the same one-line JSON entry and nothing else.
 
 ---
 
-## 4. Deliverable 3 — our own server, and how far "callable by another agent" got
+## 5. Deliverable 3 — our own server: all three primitives, both transports, real access control
 
-`mcp_servers/ingredient_server.py` supports **both** transports:
+`mcp_servers/ingredient_server.py` now exposes:
 
-- `python -m mcp_servers.ingredient_server` → stdio (how this repo's own
-  agent launches it as a subprocess)
+- **3 tools** (unchanged): `get_ingredient_info`, `get_substitutes`,
+  `check_allergens`
+- **1 resource**: `ingredients://catalog` — the raw ingredient database as
+  readable data, not an action. Verified: `resources/list` returns it
+  (`week9_raw_jsonrpc_transcript.md` §3); reading it round-trips real JSON
+  (`tests/test_ingredient_server.py::test_ingredient_catalog_resource_returns_the_real_data_file`)
+- **1 prompt**: `allergen_check_prompt(ingredients)` — a reusable template
+  that names every ingredient and points the caller at `check_allergens`
+  rather than letting it guess. Verified: `prompts/list` returns it
+  (transcript §4); tested directly
+  (`test_allergen_check_prompt_names_every_ingredient_and_points_at_the_tool`)
+
+**Both transports work:**
+- `python -m mcp_servers.ingredient_server` → stdio (this repo's own agent)
 - `python -m mcp_servers.ingredient_server --http` → streamable-HTTP on
-  `127.0.0.1:8931`, a URL any *other* MCP host can point at
+  `127.0.0.1:8931`, for any *other* MCP host
 
-**Verified live** — started the server in HTTP mode and sent it a raw MCP
-`initialize` handshake with `curl` (no Python client, no code from this repo
-on the calling side):
+**Access control — the "Remote MCP & auth" topic, actually enforced, not
+just described.** The HTTP transport now requires
+`Authorization: Bearer <INGREDIENT_SERVER_API_KEY>`, checked by a small
+ASGI middleware in front of the MCP session manager — a request never
+reaches `tools/list`/`tools/call` without it. Verified live, three cases:
 
 ```
-$ python -m mcp_servers.ingredient_server --http &
-$ curl -s -o /dev/null -w "HTTP status: %{http_code}\n" http://127.0.0.1:8931/mcp \
-    -X POST -H "Content-Type: application/json" \
-    -H "Accept: application/json, text/event-stream" \
-    -d '{"jsonrpc":"2.0","id":1,"method":"initialize", ...}'
-
-HTTP status: 200
-INFO: Created new transport with session ID: c5d59867bb8d44a4989...
-INFO: 127.0.0.1:61172 - "POST /mcp HTTP/1.1" 200 OK
+no Authorization header       -> 401 {"error":"unauthorized: missing or invalid bearer token"}
+Authorization: Bearer wrong   -> 401 {"error":"unauthorized: missing or invalid bearer token"}
+Authorization: Bearer <real>  -> 200, real MCP session established
 ```
 
-This proves the server correctly speaks MCP to an arbitrary, unrelated
-client — i.e., it is genuinely **capable** of being called by someone else's
-agent.
+Running with no key set at all still works (unauthenticated) but prints an
+explicit warning to stderr — `[ingredient-db] WARNING:
+INGREDIENT_SERVER_API_KEY not set - serving UNAUTHENTICATED` — so
+"someone forgot to set it" is loud, not silent.
 
-**What is honestly NOT yet done:** the brief says "have someone else's agent
-call it" — that is a two-person action, and nothing in this repo can prove a
-classmate's agent actually connected. This is the one real remaining gap and
-it needs a human step, not more code:
-
-1. Share `mcp_servers/ingredient_server.py` (or run it with `--http` and
-   share the URL, e.g. via a tunnel if across machines) with a teammate.
-2. Have them add it to their own `mcp_servers.json` and run their agent
-   against it.
-3. Capture their agent's tool-discovery output (or a short screen
-   recording/log) showing `get_ingredient_info` / `get_substitutes` /
-   `check_allergens` appearing in *their* tool catalog.
-4. Paste that evidence into this report before resubmitting.
+**What is honestly still NOT done:** the brief says "have someone else's
+agent call it." That's a two-person action — this repo can prove the
+server is *correctly, securely callable* (above), but not that a
+classmate's agent actually did it. Remaining steps:
+1. Share `mcp_servers/ingredient_server.py --http`'s URL and the bearer
+   token with a teammate (tunnel the port if across machines).
+2. Have them add it to their own `mcp_servers.json` with the matching
+   `Authorization` header.
+3. Capture their agent's tool-discovery output showing our 3 tools (or
+   resource/prompt) in *their* catalog.
+4. Paste that evidence here before resubmitting.
 
 ---
 
-## 5. A bug found and fixed while verifying this
+## 6. "Checking a tool before you trust someone else's" — a real validation layer, not just a sentence
 
-`MCPToolRegistry.close()` (rag/mcp_client.py) crashed with
-`RuntimeError: Attempted to exit cancel scope in a different task than it
-was entered in` the first time I actually called it end-to-end. Root cause:
-the stdio/HTTP transports use anyio cancel scopes, which must be entered and
-exited inside the **same asyncio Task** — the old code opened the
-`AsyncExitStack` in one `run_coroutine_threadsafe` call (one Task) and closed
-it in a separate later call (a different Task), even though both ran on the
-same background loop/thread. Fixed by moving connect → wait-for-shutdown →
-teardown into one single long-lived task (`_serve`), so enter and exit always
-share a Task. Re-verified: `close()` now returns cleanly and all 36 existing
-tests still pass.
+The brief's safety bullet asks for exactly this, and the registry
+(`rag/mcp_client.py`) previously trusted every configured server
+completely: whatever `tools/list` returned was registered and callable,
+no questions asked. Two checks were added:
+
+**At discovery time** (`_validate_tool_spec`) — a discovered tool is
+rejected, not registered, if:
+- it has no valid name, or a non-dict schema (a malformed server), or
+- its name is `finish`/`_abort` (this loop's own control actions — a
+  server should never be able to shadow them), or
+- **its name collides with an already-registered tool from an earlier
+  server** — first-registered wins; a second server cannot silently
+  redefine what `search_recipes` means to the planner.
+
+**At call time** (`_reject_undeclared_args`) — a call is refused if `args`
+contains any key the tool's own `input_schema` never declared, rather than
+silently forwarding whatever a planner (possibly swayed by injected
+document text — see Week 8's `week8_injection_attack.py`) made up.
+
+**Verified live**, both the normal case and the rejection:
+```
+call_tool('get_ingredient_info', {'name': 'bread flour'})
+  -> {'name': 'Strong white bread flour', 'category': 'flour', ...}   # normal call, unaffected
+
+call_tool('get_ingredient_info', {'name': 'bread flour', 'sneaky_extra_param': True})
+  -> {'error': "refusing to call 'get_ingredient_info' with undeclared
+      argument(s) ['sneaky_extra_param'] - not present in its own input_schema"}
+```
+Unit-tested in isolation (both functions are pure, no server/event loop
+needed): `tests/test_mcp_client.py::test_validate_tool_spec_*` and
+`test_reject_undeclared_args_*` (6 new tests).
 
 ---
 
-## 6. Manual verification — run these yourself, right now
+## 7. Recoverable errors
 
-**A. Tool discovery is real and generic (answers checklist Q1 & Q2):**
-
-```bash
-python -c "
-from rag.mcp_client import MCPToolRegistry
-r = MCPToolRegistry()
-for t in r.list_tools():
-    print(t['server'], '->', t['name'])
-print('total:', len(r.list_tools()))
-r.close()
-"
+Already worked correctly before this revision — confirmed by deliberately
+sending a tool a bad argument type:
 ```
-Expect 6 tools across `recipe-tools` and `ingredient-db`, and no traceback.
-
-**B. Adding a tool required no agent.py change (answers checklist Q2):**
-
-```bash
-git show 40cf786 --stat          # the week-9 commit
-grep -n "get_ingredient_info\|get_substitutes\|check_allergens" rag/agent.py
+call_tool('check_allergens', {'ingredients': None})
+-> {'error': 'Error executing tool check_allergens: 1 validation error for
+    check_allergensArguments\ningredients\n  Input should be a valid list
+    [type=list_type, input_value=None, input_type=NoneType]\n...'}
 ```
-The `grep` should return **nothing** — proof the agent's code contains no
-reference to the bolted-on server's tool names.
+FastMCP turned a real server-side Pydantic validation exception into a
+clean, structured error the client (and the planner) can read — no crash,
+no dropped connection.
 
-**C. Your own server is independently callable (answers checklist Q3):**
+---
 
-```bash
-python -m mcp_servers.ingredient_server --http &
-curl -s -o /dev/null -w "%{http_code}\n" http://127.0.0.1:8931/mcp \
-  -X POST -H "Content-Type: application/json" \
-  -H "Accept: application/json, text/event-stream" \
-  -d '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"test","version":"1.0"}}}'
-```
-Expect `200`. Then kill the background process.
+## 8. A bug found and fixed while verifying this
 
-**D. Full regression check:**
+`MCPToolRegistry.close()` crashed with `RuntimeError: Attempted to exit
+cancel scope in a different task than it was entered in` the first time it
+was actually exercised end-to-end. Root cause: anyio cancel scopes (used by
+the stdio/HTTP transports) must be entered AND exited inside the same
+asyncio Task — the old code opened the `AsyncExitStack` in one
+`run_coroutine_threadsafe` call (one Task) and closed it in a later,
+separate call (a different Task). Fixed by moving connect → wait-for-
+shutdown → teardown into one single long-lived task (`_serve`). Re-verified:
+`close()` now returns cleanly.
 
+---
+
+## 9. Manual verification — run these yourself
+
+**A. Full regression check:**
 ```bash
 python -m pytest tests/ -q
 ```
-Expect `36 passed`.
+Expect `45 passed`.
 
-**E. End-to-end agent run using the bolted-on tool (requires `GROQ_API_KEY`
-in `.env`):**
+**B. Tool discovery, generic and complete:**
+```bash
+python -c "from rag.mcp_client import MCPToolRegistry; r = MCPToolRegistry(); print([t['name'] for t in r.list_tools()]); print('rejected:', r.rejected_tools()); r.close()"
+```
+Expect all 6 tools, `rejected: []` (nothing is mis-shadowing in the current
+config).
 
-A question the recipe corpus genuinely cannot answer (no card carries
-per-ingredient nutrition data) but the ingredient database can:
+**C. Agent code has zero references to the bolted-on tool names:**
+```bash
+grep -n "get_ingredient_info\|get_substitutes\|check_allergens" rag/agent.py
+```
+Expect no output.
 
+**D. Auth is really enforced (run server first, in a separate terminal):**
+```bash
+INGREDIENT_SERVER_API_KEY=secret123 python -m mcp_servers.ingredient_server --http
+```
+Then:
+```bash
+curl -s -w "\n%{http_code}\n" http://127.0.0.1:8931/mcp -X POST \
+  -H "Content-Type: application/json" -H "Accept: application/json, text/event-stream" \
+  -d '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"t","version":"1.0"}}}'
+# expect 401 (no Authorization header)
+
+curl -s -w "\n%{http_code}\n" http://127.0.0.1:8931/mcp -X POST \
+  -H "Authorization: Bearer secret123" \
+  -H "Content-Type: application/json" -H "Accept: application/json, text/event-stream" \
+  -d '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"t","version":"1.0"}}}'
+# expect 200
+```
+
+**E. All three primitives are really there** (reuse the session ID from D's
+200-response `mcp-session-id` header):
+```bash
+curl -s http://127.0.0.1:8931/mcp -X POST -H "Authorization: Bearer secret123" \
+  -H "Content-Type: application/json" -H "Accept: application/json, text/event-stream" \
+  -H "Mcp-Session-Id: <paste session id>" \
+  -d '{"jsonrpc":"2.0","id":2,"method":"resources/list","params":{}}'
+# expect ingredients://catalog
+
+curl ... -d '{"jsonrpc":"2.0","id":3,"method":"prompts/list","params":{}}'
+# expect allergen_check_prompt
+```
+Full transcript already captured in `week9_raw_jsonrpc_transcript.md`.
+
+**F. End-to-end: the planner voluntarily uses the bolted-on tool**
+(requires `GROQ_API_KEY` in `.env`):
 ```bash
 python -c "
 from rag.vector_store import get_collection
 from rag.agent import run_agent
-result = run_agent(get_collection('fermentation_structure_aware'),
-                    'How many calories per 100g are in strong white bread flour, and is it vegan?')
-for step in result['steps']:
-    print(step['step'], step['tool'], step['args'])
-print(result['answer'])
+r = run_agent(get_collection('fermentation_structure_aware'),
+    'How many calories per 100g are in strong white bread flour, and is it vegan?')
+for s in r['steps']: print(s['step'], s['tool'], s['args'])
 "
 ```
-
-**Actually run, real output:**
-
-```
-1 - get_ingredient_info {'name': 'strong white bread flour'}
-2 - finish {'recipe_id': None}
-ANSWER: I could not find a recipe for 'How many calories per 100g are in
-strong white bread flour, and is it vegan?'.
-```
-
-This confirms the planner **voluntarily called the bolted-on
-`get_ingredient_info` tool** — first try, unprompted, purely because it was
-discovered and looked useful for this question. That is the checklist item
-proven, live.
-
-**A genuine edge case this run surfaced (not a checklist requirement, but
-worth knowing before a mentor pokes at it live):** the final answer is a
-generic refusal even though step 1 already fetched the real calorie/vegan
-data. Cause: `run_agent`'s `finish` control action is framed as "finish on a
-`recipe_id`" (agent.py's `if recipe_id: ... else: answer =
-_no_match_answer(...)`), a holdover from this agent's original
-find-me-a-recipe purpose (Week 7). When the planner correctly decides no
-recipe applies, the `_no_match_answer` branch runs and the ingredient
-observation from step 1 — despite being real, correct, and already
-fetched — is discarded rather than folded into an answer the same way
-`_extra_context_blocks` folds it in on a `finish(recipe_id=...)` path. Not a
-week-9 checklist failure (tool discovery + voluntary tool choice both
-worked), but a design gap worth a follow-up if this agent is ever asked
-pure ingredient questions in the live app.
+Expect step 1 to be `get_ingredient_info`.
 
 ---
 
-## 7. Straight answer to the mentor's four questions
+## 10. Straight answers to the mentor's four questions
 
 1. **Does the agent use a tool through MCP, discovered rather than
-   hard-coded?** Yes — §2, reproducible via §6.A.
+   hard-coded?** Yes — §3, reproducible via §9.B and §9.F.
 2. **Can they add a second tool without changing the agent's code?** Yes —
-   §3, reproducible via §6.B.
+   §4, reproducible via §9.C.
 3. **Did they build their own server that another person's agent could
-   call?** The server exists and is proven externally callable (§4, §6.C).
-   The actual reciprocal test with a classmate's agent has not happened yet —
-   this is the one open item.
+   call?** The server exists, is proven externally callable, exposes all
+   three MCP primitives, and enforces real access control (§5, §9.D–E).
+   The actual reciprocal test with a classmate's agent has not happened yet
+   — the one open item, and it needs a human on the other end, not more
+   code.
 4. **Can they explain, in plain words, where the AI runs and where it
    doesn't?** §1.

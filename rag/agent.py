@@ -447,7 +447,26 @@ def run_agent(collection, query, restriction=None, model=generator.DEFAULT_MODEL
                 full = _with_extra_context(full, transcript)
                 answer = generate_recipe_answer(question, full, model=model)
             else:
-                answer = _no_match_answer(query, restriction)
+                # No recipe matched, but an extra (non-core) tool - e.g. the
+                # bolted-on ingredient database - may still have fetched real,
+                # relevant data before the planner gave up on finding a
+                # recipe. Discarding that in favor of a canned refusal would
+                # throw away a genuine, grounded answer purely because this
+                # loop's stopping condition is framed around recipe_id.
+                # Building a results-shaped block from it and reusing the
+                # same strictly-grounded generator keeps this path honest:
+                # still forced to cite real tool output, still refusing if
+                # that output doesn't actually answer the question.
+                extra_ids, extra_documents, extra_metadatas = _extra_context_blocks(transcript)
+                if extra_ids:
+                    extra_results = {
+                        "ids": [extra_ids],
+                        "documents": [extra_documents],
+                        "metadatas": [extra_metadatas],
+                    }
+                    answer = generate_recipe_answer(question, extra_results, model=model)
+                else:
+                    answer = _no_match_answer(query, restriction)
 
             transcript.append({
                 "step": step_number, "thought": action.get("thought", ""),

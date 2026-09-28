@@ -30,6 +30,77 @@ from mcp.client.streamable_http import streamablehttp_client
 
 DEFAULT_CONFIG_PATH = Path(__file__).resolve().parent.parent / "mcp_servers.json"
 
+# rag/agent.py's own loop-control actions - never something a discovered
+# server should be able to supply. See _validate_tool_spec below.
+_RESERVED_TOOL_NAMES = {"finish", "_abort"}
+
+
+def _validate_tool_spec(tool_name, input_schema, server_name, server_by_name):
+    """"Checking a tool before you trust someone else's" (Week 9 safety
+    topic) - sanity-check ONE discovered tool before it is ever registered,
+    rather than assuming every tools/list entry from every configured
+    server is automatically safe to hand to the planner.
+
+    Returns None if the tool is fine to register, or a human-readable
+    rejection reason otherwise. Two concrete things this catches that
+    "just trust tools/list" would not:
+
+    - a malformed entry (no name, non-dict schema) from a buggy server;
+    - NAME SHADOWING: a later-connected server declaring a tool name that
+      collides with an earlier, already-trusted one (or with `finish`/
+      `_abort`, this loop's own control actions) - first-registered wins,
+      the later one is rejected rather than silently overwriting it. A
+      compromised or misconfigured second server could otherwise redefine
+      what "search_recipes" means to the planner without anyone noticing.
+
+    Never raises - a hostile or buggy server is expected input for a
+    registry that connects to whatever mcp_servers.json lists, not a bug
+    in this code.
+    """
+
+    if not tool_name or not isinstance(tool_name, str):
+        return "tool has no valid name"
+
+    if tool_name in _RESERVED_TOOL_NAMES:
+        return (
+            f"'{tool_name}' collides with a reserved control action "
+            f"(finish/_abort) - refusing to let a discovered server shadow "
+            f"the agent's own loop control"
+        )
+
+    if tool_name in server_by_name:
+        return (
+            f"'{tool_name}' was already registered by server "
+            f"'{server_by_name[tool_name]}' - refusing to let server "
+            f"'{server_name}' silently shadow it"
+        )
+
+    if not isinstance(input_schema, dict):
+        return f"'{tool_name}' has a non-dict input_schema"
+
+    return None
+
+
+def _reject_undeclared_args(tool_name, args, declared_params):
+    """The call-time half of "checking a tool before you trust someone
+    else's": refuse to forward any argument the tool's OWN input_schema
+    never declared, rather than silently passing through whatever a
+    planner (possibly swayed by injected document text - see Week 8) made
+    up. Returns an {"error": ...} dict to hand back to the planner as an
+    actionable observation, or None if every arg is declared and the call
+    should proceed."""
+
+    unexpected = sorted(set(args) - declared_params)
+    if not unexpected:
+        return None
+
+    return {
+        "error": (
+            f"refusing to call '{tool_name}' with undeclared argument(s) "
+            f"{unexpected} - not present in its own input_schema"
+        )
+    }
+
 
 class MCPToolRegistry:
     """Connects to every MCP server listed in `config_path` and aggregates
@@ -43,7 +114,9 @@ class MCPToolRegistry:
         self._thread = threading.Thread(target=self._loop.run_forever, daemon=True)
         self._thread.start()
         self._session_by_tool = {}
+        self._server_by_tool = {}
         self._tools = []
+        self._rejected_tools = []
         self._shutdown_event = None
         self._serve_task = None
         self._run(self._start_serving())
@@ -80,11 +153,24 @@ class MCPToolRegistry:
                 listed = (await session.list_tools()).tools
 
                 for tool in listed:
+                    input_schema = tool.inputSchema or {}
+                    reason = _validate_tool_spec(
+                        tool.name, input_schema, server["name"], self._server_by_tool
+                    )
+                    if reason:
+                        self._rejected_tools.append({
+                            "tool": tool.name, "server": server["name"], "reason": reason,
+                        })
+                        print(f"[mcp_client] REJECTED tool {tool.name!r} "
+                              f"from {server['name']!r}: {reason}")
+                        continue
+
                     self._session_by_tool[tool.name] = session
+                    self._server_by_tool[tool.name] = server["name"]
                     self._tools.append({
                         "name": tool.name,
                         "description": tool.description or "",
-                        "input_schema": tool.inputSchema or {},
+                        "input_schema": input_schema,
                         "server": server["name"],
                     })
 
@@ -137,16 +223,31 @@ class MCPToolRegistry:
 
     def call_tool(self, name, args):
         """Call a discovered tool by name. Returns its parsed JSON result, or
-        {"error": ...} if the tool is unknown or the call itself failed -
-        never raises, since a bad planner-chosen tool name/args is expected
-        input for rag/agent.py's loop, not a bug."""
+        {"error": ...} if the tool is unknown, the call itself failed, or
+        the args include something the tool's own schema never declared
+        (see _reject_undeclared_args) - never raises, since a bad
+        planner-chosen tool name/args is expected input for rag/agent.py's
+        loop, not a bug."""
 
         session = self._session_by_tool.get(name)
         if session is None:
             return {"error": f"unknown tool '{name}'"}
 
-        result = self._run(session.call_tool(name, args or {}))
+        args = args or {}
+        rejection = _reject_undeclared_args(name, args, self.tool_param_names(name))
+        if rejection:
+            return rejection
+
+        result = self._run(session.call_tool(name, args))
         return _unwrap(result)
+
+    def rejected_tools(self):
+        """Every discovered tool that _validate_tool_spec refused to
+        register, and why - for a caller (or this project's own report) to
+        show that "trust but verify" is a real, observable behavior and not
+        just a docstring claim."""
+
+        return list(self._rejected_tools)
 
     def close(self):
         if self._shutdown_event is not None:

@@ -7,7 +7,15 @@ other tests/ files, which test the logic behind a tool rather than the
 transport it's served over.
 """
 
-from mcp_servers.ingredient_server import check_allergens, get_ingredient_info, get_substitutes
+import json
+
+from mcp_servers.ingredient_server import (
+    allergen_check_prompt,
+    check_allergens,
+    get_ingredient_info,
+    get_substitutes,
+    ingredient_catalog,
+)
 
 
 def test_get_ingredient_info_known_ingredient():
@@ -54,3 +62,22 @@ def test_check_allergens_unknown_ingredient_is_null_not_empty():
     result = check_allergens(["not a real ingredient"])
 
     assert result["by_ingredient"]["not a real ingredient"] is None
+
+
+# ------------------------------------------ MCP's other two primitives:
+# resources (readable data, not an action) and prompts (reusable templates).
+# Week 9's "Tools, resources, prompts" topic is only genuinely covered if
+# both exist alongside the tools above, not just the tools.
+
+def test_ingredient_catalog_resource_returns_the_real_data_file():
+    catalog = json.loads(ingredient_catalog())
+
+    assert isinstance(catalog, list)
+    assert any(entry["name"] == "Strong white bread flour" for entry in catalog)
+
+
+def test_allergen_check_prompt_names_every_ingredient_and_points_at_the_tool():
+    text = allergen_check_prompt(["Eggs", "Whole milk"])
+
+    assert "Eggs" in text and "Whole milk" in text
+    assert "check_allergens" in text
