@@ -42,32 +42,56 @@ class MCPToolRegistry:
         self._loop = asyncio.new_event_loop()
         self._thread = threading.Thread(target=self._loop.run_forever, daemon=True)
         self._thread.start()
-        self._stack = None
         self._session_by_tool = {}
         self._tools = []
-        self._run(self._connect())
+        self._shutdown_event = None
+        self._serve_task = None
+        self._run(self._start_serving())
 
     def _run(self, coro):
         return asyncio.run_coroutine_threadsafe(coro, self._loop).result()
 
-    async def _connect(self):
-        self._stack = AsyncExitStack()
-        config = json.loads(self._config_path.read_text(encoding="utf-8"))
+    async def _start_serving(self):
+        """Connect and then hand control to a single long-lived task
+        (_serve) that owns the AsyncExitStack for its entire life.
 
-        for server in config.get("servers", []):
-            session = await self._open_session(server)
-            listed = (await session.list_tools()).tools
+        anyio's cancel scopes (used by stdio_client/streamablehttp_client)
+        must be entered AND exited from the same asyncio Task - not just the
+        same event loop/thread. Opening the stack in one
+        run_coroutine_threadsafe call (one Task) and closing it in a later,
+        separate run_coroutine_threadsafe call (a different Task) is exactly
+        what used to raise "Attempted to exit cancel scope in a different
+        task than it was entered in" from close(). Connecting, waiting for
+        a shutdown signal, and tearing down all happen inside _serve's one
+        task now, so enter and exit always share a Task.
+        """
 
-            for tool in listed:
-                self._session_by_tool[tool.name] = session
-                self._tools.append({
-                    "name": tool.name,
-                    "description": tool.description or "",
-                    "input_schema": tool.inputSchema or {},
-                    "server": server["name"],
-                })
+        self._shutdown_event = asyncio.Event()
+        ready = self._loop.create_future()
+        self._serve_task = asyncio.ensure_future(self._serve(ready))
+        await ready
 
-    async def _open_session(self, server):
+    async def _serve(self, ready):
+        async with AsyncExitStack() as stack:
+            config = json.loads(self._config_path.read_text(encoding="utf-8"))
+
+            for server in config.get("servers", []):
+                session = await self._open_session(server, stack)
+                listed = (await session.list_tools()).tools
+
+                for tool in listed:
+                    self._session_by_tool[tool.name] = session
+                    self._tools.append({
+                        "name": tool.name,
+                        "description": tool.description or "",
+                        "input_schema": tool.inputSchema or {},
+                        "server": server["name"],
+                    })
+
+            ready.set_result(None)
+            await self._shutdown_event.wait()
+
+    async def _open_session(self, server, stack):
         transport = server["transport"]
 
         if transport == "stdio":
@@ -80,17 +104,17 @@ class MCPToolRegistry:
                 args=server.get("args", []),
                 cwd=str(Path(self._config_path).resolve().parent),
             )
-            read, write = await self._stack.enter_async_context(stdio_client(params))
+            read, write = await stack.enter_async_context(stdio_client(params))
 
         elif transport == "http":
-            read, write, _ = await self._stack.enter_async_context(
+            read, write, _ = await stack.enter_async_context(
                 streamablehttp_client(server["url"])
             )
 
         else:
             raise ValueError(f"server '{server['name']}': unknown transport '{transport}'")
 
-        session = await self._stack.enter_async_context(ClientSession(read, write))
+        session = await stack.enter_async_context(ClientSession(read, write))
         await session.initialize()
         return session
 
@@ -125,8 +149,13 @@ class MCPToolRegistry:
         return _unwrap(result)
 
     def close(self):
-        if self._stack is not None:
-            self._run(self._stack.aclose())
+        if self._shutdown_event is not None:
+            self._loop.call_soon_threadsafe(self._shutdown_event.set)
+
+            async def _wait_for_teardown():
+                await self._serve_task
+
+            self._run(_wait_for_teardown())
         self._loop.call_soon_threadsafe(self._loop.stop)
         self._thread.join(timeout=5)
 
