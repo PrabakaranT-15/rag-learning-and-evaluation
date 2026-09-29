@@ -1,0 +1,595 @@
+{
+  "complete": true,
+  "results": {
+    "T01": {
+      "question": "How much salt goes into the country sourdough recipe?",
+      "restriction": null,
+      "single_agent": {
+        "arm": "single_agent",
+        "answer": "The recipe calls for 40\u202fg of fine sea salt.\u202f[recipe_id=ferment_001 | chunk_id=ferment_001__ingredients__0 | source_file=ferment_001_country_sourdough_2kg.md]",
+        "recipe_id": "ferment_001",
+        "elapsed_seconds": 20.983999999938533,
+        "tokens": 6454,
+        "cost_usd": 0.00135195,
+        "verdict": "pass",
+        "judge_reason": "The answer correctly states the recipe's salt amount (40\u202fg) as supported by the ingredient list.",
+        "handoffs": []
+      },
+      "orchestrator": {
+        "arm": "orchestrator",
+        "answer": "The recipe calls for **40\u202fg of fine sea salt**\u3010recipe_id=ferment_001 | chunk_id=Ingredients | source_file=recipe\u3011.",
+        "recipe_id": "ferment_001",
+        "elapsed_seconds": 26.921999999904074,
+        "tokens": 4277,
+        "cost_usd": 0.0012404999999999998,
+        "verdict": "pass",
+        "judge_reason": "The answer accurately cites the 40\u202fg fine sea salt listed in the Ingredients section of the recipe.",
+        "handoffs": [
+          {
+            "handoff": "manager->substitution_worker",
+            "tokens": 1203
+          },
+          {
+            "handoff": "manager->allergen_worker",
+            "tokens": 1344
+          },
+          {
+            "handoff": "manager->synthesis",
+            "tokens": 1730
+          }
+        ],
+        "specialist_notes": {
+          "substitution": "The tool results do not include any substitute information for fine sea salt, so no substitution note can be provided. Consequently, there is no substitute data available for the salt used in this recipe.",
+          "allergen": "The recipe contains gluten from the wheat and rye flours and levain. It also carries a risk of dairy and egg exposure because the bakery handles those allergens. No other allergens are listed in the tool result."
+        }
+      }
+    },
+    "T02": {
+      "question": "How long should I proof the brioche dough?",
+      "restriction": null,
+      "single_agent": {
+        "arm": "single_agent",
+        "answer": "The brioche dough should be proofed (final rise after shaping) for **4\u202fto\u202f5\u202fhours at 24\u202f\u00b0C** until it reaches the rim of the tin and springs back slowly when pressed.\u202f[recipe_id=ferment_004 | chunk_id=ferment_004__method__1 | source_file=ferment_004_sourdough_brioche.md]",
+        "recipe_id": "ferment_004",
+        "elapsed_seconds": 29.98499999998603,
+        "tokens": 12878,
+        "cost_usd": 0.0028807499999999996,
+        "verdict": "pass",
+        "judge_reason": "The answer cites the exact proofing time and temperature from the provided recipe.",
+        "handoffs": []
+      },
+      "orchestrator": {
+        "arm": "orchestrator",
+        "answer": "The brioche should be proved for **4\u202fto\u202f5\u202fhours at\u202f24\u202f\u00b0C**, until it reaches the rim of the tin and springs back slowly when pressed.\u202f[recipe_id=ferment_004]",
+        "recipe_id": "ferment_004",
+        "elapsed_seconds": 20.51500000001397,
+        "tokens": 4473,
+        "cost_usd": 0.0011515499999999999,
+        "verdict": "pass",
+        "judge_reason": "The answer correctly cites the 4\u20115 hour proof time at 24\u202f\u00b0C from the recipe.",
+        "handoffs": [
+          {
+            "handoff": "manager->substitution_worker",
+            "tokens": 1733
+          },
+          {
+            "handoff": "manager->allergen_worker",
+            "tokens": 1246
+          },
+          {
+            "handoff": "manager->synthesis",
+            "tokens": 1494
+          }
+        ],
+        "specialist_notes": {
+          "substitution": "Strong white bread flour can be replaced 1\u202f:\u202f1 with a gluten\u2011free bread flour blend (add xanthan gum for structure, results in a denser texture) or with whole\u2011wheat flour (also 1\u202f:\u202f1, but yields a denser crumb and absorbs more water). Both alternatives retain the recipe\u2019s vegan, vegetarian, dairy\u2011free and egg\u2011free attributes. Use the same weight as the original flour when swapping.",
+          "allergen": "This Sourdough Brioche contains the allergens dairy and gluten. No nuts or other allergens are listed. No nutrition figures are available from the provided data."
+        }
+      }
+    },
+    "T04": {
+      "question": "Can I make the kimchi vegan?",
+      "restriction": "vegan",
+      "single_agent": {
+        "arm": "single_agent",
+        "answer": "**Vegan Napa Cabbage Kimchi (recipe\u202fID\u202fferment_006)**  \n\n- **Dietary suitability:** This kimchi contains no fish, shellfish, dairy, egg, nuts, or gluten, making it fully vegan and vegetarian\u3010recipe_id=ferment_006 | chunk_id=ferment_006__allergen_note__0 | source_file=ferment_006_vegan_napa_kimchi.md\u3011.  \n\n- **Yield:** About\u202f2.85\u202fkg of finished kimchi\u3010recipe_id=ferment_006 | chunk_id=ferment_006__ingredients__1 | source_file=ferment_006_vegan_napa_kimchi.md\u3011.  \n\n### Ingredients (percentages are based on 2000\u202fg of prepared napa cabbage)\n\n| Ingredient | Weight | % of cabbage |\n|------------|--------|--------------|\n| Napa cabbage | 2000\u202fg | 100\u202f% |\n| Coarse sea salt (for brining) | 160\u202fg | 8\u202f% |\n| Gochugaru (Korean chilli flakes) | 100\u202fg | 5\u202f% |\n| Korean radish, julienned | 400\u202fg | 20\u202f% |\n| Garlic, minced | 60\u202fg | 3\u202f% |\n| Ginger, grated | 20\u202fg | 1\u202f% |\n| Dried shiitake mushrooms | 30\u202fg | 1.5\u202f% |\n| Kombu (dried kelp) | 10\u202fg | 0.5\u202f% |\n| Tamari (gluten\u2011free soy sauce) | 50\u202fg | 2.5\u202f% |\n| Glutinous rice flour | 30\u202fg | 1.5\u202f% |\n| Caster sugar | 20\u202fg | 1\u202f% |\n\n(Ingredients table taken from the recipe)\u3010recipe_id=ferment_006 | chunk_id=ferment_006__ingredients__0 | source_file=ferment_006_vegan_nap\n\na_kimchi.md\u3011  \n\n### Method\n\n1. **Brine the cabbage** \u2013 Quarter the cabbage and brine with the full 160\u202fg of coarse sea salt for 4\u20136\u202fhours, turning every 2\u202fhours. Perform the \u201cbend test\u201d (a thick white stem should bend into a\u202fU without snapping). Rinse three times and drain cut\u2011side down for one hour\u3010recipe_id=ferment_006 | chunk_id=ferment_006__method__0 | source_file=ferment_006_vegan_napa_kimchi.md\u3011.  \n\n2. **Prepare the umami base** \u2013 While the cabbage brines, simmer the dried shiitake mushrooms and kombu in 400\u202fml water for 20\u202fminutes. Remove the kombu before it turns slimy, then simmer the shiitake for a further 10\u202fminutes. Strain, reserving 250\u202fml of the liquid, and finely chop the re\u2011hydrated shiitake caps\u3010recipe_id=ferment_006 | chunk_id=ferment_006__method__0 | source_file=ferment_006_vegan_napa_kimchi.md\u3011.  \n\n3. **Make the porridge** \u2013 Whisk the glutinous rice flour into the reserved 250\u202fml mushroom stock, heat gently for 5\u202fminutes until thickened, stir in the sugar and cool completely\u3010recipe_id=ferment_006 | chunk_id=ferment_006__method__1 | source_file=ferment_006_vegan_napa_kimchi.md\u3011.  \n\n4. **Combine the paste** \u2013 Mix the cooled porridge with the gochugaru and rest for 10\u202fminutes. Then add garlic, ginger, the chopped shiitake, and tamari. Fold in the julienned radish\u3010recipe_id=ferment_006 | chunk_id=ferment_006__method__1 | source_file=ferment_006_vegan_napa_kimchi.md\u3011.  \n\n5. **Coat and pack** \u2013 Coat every cabbage leaf with the paste, pack the leaves into a jar leaving 5\u202fcm of headspace, and press down until the brine rises above the cabbage\u3010recipe_id=ferment_006 | chunk_id=ferment_006__method__1 | source_file=ferment_006_vegan_napa_kimchi.md\u3011.  \n\n6. **Fermentation** \u2013 Ferment at 20\u202f\u00b0C for 2\u20133\u202fdays (about a day longer than the traditional version because the seafood ferment is omitted). Move to the refrigerator once bubbling and pleasantly sour\u3010recipe_id=ferment_006 | chunk_id=ferment_006__method__2 | source_file=ferment_006_vegan_napa_kimchi.md\u3011.  \n\n### Summary\nThis recipe provides a completely vegan kimchi, using a shiitake\u2011kombu\u2011tamari umami base in place of the traditional seafood sauces. All listed ingredients and steps are taken directly from the provided recipe document.",
+        "recipe_id": "ferment_006",
+        "elapsed_seconds": 51.26500000001397,
+        "tokens": 9228,
+        "cost_usd": 0.0022976999999999997,
+        "verdict": "pass",
+        "judge_reason": "The answer correctly states that the recipe is vegan, cites all supporting details from the retrieved context, and does not include unsupported claims.",
+        "handoffs": []
+      },
+      "orchestrator": {
+        "arm": "orchestrator",
+        "answer": "The recipe\u2019s own allergen note says the kimchi \u201ccontains no\u202f\u2026\u202fegg\u201d and is \u201csuitable for vegans and vegetarians\u201d\u3010recipe_id=ferment_006 | chunk_id=Allergen Note | source_file=RECIPE TEXT\u3011.  \n\nHowever, the allergen\u2011checking specialist reported that \u201cegg\u202f\u2026\u202fis present\u201d and therefore the kimchi \u201cwould not be considered vegan\u201d\u3010specialist=allergen_worker\u3011.  \n\nBecause the specialist\u2019s analysis contradicts the recipe\u2019s claim, the vegan status is uncertain\u2014you would need to resolve this discrepancy (for example by confirming the ingredient list or the allergen test) before deciding whether the kimchi can be considered vegan.",
+        "recipe_id": "ferment_006",
+        "elapsed_seconds": 30.483999999938533,
+        "tokens": 4661,
+        "cost_usd": 0.0012225,
+        "verdict": "pass",
+        "judge_reason": "The answer accurately cites the recipe\u2019s vegan claim and the allergen check\u2019s egg finding, acknowledges the contradiction, and correctly states that the vegan status is uncertain based on the given context.",
+        "handoffs": [
+          {
+            "handoff": "manager->substitution_worker",
+            "tokens": 1773
+          },
+          {
+            "handoff": "manager->allergen_worker",
+            "tokens": 1166
+          },
+          {
+            "handoff": "manager->synthesis",
+            "tokens": 1722
+          }
+        ],
+        "specialist_notes": {
+          "substitution": "The kimchi recipe already contains only vegan ingredients, so no substitution is required to make it vegan. If you need an alternative for the glutinous rice flour, you can use regular rice flour at a 1\u202f:\u202f1 ratio (or cornstarch at 3\u202f:\u202f4), both listed in the substitute data. No other ingredients need swapping.",
+          "allergen": "The allergen check identified **egg** as present and found no other allergens. Because egg is listed, this kimchi would not be considered vegan."
+        }
+      }
+    },
+    "T06": {
+      "question": "What's the hydration percentage for the sourdough loaf?",
+      "restriction": null,
+      "single_agent": {
+        "arm": "single_agent",
+        "answer": "The sourdough loaf has a final hydration of **80\u202f%**.\u202f[recipe_id=ferment_001 | chunk_id=ferment_001__ingredients__0 | source_file=ferment_001_country_sourdough_2kg.md]",
+        "recipe_id": "ferment_001",
+        "elapsed_seconds": 36.34399999992456,
+        "tokens": 6357,
+        "cost_usd": 0.0013054499999999999,
+        "verdict": "pass",
+        "judge_reason": "The answer accurately cites the final hydration of 80% as stated in the retrieved recipe.",
+        "handoffs": []
+      },
+      "orchestrator": {
+        "arm": "orchestrator",
+        "answer": "The sourdough loaf is formulated at a final hydration of **80\u202f%**\u3010recipe_id=ferment_001\u3011.",
+        "recipe_id": "ferment_001",
+        "elapsed_seconds": 38.25,
+        "tokens": 4748,
+        "cost_usd": 0.0012935999999999998,
+        "verdict": "pass",
+        "judge_reason": "The answer correctly cites the final hydration of 80% as stated in the retrieved context.",
+        "handoffs": [
+          {
+            "handoff": "manager->substitution_worker",
+            "tokens": 2145
+          },
+          {
+            "handoff": "manager->allergen_worker",
+            "tokens": 1217
+          },
+          {
+            "handoff": "manager->synthesis",
+            "tokens": 1386
+          }
+        ],
+        "specialist_notes": {
+          "substitution": "The sourdough loaf\u2019s hydration level isn\u2019t covered by the substitution data, so I can\u2019t provide that figure here.\u202fFor the strong white bread flour you can swap in a gluten\u2011free bread flour blend at a 1:1 ratio (add xanthan gum for structure) or use whole\u2011wheat flour at 1:1 (expect a denser crumb).",
+          "allergen": "This recipe contains the allergens gluten, dairy, and egg. No other allergens are listed in the tool result."
+        }
+      }
+    },
+    "T07": {
+      "question": "How many calories are in a slice of the brioche?",
+      "restriction": null,
+      "single_agent": {
+        "arm": "single_agent",
+        "answer": "I cannot answer this from the provided recipe documents.",
+        "recipe_id": null,
+        "elapsed_seconds": 10.202999999979511,
+        "tokens": 6415,
+        "cost_usd": 0.0013735499999999999,
+        "verdict": "pass",
+        "judge_reason": "The response correctly indicates that the provided context does not contain calorie information, which is all that can be inferred.",
+        "handoffs": []
+      },
+      "orchestrator": {
+        "arm": "orchestrator",
+        "answer": "I cannot answer this from the provided recipe documents.",
+        "recipe_id": "ferment_004",
+        "elapsed_seconds": 30.5,
+        "tokens": 4244,
+        "cost_usd": 0.0010308,
+        "verdict": "pass",
+        "judge_reason": "The answer correctly refuses to provide a calorie count because the retrieved context contains no calorie information.",
+        "handoffs": [
+          {
+            "handoff": "manager->substitution_worker",
+            "tokens": 1875
+          },
+          {
+            "handoff": "manager->allergen_worker",
+            "tokens": 1225
+          },
+          {
+            "handoff": "manager->synthesis",
+            "tokens": 1144
+          }
+        ],
+        "specialist_notes": {
+          "substitution": "No calorie information is provided in the data you shared. For the strong white bread flour, you can substitute a gluten\u2011free bread flour blend (1\u202f:\u202f1, with added xanthan gum for structure) or whole\u2011wheat flour (1\u202f:\u202f1, giving a denser crumb).",
+          "allergen": "The brioche contains dairy and gluten allergens. No calorie information is provided in the available data."
+        }
+      }
+    },
+    "T12": {
+      "question": "Is the sourdough bread gluten free?",
+      "restriction": null,
+      "single_agent": {
+        "arm": "single_agent",
+        "answer": "The 2\u202fkg Country Sourdough Loaf is **not gluten\u2011free**; it contains wheat and rye, which means it contains gluten\u3010recipe_id=ferment_001 | chunk_id=ferment_001__allergen_note__0 | source_file=ferment_001_country_sourdough_2kg.md\u3011.",
+        "recipe_id": "ferment_001",
+        "elapsed_seconds": 48.375,
+        "tokens": 6740,
+        "cost_usd": 0.00152805,
+        "verdict": "pass",
+        "judge_reason": "The answer correctly states that the loaf contains wheat and rye, thus is not gluten free, and cites the provided allergen note.",
+        "handoffs": []
+      },
+      "orchestrator": {
+        "arm": "orchestrator",
+        "answer": "No. The sourdough loaf contains wheat and rye, so it contains gluten and is not gluten\u2011free.\u202f[recipe_id=ferment_001 | chunk_id=Allergen Note | source_file=recipe]\u202f[specialist=allergen_worker]",
+        "recipe_id": "ferment_001",
+        "elapsed_seconds": 31.561999999918044,
+        "tokens": 4446,
+        "cost_usd": 0.0011182499999999999,
+        "verdict": "pass",
+        "judge_reason": "The answer directly states that the loaf contains wheat and rye, confirming it is not gluten-free, which is fully supported by the retrieved context.",
+        "handoffs": [
+          {
+            "handoff": "manager->substitution_worker",
+            "tokens": 1811
+          },
+          {
+            "handoff": "manager->allergen_worker",
+            "tokens": 1199
+          },
+          {
+            "handoff": "manager->synthesis",
+            "tokens": 1436
+          }
+        ],
+        "specialist_notes": {
+          "substitution": "The loaf is not gluten\u2011free as written because it contains strong white bread flour and wholemeal flour. You could replace the strong white bread flour with a gluten\u2011free bread flour blend at a 1:1 ratio (per the tool data), but no substitute information is available for the wholemeal flour.",
+          "allergen": "The sourdough bread is not gluten\u2011free; it contains gluten. According to the tool output it also lists dairy and egg as present allergens."
+        }
+      }
+    },
+    "T13": {
+      "question": "What's a good substitute for the fish sauce in the kimchi?",
+      "restriction": null,
+      "single_agent": {
+        "arm": "single_agent",
+        "answer": "A suitable vegan substitute for the anchovy fish sauce used in the kimchi is a 1\u202f:\u202f1 mixture of soy sauce and kelp (dashima) soaking liquid. This combination provides an umami flavor similar to fish sauce and is the standard vegan\u2011kimchi swap\u3010recipe_id=(mcp tool data) | chunk_id=mcp:get_substitutes:3 | source_file=mcp-tool:get_substitutes\u3011.",
+        "recipe_id": "ferment_005",
+        "elapsed_seconds": 64.96799999999348,
+        "tokens": 12162,
+        "cost_usd": 0.002682,
+        "verdict": "fail",
+        "judge_reason": "The answer gives a substitute not supported by the retrieved context.",
+        "handoffs": []
+      },
+      "orchestrator": {
+        "arm": "orchestrator",
+        "answer": "A suitable vegan replacement for the fish sauce is a 1\u202f:\u202f1 mixture of soy sauce and kelp (dashima) soaking liquid. This umami stand\u2011in contains no fish and meets vegan, vegetarian, dairy\u2011free, egg\u2011free and gluten\u2011free requirements\u202f[specialist=substitution_worker].\n\nThe kimchi recipe itself already replaces the traditional salted shrimp and anchovy fish sauce with a shiitake\u2011and\u2011kombu umami base plus tamari, which supplies the savory glutamates that fish sauce would normally provide\u202f[recipe_id=ferment_006 | chunk_id=Ingredients | source_file=RECIPE TEXT].",
+        "recipe_id": "ferment_006",
+        "elapsed_seconds": 32.26600000006147,
+        "tokens": 4139,
+        "cost_usd": 0.00107625,
+        "verdict": "pass",
+        "judge_reason": "The answer cites the substitution worker note for soy sauce + kelp soaking liquid and the recipe\u2019s own shiitake\u2011kombu base with tamari, both directly supported by the retrieved context.",
+        "handoffs": [
+          {
+            "handoff": "manager->substitution_worker",
+            "tokens": 1217
+          },
+          {
+            "handoff": "manager->allergen_worker",
+            "tokens": 1206
+          },
+          {
+            "handoff": "manager->synthesis",
+            "tokens": 1716
+          }
+        ],
+        "specialist_notes": {
+          "substitution": "Use soy sauce\u202f+\u202fkelp (dashima) soaking liquid as a 1:1 replacement for fish sauce. This umami stand\u2011in contains no fish and meets vegan, vegetarian, dairy\u2011free, egg\u2011free, and gluten\u2011free requirements.",
+          "allergen": "According to the allergen check, this kimchi contains egg. No other allergens were detected."
+        }
+      }
+    },
+    "T14": {
+      "question": "how much butter in the brioche",
+      "restriction": null,
+      "single_agent": {
+        "arm": "single_agent",
+        "answer": "The brioche uses **200\u202fg of unsalted butter** (softened)\u202f\u3010recipe_id=ferment_004 | chunk_id=ferment_004__ingredients__0 | source_file=ferment_004_sourdough_brioche.md\u3011",
+        "recipe_id": "ferment_004",
+        "elapsed_seconds": 36.15600000007544,
+        "tokens": 6232,
+        "cost_usd": 0.0013731,
+        "verdict": "pass",
+        "judge_reason": "The answer correctly states 200\u202fg of unsalted butter, which matches the provided ingredient list.",
+        "handoffs": []
+      },
+      "orchestrator": {
+        "arm": "orchestrator",
+        "answer": "The brioche recipe calls for **200\u202fg of unsalted butter**\u3010recipe_id=ferment_004\u3011.",
+        "recipe_id": "ferment_004",
+        "elapsed_seconds": 23.09299999999348,
+        "tokens": 4300,
+        "cost_usd": 0.0012097499999999999,
+        "verdict": "pass",
+        "judge_reason": "The answer accurately states that 200\u202fg of unsalted butter is used, which is directly supported by the retrieved context.",
+        "handoffs": [
+          {
+            "handoff": "manager->substitution_worker",
+            "tokens": 1452
+          },
+          {
+            "handoff": "manager->allergen_worker",
+            "tokens": 1239
+          },
+          {
+            "handoff": "manager->synthesis",
+            "tokens": 1609
+          }
+        ],
+        "specialist_notes": {
+          "substitution": "The brioche uses 200\u202fg unsalted butter; you can swap it 1\u202f:\u202f1 with either Vegan block butter or solid coconut oil, both of which are dairy\u2011free alternatives.",
+          "allergen": "This brioche contains the allergens dairy and gluten, as identified in the ingredient list. No nut allergens are present."
+        }
+      }
+    },
+    "T18": {
+      "question": "What's the ratio of flour to water in the rye levain?",
+      "restriction": null,
+      "single_agent": {
+        "arm": "single_agent",
+        "answer": "The rye levain uses a\u202f1\u202fpart flour\u202fto\u202f1\u202fpart water ratio (100\u202f% hydration, so the water weight equals the flour weight)\u3010recipe_id=ferment_002 | chunk_id=ferment_002__ingredients__0 | source_file=ferment_002_rye_levain_starter.md\u3011.",
+        "recipe_id": "ferment_002",
+        "elapsed_seconds": 36.31299999996554,
+        "tokens": 6178,
+        "cost_usd": 0.0013406999999999998,
+        "verdict": "pass",
+        "judge_reason": "The answer correctly states the 1:1 flour-to-water ratio supported by the retrieved context.",
+        "handoffs": []
+      },
+      "orchestrator": {
+        "arm": "orchestrator",
+        "answer": "The rye levain is made at\u202f100\u202f% hydration, meaning the water weight equals the flour weight; thus the flour\u2011to\u2011water ratio is\u202f1\u202f:\u202f1\u202f(by weight)\u3010recipe_id=ferment_002 | chunk_id=Ingredients\u3011.",
+        "recipe_id": "ferment_002",
+        "elapsed_seconds": 29.85999999998603,
+        "tokens": 3775,
+        "cost_usd": 0.00097755,
+        "verdict": "pass",
+        "judge_reason": "The answer correctly states the 100% hydration ratio of 1:1, which is directly supported by the recipe's ingredient table.",
+        "handoffs": [
+          {
+            "handoff": "manager->substitution_worker",
+            "tokens": 1363
+          },
+          {
+            "handoff": "manager->allergen_worker",
+            "tokens": 1185
+          },
+          {
+            "handoff": "manager->synthesis",
+            "tokens": 1227
+          }
+        ],
+        "specialist_notes": {
+          "substitution": "Active dry yeast can replace the rye levain; use\u202f1\u202fg yeast per\u202f100\u202fg levain and adjust the hydration as needed. This swap eliminates the sour flavor and long\u2011fermentation character of the original levain.",
+          "allergen": "According to the tool output, this rye levain contains the allergens gluten and egg. No other allergens are reported."
+        }
+      }
+    },
+    "T20": {
+      "question": "Why does my sourdough starter smell like nail polish?",
+      "restriction": null,
+      "single_agent": {
+        "arm": "single_agent",
+        "answer": "I ran into trouble deciding my next step and cannot complete this safely.",
+        "recipe_id": null,
+        "elapsed_seconds": 31.108999999938533,
+        "tokens": 6794,
+        "cost_usd": 0.00153615,
+        "verdict": "pass",
+        "judge_reason": "The assistant correctly refuses to answer due to lack of relevant context.",
+        "handoffs": []
+      },
+      "orchestrator": {
+        "arm": "orchestrator",
+        "answer": "The starter is giving off a nail\u2011polish\u2011like odor because it has developed a faint acetone note. The recipe describes the ripe levain as \u201csmells sharply sour with a faint acetone note\u201d and warns that a levain which has risen and then collapsed back to a flat, watery surface has \u201cgone past ripe and will give a slack, over\u2011acidified dough\u201d\u202f[recipe_id=ferment_002 | chunk_id=method | source_file=recipe.txt]. An over\u2011acidified or over\u2011ripe starter can therefore produce that acetone\u2011type smell, which is why your starter may smell like nail polish.",
+        "recipe_id": "ferment_002",
+        "elapsed_seconds": 17.891000000061467,
+        "tokens": 3764,
+        "cost_usd": 0.0010586999999999999,
+        "verdict": "fail",
+        "judge_reason": "The answer includes an inference that an over\u2011acidified starter produces an acetone smell, which is not explicitly stated in the retrieved context.",
+        "handoffs": [
+          {
+            "handoff": "manager->substitution_worker",
+            "tokens": 1147
+          },
+          {
+            "handoff": "manager->allergen_worker",
+            "tokens": 1097
+          },
+          {
+            "handoff": "manager->synthesis",
+            "tokens": 1520
+          }
+        ],
+        "specialist_notes": {
+          "substitution": "You can replace the rye levain (sourdough starter) with active dry yeast, using\u202f1\u202fg yeast per\u202f100\u202fg levain and adjusting the hydration accordingly. Keep in mind this swap eliminates the sour flavor and the longer fermentation character.",
+          "allergen": "The tool\u2011derived data indicates that this starter contains the allergens gluten and egg. No other allergens are listed for the ingredients in this recipe."
+        }
+      }
+    },
+    "_failure_injection": {
+      "case_id": "T07",
+      "question": "How many calories are in a slice of the brioche?",
+      "result": {
+        "answer": "I cannot answer this from the provided recipe documents.",
+        "recipe_id": "ferment_004",
+        "recipe_text": "Recipe: Sourdough Brioche (recipe_id: ferment_004)\nSection: Allergen Note\n\nContains wheat and rye, therefore contains gluten. Contains milk and butter, therefore contains dairy. Contains egg, both in the dough and in the egg wash. Contains no nuts. Suitable for vegetarians but not for vegans.\n\nRecipe: Sourdough Brioche (recipe_id: ferment_004)\nSection: Ingredients\n\nBaker's percentages are calculated against the 500 g of strong white flour. This is an enriched dough, so the fat and egg percentages are high.\n\n| Ingredient | Weight | Baker's % |\n|---|---|---|\n| Strong white bread flour | 500 g | 100% |\n| Whole milk (cold) | 150 g | 30% |\n| Eggs (about 4 medium) | 200 g | 40% |\n| Unsalted butter (softened) | 200 g | 40% |\n| Caster sugar | 60 g | 12% |\n| Rye levain (100% hydration) | 100 g | 20% |\n| Fine sea salt | 10 g | 2% |\n\nRecipe: Sourdough Brioche (recipe_id: ferment_004)\nSection: Ingredients\n\nTotal dough weight is 1220 g, which makes two loaves in 900 g tins.\n\nRecipe: Sourdough Brioche (recipe_id: ferment_004)\nSection: Method\n\nMix the flour, cold milk, eggs, sugar and levain in a stand mixer with the dough hook on low for 4 minutes until a shaggy dough forms. Add the fine sea salt and mix on medium for a further 8 minutes until the dough is smooth and pulls cleanly from the sides of the bowl.\n\nOnly now begin adding the softened butter, roughly 50 g at a time, waiting until each addition has fully disappeared before adding the next. The butter goes in last and gradually, because adding it at the start coats the flour in fat and prevents the gluten network from developing at all. Expect this stage to take 10 to 12 minutes.\n\nThe dough is ready when it passes the windowpane test: a small piece stretched thin should become translucent without tearing.\n\nRecipe: Sourdough Brioche (recipe_id: ferment_004)\nSection: Method\n\nBulk ferment for 5 to 6 hours at 22C, then cold retard for 14 to 18 hours at 4C. Enriched sourdough is very difficult to shape at room temperature, so the cold retard is a handling step as much as a flavour step.\n\nDivide, shape into four balls per tin, and prove for 4 to 5 hours at 24C until the dough reaches the rim of the tin and springs back slowly when pressed.\n\nEgg wash and bake at 180C for 30 minutes until deep golden and the internal temperature reaches 92C. Turn out of the tins immediately to stop the sides collapsing.",
+        "handoffs": [
+          {
+            "handoff": "manager->substitution_worker",
+            "note": "For the strong white bread flour you may substitute either a gluten\u2011free bread flour blend (1\u202f:\u202f1) or whole\u2011wheat flour (1\u202f:\u202f1), as shown in the tool results. Both options carry the same ratio; the gluten\u2011free blend requires added xanthan gum for structure, while whole\u2011wheat flour yields a denser crumb.",
+            "tool_calls": [
+              {
+                "tool": "get_substitutes",
+                "args": {
+                  "name": "Strong white bread flour"
+                },
+                "result": {
+                  "name": "Strong white bread flour",
+                  "dietary_restriction": null,
+                  "substitutes": [
+                    {
+                      "name": "Gluten-free bread flour blend",
+                      "ratio": "1:1",
+                      "notes": "needs added xanthan gum for structure; texture is denser",
+                      "dietary_tags": [
+                        "vegan",
+                        "vegetarian",
+                        "dairy-free",
+                        "egg-free",
+                        "gluten-free"
+                      ]
+                    },
+                    {
+                      "name": "Whole wheat flour",
+                      "ratio": "1:1",
+                      "notes": "denser crumb, absorbs more water",
+                      "dietary_tags": [
+                        "vegan",
+                        "vegetarian",
+                        "dairy-free",
+                        "egg-free"
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "tool": "get_substitutes",
+                "args": {
+                  "name": "bread flour"
+                },
+                "result": {
+                  "name": "Strong white bread flour",
+                  "dietary_restriction": null,
+                  "substitutes": [
+                    {
+                      "name": "Gluten-free bread flour blend",
+                      "ratio": "1:1",
+                      "notes": "needs added xanthan gum for structure; texture is denser",
+                      "dietary_tags": [
+                        "vegan",
+                        "vegetarian",
+                        "dairy-free",
+                        "egg-free",
+                        "gluten-free"
+                      ]
+                    },
+                    {
+                      "name": "Whole wheat flour",
+                      "ratio": "1:1",
+                      "notes": "denser crumb, absorbs more water",
+                      "dietary_tags": [
+                        "vegan",
+                        "vegetarian",
+                        "dairy-free",
+                        "egg-free"
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "tool": "get_substitutes",
+                "args": {
+                  "name": "white bread flour"
+                },
+                "result": {
+                  "name": "Strong white bread flour",
+                  "dietary_restriction": null,
+                  "substitutes": [
+                    {
+                      "name": "Gluten-free bread flour blend",
+                      "ratio": "1:1",
+                      "notes": "needs added xanthan gum for structure; texture is denser",
+                      "dietary_tags": [
+                        "vegan",
+                        "vegetarian",
+                        "dairy-free",
+                        "egg-free",
+                        "gluten-free"
+                      ]
+                    },
+                    {
+                      "name": "Whole wheat flour",
+                      "ratio": "1:1",
+                      "notes": "denser crumb, absorbs more water",
+                      "dietary_tags": [
+                        "vegan",
+                        "vegetarian",
+                        "dairy-free",
+                        "egg-free"
+                      ]
+                    }
+                  ]
+                }
+              }
+            ],
+            "tokens": 1699
+          },
+          {
+            "handoff": "manager->allergen_worker",
+            "note": "The allergen\u2011worker service returned an error, so I cannot provide any calorie or nutritional information for this recipe. I must therefore refuse to give a figure.",
+            "tool_calls": [
+              {
+                "tool": "check_allergens",
+                "args": {
+                  "ingredients": [
+                    "Strong white bread flour",
+                    "bread flour",
+                    "white bread flour",
+                    "Fine sea salt",
+                    "sea salt",
+                    "Rye levain",
+                    "levain",
+                    "Unsalted butter",
+                    "butter",
+                    "Whole milk"
+                  ]
+                },
+                "result": {
+                  "error": "HTTP 500: allergen-worker service unavailable"
+                },
+                "attempts": 2
+              }
+            ],
+            "tokens": 965,
+            "failed": true
+          },
+          {
+            "handoff": "manager->synthesis",
+            "note": null,
+            "tool_calls": [],
+            "tokens": 1201
+          }
+        ],
+        "llm_calls": 3,
+        "elapsed_seconds": 30.29700000002049
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+[T07] re-running single agent...
+[09/28/26 20:49:46] INFO     Processing request of type           server.py:733
+                             ListToolsRequest                                  
+[09/28/26 20:49:47] INFO     Processing request of type           server.py:733
+                             ListToolsRequest                                  
+[09/28/26 20:49:50] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+                    INFO     HTTP Request: POST                 _client.py:1025
+                             https://generativelanguage.googlea                
+                             pis.com/v1beta/models/gemini-embed                
+                             ding-001:batchEmbedContents                       
+                             "HTTP/1.1 200 OK"                                 
+  [empty response, resampling]
+  [rate limited/unavailable, backing off 20s]
+  [rate limited/unavailable, backing off 30s]
+  [rate limited/unavailable, backing off 40s]
+  [rate limited/unavailable, backing off 50s]
+  [rate limited/unavailable, backing off 60s]
+  [rate limited/unavailable, backing off 60s]
+  [rate limited/unavailable, backing off 60s]
+Traceback (most recent call last):
+  File "D:\rag_food_receipe\week10_rerun_single.py", line 33, in <module>
+    main()
+  File "D:\rag_food_receipe\week10_rerun_single.py", line 22, in main
+    single = run_single_agent_case(question, restriction)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\rag_food_receipe\week10_race.py", line 89, in run_single_agent_case
+    result = run_agent(collection, question, restriction)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\rag_food_receipe\rag\agent.py", line 396, in run_agent
+    action = _ask_for_action(question, transcript, model, restriction, tool_catalog)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\rag_food_receipe\rag\agent.py", line 259, in _ask_for_action
+    raw = generator._generate(prompt, model)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\rag_food_receipe\rag\generator.py", line 113, in _generate
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjay.B\AppData\Local\Programs\Python\Python312\Lib\site-packages\groq\resources\chat\completions.py", line 466, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\Sanjay.B\AppData\Local\Programs\Python\Python312\Lib\site-packages\groq\_base_client.py", line 1284, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjay.B\AppData\Local\Programs\Python\Python312\Lib\site-packages\groq\_base_client.py", line 1071, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m1h6n21ven2ry4wvsa0xyyhh` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198702, Requested 2003. Please try again in 5m4.56s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}

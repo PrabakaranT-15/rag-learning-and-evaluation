@@ -1,0 +1,58 @@
+Week 10 - every hand-off, every case, with its real token count
+======================================================================
+
+case T01: 'How much salt goes into the country sourdough recipe?'
+  manager->substitution_worker       1203 tokens
+  manager->allergen_worker           1344 tokens
+  manager->synthesis                 1730 tokens
+
+case T02: 'How long should I proof the brioche dough?'
+  manager->substitution_worker       1733 tokens
+  manager->allergen_worker           1246 tokens
+  manager->synthesis                 1494 tokens
+
+case T04: 'Can I make the kimchi vegan?'
+  manager->substitution_worker       1773 tokens
+  manager->allergen_worker           1166 tokens
+  manager->synthesis                 1722 tokens
+
+case T06: "What's the hydration percentage for the sourdough loaf?"
+  manager->substitution_worker       2145 tokens
+  manager->allergen_worker           1217 tokens
+  manager->synthesis                 1386 tokens
+
+case T07: 'How many calories are in a slice of the brioche?'
+  manager->substitution_worker       1875 tokens
+  manager->allergen_worker           1225 tokens
+  manager->synthesis                 1144 tokens
+
+case T12: 'Is the sourdough bread gluten free?'
+  manager->substitution_worker       1811 tokens
+  manager->allergen_worker           1199 tokens
+  manager->synthesis                 1436 tokens
+
+case T13: "What's a good substitute for the fish sauce in the kimchi?"
+  manager->substitution_worker       1217 tokens
+  manager->allergen_worker           1206 tokens
+  manager->synthesis                 1716 tokens
+
+case T14: 'how much butter in the brioche'
+  manager->substitution_worker       1452 tokens
+  manager->allergen_worker           1239 tokens
+  manager->synthesis                 1609 tokens
+
+case T18: "What's the ratio of flour to water in the rye levain?"
+  manager->substitution_worker       1363 tokens
+  manager->allergen_worker           1185 tokens
+  manager->synthesis                 1227 tokens
+
+case T20: 'Why does my sourdough starter smell like nail polish?'
+  manager->substitution_worker       1147 tokens
+  manager->allergen_worker           1097 tokens
+  manager->synthesis                 1520 tokens
+
+======================================================================
+TOTALS across all 10 cases:
+  manager->substitution_worker      15719 tokens
+  manager->synthesis                14984 tokens
+  manager->allergen_worker          12124 tokens

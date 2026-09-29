@@ -1,0 +1,239 @@
+[T01] 'How much salt goes into the country sourdough recipe?' (restriction=None)
+[09/28/26 20:20:47] INFO     Processing request of type           server.py:733
+                             ListToolsRequest                                  
+[09/28/26 20:20:48] INFO     Processing request of type           server.py:733
+                             ListToolsRequest                                  
+[09/28/26 20:20:51] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+[09/28/26 20:20:52] INFO     HTTP Request: POST                 _client.py:1025
+                             https://generativelanguage.googlea                
+                             pis.com/v1beta/models/gemini-embed                
+                             ding-001:batchEmbedContents                       
+                             "HTTP/1.1 200 OK"                                 
+[09/28/26 20:20:54] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+  single_agent: pass - 6427 tokens, 14.3s
+[09/28/26 20:21:07] INFO     Processing request of type           server.py:733
+                             ListToolsRequest                                  
+[09/28/26 20:21:08] INFO     Processing request of type           server.py:733
+                             ListToolsRequest                                  
+                    INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+[09/28/26 20:21:10] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+  orchestrator: pass - 4277 tokens, 26.9s
+[T02] 'How long should I proof the brioche dough?' (restriction=None)
+[09/28/26 20:21:46] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+                    INFO     HTTP Request: POST                 _client.py:1025
+                             https://generativelanguage.googlea                
+                             pis.com/v1beta/models/gemini-embed                
+                             ding-001:batchEmbedContents                       
+                             "HTTP/1.1 200 OK"                                 
+[09/28/26 20:21:59] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+                    INFO     HTTP Request: POST                 _client.py:1025
+                             https://generativelanguage.googlea                
+                             pis.com/v1beta/models/gemini-embed                
+                             ding-001:batchEmbedContents                       
+                             "HTTP/1.1 200 OK"                                 
+  [empty response, resampling]
+  [empty response, resampling]
+  [empty response, resampling]
+  [empty response, resampling]
+[09/28/26 20:22:58] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+[09/28/26 20:23:22] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+                    INFO     HTTP Request: POST                 _client.py:1025
+                             https://generativelanguage.googlea                
+                             pis.com/v1beta/models/gemini-embed                
+                             ding-001:batchEmbedContents                       
+                             "HTTP/1.1 200 OK"                                 
+  single_agent: fail - 14194 tokens, 110.3s
+[09/28/26 20:23:24] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+                    INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+                    INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+[09/28/26 20:23:31] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+  orchestrator: pass - 4473 tokens, 20.5s
+[T04] 'Can I make the kimchi vegan?' (restriction='vegan')
+  [empty response, resampling]
+[09/28/26 20:23:56] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+[09/28/26 20:23:57] INFO     HTTP Request: POST                 _client.py:1025
+                             https://generativelanguage.googlea                
+                             pis.com/v1beta/models/gemini-embed                
+                             ding-001:batchEmbedContents                       
+                             "HTTP/1.1 200 OK"                                 
+  [empty response, resampling]
+  [empty response, resampling]
+  [empty response, resampling]
+  [empty response, resampling]
+  [empty response, resampling]
+  [empty response, resampling]
+[09/28/26 20:25:10] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+[09/28/26 20:25:22] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+  single_agent: fail - 14071 tokens, 96.3s
+[09/28/26 20:25:24] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+                    INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+                    INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+[09/28/26 20:25:38] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+  orchestrator: pass - 4661 tokens, 30.5s
+[T06] "What's the hydration percentage for the sourdough loaf?" (restriction=None)
+[09/28/26 20:26:06] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+[09/28/26 20:26:07] INFO     HTTP Request: POST                 _client.py:1025
+                             https://generativelanguage.googlea                
+                             pis.com/v1beta/models/gemini-embed                
+                             ding-001:batchEmbedContents                       
+                             "HTTP/1.1 200 OK"                                 
+[09/28/26 20:26:12] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+  single_agent: pass - 6308 tokens, 32.4s
+[09/28/26 20:26:31] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+                    INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+                    INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+[09/28/26 20:26:42] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+  orchestrator: pass - 4748 tokens, 38.2s
+[T07] 'How many calories are in a slice of the brioche?' (restriction=None)
+[09/28/26 20:27:15] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+                    INFO     HTTP Request: POST                 _client.py:1025
+                             https://generativelanguage.googlea                
+                             pis.com/v1beta/models/gemini-embed                
+                             ding-001:batchEmbedContents                       
+                             "HTTP/1.1 200 OK"                                 
+  single_agent: pass - 4275 tokens, 23.8s
+[09/28/26 20:27:37] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+                    INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+                    INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+[09/28/26 20:27:47] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+  orchestrator: pass - 4244 tokens, 30.5s
+[T12] 'Is the sourdough bread gluten free?' (restriction=None)
+[09/28/26 20:28:14] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+[09/28/26 20:28:15] INFO     HTTP Request: POST                 _client.py:1025
+                             https://generativelanguage.googlea                
+                             pis.com/v1beta/models/gemini-embed                
+                             ding-001:batchEmbedContents                       
+                             "HTTP/1.1 200 OK"                                 
+[09/28/26 20:28:27] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+  single_agent: pass - 6740 tokens, 48.4s
+[09/28/26 20:28:59] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+                    INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+                    INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+[09/28/26 20:29:09] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+  orchestrator: pass - 4446 tokens, 31.6s
+[T13] "What's a good substitute for the fish sauce in the kimchi?" (restriction=None)
+[09/28/26 20:29:40] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+                    INFO     HTTP Request: POST                 _client.py:1025
+                             https://generativelanguage.googlea                
+                             pis.com/v1beta/models/gemini-embed                
+                             ding-001:batchEmbedContents                       
+                             "HTTP/1.1 200 OK"                                 
+  [empty response, resampling]
+  [empty response, resampling]
+[09/28/26 20:29:59] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+[09/28/26 20:30:13] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+  single_agent: fail - 12162 tokens, 65.0s
+[09/28/26 20:30:38] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+[09/28/26 20:30:48] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+  orchestrator: pass - 4139 tokens, 32.3s
+[T14] 'how much butter in the brioche' (restriction=None)
+[09/28/26 20:31:19] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+[09/28/26 20:31:20] INFO     HTTP Request: POST                 _client.py:1025
+                             https://generativelanguage.googlea                
+                             pis.com/v1beta/models/gemini-embed                
+                             ding-001:batchEmbedContents                       
+                             "HTTP/1.1 200 OK"                                 
+[09/28/26 20:31:23] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+  single_agent: pass - 6232 tokens, 36.2s
+[09/28/26 20:31:50] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+                    INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+[09/28/26 20:31:54] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+  orchestrator: pass - 4300 tokens, 23.1s
+[T18] "What's the ratio of flour to water in the rye levain?" (restriction=None)
+[09/28/26 20:32:27] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+                    INFO     HTTP Request: POST                 _client.py:1025
+                             https://generativelanguage.googlea                
+                             pis.com/v1beta/models/gemini-embed                
+                             ding-001:batchEmbedContents                       
+                             "HTTP/1.1 200 OK"                                 
+[09/28/26 20:32:33] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+  single_agent: pass - 6178 tokens, 36.3s
+[09/28/26 20:32:53] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+                    INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+                    INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+[09/28/26 20:33:01] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+  orchestrator: pass - 3775 tokens, 29.9s
+[T20] 'Why does my sourdough starter smell like nail polish?' (restriction=None)
+[09/28/26 20:33:30] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+[09/28/26 20:33:31] INFO     HTTP Request: POST                 _client.py:1025
+                             https://generativelanguage.googlea                
+                             pis.com/v1beta/models/gemini-embed                
+                             ding-001:batchEmbedContents                       
+                             "HTTP/1.1 200 OK"                                 
+[09/28/26 20:33:36] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+                    INFO     HTTP Request: POST                 _client.py:1025
+                             https://generativelanguage.googlea                
+                             pis.com/v1beta/models/gemini-embed                
+                             ding-001:batchEmbedContents                       
+                             "HTTP/1.1 200 OK"                                 
+  [empty response, resampling]
+  single_agent: pass - 6794 tokens, 31.1s
+[09/28/26 20:33:57] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+[09/28/26 20:33:59] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+  orchestrator: fail - 3764 tokens, 17.9s
+
+[FAILURE INJECTION] T07 with allergen worker forced to 500
+[09/28/26 20:34:18] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+                    INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+                    INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+
+All cases complete. Wrote week10_race_raw.json

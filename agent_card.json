@@ -1,0 +1,41 @@
+{
+  "name": "kitchen-squad-orchestrator",
+  "description": "Manager agent for the fermentation recipe corpus. Decomposes a cooking question, delegates ingredient-substitution questions to a substitution specialist and allergen/nutrition questions to an allergen specialist (each restricted to its own narrow tool set over the ingredient database), and synthesises a cited answer.",
+  "url": "https://example.local/a2a/kitchen-squad",
+  "version": "1.0.0",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text/plain"
+  ],
+  "defaultOutputModes": [
+    "text/plain"
+  ],
+  "authentication": {
+    "schemes": [
+      "bearer"
+    ]
+  },
+  "skills": [
+    {
+      "id": "answer-recipe-question",
+      "name": "Answer a recipe question",
+      "description": "Given a natural-language cooking question, retrieves the matching fermentation recipe, delegates to a substitution specialist and an allergen/nutrition specialist, and returns a grounded, cited answer.",
+      "tags": [
+        "recipes",
+        "fermentation",
+        "substitution",
+        "allergens",
+        "nutrition"
+      ],
+      "inputModes": [
+        "text/plain"
+      ],
+      "outputModes": [
+        "text/plain"
+      ]
+    }
+  ]
+}

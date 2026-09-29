@@ -42,12 +42,41 @@ WEEK4_MODEL = "openai/gpt-oss-20b"
 
 _last_call = [0.0]
 
-# Week 7 addition: every real call to the model is logged here (model name +
-# prompt length only - never the API key or full prompt text). This is the
-# cost/call-count signal race_agent_vs_workflow.py reads to compare the
-# agent against the fixed workflow - counting real billable requests, not
-# wall-clock alone, since wall-clock is dominated by MIN_INTERVAL_SECONDS
-# pacing rather than actual work.
+# Week 10: real per-token pricing (USD per token, not per million - divided
+# once here so cost_of() below is a plain multiply), from Groq's published
+# rate card as of 2026-09 (console.groq.com/docs/model/<name>; cross-checked
+# against openrouter.ai's mirror of the same rate). Needed because
+# week10_race.py's "cost per question" metric (the brief's own rubric line)
+# has to be a real number, not a guess - and call_log below previously threw
+# away the one thing (actual token counts) a real cost figure requires.
+MODEL_RATES_USD_PER_TOKEN = {
+    "openai/gpt-oss-120b": {"input": 0.15 / 1_000_000, "output": 0.60 / 1_000_000},
+    "openai/gpt-oss-20b": {"input": 0.075 / 1_000_000, "output": 0.30 / 1_000_000},
+}
+
+
+def cost_of(model, prompt_tokens, completion_tokens):
+    """USD cost of one call, or None if `model` isn't in the rate table -
+    None rather than a silent 0, so a caller (week10_race.py) can tell "this
+    model's cost is genuinely zero" apart from "this model has no known
+    price and the total is meaningless."""
+
+    rates = MODEL_RATES_USD_PER_TOKEN.get(model)
+    if rates is None:
+        return None
+
+    return prompt_tokens * rates["input"] + completion_tokens * rates["output"]
+
+
+# Week 7 addition, extended Week 10: every real call to the model is logged
+# here - model name, prompt length, and (new) the REAL token counts Groq's
+# own response reports (prompt_tokens/completion_tokens/total_tokens), never
+# the API key or full prompt text. Before Week 10 this only recorded
+# prompt_chars (a character count, not a token count) - enough for
+# race_agent_vs_workflow.py's call-count comparison, but not enough to
+# answer week10_race.py's actual rubric questions ("total tokens", "cost per
+# question", the context re-send multiplier) - those need genuine token
+# counts, which only the API response itself has.
 call_log = []
 
 
@@ -87,7 +116,24 @@ def _generate(prompt, model=DEFAULT_MODEL):
                 reasoning_format="hidden",
             )
             _last_call[0] = time.time()
-            call_log.append({"model": model, "prompt_chars": len(prompt)})
+
+            usage = response.usage
+            prompt_tokens = getattr(usage, "prompt_tokens", None) if usage else None
+            completion_tokens = getattr(usage, "completion_tokens", None) if usage else None
+            total_tokens = getattr(usage, "total_tokens", None) if usage else None
+
+            call_log.append({
+                "model": model,
+                "prompt_chars": len(prompt),
+                "prompt_tokens": prompt_tokens,
+                "completion_tokens": completion_tokens,
+                "total_tokens": total_tokens,
+                "cost_usd": (
+                    cost_of(model, prompt_tokens, completion_tokens)
+                    if prompt_tokens is not None and completion_tokens is not None
+                    else None
+                ),
+            })
 
             content = response.choices[0].message.content
             if content:

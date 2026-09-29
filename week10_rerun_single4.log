@@ -1,0 +1,61 @@
+[T07] re-running single agent...
+[09/28/26 22:21:57] INFO     Processing request of type           server.py:733
+                             ListToolsRequest                                  
+[09/28/26 22:21:58] INFO     Processing request of type           server.py:733
+                             ListToolsRequest                                  
+  [empty response, resampling]
+  [empty response, resampling]
+[09/28/26 22:22:04] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+                    INFO     HTTP Request: POST                 _client.py:1025
+                             https://generativelanguage.googlea                
+                             pis.com/v1beta/models/gemini-embed                
+                             ding-001:batchEmbedContents                       
+                             "HTTP/1.1 200 OK"                                 
+  pass - 6415 tokens, 10.2s
+[T12] re-running single agent...
+[09/28/26 22:22:12] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+[09/28/26 22:22:13] INFO     HTTP Request: POST                 _client.py:1025
+                             https://generativelanguage.googlea                
+                             pis.com/v1beta/models/gemini-embed                
+                             ding-001:batchEmbedContents                       
+                             "HTTP/1.1 200 OK"                                 
+[09/28/26 22:22:15] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+[09/28/26 22:22:21] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+  [rate limited/unavailable, backing off 20s]
+  [rate limited/unavailable, backing off 30s]
+  [rate limited/unavailable, backing off 40s]
+  [rate limited/unavailable, backing off 50s]
+  [rate limited/unavailable, backing off 60s]
+  [rate limited/unavailable, backing off 60s]
+  [rate limited/unavailable, backing off 60s]
+Traceback (most recent call last):
+  File "D:\rag_food_receipe\week10_rerun_single.py", line 33, in <module>
+    main()
+  File "D:\rag_food_receipe\week10_rerun_single.py", line 22, in main
+    single = run_single_agent_case(question, restriction)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\rag_food_receipe\week10_race.py", line 89, in run_single_agent_case
+    result = run_agent(collection, question, restriction)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\rag_food_receipe\rag\agent.py", line 448, in run_agent
+    answer = generate_recipe_answer(question, full, model=model)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\rag_food_receipe\rag\generator.py", line 385, in generate_recipe_answer
+    return _generate(prompt, model)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\rag_food_receipe\rag\generator.py", line 113, in _generate
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjay.B\AppData\Local\Programs\Python\Python312\Lib\site-packages\groq\resources\chat\completions.py", line 466, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\Sanjay.B\AppData\Local\Programs\Python\Python312\Lib\site-packages\groq\_base_client.py", line 1284, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sanjay.B\AppData\Local\Programs\Python\Python312\Lib\site-packages\groq\_base_client.py", line 1071, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m1h6n21ven2ry4wvsa0xyyhh` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199026, Requested 2328. Please try again in 9m44.928s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
