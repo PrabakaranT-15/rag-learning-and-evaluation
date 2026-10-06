@@ -1,9 +1,14 @@
 import html
 import json
 import os
+import re
 import time
 
 import streamlit as st
+
+# Week 11: the live app caches identical (model, prompt) generations - see
+# rag/cache.py. Set before rag.* imports read it; experiments leave it off.
+os.environ.setdefault("RAG_LLM_CACHE", "1")
 
 from rag import generator
 from rag.pdf_loader import load_pdf
@@ -14,6 +19,9 @@ from rag.generator import generate_answer, generate_recipe_answer
 from rag.evaluation import classify, rows_from_results, normalise
 from rag.agent import run_agent
 from rag.tools import restriction_where
+from rag.restrictions import detect_restriction
+from rag.guards import check_answer
+from rag.observability import span, trace_request
 
 
 st.set_page_config(
@@ -273,11 +281,19 @@ st.markdown(
 
 # --------------------------------------------------------------- helpers
 
+@st.cache_data(show_spinner=False)
+def _all_metadatas(collection_name, chunk_count):
+    """Every chunk's metadata for one collection. Cached on (name, count) so
+    the sidebar explorer and stat tiles don't re-read the whole collection
+    on every Streamlit rerun; a changed chunk count busts the cache."""
+
+    return get_collection(collection_name).get(include=["metadatas"])["metadatas"]
+
+
 def is_recipe_collection(collection):
     """A collection is recipe-shaped if its chunks carry recipe_id metadata."""
 
-    sample = collection.get(limit=1, include=["metadatas"])
-    metadatas = sample.get("metadatas") or []
+    metadatas = _all_metadatas(collection.name, collection.count())[:1]
     return bool(metadatas) and metadatas[0].get("recipe_id") is not None
 
 
@@ -303,21 +319,9 @@ VERDICT_STYLE = {
     "right_document_wrong_answer": ("🟨", "RIGHT DOCUMENT, WRONG ANSWER", "warn"),
 }
 
-# Week 7: dietary restriction words both methods can act on. Both the
-# chatbot (as an up-front metadata filter) and the agent (as a
-# check-and-retry step) run on every recipe question regardless of whether
-# one of these is present - a question with no restriction here is itself a
-# useful comparison case (does the agent still do anything useful when
-# there is nothing to verify?), not a reason to skip either method.
-RESTRICTION_KEYWORDS = [
-    "vegan", "vegetarian", "dairy-free", "gluten-free",
-    "egg-free", "nut-free", "non-vegetarian",
-]
-
-
-def detect_restriction(question):
-    lowered = question.lower()
-    return next((r for r in RESTRICTION_KEYWORDS if r in lowered), None)
+# Dietary-restriction detection lives in rag/restrictions.py (Week 7 design,
+# Week 11 fix + regression tests). Both methods run on every recipe question
+# whether or not a restriction is named.
 
 
 def render_verdict(label, evidence):
@@ -402,8 +406,8 @@ def render_chunk_explorer(collection, recipe_shaped):
 
     doc_field = "source_file" if recipe_shaped else "source"
 
-    sample = collection.get(include=["metadatas"])
-    docs = sorted({m.get(doc_field) for m in sample["metadatas"] if m.get(doc_field)})
+    all_metadatas = _all_metadatas(collection.name, collection.count())
+    docs = sorted({m.get(doc_field) for m in all_metadatas if m.get(doc_field)})
 
     if not docs:
         st.caption("No documents indexed yet.")
@@ -532,16 +536,25 @@ def run_fixed_path(collection, prompt, retrieval_mode, top_k, recipe_shaped, res
 
     where = restriction_where(restriction) if recipe_shaped else None
 
-    if retrieval_mode.startswith("Hybrid"):
-        results = retrieve_hybrid(collection, prompt, top_k, where=where)
-    else:
-        results = retrieve(collection, prompt, top_k, where=where)
+    with trace_request("chatbot", prompt, restriction=restriction,
+                       collection=collection.name, retrieval_mode=retrieval_mode,
+                       top_k=top_k) as trace:
 
-    generation_tool = "generate_recipe_answer" if recipe_shaped else "generate_answer"
-    answer = (
-        generate_recipe_answer(prompt, results)
-        if recipe_shaped else generate_answer(prompt, results)
-    )
+        with span("retrieve", mode=retrieval_mode):
+            if retrieval_mode.startswith("Hybrid"):
+                results = retrieve_hybrid(collection, prompt, top_k, where=where)
+            else:
+                results = retrieve(collection, prompt, top_k, where=where)
+
+        generation_tool = "generate_recipe_answer" if recipe_shaped else "generate_answer"
+        with span("answer", tool=generation_tool):
+            answer = (
+                generate_recipe_answer(prompt, results)
+                if recipe_shaped else generate_answer(prompt, results)
+            )
+
+        trace.set(answer=answer, retrieved_chunk_ids=list(results["ids"][0]),
+                  guard_flags=check_answer(answer))
 
     workflow_steps = build_workflow_trace(prompt, retrieval_mode, top_k, results, generation_tool, where)
 
@@ -591,8 +604,8 @@ def render_stat_tiles(collection, retrieval_mode, recipe_shaped):
     total_chunks = collection.count()
 
     doc_field = "recipe_id" if recipe_shaped else "source"
-    sample = collection.get(include=["metadatas"])
-    distinct_docs = len({m.get(doc_field) for m in sample["metadatas"] if m.get(doc_field)})
+    all_metadatas = _all_metadatas(collection.name, total_chunks)
+    distinct_docs = len({m.get(doc_field) for m in all_metadatas if m.get(doc_field)})
 
     mode_label = "Hybrid" if retrieval_mode.startswith("Hybrid") else "Semantic"
     mode_sub = "Semantic + keyword" if mode_label == "Hybrid" else "Embedding similarity"
@@ -653,13 +666,21 @@ with st.sidebar:
     st.write("")
 
     uploaded_files = st.file_uploader(
-        "Upload amendment PDFs",
+        "Upload contract PDFs (legal_contracts collection)",
         type=["pdf"],
         accept_multiple_files=True,
     )
 
     chunk_size = st.slider("Chunk size", min_value=100, max_value=1000, value=500, step=100)
     overlap = st.slider("Chunk overlap", min_value=0, max_value=300, value=100, step=50)
+
+    # Build Index REPLACES the whole legal_contracts collection (build_index
+    # clears it first), so require an explicit opt-in when one already exists.
+    _legal_exists = "legal_contracts" in list_collections()
+    confirm_overwrite = (
+        st.checkbox("Replace the existing legal_contracts index", value=False)
+        if _legal_exists else True
+    )
 
     build_button = st.button("Build Index", type="primary", width="stretch")
 
@@ -745,6 +766,9 @@ if build_button:
     if not uploaded_files:
         st.warning("Please upload at least one PDF.")
 
+    elif not confirm_overwrite:
+        st.warning("An index already exists. Tick 'Replace the existing legal_contracts index' to overwrite it.")
+
     elif overlap >= chunk_size:
         st.error("Overlap must be smaller than chunk size.")
 
@@ -769,6 +793,7 @@ if build_button:
 
             build_index(chunks, "legal_contracts")
 
+            _all_metadatas.clear()
             st.session_state.indexed = True
             st.session_state.chunk_count = len(chunks)
 

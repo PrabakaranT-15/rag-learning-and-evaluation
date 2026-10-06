@@ -15,26 +15,36 @@ the thing race_agent_vs_workflow.py is actually trying to measure.
 """
 
 from rag.generator import generate_recipe_answer, DEFAULT_MODEL
+from rag.guards import check_answer
+from rag.observability import span, trace_request
 from rag.tools import search_recipes, restriction_where, get_recipe
 
 
 def run_fixed_workflow(collection, query, restriction, model=DEFAULT_MODEL, top_k=5):
     """One search (filtered up front, by a human who already knows the
-    schema) -> one generation call. No loop, no retry."""
+    schema) -> one generation call. No loop, no retry. Traced (Week 11)."""
 
-    where = restriction_where(restriction)
-    candidates = search_recipes(collection, query, where=where, top_k=top_k)
+    with trace_request("fixed_workflow", query, restriction=restriction,
+                       collection=collection.name, model=model) as trace:
 
-    if not candidates:
-        return {
-            "answer": f"I could not find a recipe for '{query}' that satisfies '{restriction}'.",
-            "candidates": [],
-        }
+        where = restriction_where(restriction)
+        with span("retrieve", top_k=top_k):
+            candidates = search_recipes(collection, query, where=where, top_k=top_k)
 
-    top = candidates[0]
-    full = get_recipe(collection, top["recipe_id"])
+        trace.set(retrieved_chunk_ids=[c["chunk_id"] for c in candidates])
 
-    question = f'Find a recipe for "{query}" that satisfies the dietary restriction "{restriction}".'
-    answer = generate_recipe_answer(question, full, model=model)
+        if not candidates:
+            answer = f"I could not find a recipe for '{query}' that satisfies '{restriction}'."
+            trace.set(answer=answer)
+            return {"answer": answer, "candidates": []}
 
-    return {"answer": answer, "candidates": candidates}
+        top = candidates[0]
+        with span("get_recipe", recipe_id=top["recipe_id"]):
+            full = get_recipe(collection, top["recipe_id"])
+
+        question = f'Find a recipe for "{query}" that satisfies the dietary restriction "{restriction}".'
+        with span("answer", recipe_id=top["recipe_id"]):
+            answer = generate_recipe_answer(question, full, model=model)
+
+        trace.set(answer=answer, recipe_id=top["recipe_id"], guard_flags=check_answer(answer))
+        return {"answer": answer, "candidates": candidates}

@@ -37,22 +37,18 @@ from pathlib import Path
 
 from rag import generator
 from rag.generator import DEFAULT_MODEL, REFUSAL_TEXT, generate_recipe_answer
-from rag.mcp_client import MCPToolRegistry
+from rag.mcp_client import get_shared_registry
+from rag.guards import check_answer
+from rag.observability import span, trace_request
 from rag.tools import get_recipe, restriction_where, search_recipes
 
 
 _INGREDIENTS_PATH = Path(__file__).resolve().parent.parent / "data" / "ingredients.json"
 
-# Same reasoning as rag/agent.py's _get_registry(): one MCPToolRegistry per
-# process, reused across every run_orchestrator() call.
-_registry = None
-
-
 def _get_registry():
-    global _registry
-    if _registry is None:
-        _registry = MCPToolRegistry()
-    return _registry
+    """Same process-wide registry rag/agent.py uses."""
+
+    return get_shared_registry()
 
 
 def _known_ingredient_names():
@@ -322,6 +318,17 @@ USER QUESTION:
 
 
 def run_orchestrator(collection, query, restriction=None, model=DEFAULT_MODEL, force_allergen_failure=False):
+    """Traced entry point (Week 11): one log record per run, then _run_orchestrator."""
+
+    with trace_request("orchestrator", query, restriction=restriction,
+                       collection=collection.name, model=model) as trace:
+        result = _run_orchestrator(collection, query, restriction, model, force_allergen_failure)
+        trace.set(answer=result["answer"], recipe_id=result.get("recipe_id"),
+                  guard_flags=check_answer(result["answer"]))
+        return result
+
+
+def _run_orchestrator(collection, query, restriction, model, force_allergen_failure):
     """The manager: deterministic retrieval (same tools rag/fixed_workflow.py
     uses - not a hand-off, this is the manager doing its own job, not
     delegating) -> ALWAYS hand off to both specialists -> synthesise.
@@ -341,7 +348,8 @@ def run_orchestrator(collection, query, restriction=None, model=DEFAULT_MODEL, f
     # pattern being tested (exactly the brief's "you tested your context
     # strategy, not the pattern" trap, one level up).
     where = restriction_where(restriction)
-    candidates = search_recipes(collection, query, where=where, top_k=5)
+    with span("retrieve", top_k=5):
+        candidates = search_recipes(collection, query, where=where, top_k=5)
 
     if not candidates:
         return {
@@ -356,8 +364,10 @@ def run_orchestrator(collection, query, restriction=None, model=DEFAULT_MODEL, f
     full = get_recipe(collection, recipe_id)
     recipe_text = "\n\n".join(full["documents"][0])
 
-    substitution = run_substitution_specialist(query, recipe_text, model=model)
-    allergen = run_allergen_specialist(query, recipe_text, model=model, force_failure=force_allergen_failure)
+    with span("substitution_worker"):
+        substitution = run_substitution_specialist(query, recipe_text, model=model)
+    with span("allergen_worker"):
+        allergen = run_allergen_specialist(query, recipe_text, model=model, force_failure=force_allergen_failure)
 
     synthesis_prompt = SYNTHESIS_PROMPT.format(
         refusal=REFUSAL_TEXT,
@@ -366,7 +376,8 @@ def run_orchestrator(collection, query, restriction=None, model=DEFAULT_MODEL, f
         allergen_note=allergen["note"],
         question=query,
     )
-    answer, synthesis_tokens = _timed_generate(synthesis_prompt, model)
+    with span("synthesis"):
+        answer, synthesis_tokens = _timed_generate(synthesis_prompt, model)
 
     handoffs = [
         substitution,

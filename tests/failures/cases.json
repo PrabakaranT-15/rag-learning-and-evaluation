@@ -1,0 +1,54 @@
+{
+  "_readme": "Week 11 failure -> test loop. Every confirmed production failure is added here (with the trace_id it was found under) and tests/test_failures.py replays ALL of them on every run, so a fixed mistake cannot quietly come back. To add one: find it with week11_logs.py, copy its question/answer, add an entry, run pytest.",
+  "cases": [
+    {
+      "id": "F001-non-vegetarian-read-as-vegetarian",
+      "found_via": "code review of app.py during the Week 11 analysis (no trace id: found before request logging existed)",
+      "complaint": "Asking for a NON-vegetarian kimchi filtered the search to vegetarian recipes - the opposite diet.",
+      "check": "detect_restriction",
+      "question": "Can you give me a non-vegetarian kimchi recipe?",
+      "expected": "non-vegetarian"
+    },
+    {
+      "id": "F002-non-vegan-read-as-vegan",
+      "found_via": "same root cause as F001",
+      "complaint": "'non-vegan' matched the substring 'vegan' and applied the vegan filter.",
+      "check": "detect_restriction",
+      "question": "Show me a non-vegan kimchi",
+      "expected": null
+    },
+    {
+      "id": "F003-plain-vegan-still-detected",
+      "found_via": "guard against over-fixing F001/F002",
+      "complaint": "The fix must not stop detecting a genuine 'vegan' request.",
+      "check": "detect_restriction",
+      "question": "Is there a vegan kimchi?",
+      "expected": "vegan"
+    },
+    {
+      "id": "F004-ghee-called-dairy-free",
+      "found_via": "support drill, trace_id d41ry7ee0001 (logs/drill_requests.jsonl)",
+      "complaint": "Customer was told the brioche has a dairy-free swap; the answer recommended ghee, which is dairy.",
+      "check": "dairy_free_answer",
+      "answer": "Yes - a dairy-free swap for the butter in the brioche is ghee at a 1:1 ratio, which keeps the dough rich.",
+      "expected_flags": ["ghee"]
+    },
+    {
+      "id": "F005-correct-dairy-free-swap-not-flagged",
+      "found_via": "guard against false positives for F004",
+      "complaint": "The guard must not flag the CORRECT swaps from the ingredient database.",
+      "check": "dairy_free_answer",
+      "answer": "A dairy-free swap for the butter is vegan block butter at 1:1, and oat milk replaces the whole milk, instead of ghee.",
+      "expected_flags": []
+    },
+    {
+      "id": "F006-ingredient-db-dairy-free-swaps-are-dairy-free",
+      "found_via": "root-cause check for F004: does the TOOL ever offer a non-dairy-free swap?",
+      "complaint": "get_substitutes(butter, 'dairy-free') must only return substitutes tagged dairy-free, and never ghee.",
+      "check": "tool_swaps",
+      "ingredient": "Unsalted butter",
+      "restriction": "dairy-free",
+      "forbidden_names": ["ghee", "clarified butter"]
+    }
+  ]
+}

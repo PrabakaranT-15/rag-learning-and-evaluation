@@ -60,7 +60,9 @@ import time
 
 from rag import generator
 from rag.generator import generate_recipe_answer
-from rag.mcp_client import MCPToolRegistry
+from rag.mcp_client import get_shared_registry
+from rag.guards import check_answer
+from rag.observability import span, trace_request
 from rag.tools import get_recipe, restriction_verified
 
 
@@ -80,17 +82,11 @@ HIDDEN_PARAMS = {"collection_name"}
 # reasoning and then being discarded at finish().
 CORE_RECIPE_TOOLS = {"search_recipes", "check_restriction", "get_recipe"}
 
-_registry = None
-
-
 def _get_registry():
-    """One MCPToolRegistry per process, reused across every run_agent() call
+    """The process-wide MCPToolRegistry, reused across every run_agent() call
     instead of reconnecting (and respawning server subprocesses) per query."""
 
-    global _registry
-    if _registry is None:
-        _registry = MCPToolRegistry()
-    return _registry
+    return get_shared_registry()
 
 
 def _tools_description(tool_catalog, restriction):
@@ -354,6 +350,37 @@ def _no_match_answer(query, restriction):
 
 def run_agent(collection, query, restriction=None, model=generator.DEFAULT_MODEL,
               max_steps=MAX_STEPS, max_seconds=MAX_SECONDS):
+    """Traced entry point: one Week 11 log record per run (see
+    rag/observability.py), then the loop below. Behaviour is unchanged."""
+
+    with trace_request("agent", query, restriction=restriction,
+                       collection=collection.name, model=model) as trace:
+        result = _run_agent(collection, query, restriction, model, max_steps, max_seconds)
+        trace.set(
+            answer=result["answer"],
+            guard_flags=check_answer(result["answer"]),
+            stopped_reason=result["stopped_reason"],
+            retrieved_chunk_ids=_retrieved_chunk_ids(result["steps"]),
+            steps=[{"step": st["step"], "tool": st["tool"]} for st in result["steps"]],
+        )
+        return result
+
+
+def _retrieved_chunk_ids(steps):
+    """Chunk ids the agent actually saw via search_recipes, in order, deduped."""
+
+    seen = []
+    for st in steps:
+        obs = st.get("observation")
+        if st.get("tool") == "search_recipes" and isinstance(obs, list):
+            for cand in obs:
+                cid = cand.get("chunk_id") if isinstance(cand, dict) else None
+                if cid and cid not in seen:
+                    seen.append(cid)
+    return seen
+
+
+def _run_agent(collection, query, restriction, model, max_steps, max_seconds):
     """Run the plan -> act -> observe loop until `finish`, or a step/time
     budget is hit - the safe-stop the brief requires, so a confused planner
     can never loop forever.
@@ -393,7 +420,8 @@ def run_agent(collection, query, restriction=None, model=generator.DEFAULT_MODEL
             stopped_reason = "time_budget_exceeded"
             break
 
-        action = _ask_for_action(question, transcript, model, restriction, tool_catalog)
+        with span("plan", step=step_number):
+            action = _ask_for_action(question, transcript, model, restriction, tool_catalog)
         tool = action.get("tool")
         args = action.get("args") or {}
 
@@ -445,7 +473,8 @@ def run_agent(collection, query, restriction=None, model=generator.DEFAULT_MODEL
             if recipe_id:
                 full = get_recipe(collection, recipe_id)
                 full = _with_extra_context(full, transcript)
-                answer = generate_recipe_answer(question, full, model=model)
+                with span("answer", recipe_id=recipe_id):
+                    answer = generate_recipe_answer(question, full, model=model)
             else:
                 # No recipe matched, but an extra (non-core) tool - e.g. the
                 # bolted-on ingredient database - may still have fetched real,
@@ -481,7 +510,8 @@ def run_agent(collection, query, restriction=None, model=generator.DEFAULT_MODEL
                 "elapsed_seconds": time.monotonic() - start,
             }
 
-        observation = _run_tool(registry, collection_name, tool, args)
+        with span("tool", step=step_number, tool=tool):
+            observation = _run_tool(registry, collection_name, tool, args)
 
         transcript.append({
             "step": step_number, "thought": action.get("thought", ""),

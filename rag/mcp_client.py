@@ -261,6 +261,20 @@ class MCPToolRegistry:
         self._thread.join(timeout=5)
 
 
+_shared_registry = None
+
+
+def get_shared_registry():
+    """One MCPToolRegistry per process, shared by rag/agent.py and
+    rag/orchestrator.py instead of each keeping its own copy (and spawning
+    its own server subprocesses)."""
+
+    global _shared_registry
+    if _shared_registry is None:
+        _shared_registry = MCPToolRegistry()
+    return _shared_registry
+
+
 def _unwrap(result):
     """A CallToolResult's structuredContent is already the parsed return
     value when the server provides it; otherwise fall back to parsing the

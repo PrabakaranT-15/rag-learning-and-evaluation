@@ -3,6 +3,9 @@ from dotenv import load_dotenv
 import os
 import time
 
+from rag import cache
+from rag.observability import span, record_llm_usage
+
 load_dotenv()
 
 # Week 7: generation backend switched from Gemini (google.genai) to Groq.
@@ -14,7 +17,22 @@ load_dotenv()
 # agent demo hit its own time budget.
 API_KEY = os.getenv("GROQ_API_KEY")
 
-client = Groq(api_key=API_KEY)
+_client = None
+
+
+def _get_client():
+    """Create the Groq client on first use, not at import time, so importing
+    this module (tests, MCP servers, the Streamlit app's first render) does
+    not fail just because GROQ_API_KEY is unset."""
+
+    global _client
+    if _client is None:
+        if not API_KEY:
+            raise RuntimeError(
+                "GROQ_API_KEY is not set. Copy .env.example to .env and fill it in."
+            )
+        _client = Groq(api_key=API_KEY)
+    return _client
 
 
 # ---------------------------------------------------------------- call pacing
@@ -81,6 +99,48 @@ call_log = []
 
 
 def _generate(prompt, model=DEFAULT_MODEL):
+    """Every model call in the app goes through here: optional exact-match
+    cache (rag/cache.py, RAG_LLM_CACHE=1), a Week 11 trace span carrying the
+    call's real latency/tokens/cost, and call_log - then the throttled,
+    retried Groq call itself (_generate_uncached) on a cache miss."""
+
+    with span("llm", model=model, prompt_chars=len(prompt),
+              prompt_hash=cache.prompt_hash(prompt)) as node:
+
+        cached = cache.get_llm(model, prompt)
+        if cached is not None:
+            call_log.append({
+                "model": model, "prompt_chars": len(prompt), "prompt_tokens": 0,
+                "completion_tokens": 0, "total_tokens": 0, "cost_usd": 0.0,
+                "cache_hit": True,
+            })
+            record_llm_usage(0, 0, 0.0, cache_hit=True)
+            if node:
+                node.set(cache_hit=True)
+            return cached
+
+        before = len(call_log)
+        try:
+            text = _generate_uncached(prompt, model)
+        finally:
+            # Charge EVERY real attempt (empty-content resamples included) -
+            # they all cost tokens - not just the last one.
+            made = call_log[before:]
+            record_llm_usage(
+                sum(c.get("prompt_tokens") or 0 for c in made),
+                sum(c.get("completion_tokens") or 0 for c in made),
+                sum(c.get("cost_usd") or 0.0 for c in made),
+            )
+            if node:
+                node.set(attempts=len(made))
+
+        if node:
+            node.set(cache_hit=False)
+        cache.put_llm(model, prompt, text)
+        return text
+
+
+def _generate_uncached(prompt, model=DEFAULT_MODEL):
     """Throttled + retried wrapper around Groq's chat.completions.create.
 
     reasoning_format="hidden" asks Groq's gpt-oss models to strip their
@@ -110,7 +170,7 @@ def _generate(prompt, model=DEFAULT_MODEL):
             time.sleep(wait)
 
         try:
-            response = client.chat.completions.create(
+            response = _get_client().chat.completions.create(
                 model=model,
                 messages=[{"role": "user", "content": prompt}],
                 reasoning_format="hidden",
@@ -189,7 +249,8 @@ def _generate(prompt, model=DEFAULT_MODEL):
 
 
 def generate_answer(question, results):
-    """Generate an answer using retrieved context and the Gemini model."""
+    """Generate an answer to a legal-contract question using retrieved context
+    (generation runs on Groq; only embeddings use Gemini)."""
 
     documents = results["documents"][0]
     metadatas = results["metadatas"][0]
